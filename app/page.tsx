@@ -14,22 +14,22 @@ export default function Home() {
     <>
       {/* 1. Hero */}
       <LandingHero />
-      {/* 2. Re. Intelligence */}
-      <LandingReIntelligence />
-      {/* 3. Tres formas de trabajar */}
-      <ThreePaths />
-      {/* 4. El problema que resolvemos */}
-      <ProblemSection />
-      {/* 5. IA para bioeconomía */}
-      <AISection />
-      {/* 6. Para fondos de inversión */}
-      <FundsAccent />
-      {/* 7. Conocimiento */}
-      <KnowledgePreview />
-      {/* 8. Quiénes somos */}
-      <TeamSection />
-      {/* 9. Aliados institucionales */}
+      {/* 2. Aliados institucionales (puente tonal entre hero y Re. Intelligence) */}
       <AlliesMarquee />
+      {/* 3. Re. Intelligence */}
+      <LandingReIntelligence />
+      {/* 4. Tres formas de trabajar */}
+      <ThreePaths />
+      {/* 5. El problema que resolvemos */}
+      <ProblemSection />
+      {/* 6. IA para bioeconomía */}
+      <AISection />
+      {/* 7. Para fondos de inversión */}
+      <FundsAccent />
+      {/* 8. Conocimiento */}
+      <KnowledgePreview />
+      {/* 9. Quiénes somos */}
+      <TeamSection />
       {/* 10. CTA Final */}
       <FinalCta />
     </>

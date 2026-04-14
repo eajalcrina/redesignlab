@@ -28,9 +28,9 @@ export default function ProjectsCarousel() {
       if (scrollLeft + clientWidth >= scrollWidth - 10) {
         scrollRef.current.scrollTo({ left: 0, behavior: 'smooth' })
       } else {
-        scrollRef.current.scrollBy({ left: 400, behavior: 'smooth' })
+        scrollRef.current.scrollBy({ left: 420, behavior: 'smooth' })
       }
-    }, 4000)
+    }, 5500)
 
     return () => clearInterval(interval)
   }, [isHovered])
@@ -53,14 +53,14 @@ export default function ProjectsCarousel() {
           <div className="hidden md:flex gap-2">
             <button
               onClick={() => scroll('left')}
-              className="w-14 h-14 border-2 border-border-light rounded-full flex items-center justify-center text-text-secondary hover:border-rl-red hover:text-rl-red hover:bg-rl-red/5 transition-colors text-xl font-bold"
+              className="w-16 h-16 border-2 border-rl-red/40 bg-rl-red/5 rounded-full flex items-center justify-center text-rl-red hover:border-rl-red hover:bg-rl-red hover:text-white transition-all duration-200 text-2xl font-bold"
               aria-label="Anterior"
             >
               &larr;
             </button>
             <button
               onClick={() => scroll('right')}
-              className="w-14 h-14 border-2 border-border-light rounded-full flex items-center justify-center text-text-secondary hover:border-rl-red hover:text-rl-red hover:bg-rl-red/5 transition-colors text-xl font-bold"
+              className="w-16 h-16 border-2 border-rl-red/40 bg-rl-red/5 rounded-full flex items-center justify-center text-rl-red hover:border-rl-red hover:bg-rl-red hover:text-white transition-all duration-200 text-2xl font-bold"
               aria-label="Siguiente"
             >
               &rarr;

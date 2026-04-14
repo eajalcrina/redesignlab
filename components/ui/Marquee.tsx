@@ -25,7 +25,7 @@ function MarqueeRow({ items, direction = 'left', speed = 60 }: MarqueeProps) {
         {doubled.map((item, i) => (
           <span
             key={`${item}-${i}`}
-            className="text-body-lg font-display text-text-primary/40 hover:text-text-muted transition-colors cursor-default"
+            className="text-body-lg font-display text-text-primary/60 hover:text-rl-red transition-colors cursor-default"
           >
             {item}
           </span>

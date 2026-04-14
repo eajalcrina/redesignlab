@@ -74,6 +74,20 @@ export const ventures: Venture[] = [
   },
 ]
 
+// Generate URL-friendly slug from venture name
+export function getVentureSlug(venture: Venture): string {
+  return venture.name
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '') // remove accents
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+}
+
+export function findVentureBySlug(slug: string): Venture | undefined {
+  return ventures.find((v) => getVentureSlug(v) === slug)
+}
+
 export const ventureMetrics = [
   { value: 10, label: 'empresas en el portafolio' },
   { prefix: '+USD ', value: 26, suffix: 'MM', label: 'en facturación' },

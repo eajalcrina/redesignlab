@@ -10,10 +10,10 @@ interface ReIntelligenceBlockProps {
 }
 
 const benefits = [
-  '4 horas de acceso C-Level directo — con Eddie Ajalcriña o Lorenzo Ortiz',
-  'Re. Intelligence Brief mensual personalizado por industria y momento',
-  '2 consultas adicionales de 30 min con especialistas de la red',
-  'Acceso anticipado a todos los frameworks y publicaciones',
+  'Acceso C-Level directo cada mes con Eddie Ajalcriña y Lorenzo Ortiz',
+  'Brief mensual de inteligencia estratégica diseñado para tu industria',
+  'Consultas express con la red de especialistas en bioeconomía e IA',
+  'Acceso anticipado a frameworks, herramientas y publicaciones propias',
   'Prioridad en proyectos y condiciones preferenciales en todos los servicios',
 ]
 
@@ -29,30 +29,30 @@ export default function ReIntelligenceBlock({
               EMPIEZA A TRANSFORMAR TU NEGOCIO
             </Tag>
 
-            <p className="font-mono text-mono-lg text-rl-red mb-4">
-              USD 3,000 / mes
-            </p>
-
             <h2 className="font-display text-display-md md:text-display-lg text-text-on-dark mb-4">
               Re. Intelligence
             </h2>
 
-            <p className="text-body-lg text-text-muted mb-6">
-              Máximo 15 miembros. Siempre.
+            <p className="font-display text-display-sm text-rl-red mb-6">
+              Asesoría estratégica impulsada por IA para desbloquear el siguiente nivel de tu empresa.
+            </p>
+
+            <p className="font-mono text-mono-lg text-text-muted mb-8">
+              USD 3,000 / mes &middot; Solo 15 cupos al año
             </p>
 
             <Divider variant="red" className="w-16 mb-8" animated />
 
-            <p className="font-display text-display-sm text-text-on-dark mb-6">
-              Hay decisiones que no se pueden tomar bien sin el criterio correcto en el momento correcto.
+            <p className="text-body-lg text-text-on-dark mb-6">
+              Acompañamiento continuo del equipo senior de Redesign Lab para los líderes que están tomando las decisiones que definirán los próximos cinco años de su industria.
             </p>
 
             <p className="text-body-md text-text-muted mb-4">
-              No es una suscripción a contenido. No es consultoría recurrente con entregables mensuales. Es acceso directo al criterio, la red y la inteligencia de mercado de Redesign Lab — aplicados al contexto específico de cada miembro, cada mes.
+              No es una suscripción a contenido genérico ni un programa de mentoría más. Es acceso directo al criterio, la red y la inteligencia de mercado que ya está construyendo el portafolio de bioeconomía más relevante de América Latina — aplicado al contexto específico de tu empresa, cada mes.
             </p>
 
-            <p className="text-body-md text-text-muted mb-12">
-              Máximo 15 miembros. Siempre. Porque con 16, el producto deja de ser lo que es.
+            <p className="text-body-md text-text-on-dark/80 mb-12 italic">
+              Solo 15 miembros activos a la vez. Porque con 16, el producto deja de ser lo que es.
             </p>
           </SectionReveal>
 
@@ -73,8 +73,11 @@ export default function ReIntelligenceBlock({
 
           <SectionReveal delay={0.3}>
             <Button variant="primary" size="lg" href="/re-intelligence">
-              Solicitar información sobre Re. Intelligence →
+              Súmate a la red de Re. Intelligence &rarr;
             </Button>
+            <p className="text-body-sm text-text-muted/70 mt-4">
+              Conversación previa de fit · Sin compromiso
+            </p>
           </SectionReveal>
         </div>
       </div>

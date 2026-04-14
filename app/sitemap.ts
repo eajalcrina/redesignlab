@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next'
 import { projects, getProjectSlug } from '@/data/projects'
+import { ventures, getVentureSlug } from '@/data/ventures'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://redesignlab.org'
@@ -20,11 +21,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ]
 
   const projectRoutes = projects.map((p) => `/proyectos/${getProjectSlug(p)}`)
+  const ventureRoutes = ventures.map((v) => `/ventures/${getVentureSlug(v)}`)
 
-  return [...staticRoutes, ...projectRoutes].map((route) => ({
+  return [...staticRoutes, ...projectRoutes, ...ventureRoutes].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,
-    priority: route === '' ? 1 : route.startsWith('/proyectos/') ? 0.6 : 0.8,
+    priority:
+      route === ''
+        ? 1
+        : route.startsWith('/proyectos/') || route.startsWith('/ventures/')
+        ? 0.6
+        : 0.8,
   }))
 }

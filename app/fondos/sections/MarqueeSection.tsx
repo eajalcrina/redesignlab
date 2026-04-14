@@ -1,12 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-
-const allies = [
-  'ProInversión', 'CAF', 'BID Lab', 'GIZ', 'USAID',
-  'Concytec', 'Produce', 'Sierra y Selva Exportadora',
-  'PNUD', 'FAO', 'IFC', 'Endeavor',
-]
+import { ALLIES, ALLIES_LABEL } from '@/lib/constants'
 
 function MarqueeRow({ direction = 'left', items }: { direction?: 'left' | 'right'; items: string[] }) {
   const doubled = [...items, ...items]
@@ -22,7 +17,7 @@ function MarqueeRow({ direction = 'left', items }: { direction?: 'left' | 'right
         {doubled.map((item, i) => (
           <span
             key={`${item}-${i}`}
-            className="text-body-lg text-text-primary/40 font-display hover:text-text-muted transition-colors cursor-default"
+            className="text-body-lg text-text-primary/60 font-display hover:text-rl-red transition-colors cursor-default"
           >
             {item}
           </span>
@@ -36,10 +31,10 @@ export default function MarqueeSection() {
   return (
     <section className="section-neutral py-12 md:py-16 overflow-hidden">
       <div className="container-rl mb-6">
-        <span className="text-label-sm uppercase text-text-tertiary">Red institucional</span>
+        <span className="text-label-sm uppercase text-text-tertiary">{ALLIES_LABEL}</span>
       </div>
-      <MarqueeRow direction="left" items={allies} />
-      <MarqueeRow direction="right" items={[...allies].reverse()} />
+      <MarqueeRow direction="left" items={ALLIES.row1} />
+      <MarqueeRow direction="right" items={ALLIES.row2} />
     </section>
   )
 }

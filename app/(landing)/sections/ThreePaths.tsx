@@ -42,7 +42,7 @@ export default function ThreePaths() {
             <SectionReveal key={path.title} delay={i * 0.1}>
               <div className="p-10 border-2 border-border-light rounded hover:bg-rl-dark hover:text-text-on-dark hover:border-rl-dark transition-all duration-300 group h-full flex flex-col shadow-sm hover:shadow-lg">
                 <span className="font-mono text-mono-sm text-rl-red block mb-4">0{i + 1}</span>
-                <h3 className="font-display text-display-md text-text-primary group-hover:text-text-on-dark mb-4 transition-colors">
+                <h3 className="font-display text-[36px] md:text-[44px] leading-[1.05] text-text-primary group-hover:text-text-on-dark mb-5 transition-colors">
                   {path.title}
                 </h3>
                 <p className="text-body-sm text-text-secondary group-hover:text-text-muted mb-4 flex-1 transition-colors">

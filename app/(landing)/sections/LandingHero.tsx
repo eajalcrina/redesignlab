@@ -8,15 +8,15 @@ export default function LandingHero() {
   return (
     <section className="section-dark min-h-screen flex items-center">
       <div className="container-rl py-32">
-        <p className="mb-8 text-body-sm tracking-[0.14em] uppercase text-rl-red">
+        <p className="mb-8 text-body-md md:text-body-lg tracking-[0.16em] uppercase text-rl-red font-medium">
           THE AI STUDIO FOR BIOECONOMY INDUSTRIES
         </p>
         <HeroText
           line1="Negocios que funcionan."
           line2="En industrias que importan."
         />
-        <p className="mt-8 text-body-xl text-text-muted max-w-2xl">
-          Somos el primer AI Studio de América Latina dedicado a transformar las industrias cuya ventaja competitiva depende de regenerar los sistemas naturales.
+        <p className="mt-8 text-body-xl text-text-muted max-w-3xl">
+          No somos una consultora convencional. No somos un fondo. Somos el estudio especializado que transforma la relación de las industrias con los sistemas naturales de los que dependen en ventajas competitivas verificables y duraderas.
         </p>
         <div className="mt-12 flex flex-col sm:flex-row gap-4">
           <Button variant="primary" size="lg" href="/crear-valor">

@@ -269,15 +269,16 @@ export const projectCategories = [
 
 export const projectIndustries = [
   'Todas',
-  'Venture Building',
-  'Agricultura Regenerativa',
-  'Tecnología',
-  'Economía Circular',
-  'Finanzas Verdes',
-  'Política Pública',
   'Bioeconomía',
+  'Agricultura Regenerativa',
+  'Economía Circular',
+  'Pesca',
+  'Acuicultura',
+  'Textil',
+  'Finanzas',
+  'Políticas Públicas',
   'Turismo',
   'Climate Tech',
-  'Finanzas de Impacto',
   'Inteligencia Artificial',
+  'Tecnología',
 ] as const

@@ -41,9 +41,14 @@ const problems = [
 
 export default function ProblemSection() {
   const [active, setActive] = useState(0)
+  const total = problems.length
+
+  const go = (delta: number) => {
+    setActive((prev) => (prev + delta + total) % total)
+  }
 
   return (
-    <section className="section-dark py-16 md:py-24">
+    <section className="section-dark py-24 md:py-32">
       <div className="container-rl">
         <SectionReveal>
           <Tag color="red" className="mb-4">EL PROBLEMA QUE RESOLVEMOS</Tag>
@@ -52,52 +57,76 @@ export default function ProblemSection() {
           </h2>
         </SectionReveal>
 
-        {/* 3 tabs always visible */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 items-stretch">
-          {problems.map((problem, i) => (
-            <SectionReveal key={problem.number} delay={i * 0.1} className="flex">
-              <button
-                onClick={() => setActive(i)}
-                className={`w-full text-left p-6 rounded border transition-all duration-300 flex flex-col ${
-                  active === i
-                    ? 'border-rl-red bg-rl-red/10'
-                    : 'border-border-dark hover:border-text-muted/30'
-                }`}
-              >
-                <span className="font-mono text-mono-sm text-rl-red block mb-2">{problem.number}</span>
-                <h3 className={`font-display text-body-lg md:text-display-sm transition-colors ${
-                  active === i ? 'text-text-on-dark' : 'text-text-muted'
-                }`}>
-                  {problem.statement}
-                </h3>
-              </button>
-            </SectionReveal>
-          ))}
+        {/* Slider controls */}
+        <div className="flex items-center justify-between mb-8">
+          <div className="flex items-center gap-4">
+            <span className="font-mono text-mono-sm text-rl-red">
+              {problems[active].number}
+            </span>
+            <span className="text-body-sm text-text-muted">
+              / {String(total).padStart(2, '0')}
+            </span>
+          </div>
+          <div className="flex gap-2">
+            <button
+              onClick={() => go(-1)}
+              aria-label="Anterior"
+              className="w-11 h-11 rounded-full border border-border-dark flex items-center justify-center text-text-on-dark hover:border-rl-red hover:text-rl-red transition-colors"
+            >
+              &larr;
+            </button>
+            <button
+              onClick={() => go(1)}
+              aria-label="Siguiente"
+              className="w-11 h-11 rounded-full border border-border-dark flex items-center justify-center text-text-on-dark hover:border-rl-red hover:text-rl-red transition-colors"
+            >
+              &rarr;
+            </button>
+          </div>
         </div>
 
-        {/* Expanded detail for active problem */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={active}
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -12 }}
-            transition={{ duration: DURATION.fast, ease: EASE.out }}
-            className="max-w-3xl"
-          >
-            <ul className="space-y-4 mb-6">
-              {problems[active].bullets.map((bullet, i) => (
-                <li key={i} className="flex items-start gap-3 text-body-lg text-text-muted">
-                  <span className="w-1.5 h-1.5 rounded-full bg-rl-red mt-2.5 flex-shrink-0" />
-                  {bullet}
-                </li>
-              ))}
-            </ul>
-            <p className="text-body-lg text-rl-red font-medium">
-              {problems[active].conclusion}
-            </p>
-          </motion.div>
-        </AnimatePresence>
+        {/* Horizontal slide */}
+        <div className="relative overflow-hidden">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={active}
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -40 }}
+              transition={{ duration: DURATION.normal, ease: EASE.out }}
+              className="max-w-4xl"
+            >
+              <h3 className="font-display text-display-md md:text-display-lg text-text-on-dark mb-10">
+                {problems[active].statement}
+              </h3>
+              <ul className="space-y-4 mb-8">
+                {problems[active].bullets.map((bullet, i) => (
+                  <li key={i} className="flex items-start gap-3 text-body-lg text-text-muted">
+                    <span className="w-1.5 h-1.5 rounded-full bg-rl-red mt-2.5 flex-shrink-0" />
+                    {bullet}
+                  </li>
+                ))}
+              </ul>
+              <p className="text-body-lg text-rl-red font-medium max-w-3xl">
+                {problems[active].conclusion}
+              </p>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+
+        {/* Progress dots */}
+        <div className="flex gap-2 mt-12">
+          {problems.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setActive(i)}
+              aria-label={`Ir al problema ${i + 1}`}
+              className={`h-1 transition-all duration-300 ${
+                i === active ? 'w-12 bg-rl-red' : 'w-6 bg-text-muted/30 hover:bg-text-muted/60'
+              }`}
+            />
+          ))}
+        </div>
       </div>
     </section>
   )

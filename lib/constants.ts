@@ -81,16 +81,22 @@ export const NEWSLETTER = {
   disclaimer: 'Puedes darte de baja en cualquier momento.',
 }
 
+export const ALLIES_LABEL = 'Organizaciones con las que hemos colaborado estos años'
+
 export const ALLIES = {
   row1: [
-    'IDB', 'Wyss Academy for Nature', 'WWF', 'NESsT', 'Beneficial Returns',
-    'Conservation International', 'Textile Exchange', 'GIZ', 'Singularity University',
-    'CleantechHUB', 'C Minds', 'CATAL1.5T',
+    'IDB', 'IDB Lab', 'IDB Invest', 'Wyss Academy for Nature', 'WWF',
+    'NESsT', 'Beneficial Returns', 'Conservation International', 'CI Ventures',
+    'Textile Exchange', 'Fibral Material Alliance', 'The Sustainable Angle',
+    'GIZ', 'Singularity University', 'CleantechHUB', 'C Minds', 'CATAL1.5T', 'GRIDX',
   ],
   row2: [
     'FIT State University of New York', 'ImpactAlpha', 'elea', 'IMD',
     'UAL University of the Arts London', 'Tecnológico de Monterrey', 'MIT',
-    'PromPerú', 'ProInnóvate', 'Ministerio del Ambiente Perú', 'SNI',
-    'Unión Europea', 'Green Climate Fund',
+    'PromPerú', 'ProInnóvate', 'Agromercado',
+    'Ministerio del Ambiente Perú', 'Ministerio de la Producción',
+    'SNI', 'ADEX', 'ECOAGE', 'Unión Europea', 'Green Climate Fund',
   ],
 }
+
+export const ALLIES_FLAT = [...ALLIES.row1, ...ALLIES.row2]
