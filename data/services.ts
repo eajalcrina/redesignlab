@@ -24,7 +24,7 @@ export const crearValorServices: Service[] = [
   {
     name: 'Innovation Blueprint',
     duration: '5 a 7 semanas',
-    price: 'USD 9,000 – 16,000',
+    price: '',
     description:
       'Lanzar un nuevo producto o servicio sin haberlo diseñado con rigor es uno de los errores más costosos que una empresa puede cometer. No porque la idea sea mala — sino porque la distancia entre una buena idea y un producto que el mercado está dispuesto a comprar, al precio correcto y en el formato correcto, es mucho mayor de lo que parece antes de hacer el trabajo. El Innovation Blueprint cubre esa distancia antes de que la organización comprometa recursos en producción o implementación. Redesign Lab entrega el diseño completo. La organización es quien lo produce y lo lanza.',
     includes: [
@@ -38,7 +38,7 @@ export const crearValorServices: Service[] = [
   {
     name: 'Bioventure Blueprint',
     duration: '4 a 6 semanas',
-    price: 'USD 8,000 – 14,000',
+    price: '',
     description:
       'Diseñar un nuevo negocio en bioeconomía sin un modelo robusto no es emprender — es apostar. El Bioventure Blueprint convierte una oportunidad identificada en un modelo de negocio verificable: cadena de valor definida, estructura de costos real, estrategia de certificación, modelo de distribución de valor con comunidades o productores y proyecciones financieras con supuestos explícitos.',
     includes: [
@@ -52,7 +52,7 @@ export const crearValorServices: Service[] = [
   {
     name: 'Corporate Spin-off Design',
     duration: '4 a 6 semanas',
-    price: 'USD 10,000 – 16,000',
+    price: '',
     description:
       'Muchas corporaciones tienen activos estratégicos que su modelo principal no está diseñado para valorizar: conocimiento territorial acumulado, relaciones con comunidades productoras, acceso a biodiversidad, tecnologías propias o cadenas de suministro que podrían ser la base de una empresa independiente con mercado propio. El Corporate Spin-off Design convierte esos activos en una empresa.',
     includes: [
@@ -80,7 +80,7 @@ export const crearValorServices: Service[] = [
   {
     name: 'Impact Value Report',
     duration: '2 a 3 semanas',
-    price: 'USD 4,000 – 7,000',
+    price: '',
     description:
       'El impacto que no se puede demostrar no existe para el mercado. El Impact Value Report convierte la historia de impacto de una organización en un documento que resiste el escrutinio de un LP exigente, de un comprador que audita su cadena de suministro o de un organismo de certificación internacional.',
     includes: [
@@ -114,7 +114,7 @@ export const redisenarTrabajoServices: Service[] = [
   {
     name: 'Circular Operations Redesign',
     duration: '6 a 8 semanas',
-    price: 'USD 12,000 – 20,000',
+    price: '',
     description:
       'La economía circular no es un principio de sostenibilidad — es un modelo de reducción de costos, apertura de mercados y generación de valor a partir de recursos que hoy se están descartando. El Circular Operations Redesign identifica dónde están esas oportunidades en la operación existente y diseña el camino para capturarlas.',
     includes: [
@@ -128,7 +128,7 @@ export const redisenarTrabajoServices: Service[] = [
   {
     name: 'Supply Chain Intelligence',
     duration: '4 a 6 semanas',
-    price: 'USD 8,000 – 15,000',
+    price: '',
     description:
       'Una cadena de suministro que no se puede ver con precisión no se puede gestionar con inteligencia. Y una cadena que no se puede trazar no puede acceder a los mercados premium que hoy exigen visibilidad completa como condición de elegibilidad.',
     includes: [
@@ -142,7 +142,7 @@ export const redisenarTrabajoServices: Service[] = [
   {
     name: 'Re.·IA Application',
     duration: '6 a 10 semanas',
-    price: 'USD 10,000 – 22,000',
+    price: '',
     description:
       'La promesa de la IA para las industrias de bioeconomía es real. Pero la mayoría de las implementaciones fallan por la misma razón: se despliegan herramientas genéricas sobre procesos que no fueron diseñados para recibirlas.',
     includes: [
@@ -173,7 +173,7 @@ export const transformarModeloServices: Service[] = [
   {
     name: 'Operating Model Design',
     duration: '8 a 12 semanas',
-    price: 'USD 20,000 – 35,000',
+    price: '',
     description:
       'El modelo operativo de una organización es la forma en que todo funciona junto: estructura de decisión, flujos de información, distribución de responsabilidades, sistemas de gestión y mecanismos de aprendizaje. Cuando ese modelo fue diseñado para una etapa anterior — o cuando nunca fue diseñado deliberadamente — se convierte en el principal freno del crecimiento.',
     includes: [
@@ -187,7 +187,7 @@ export const transformarModeloServices: Service[] = [
   {
     name: 'AI Transformation Roadmap',
     duration: '4 a 6 semanas',
-    price: 'USD 12,000 – 20,000',
+    price: '',
     description:
       'La mayoría de las hojas de ruta de adopción de IA tienen el mismo problema: fueron diseñadas por personas que conocen la tecnología pero no conocen la operación, o por personas que conocen la operación pero no saben lo que la IA puede hacer realmente.',
     includes: [
@@ -201,7 +201,7 @@ export const transformarModeloServices: Service[] = [
   {
     name: 'AI Leadership Sprint',
     duration: '2 a 3 semanas',
-    price: 'USD 8,000 – 14,000',
+    price: '',
     description:
       'La brecha más crítica en la adopción de IA en las industrias de bioeconomía no está en la tecnología — está en los equipos directivos. Los líderes que no entienden qué puede y qué no puede hacer la IA delegan decisiones que deberían tomar ellos.',
     includes: [
@@ -214,7 +214,7 @@ export const transformarModeloServices: Service[] = [
   {
     name: 'Scale Strategy',
     duration: '4 a 6 semanas',
-    price: 'USD 10,000 – 18,000',
+    price: '',
     description:
       'Escalar una empresa de bioeconomía no es lo mismo que escalar una empresa de tecnología. Los activos naturales tienen sus propios tiempos. Las comunidades productoras tienen sus propias lógicas de gobernanza. Las certificaciones internacionales tienen sus propios procesos.',
     includes: [

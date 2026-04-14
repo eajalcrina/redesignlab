@@ -8,7 +8,7 @@ const services = [
   {
     name: 'Technical Due Diligence',
     duration: 'Por empresa evaluada',
-    price: 'USD 3,500 – 10,000',
+    price: '',
     description: 'El Technical Due Diligence aplica el BIRF — Bionegocio Investment Readiness Framework — como herramienta de diagnóstico estructurado, combinado con visita de campo y entrevistas con todos los actores clave de la cadena.',
     includes: [
       'Aplicación del BIRF',
@@ -21,7 +21,7 @@ const services = [
   {
     name: 'Pre-Investment Venture Building',
     duration: '3 a 6 meses',
-    price: 'USD 4,000 – 6,000 / mes',
+    price: '',
     description: 'Cuando el Technical Due Diligence identifica un bionegocio con potencial real pero con brechas que impiden el desembolso responsable, hay dos opciones: rechazar la inversión o acompañar el cierre de esas brechas antes de comprometer el capital principal.',
     includes: [
       'Plan de fortalecimiento basado en brechas BIRF identificadas',
@@ -34,7 +34,7 @@ const services = [
   {
     name: 'BIRF para portafolios',
     duration: 'Por proceso de selección',
-    price: 'Desde USD 2,500',
+    price: '',
     description: 'Para fondos que necesitan evaluar un número significativo de candidatos en un proceso de selección, Redesign Lab licencia el uso del BIRF como herramienta de diagnóstico estandarizado.',
     includes: [
       'Licencia de uso del BIRF para el proceso de selección',

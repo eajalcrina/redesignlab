@@ -29,7 +29,7 @@ export default function HighlightedServices({ services }: HighlightedServicesPro
                   {service.name}
                 </h3>
                 <p className="font-mono text-mono-md text-rl-red mb-4">
-                  {service.duration} · {service.price}
+                  {service.price ? `${service.duration} · ${service.price}` : service.duration}
                 </p>
                 <p className="text-body-md text-text-muted mb-6">
                   {service.description}

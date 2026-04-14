@@ -48,7 +48,7 @@ export default function ServiceCard({
 
         {/* Duration + Price */}
         <p className="font-mono text-mono-md text-rl-red mb-3">
-          {duration} · {price}
+          {price ? `${duration} · ${price}` : duration}
         </p>
 
         {/* Description */}
