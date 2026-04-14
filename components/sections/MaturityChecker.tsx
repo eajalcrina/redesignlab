@@ -1,8 +1,20 @@
 'use client'
 
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
+import { createPortal } from 'react-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { cn } from '@/lib/utils'
+import {
+  LEVEL_PROFILE,
+  BLOCK_INSIGHT,
+  BLOCK_90_DAY_ACTIONS,
+  INDUSTRY_90_DAY_NOTE,
+  INDUSTRY_LABEL,
+  LEVER_DESCRIPTION,
+  computePriorityLevers,
+  type BlockKey as BK,
+  type IndustryId,
+} from '@/data/maturity'
 
 // ── Data ────────────────────────────────────────────────────────────────────
 
@@ -56,7 +68,9 @@ const LEVELS: Record<number, { name: string; range: [number, number]; tagline: s
   4: { name: 'Lider', range: [39, 48], tagline: 'Estas entre las mas avanzadas de tu industria en LATAM.' },
 }
 
-const levelDescriptions: Record<number, { definition: string; companies: string }> = {
+// Legacy — kept for reference, replaced by LEVEL_PROFILE in data/maturity.ts
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const _levelDescriptions: Record<number, { definition: string; companies: string }> = {
   1: {
     definition: 'Tu organizacion esta en el punto de partida. La IA no es parte de las operaciones ni de las decisiones. La captura de datos es manual o inexistente, y las decisiones se basan en experiencia e intuicion.',
     companies: 'Empresas familiares en transicion, cooperativas agricolas, operadores turisticos locales, pequenos exportadores de productos naturales.',
@@ -75,7 +89,8 @@ const levelDescriptions: Record<number, { definition: string; companies: string 
   },
 }
 
-const levelRecommendations: Record<number, string[]> = {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const _levelRecommendations: Record<number, string[]> = {
   1: [
     'Digitaliza los registros de las 3 operaciones mas criticas.',
     'Configura monitoreo basico de tus mercados clave.',
@@ -137,13 +152,29 @@ export default function MaturityChecker() {
     return { key: k, ...info, score }
   })
 
-  const lowestBlocks = [...blockScores].sort((a, b) => a.score / a.max - b.score / b.max).slice(0, 3)
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const _lowestBlocks = [...blockScores].sort((a, b) => a.score / a.max - b.score / b.max).slice(0, 3)
 
   const progress = Math.min(step / TOTAL_STEPS, 1)
 
   const reset = () => {
     setStep(0); setIndustry(null); setCompanySize(null); setAnswers({}); setLead({ name: '', email: '', company: '', cargo: '', consent: false })
   }
+
+  const close = useCallback(() => { setOpen(false); reset() }, [])
+
+  // Lock body scroll + ESC handler while overlay is open
+  useEffect(() => {
+    if (!open) return
+    const prevOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') close() }
+    window.addEventListener('keydown', onKey)
+    return () => {
+      document.body.style.overflow = prevOverflow
+      window.removeEventListener('keydown', onKey)
+    }
+  }, [open, close])
 
   // ── Entry card ──────────────────────────────────────────────────────────
 
@@ -167,44 +198,49 @@ export default function MaturityChecker() {
     )
   }
 
-  // ── Overlay ─────────────────────────────────────────────────────────────
+  // ── Overlay (rendered via portal to escape any stacking context) ────────
 
-  return (
-    <div className="fixed inset-0 z-[100] bg-[#141414] overflow-y-auto">
+  if (typeof document === 'undefined') return null
+
+  const overlay = (
+    <div className="fixed inset-0 z-[9999] bg-[#141414] overflow-y-auto">
       {/* Progress bar */}
-      <div className="fixed top-0 left-0 right-0 h-1 bg-white/5 z-[101]">
+      <div className="fixed top-0 left-0 right-0 h-1 bg-white/5 z-[10001]">
         <motion.div className="h-full bg-rl-red" animate={{ width: `${progress * 100}%` }} transition={{ duration: 0.3 }} />
       </div>
 
-      {/* Close */}
-      <button
-        onClick={() => { setOpen(false); reset() }}
-        className="fixed top-5 right-5 z-[102] w-10 h-10 flex items-center justify-center text-text-muted hover:text-white transition-colors"
-        aria-label="Cerrar"
-      >
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M15 5L5 15M5 5l10 10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /></svg>
-      </button>
+      {/* Top bar — holds back/counter/close with consistent spacing */}
+      <div className="fixed top-0 left-0 right-0 z-[10000] pt-2 pb-2 px-4 md:px-6 flex items-center justify-between bg-[#141414]/90 backdrop-blur-sm border-b border-white/5">
+        {/* Back */}
+        {step > 0 && step < TOTAL_STEPS ? (
+          <button
+            onClick={prev}
+            className="flex items-center gap-2 text-text-muted hover:text-white text-body-sm transition-colors h-10 px-3 rounded"
+          >
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 12L6 8l4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+            Atrás
+          </button>
+        ) : <span className="w-10" />}
 
-      {/* Back */}
-      {step > 0 && step < TOTAL_STEPS && (
+        {/* Step counter */}
+        {step > 0 && step < TOTAL_STEPS ? (
+          <span className="text-text-muted text-mono-sm font-mono">
+            {step} / {TOTAL_STEPS - 2}
+          </span>
+        ) : <span />}
+
+        {/* Close */}
         <button
-          onClick={prev}
-          className="fixed top-5 left-5 z-[102] flex items-center gap-2 text-text-muted hover:text-white text-body-sm transition-colors"
+          onClick={close}
+          className="w-10 h-10 rounded-full border border-white/15 bg-white/5 hover:bg-rl-red hover:border-rl-red flex items-center justify-center text-white transition-colors"
+          aria-label="Cerrar diagnóstico"
         >
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 12L6 8l4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
-          Atras
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M15 5L5 15M5 5l10 10" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" /></svg>
         </button>
-      )}
-
-      {/* Step counter */}
-      {step > 0 && step < TOTAL_STEPS && (
-        <div className="fixed top-5 left-1/2 -translate-x-1/2 z-[102] text-text-muted text-mono-sm font-mono">
-          {step} / {TOTAL_STEPS - 2}
-        </div>
-      )}
+      </div>
 
       {/* Content */}
-      <div className="min-h-screen flex items-center justify-center px-6 py-20">
+      <div className="min-h-screen flex items-center justify-center px-6 pt-24 pb-20">
         <AnimatePresence mode="wait" custom={dir}>
           {/* Screen 0: Welcome */}
           {step === 0 && (
@@ -352,7 +388,7 @@ export default function MaturityChecker() {
           {/* Screen 16: Results */}
           {step === 16 && (() => {
             const fodaEntries = blockScores.map((b) => ({
-              key: b.key,
+              key: b.key as BK,
               name: b.name,
               score: b.score,
               max: b.max,
@@ -361,25 +397,37 @@ export default function MaturityChecker() {
             const sortedFoda = [...fodaEntries].sort((a, b) => b.pct - a.pct)
             const strengths = sortedFoda.slice(0, 2)
             const weaknesses = sortedFoda.slice(-2).reverse()
+            const blockPct: Record<BK, number> = {
+              A: 0, B: 0, C: 0, D: 0, E: 0,
+            }
+            fodaEntries.forEach((e) => { blockPct[e.key] = e.pct })
+            const industryId = (industry || 'otra') as IndustryId
+            const priorityLevers = computePriorityLevers(blockPct, industryId)
+            const profile = LEVEL_PROFILE[level]
+            const firstName = lead.name.split(' ')[0] || 'Tu organización'
 
             return (
             <Screen key="results" dir={dir}>
               <div className="max-w-2xl w-full">
-                {/* 1. Level name + tagline */}
-                <p className="text-label-sm uppercase tracking-[0.18em] text-rl-red mb-4">Tu resultado</p>
+                {/* 1. Header */}
+                <p className="text-label-sm uppercase tracking-[0.18em] text-rl-red mb-4">Tu diagnóstico</p>
+                <p className="text-body-md text-text-muted mb-2">
+                  {firstName}, tu organización es un
+                </p>
                 <h2 className="font-display text-display-md md:text-display-lg text-text-on-dark mb-2">
-                  Nivel {level}: {LEVELS[level].name}
+                  {profile.name.toUpperCase()}
                 </h2>
-                <p className="text-body-lg text-text-muted mb-8">{LEVELS[level].tagline}</p>
+                <p className="text-body-lg text-rl-red mb-6 font-medium">{profile.tagline}</p>
+                <p className="text-body-sm text-text-muted mb-8">
+                  Nivel {level} de 4 · Industria: {INDUSTRY_LABEL[industryId]}
+                </p>
 
-                {/* 2. Level definition + typical companies */}
+                {/* 2. Perfil narrativo */}
                 <div className="bg-white/5 rounded p-6 mb-8">
-                  <h3 className="font-display text-display-xs text-text-on-dark mb-3">
-                    Que significa ser {LEVELS[level].name}?
-                  </h3>
-                  <p className="text-body-md text-text-muted mb-4">{levelDescriptions[level].definition}</p>
-                  <p className="text-label-sm uppercase tracking-[0.18em] text-text-muted mb-2">Empresas tipicas en este nivel:</p>
-                  <p className="text-body-sm text-text-muted">{levelDescriptions[level].companies}</p>
+                  <p className="text-label-sm uppercase tracking-[0.18em] text-rl-red mb-3">El perfil</p>
+                  <p className="text-body-md text-text-on-dark mb-4">{profile.narrative}</p>
+                  <p className="text-label-sm uppercase tracking-[0.18em] text-text-muted mb-2">Empresas típicas en este nivel</p>
+                  <p className="text-body-sm text-text-muted">{profile.typicalCompanies}</p>
                 </div>
 
                 {/* 3. Total score */}
@@ -393,36 +441,32 @@ export default function MaturityChecker() {
                   </div>
                 </div>
 
-                {/* 4. FODA analysis — strengths & weaknesses */}
+                {/* 4. Fortalezas & Debilidades con insight contextual */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-                  <div className="bg-white/5 rounded p-6">
-                    <p className="text-label-sm uppercase tracking-[0.18em] text-emerald-400 mb-4">Fortalezas identificadas</p>
-                    <ul className="space-y-4">
+                  <div className="bg-emerald-500/5 border border-emerald-500/20 rounded p-6">
+                    <p className="text-label-sm uppercase tracking-[0.18em] text-emerald-400 mb-4">Fortalezas</p>
+                    <ul className="space-y-5">
                       {strengths.map((s) => (
-                        <li key={s.key} className="flex items-start gap-3">
-                          <span className="shrink-0 w-5 h-5 rounded-full bg-emerald-400/20 text-emerald-400 flex items-center justify-center mt-0.5">
-                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6l2.5 2.5 4.5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                          </span>
-                          <div>
+                        <li key={s.key}>
+                          <div className="flex items-baseline justify-between mb-1.5">
                             <p className="text-body-md text-text-on-dark font-medium">{s.name}</p>
-                            <p className="text-body-sm text-text-muted">Puntuacion: {s.score}/{s.max} — tu organizacion muestra solidez en esta dimension.</p>
+                            <span className="font-mono text-mono-sm text-emerald-400">{s.score}/{s.max}</span>
                           </div>
+                          <p className="text-body-sm text-text-muted">{BLOCK_INSIGHT[s.key].asStrength}</p>
                         </li>
                       ))}
                     </ul>
                   </div>
-                  <div className="bg-white/5 rounded p-6">
-                    <p className="text-label-sm uppercase tracking-[0.18em] text-red-400 mb-4">Areas de mejora prioritarias</p>
-                    <ul className="space-y-4">
+                  <div className="bg-rl-red/5 border border-rl-red/20 rounded p-6">
+                    <p className="text-label-sm uppercase tracking-[0.18em] text-rl-red mb-4">Debilidades</p>
+                    <ul className="space-y-5">
                       {weaknesses.map((w) => (
-                        <li key={w.key} className="flex items-start gap-3">
-                          <span className="shrink-0 w-5 h-5 rounded-full bg-red-400/20 text-red-400 flex items-center justify-center mt-0.5">
-                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 3v4M6 9h.005" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /></svg>
-                          </span>
-                          <div>
+                        <li key={w.key}>
+                          <div className="flex items-baseline justify-between mb-1.5">
                             <p className="text-body-md text-text-on-dark font-medium">{w.name}</p>
-                            <p className="text-body-sm text-text-muted">Puntuacion: {w.score}/{w.max} — esta dimension tiene el mayor espacio de mejora.</p>
+                            <span className="font-mono text-mono-sm text-rl-red">{w.score}/{w.max}</span>
                           </div>
+                          <p className="text-body-sm text-text-muted">{BLOCK_INSIGHT[w.key].asWeakness}</p>
                         </li>
                       ))}
                     </ul>
@@ -445,28 +489,38 @@ export default function MaturityChecker() {
                   ))}
                 </div>
 
-                {/* 6. Priority levers */}
-                <div className="bg-white/5 rounded p-6 mb-10">
-                  <p className="text-label-sm uppercase tracking-[0.18em] text-rl-red mb-4">Palancas prioritarias</p>
-                  <p className="text-body-sm text-text-muted mb-4">Basado en tus dimensiones con mayor oportunidad de mejora:</p>
-                  <ul className="space-y-3">
-                    {lowestBlocks.map((b, i) => (
-                      <li key={b.key} className="flex items-start gap-3">
-                        <span className="shrink-0 w-6 h-6 rounded-full bg-rl-red/20 text-rl-red flex items-center justify-center text-mono-sm font-mono">{i + 1}</span>
+                {/* 6. Palancas prioritarias industria-aware */}
+                <div className="bg-white/5 rounded p-6 mb-8">
+                  <p className="text-label-sm uppercase tracking-[0.18em] text-rl-red mb-2">Palancas prioritarias</p>
+                  <p className="text-body-sm text-text-muted mb-5">
+                    Para una organización de {INDUSTRY_LABEL[industryId].toLowerCase()} en nivel {level}, estas son las palancas de IA con mayor impacto potencial:
+                  </p>
+                  <ul className="space-y-4">
+                    {priorityLevers.map((lever, i) => (
+                      <li key={lever} className="flex items-start gap-4">
+                        <span className="shrink-0 w-7 h-7 rounded-full bg-rl-red/20 text-rl-red flex items-center justify-center text-mono-sm font-mono">{i + 1}</span>
                         <div>
-                          <p className="text-body-md text-text-on-dark font-medium">{b.name}</p>
-                          <p className="text-body-sm text-text-muted">Puntaje: {b.score}/{b.max} — esta dimension tiene el mayor espacio de mejora relativo.</p>
+                          <p className="text-body-md text-text-on-dark font-medium mb-1">{lever}</p>
+                          <p className="text-body-sm text-text-muted">{LEVER_DESCRIPTION[lever]}</p>
                         </div>
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                {/* 7. Recommendations */}
-                <div className="bg-white/5 rounded p-6 mb-10">
-                  <p className="text-label-sm uppercase tracking-[0.18em] text-rl-red mb-4">Que hacer en los proximos 90 dias</p>
+                {/* 7. Plan 90 días contextual al bloque más débil + industria */}
+                <div className="bg-rl-red/5 border border-rl-red/20 rounded p-6 mb-10">
+                  <p className="text-label-sm uppercase tracking-[0.18em] text-rl-red mb-2">
+                    Plan de los próximos {profile.horizon}
+                  </p>
+                  <p className="text-body-md text-text-on-dark mb-5">
+                    {INDUSTRY_90_DAY_NOTE[industryId]}
+                  </p>
+                  <p className="text-label-sm uppercase tracking-[0.18em] text-text-muted mb-3">
+                    Acciones concretas sobre tu bloque más débil — {weaknesses[0]?.name}
+                  </p>
                   <ol className="space-y-3">
-                    {levelRecommendations[level].map((rec, i) => (
+                    {BLOCK_90_DAY_ACTIONS[weaknesses[0]?.key as BK].map((rec, i) => (
                       <li key={i} className="flex items-start gap-3">
                         <span className="shrink-0 w-6 h-6 rounded-full bg-white/10 text-text-on-dark flex items-center justify-center text-mono-sm font-mono">{i + 1}</span>
                         <p className="text-body-md text-text-muted">{rec}</p>
@@ -516,6 +570,8 @@ export default function MaturityChecker() {
       </div>
     </div>
   )
+
+  return createPortal(overlay, document.body)
 }
 
 // ── Helpers ──────────────────────────────────────────────────────────────────

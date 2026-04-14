@@ -81,7 +81,7 @@ export const NEWSLETTER = {
   disclaimer: 'Puedes darte de baja en cualquier momento.',
 }
 
-export const ALLIES_LABEL = 'Organizaciones con las que hemos colaborado estos años'
+export const ALLIES_LABEL = 'Hemos colaborado con'
 
 export const ALLIES = {
   row1: [

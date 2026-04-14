@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import SectionReveal from '@/components/animations/SectionReveal'
 import Tag from '@/components/ui/Tag'
@@ -41,14 +41,30 @@ const problems = [
 
 export default function ProblemSection() {
   const [active, setActive] = useState(0)
+  const [isPaused, setIsPaused] = useState(false)
   const total = problems.length
 
   const go = (delta: number) => {
     setActive((prev) => (prev + delta + total) % total)
   }
 
+  // Auto-rotate every 6s, pause on hover/focus
+  useEffect(() => {
+    if (isPaused) return
+    const interval = setInterval(() => {
+      setActive((prev) => (prev + 1) % total)
+    }, 3500)
+    return () => clearInterval(interval)
+  }, [isPaused, total])
+
   return (
-    <section className="section-dark py-24 md:py-32">
+    <section
+      className="section-dark py-24 md:py-32"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+      onFocusCapture={() => setIsPaused(true)}
+      onBlurCapture={() => setIsPaused(false)}
+    >
       <div className="container-rl">
         <SectionReveal>
           <Tag color="red" className="mb-4">EL PROBLEMA QUE RESOLVEMOS</Tag>
@@ -114,19 +130,37 @@ export default function ProblemSection() {
           </AnimatePresence>
         </div>
 
-        {/* Progress dots */}
+        {/* Progress bars */}
         <div className="flex gap-2 mt-12">
           {problems.map((_, i) => (
             <button
               key={i}
               onClick={() => setActive(i)}
               aria-label={`Ir al problema ${i + 1}`}
-              className={`h-1 transition-all duration-300 ${
-                i === active ? 'w-12 bg-rl-red' : 'w-6 bg-text-muted/30 hover:bg-text-muted/60'
+              className={`h-1 overflow-hidden transition-all duration-300 ${
+                i === active ? 'w-16 bg-text-muted/20' : 'w-8 bg-text-muted/20 hover:bg-text-muted/40'
               }`}
-            />
+            >
+              {i === active && (
+                <span
+                  key={`${active}-${isPaused ? 'paused' : 'running'}`}
+                  className="block h-full bg-rl-red origin-left"
+                  style={{
+                    animation: isPaused ? 'none' : 'problem-progress 3.5s linear forwards',
+                    width: isPaused ? '30%' : '100%',
+                  }}
+                />
+              )}
+            </button>
           ))}
         </div>
+
+        <style jsx>{`
+          @keyframes problem-progress {
+            from { width: 0%; }
+            to { width: 100%; }
+          }
+        `}</style>
       </div>
     </section>
   )

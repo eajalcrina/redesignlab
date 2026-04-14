@@ -15,26 +15,28 @@ export default function VentureCoBuilding({ service }: VentureCoBuildingProps) {
       <div className="container-rl">
         <div className="max-w-3xl mx-auto text-center">
           <SectionReveal>
-            <Tag color="red" className="mb-4">
-              Venture Co-Building
+            <Tag color="red" className="mb-6">
+              CO-FUNDAMOS NEGOCIOS
             </Tag>
             <h2 className="font-display text-display-md md:text-display-lg text-text-on-dark mb-6">
               Venture Co-Building
             </h2>
-            <p className="text-body-lg text-text-muted mb-4">
-              Para quienes no buscan un consultor — buscan un co-fundador
+            <p className="text-body-lg text-rl-red mb-6">
+              Para quienes no buscan un consultor — buscan un co-fundador.
             </p>
-            <p className="text-body-md text-text-muted max-w-2xl mx-auto mb-8">
+            <p className="text-body-md text-text-muted max-w-2xl mx-auto mb-10">
               {service.description}
             </p>
             <Button
-              variant="secondary"
+              variant="primary"
               size="lg"
               href="mailto:eddie@redesignlab.org?subject=Venture%20Co-Building"
-              className="text-white border-white/30 hover:bg-white/10"
             >
-              Iniciar conversacion &rarr;
+              Iniciar conversación &rarr;
             </Button>
+            <p className="text-body-sm text-text-muted/70 mt-4">
+              Conversación previa de fit · Sin compromiso
+            </p>
           </SectionReveal>
         </div>
       </div>

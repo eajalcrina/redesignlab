@@ -16,17 +16,15 @@ export default function LandingHero() {
           line2="En industrias que importan."
         />
         <p className="mt-8 text-body-xl text-text-muted max-w-3xl">
-          No somos una consultora convencional. No somos un fondo. Somos el estudio especializado que transforma la relación de las industrias con los sistemas naturales de los que dependen en ventajas competitivas verificables y duraderas.
+          No somos una consultora. No somos un fondo. Somos un estudio de IA que transforma la relación de las industrias con los sistemas naturales, para convertirlas en ventajas competitivas únicas.
         </p>
-        <div className="mt-12 flex flex-col sm:flex-row gap-4">
+        <div className="mt-12 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
           <Button variant="primary" size="lg" href="/crear-valor">
             Ver nuestros servicios →
           </Button>
           <Button variant="secondary" size="lg" href="/inteligencia-artificial#diagnostico" className="text-text-on-dark border-text-on-dark/20">
             Haz tu diagnóstico IA →
           </Button>
-        </div>
-        <div className="mt-8">
           <Link
             href="/conocimiento"
             className="inline-flex items-center gap-2 text-body-md text-text-muted hover:text-text-on-dark transition-colors group"

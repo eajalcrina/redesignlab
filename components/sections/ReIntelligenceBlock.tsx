@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import SectionReveal from '@/components/animations/SectionReveal'
 import Button from '@/components/ui/Button'
 import Tag from '@/components/ui/Tag'
@@ -72,9 +73,20 @@ export default function ReIntelligenceBlock({
           )}
 
           <SectionReveal delay={0.3}>
-            <Button variant="primary" size="lg" href="/re-intelligence">
-              Súmate a la red de Re. Intelligence &rarr;
-            </Button>
+            <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8">
+              <Button variant="primary" size="lg" href="/re-intelligence">
+                Súmate a la red de Re. Intelligence &rarr;
+              </Button>
+              <Link
+                href="/inteligencia-artificial#diagnostico"
+                className="inline-flex items-center gap-2 text-body-md text-text-on-dark hover:text-rl-red transition-colors group"
+              >
+                <span className="underline underline-offset-4 decoration-text-muted/40 group-hover:decoration-rl-red">
+                  Empieza con tu diagnóstico IA
+                </span>
+                <span className="text-rl-red transition-transform group-hover:translate-x-1">&rarr;</span>
+              </Link>
+            </div>
             <p className="text-body-sm text-text-muted/70 mt-4">
               Conversación previa de fit · Sin compromiso
             </p>

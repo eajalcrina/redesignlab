@@ -17,7 +17,7 @@ export default function HeroText({ line1, line2 }: HeroTextProps) {
     setMounted(true)
   }, [])
 
-  const headingClass = 'font-display text-display-xl lg:text-[120px] lg:leading-[0.95] lg:tracking-[-0.04em] lg:font-normal text-text-on-dark max-w-5xl'
+  const headingClass = 'font-display text-[44px] leading-[1.02] tracking-[-0.02em] md:text-display-xl lg:text-[100px] lg:leading-[0.95] lg:tracking-[-0.04em] lg:font-normal text-text-on-dark max-w-5xl'
 
   // Before mount or reduced motion: show static content
   if (!mounted || prefersReduced) {

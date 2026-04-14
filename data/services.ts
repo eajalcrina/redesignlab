@@ -94,20 +94,19 @@ export const crearValorServices: Service[] = [
 
 export const ventureCoBuilding: Service = {
   name: 'Venture Co-Building',
-  duration: 'Equity + participación',
-  price: 'Conversación directa',
+  duration: 'Conversación directa',
+  price: '',
   description:
-    'La Línea Signature de Redesign Lab no se vende. Se conversa. Cuando el activo es extraordinario, el fundador tiene la convicción y el mercado ya existe — pero la distancia entre la idea y la empresa requiere más que un entregable — Redesign Lab puede entrar como co-fundador operativo con participación real. Esto no es consultoría. Es construcción conjunta con piel en el juego desde el primer día.',
+    'Cuando el activo es extraordinario, el fundador tiene la convicción y el mercado ya existe — pero la distancia entre la idea y la empresa requiere más que un entregable — Redesign Lab puede entrar como co-fundador operativo. Esto no es consultoría. Es construcción conjunta con piel en el juego desde el primer día.',
   includes: [
     'Co-diseño del modelo de negocio',
     'Validación de mercado en campo',
     'Desarrollo de MVP y primeros clientes',
     'Operación del primer año',
-    'Estrategia de fundraising y cap table',
+    'Estrategia de fundraising y acompañamiento al cierre',
     'Acceso a la red de Redesign Lab',
     'Reportería mensual de progreso',
   ],
-  isSignature: true,
 }
 
 export const redisenarTrabajoServices: Service[] = [

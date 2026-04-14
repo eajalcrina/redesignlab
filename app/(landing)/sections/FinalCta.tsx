@@ -11,18 +11,9 @@ export default function FinalCta() {
     <section className="bg-[#080808] min-h-[80vh] flex items-center">
       <div className="container-rl text-center">
         <SectionReveal>
-          <Tag color="red" className="mb-8">EMPIEZA LA TRANSFORMACIÓN</Tag>
-          <h2 className="font-display text-display-lg md:text-display-xl lg:text-[96px] lg:leading-[0.95] lg:font-normal text-text-on-dark max-w-4xl mx-auto">
-            Si buscas acelerar
-          </h2>
-          <h2 className="font-display text-display-lg md:text-display-xl lg:text-[96px] lg:leading-[0.95] lg:font-normal text-text-on-dark max-w-4xl mx-auto mb-2">
-            tu industria.
-          </h2>
-        </SectionReveal>
-
-        <SectionReveal delay={0.3}>
-          <h2 className="font-display text-display-lg md:text-display-xl lg:text-[96px] lg:leading-[0.95] lg:font-normal text-rl-red max-w-4xl mx-auto mb-8">
-            Hablemos.
+          <Tag color="red" className="mb-8">THE FIRST AI STUDIO FOR BIOECONOMY INDUSTRIES</Tag>
+          <h2 className="font-display text-[44px] leading-[1.15] tracking-[-0.02em] font-normal text-text-on-dark max-w-3xl mx-auto mb-8">
+            Empecemos a adoptar la inteligencia artificial para transformar tu industria.
           </h2>
         </SectionReveal>
 
