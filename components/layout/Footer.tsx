@@ -7,26 +7,50 @@ import Divider from '@/components/ui/Divider'
 export default function Footer() {
   return (
     <footer className="section-dark">
-      <div className="container-rl py-16 md:py-24">
+      <div className="container-rl py-10 md:py-24">
         {/* Top: Logo + tagline */}
-        <div className="mb-12 md:mb-16">
-          <Link href="/" className="font-display text-display-sm text-text-on-dark">
+        <div className="mb-8 md:mb-16">
+          <Link href="/" className="font-display text-display-xs md:text-display-sm text-text-on-dark">
             Redesign Lab<span className="text-rl-red">.</span>
           </Link>
-          <p className="mt-2 text-body-sm text-text-muted">
+          <p className="mt-2 text-body-xs md:text-body-sm text-text-muted">
             {SITE_CONFIG.tagline}
           </p>
-          <p className="mt-1 text-body-sm text-text-muted">
+          <p className="hidden md:block mt-1 text-body-sm text-text-muted">
             {SITE_CONFIG.taglineEs}
           </p>
         </div>
 
-        <Divider mode="dark" className="mb-12 md:mb-16" />
+        <Divider mode="dark" className="mb-8 md:mb-16" />
 
-        {/* Middle: Newsletter + Links */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 md:gap-8 mb-12 md:mb-16">
-          {/* Newsletter */}
-          <div className="lg:col-span-2">
+        {/* Newsletter — full width on mobile, first column on desktop */}
+        <div className="mb-10 md:mb-16 lg:hidden">
+          <h3 className="text-label-sm uppercase text-text-muted mb-3">
+            {NEWSLETTER.headline}
+          </h3>
+          <form
+            onSubmit={(e) => e.preventDefault()}
+            className="flex gap-2"
+          >
+            <input
+              type="email"
+              placeholder={NEWSLETTER.placeholder}
+              required
+              className="flex-1 h-10 px-3 bg-transparent border border-border-dark text-text-on-dark text-body-sm rounded placeholder:text-text-muted/50 focus:outline-none focus:border-rl-red transition-colors"
+            />
+            <button
+              type="submit"
+              className="h-10 px-4 bg-rl-red text-white text-body-sm font-medium rounded hover:bg-[#d91f5b] transition-colors whitespace-nowrap"
+            >
+              {NEWSLETTER.cta}
+            </button>
+          </form>
+        </div>
+
+        {/* Links grid — 2 cols mobile, 5 cols desktop */}
+        <div className="grid grid-cols-2 lg:grid-cols-5 gap-8 md:gap-8 mb-10 md:mb-16">
+          {/* Newsletter (desktop only — mobile version above) */}
+          <div className="hidden lg:block lg:col-span-2">
             <h3 className="text-label-md uppercase text-text-muted mb-4">
               {NEWSLETTER.headline}
             </h3>
@@ -34,9 +58,7 @@ export default function Footer() {
               {NEWSLETTER.body}
             </p>
             <form
-              onSubmit={(e) => {
-                e.preventDefault()
-              }}
+              onSubmit={(e) => e.preventDefault()}
               className="flex gap-2 mb-2"
             >
               <input
@@ -59,15 +81,15 @@ export default function Footer() {
 
           {/* Servicios */}
           <div>
-            <h3 className="text-label-md uppercase text-text-muted mb-4">
+            <h3 className="text-label-sm md:text-label-md uppercase text-text-muted mb-3 md:mb-4">
               {FOOTER_LINKS.servicios.titulo}
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2 md:space-y-3">
               {FOOTER_LINKS.servicios.links.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-body-sm text-text-muted hover:text-text-on-dark transition-colors"
+                    className="text-body-xs md:text-body-sm text-text-muted hover:text-text-on-dark transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -78,15 +100,15 @@ export default function Footer() {
 
           {/* Ecosistema */}
           <div>
-            <h3 className="text-label-md uppercase text-text-muted mb-4">
+            <h3 className="text-label-sm md:text-label-md uppercase text-text-muted mb-3 md:mb-4">
               {FOOTER_LINKS.ecosistema.titulo}
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2 md:space-y-3">
               {FOOTER_LINKS.ecosistema.links.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-body-sm text-text-muted hover:text-text-on-dark transition-colors"
+                    className="text-body-xs md:text-body-sm text-text-muted hover:text-text-on-dark transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -95,18 +117,19 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contacto */}
-          <div>
-            <h3 className="text-label-md uppercase text-text-muted mb-4">
+          {/* Contacto — spans 2 cols on mobile */}
+          <div className="col-span-2 lg:col-span-1">
+            <h3 className="text-label-sm md:text-label-md uppercase text-text-muted mb-3 md:mb-4">
               {FOOTER_LINKS.contacto.titulo}
             </h3>
-            <ul className="space-y-3">
-              <li className="text-body-sm text-text-muted">{SITE_CONFIG.address}</li>
-              <li className="text-body-sm text-text-muted">{SITE_CONFIG.city}</li>
+            <ul className="space-y-2 md:space-y-3">
+              <li className="text-body-xs md:text-body-sm text-text-muted">
+                {SITE_CONFIG.address} · {SITE_CONFIG.city}
+              </li>
               <li>
                 <a
                   href={`mailto:${SITE_CONFIG.email}`}
-                  className="text-body-sm text-text-muted hover:text-text-on-dark transition-colors"
+                  className="text-body-xs md:text-body-sm text-text-muted hover:text-text-on-dark transition-colors break-all"
                 >
                   {SITE_CONFIG.email}
                 </a>
@@ -114,7 +137,7 @@ export default function Footer() {
               <li>
                 <a
                   href={`tel:${SITE_CONFIG.phone}`}
-                  className="text-body-sm text-text-muted hover:text-text-on-dark transition-colors"
+                  className="text-body-xs md:text-body-sm text-text-muted hover:text-text-on-dark transition-colors"
                 >
                   {SITE_CONFIG.phone}
                 </a>
@@ -124,7 +147,7 @@ export default function Footer() {
                   href="https://fondodeimpacto.pe"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-body-sm text-text-muted hover:text-text-on-dark transition-colors"
+                  className="text-body-xs md:text-body-sm text-text-muted hover:text-text-on-dark transition-colors"
                 >
                   fondodeimpacto.pe
                 </a>
@@ -133,17 +156,17 @@ export default function Footer() {
           </div>
         </div>
 
-        <Divider mode="dark" className="mb-8" />
+        <Divider mode="dark" className="mb-6 md:mb-8" />
 
         {/* Bottom: Copyright */}
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-2 md:gap-4">
           <a
             href={`mailto:${SITE_CONFIG.email}`}
-            className="text-body-sm text-text-muted hover:text-text-on-dark transition-colors"
+            className="hidden md:inline text-body-sm text-text-muted hover:text-text-on-dark transition-colors"
           >
             {SITE_CONFIG.email}
           </a>
-          <p className="text-body-xs text-text-muted">
+          <p className="text-body-xs text-text-muted/70">
             {SITE_CONFIG.copyright}
           </p>
         </div>
