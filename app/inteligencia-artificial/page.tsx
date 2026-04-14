@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import HeroSection from './sections/HeroSection'
+import WhatIsAIStudio from './sections/WhatIsAIStudio'
 import ThesisSection from './sections/ThesisSection'
 import ApplicationsSection from './sections/ApplicationsSection'
 import DimensionsSection from './sections/DimensionsSection'
@@ -24,6 +25,7 @@ export default function InteligenciaArtificialPage() {
   return (
     <>
       <HeroSection />
+      <WhatIsAIStudio />
       <ThesisSection />
       <ApplicationsSection />
       <DimensionsSection />

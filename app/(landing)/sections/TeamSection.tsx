@@ -1,5 +1,7 @@
 'use client'
 
+import Link from 'next/link'
+import Image from 'next/image'
 import SectionReveal from '@/components/animations/SectionReveal'
 import Tag from '@/components/ui/Tag'
 import Divider from '@/components/ui/Divider'
@@ -25,12 +27,36 @@ export default function TeamSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
           {team.map((member, i) => (
             <SectionReveal key={member.name} delay={i * 0.1}>
-              <div>
-                {/* Photo placeholder */}
-                <div className="aspect-[4/3] bg-rl-dark/5 rounded mb-6 flex items-center justify-center">
-                  <span className="font-display text-display-lg text-text-primary/[0.06]">
-                    {member.name.split(' ').map(w => w[0]).join('')}
-                  </span>
+              <div className="group">
+                {/* Photo with duotone filter */}
+                <div className="relative aspect-[4/5] overflow-hidden rounded mb-6 bg-rl-dark">
+                  {member.photo ? (
+                    <>
+                      <Image
+                        src={member.photo}
+                        alt={member.name}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        className="object-cover grayscale contrast-[1.1] transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105"
+                      />
+                      {/* Red tint overlay (fades on hover) */}
+                      <div
+                        className="absolute inset-0 mix-blend-multiply bg-rl-red/40 transition-opacity duration-500 group-hover:opacity-0"
+                        aria-hidden
+                      />
+                      {/* Dark gradient at bottom for readability */}
+                      <div
+                        className="absolute inset-0 bg-gradient-to-t from-rl-dark/40 via-transparent to-transparent"
+                        aria-hidden
+                      />
+                    </>
+                  ) : (
+                    <div className="absolute inset-0 bg-rl-dark/5 flex items-center justify-center">
+                      <span className="font-display text-display-lg text-text-primary/[0.06]">
+                        {member.name.split(' ').map(w => w[0]).join('')}
+                      </span>
+                    </div>
+                  )}
                 </div>
                 <h3 className="font-display text-display-sm text-text-primary mb-1">{member.name}</h3>
                 <p className="font-mono text-mono-sm text-rl-red mb-4">{member.role}</p>
@@ -45,6 +71,21 @@ export default function TeamSection() {
             </SectionReveal>
           ))}
         </div>
+
+        <SectionReveal delay={0.3}>
+          <div className="mt-16 md:mt-20 pt-12 border-t border-border-light">
+            <p className="text-body-md text-text-secondary mb-4">
+              El equipo se extiende más allá de los fundadores. Expertos senior co-construyen con nosotros los negocios más ambiciosos de bioeconomía en América Latina.
+            </p>
+            <Link
+              href="/builders"
+              className="inline-flex items-center gap-2 text-body-lg text-text-primary hover:text-rl-red transition-colors font-medium group"
+            >
+              Súmate a la Red de Builders
+              <span className="text-rl-red transition-transform group-hover:translate-x-1">&rarr;</span>
+            </Link>
+          </div>
+        </SectionReveal>
       </div>
     </section>
   )

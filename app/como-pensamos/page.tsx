@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import HeroSection from './sections/HeroSection'
+import ThreeAxes from '../(landing)/sections/ThreeAxes'
 import DriversSection from './sections/DriversSection'
 import PrinciplesSection from './sections/PrinciplesSection'
 import CriteriaSection from './sections/CriteriaSection'
@@ -15,6 +16,7 @@ export default function ComoPensamosPage() {
   return (
     <>
       <HeroSection />
+      <ThreeAxes />
       <DriversSection />
       <PrinciplesSection />
       <CriteriaSection />

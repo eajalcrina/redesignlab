@@ -18,16 +18,16 @@ export default function BioeconomyPills() {
     <section className="section-dark py-16 md:py-24">
       <div className="container-rl">
         <SectionReveal>
-          <Tag color="red" className="mb-4">PARA QUE ESTEMOS TODOS EN LA MISMA PÁGINA</Tag>
+          <Tag color="red" className="mb-4">SOMOS EL PRIMER AI STUDIO FOR BIOECONOMY INDUSTRIES DE LATAM</Tag>
         </SectionReveal>
 
         {/* Tab selector */}
-        <div className="flex gap-4 mb-10">
+        <div className="flex gap-4 mb-10 overflow-x-auto scrollbar-none" style={{ scrollbarWidth: 'none' }}>
           {tabs.map((tab, i) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(i)}
-              className={`px-5 py-2.5 text-body-md font-medium transition-all duration-200 border-b-2 ${
+              className={`px-5 py-2.5 text-body-md font-medium transition-all duration-200 border-b-2 whitespace-nowrap flex-shrink-0 ${
                 activeTab === i
                   ? 'text-text-on-dark border-rl-red'
                   : 'text-text-muted/60 border-transparent hover:text-text-muted'
@@ -68,22 +68,25 @@ export default function BioeconomyPills() {
               exit={{ opacity: 0, y: -12 }}
               transition={{ duration: DURATION.fast, ease: EASE.out }}
             >
-              <h2 className="font-display text-display-md md:text-display-lg text-text-on-dark max-w-3xl mb-4">
+              <h2 className="font-display text-display-md md:text-display-lg text-text-on-dark max-w-3xl mb-6">
                 ¿Qué es un AI Studio?
               </h2>
-              <p className="text-body-xl text-text-muted max-w-2xl mb-10">
-                Es la combinación de innovación, territorio e inteligencia artificial en un solo modelo de trabajo.
-              </p>
 
               <div className="max-w-3xl space-y-6">
-                <p className="text-body-lg text-text-muted">
-                  Un AI Studio no es una consultora que usa IA como herramienta. Es una organización diseñada desde su origen para que la inteligencia artificial sea el motor central de análisis, diseño y decisión — aplicada a industrias donde el conocimiento de campo y el territorio son irremplazables.
+                <p className="text-body-lg text-text-on-dark font-medium">
+                  Un AI Studio no es una consultora que aprendió a usar ChatGPT.
                 </p>
                 <p className="text-body-lg text-text-muted">
-                  La IA no reemplaza la experiencia territorial. La amplifica. Comprime meses de análisis en días. Detecta patrones que el ojo humano no puede procesar a escala. Permite tomar decisiones con la velocidad que el mercado de 2026 exige — sin perder la profundidad que estas industrias requieren.
+                  Un AI Studio trabaja diferente. La inteligencia artificial opera desde el centro. En el análisis, en el diseño, en la decisión.
+                </p>
+                <p className="text-body-lg text-text-muted">
+                  Las herramientas son las mismas para todos. Lo que cambia es lo que alimenta a esas herramientas.
+                </p>
+                <p className="text-body-lg text-text-muted">
+                  IA sobre datos genéricos produce resultados genéricos. IA construida sobre cinco años en campo, en parcelas de San Martín, en asambleas comunales de Loreto, en mesas de negociación con fondos de impacto, en viajes negociando con clientes globales, produce algo que ninguna oficina replica.
                 </p>
                 <p className="text-body-lg text-text-on-dark font-medium">
-                  Redesign Lab es el único AI Studio en América Latina especializado en las industrias de bioeconomía.
+                  Redesign Lab es el único AI Studio en América Latina construido sobre conocimiento territorial de la bioeconomía.
                 </p>
               </div>
             </motion.div>

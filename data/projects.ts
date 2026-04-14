@@ -245,6 +245,21 @@ export const projects: Project[] = [
   },
 ]
 
+// Generate URL-friendly slug from project title + number
+export function getProjectSlug(project: Project): string {
+  const slug = project.title
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '') // remove accents
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+  return `${project.number}-${slug}`
+}
+
+export function findProjectBySlug(slug: string): Project | undefined {
+  return projects.find((p) => getProjectSlug(p) === slug)
+}
+
 export const projectCategories = [
   { value: 'all', label: 'Todos' },
   { value: 'crear-valor', label: 'Crear valor' },

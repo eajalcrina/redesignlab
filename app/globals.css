@@ -84,14 +84,14 @@
     font-weight: 600;
   }
 
-  /* 48px — Medium */
+  /* 48px — Regular (fino) */
   .font-display.text-display-lg {
-    font-weight: 500;
+    font-weight: 400;
   }
 
-  /* 64px — Medium */
+  /* 64px — Regular (fino) */
   .font-display.text-display-xl {
-    font-weight: 500;
+    font-weight: 400;
   }
 
   /* 80px — Regular (fino) */
@@ -108,8 +108,37 @@
   .text-balance {
     text-wrap: balance;
   }
+
+  /* Hide scrollbar for horizontal scroll containers */
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
 
+
+/* Desktop typography scaling — restore full sizes on md+ */
+@media (min-width: 768px) {
+  .text-display-2xl { font-size: 80px; line-height: 0.95; letter-spacing: -0.04em; }
+  .text-display-xl { font-size: 64px; line-height: 0.97; letter-spacing: -0.03em; }
+  .text-display-lg { font-size: 48px; line-height: 1.05; letter-spacing: -0.025em; }
+  .text-display-md { font-size: 36px; line-height: 1.1; letter-spacing: -0.02em; }
+  .text-display-sm { font-size: 28px; line-height: 1.15; letter-spacing: -0.015em; }
+  .text-body-xl { font-size: 20px; }
+  .text-body-lg { font-size: 18px; }
+  .text-body-md { font-size: 16px; }
+  .text-body-sm { font-size: 14px; }
+  .text-body-xs { font-size: 12px; }
+  .text-label-lg { font-size: 13px; }
+  .text-label-md { font-size: 11px; }
+  .text-label-sm { font-size: 10px; }
+  .text-mono-lg { font-size: 16px; }
+  .text-mono-md { font-size: 14px; }
+  .text-mono-sm { font-size: 12px; }
+}
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {

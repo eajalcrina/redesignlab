@@ -1,9 +1,10 @@
 import { MetadataRoute } from 'next'
+import { projects, getProjectSlug } from '@/data/projects'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://redesignlab.org'
 
-  const routes = [
+  const staticRoutes = [
     '',
     '/crear-valor',
     '/redisenar-el-trabajo',
@@ -18,10 +19,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/builders',
   ]
 
-  return routes.map((route) => ({
+  const projectRoutes = projects.map((p) => `/proyectos/${getProjectSlug(p)}`)
+
+  return [...staticRoutes, ...projectRoutes].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,
-    priority: route === '' ? 1 : 0.8,
+    priority: route === '' ? 1 : route.startsWith('/proyectos/') ? 0.6 : 0.8,
   }))
 }
