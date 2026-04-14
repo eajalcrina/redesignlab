@@ -2,26 +2,123 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: 'Mluvka', system-ui, sans-serif;
+    font-weight: 400;
+    color: #0D0D0D;
+    background: #FAFAF8;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: #F32769;
+    color: #FAFAF8;
+  }
+
+  /* Scrollbar minimal */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(13, 13, 13, 0.15);
+    border-radius: 3px;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  /* Section modes */
+  .section-dark {
+    @apply bg-rl-dark text-text-on-dark;
+  }
+
+  .section-neutral {
+    @apply bg-rl-neutral text-text-primary;
+  }
+
+  .section-accent {
+    @apply bg-rl-red text-text-on-dark;
+  }
+
+  /* Container */
+  .container-rl {
+    @apply mx-auto w-full max-w-[1280px] px-6 md:px-8 lg:px-12 xl:px-16;
+  }
+
+  /*
+   * Mluvka weight scale — inversely proportional to size:
+   * 120px (hero):       400 (Regular) — más fino
+   * 96px (hero):        400 (Regular) — más fino
+   * 80px (display-2xl): 400 (Regular)
+   * 64px (display-xl):  500 (Medium)
+   * 48px (display-lg):  500 (Medium)
+   * 36px (display-md):  600 (SemiBold)
+   * 28px (display-sm):  700 (Bold)
+   * Body text:          400 (Regular)
+   * Labels:             600 (SemiBold) — uppercase tracking
+   */
+
+  /* Font display — base weight for smaller headings (28-36px) */
+  .font-display {
+    font-family: 'Mluvka', system-ui, sans-serif;
+    font-weight: 700;
+  }
+
+  /* 36px — SemiBold */
+  .font-display.text-display-md {
+    font-weight: 600;
+  }
+
+  /* 48px — Medium */
+  .font-display.text-display-lg {
+    font-weight: 500;
+  }
+
+  /* 64px — Medium */
+  .font-display.text-display-xl {
+    font-weight: 500;
+  }
+
+  /* 80px — Regular (fino) */
+  .font-display.text-display-2xl {
+    font-weight: 400;
+  }
+
+  .font-mono {
+    font-family: var(--font-jetbrains), monospace;
+  }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
