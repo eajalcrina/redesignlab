@@ -2,13 +2,19 @@
 
 import { useEffect, useState } from 'react'
 import { motion, useReducedMotion } from 'framer-motion'
-import { DURATION, EASE } from '@/lib/animations'
 
 interface HeroTextProps {
   line1: string
   line2: string
 }
 
+const headingClass =
+  'font-display text-[44px] leading-[1.02] tracking-[-0.02em] md:text-display-xl lg:text-[100px] lg:leading-[0.95] lg:tracking-[-0.04em] lg:font-normal max-w-5xl'
+
+/**
+ * Two-line hero headline with overflow-hidden slide-up reveal.
+ * Second line uses the brand red (Thousandfold-style accent split).
+ */
 export default function HeroText({ line1, line2 }: HeroTextProps) {
   const prefersReduced = useReducedMotion()
   const [mounted, setMounted] = useState(false)
@@ -17,61 +23,49 @@ export default function HeroText({ line1, line2 }: HeroTextProps) {
     setMounted(true)
   }, [])
 
-  const headingClass = 'font-display text-[44px] leading-[1.02] tracking-[-0.02em] md:text-display-xl lg:text-[100px] lg:leading-[0.95] lg:tracking-[-0.04em] lg:font-normal text-text-on-dark max-w-5xl'
-
-  // Before mount or reduced motion: show static content
+  // Static fallback before mount or when reduced-motion is requested
   if (!mounted || prefersReduced) {
     return (
       <div>
-        <h1 className={headingClass}>{line1}</h1>
-        <div className="h-0.5 bg-rl-red w-32 my-6" />
-        <h2 className={headingClass}>{line2}</h2>
+        <h1 className={`${headingClass} text-text-on-dark/55`}>{line1}</h1>
+        <div className="h-0.5 bg-rl-red w-24 my-5" />
+        <h2 className={`${headingClass} text-text-on-dark`}>{line2}</h2>
       </div>
     )
   }
 
-  const words1 = line1.split(' ')
+  const ease: [number, number, number, number] = [0.22, 0.61, 0.36, 1]
 
   return (
     <div>
-      <motion.h1
-        className={headingClass}
-        initial="hidden"
-        animate="visible"
-        variants={{
-          hidden: {},
-          visible: { transition: { staggerChildren: 0.08 } },
-        }}
-      >
-        {words1.map((word, i) => (
-          <motion.span
-            key={i}
-            variants={{
-              hidden: { opacity: 0, y: 16 },
-              visible: { opacity: 1, y: 0, transition: { duration: DURATION.normal, ease: EASE.out } },
-            }}
-            className="inline-block mr-[0.3em]"
-          >
-            {word}
-          </motion.span>
-        ))}
-      </motion.h1>
+      <div className="overflow-hidden">
+        <motion.h1
+          className={`${headingClass} text-text-on-dark/55`}
+          initial={{ y: '110%' }}
+          animate={{ y: '0%' }}
+          transition={{ duration: 0.85, ease, delay: 0.1 }}
+        >
+          {line1}
+        </motion.h1>
+      </div>
 
       <motion.div
-        className="h-0.5 bg-rl-red w-32 my-6"
-        initial={{ scaleX: 0, originX: 0 }}
+        className="h-0.5 bg-rl-red w-24 my-5 origin-left"
+        initial={{ scaleX: 0 }}
         animate={{ scaleX: 1 }}
-        transition={{ duration: 0.6, ease: EASE.out, delay: words1.length * 0.08 + 0.2 }}
+        transition={{ duration: 0.6, ease, delay: 0.55 }}
       />
 
-      <motion.h2
-        className={headingClass}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: DURATION.slow, delay: words1.length * 0.08 + 0.6 }}
-      >
-        {line2}
-      </motion.h2>
+      <div className="overflow-hidden">
+        <motion.h2
+          className={`${headingClass} text-text-on-dark`}
+          initial={{ y: '110%' }}
+          animate={{ y: '0%' }}
+          transition={{ duration: 0.85, ease, delay: 0.7 }}
+        >
+          {line2}
+        </motion.h2>
+      </div>
     </div>
   )
 }

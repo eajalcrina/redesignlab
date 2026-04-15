@@ -57,10 +57,10 @@ export default function Navigation() {
     <>
       <nav
         className={cn(
-          'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
+          'fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-[10px]',
           isScrolled
-            ? 'bg-rl-dark/80 backdrop-blur-[16px] border-b border-border-dark'
-            : 'bg-transparent'
+            ? 'bg-rl-dark/80 border-b border-border-dark'
+            : 'bg-rl-dark/15'
         )}
       >
         <div className="container-rl flex items-center justify-between h-16 md:h-20">
@@ -135,7 +135,7 @@ export default function Navigation() {
 
           {/* Desktop CTA */}
           <div className="hidden lg:block">
-            <Button variant="text" size="sm" href={`mailto:${SITE_CONFIG.email}`} className="text-text-on-dark text-body-sm">
+            <Button variant="text" size="sm" href={`mailto:${SITE_CONFIG.email}`} className="text-body-sm !text-text-on-dark hover:!text-rl-red transition-colors">
               Escribir al equipo
             </Button>
           </div>

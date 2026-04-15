@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import SectionReveal from '@/components/animations/SectionReveal'
 import Button from '@/components/ui/Button'
 import ResourceDrawer from '@/components/ui/ResourceDrawer'
@@ -14,6 +15,7 @@ const resources = [
     downloadUrl: '#',
     mode: 'neutral' as const,
     available: true,
+    image: '/assets/conocimiento/birf.jpg',
   },
   {
     slug: 're-ia-propuesta',
@@ -23,6 +25,7 @@ const resources = [
     downloadUrl: '#',
     mode: 'dark' as const,
     available: true,
+    image: '/assets/conocimiento/re-ia.jpg',
   },
   {
     slug: 'due-diligence-tecnico',
@@ -32,6 +35,7 @@ const resources = [
     downloadUrl: '#',
     mode: 'neutral' as const,
     available: true,
+    image: '/assets/conocimiento/due-diligence.jpg',
   },
   {
     slug: 'inversion-comunidades-nativas',
@@ -41,6 +45,7 @@ const resources = [
     downloadUrl: '#',
     mode: 'dark' as const,
     available: true,
+    image: '/assets/conocimiento/comunidades-nativas.jpg',
   },
   {
     slug: 'blended-finance-design',
@@ -50,6 +55,7 @@ const resources = [
     downloadUrl: '#',
     mode: 'neutral' as const,
     available: false,
+    image: '/assets/conocimiento/blended-finance.jpg',
   },
 ]
 
@@ -58,7 +64,7 @@ export default function ResourcesList() {
 
   return (
     <>
-      {resources.map((resource, i) => (
+      {resources.map((resource) => (
         <section
           key={resource.name}
           className={resource.mode === 'dark' ? 'section-dark' : 'section-neutral'}
@@ -66,15 +72,19 @@ export default function ResourcesList() {
           <div className="container-rl py-16 md:py-20">
             <SectionReveal>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
-                {/* Visual placeholder */}
-                <div className={`aspect-[4/3] rounded flex items-center justify-center ${
+                {/* Cover image */}
+                <div className={`relative aspect-[4/3] rounded overflow-hidden ${
                   resource.mode === 'dark' ? 'bg-rl-dark border border-border-dark' : 'bg-rl-dark/5'
                 }`}>
-                  <span className={`font-display text-display-2xl ${
-                    resource.mode === 'dark' ? 'text-text-on-dark/[0.06]' : 'text-text-primary/[0.06]'
-                  }`}>
-                    0{i + 1}
-                  </span>
+                  <Image
+                    src={resource.image}
+                    alt={resource.name}
+                    fill
+                    sizes="(min-width: 768px) 50vw, 100vw"
+                    className="object-cover"
+                  />
+                  {/* Slight darkening overlay for tonal cohesion with the section */}
+                  <div className="absolute inset-0 bg-rl-dark/25 pointer-events-none" />
                 </div>
 
                 {/* Content */}

@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { DURATION, EASE, STAGGER } from '@/lib/animations'
 import Tag from '@/components/ui/Tag'
+import HeroCarouselBg from './HeroCarouselBg'
 
 export default function HeroSection() {
   const container = {
@@ -16,8 +17,7 @@ export default function HeroSection() {
 
   return (
     <section className="section-dark min-h-[80vh] flex items-center relative overflow-hidden">
-      {/* B&W overlay placeholder */}
-      <div className="absolute inset-0 bg-gradient-to-b from-rl-dark/90 to-rl-dark" />
+      <HeroCarouselBg />
 
       <div className="container-rl py-32 md:py-40 relative z-10 text-center">
         <motion.div initial="hidden" animate="visible" variants={container} className="max-w-4xl mx-auto">

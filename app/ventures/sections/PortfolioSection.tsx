@@ -7,7 +7,7 @@ import { ventures, getVentureSlug } from '@/data/ventures'
 
 export default function PortfolioSection() {
   return (
-    <section className="section-dark py-24 md:py-32">
+    <section id="portafolio" className="section-dark py-24 md:py-32 scroll-mt-20">
       <div className="container-rl">
         <SectionReveal>
           <Tag color="red" className="mb-4">VII. El portafolio</Tag>
@@ -18,10 +18,10 @@ export default function PortfolioSection() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {ventures.map((venture, i) => (
-            <SectionReveal key={venture.name} delay={i * 0.06}>
+            <SectionReveal key={venture.name} delay={i * 0.06} className="h-full">
               <Link
                 href={`/ventures/${getVentureSlug(venture)}`}
-                className="group relative block bg-rl-dark rounded-lg overflow-hidden p-6 md:p-8 border border-border-dark hover:border-rl-red/50 transition-all duration-300 hover:-translate-y-1 min-h-[200px] flex flex-col justify-end"
+                className="group relative h-full bg-rl-dark rounded-lg overflow-hidden p-6 md:p-8 border border-border-dark hover:border-rl-red/50 transition-all duration-300 hover:-translate-y-1 min-h-[260px] flex flex-col justify-end"
               >
                 {/* Background gradient */}
                 <div className="absolute inset-0 bg-gradient-to-br from-rl-dark to-[#1a1a1a] opacity-100" />

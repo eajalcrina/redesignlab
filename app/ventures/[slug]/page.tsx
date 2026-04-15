@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { ventures, findVentureBySlug, getVentureSlug } from '@/data/ventures'
@@ -7,6 +8,27 @@ import Divider from '@/components/ui/Divider'
 import Button from '@/components/ui/Button'
 import SectionReveal from '@/components/animations/SectionReveal'
 import { SITE_CONFIG } from '@/lib/constants'
+
+// Slugs that have a hero cover image in /public/assets/ventures/.
+// Ventures not listed here fall back to the plain dark hero.
+const VENTURES_WITH_HERO = new Set([
+  'cotton-nation',
+  'neofibers',
+  'endemics',
+  'rare-by',
+  'greenprod',
+  'ecovive',
+  'startups4climate',
+  'bio-business-school',
+  'thousandfold',
+])
+
+// Per-venture overlay tint class. Default is /80; bump up where the underlying
+// photo is bright/busy and the hero text loses contrast.
+const HERO_OVERLAY_CLASS: Record<string, string> = {
+  startups4climate: 'bg-rl-dark/90',
+}
+const DEFAULT_HERO_OVERLAY = 'bg-rl-dark/80'
 
 interface VenturePageProps {
   params: { slug: string }
@@ -43,7 +65,8 @@ export default function VenturePage({ params }: VenturePageProps) {
       <div className="section-dark border-b border-border-dark pt-24 pb-6">
         <div className="container-rl">
           <Link
-            href="/ventures"
+            href="/ventures#portafolio"
+            scroll
             className="inline-flex items-center gap-2 text-body-sm text-text-muted hover:text-text-on-dark transition-colors group"
           >
             <span className="inline-block transition-transform group-hover:-translate-x-1">&larr;</span>
@@ -53,8 +76,22 @@ export default function VenturePage({ params }: VenturePageProps) {
       </div>
 
       {/* Hero */}
-      <section className="section-dark pt-12 md:pt-16 pb-16 md:pb-24">
-        <div className="container-rl">
+      <section className="section-dark pt-12 md:pt-16 pb-16 md:pb-24 relative overflow-hidden">
+        {VENTURES_WITH_HERO.has(params.slug) && (
+          <>
+            <Image
+              src={venture.heroImage || `/assets/ventures/${params.slug}.jpg`}
+              alt=""
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover pointer-events-none select-none"
+              aria-hidden="true"
+            />
+            <div className={`absolute inset-0 pointer-events-none ${HERO_OVERLAY_CLASS[params.slug] || DEFAULT_HERO_OVERLAY}`} />
+          </>
+        )}
+        <div className="container-rl relative z-10">
           <SectionReveal>
             <Tag color="red" className="mb-6">{venture.category}</Tag>
 
@@ -222,7 +259,7 @@ export default function VenturePage({ params }: VenturePageProps) {
               <Button
                 variant="secondary"
                 size="lg"
-                href="/ventures"
+                href="/ventures#portafolio"
                 className="text-text-on-dark border-text-on-dark/20"
               >
                 Ver todo el portafolio

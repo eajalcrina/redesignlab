@@ -7,6 +7,9 @@ export interface Venture {
   hito?: string
   projection?: string
   tags: string[]
+  /** Hero background image for the venture detail page. Resolved by slug
+   *  in /public/assets/ventures/{slug}.jpg if not explicitly set. */
+  heroImage?: string
 }
 
 export const ventures: Venture[] = [

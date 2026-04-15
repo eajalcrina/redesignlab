@@ -2,12 +2,14 @@
 
 import Link from 'next/link'
 import HeroText from '@/components/sections/HeroText'
+import HeroCarousel from '@/components/sections/HeroCarousel'
 import Button from '@/components/ui/Button'
 
 export default function LandingHero() {
   return (
-    <section className="section-dark min-h-screen flex items-center">
-      <div className="container-rl py-32">
+    <section className="section-dark min-h-screen flex items-center relative overflow-hidden">
+      <HeroCarousel />
+      <div className="container-rl py-32 relative z-10">
         <p className="mb-8 text-body-md md:text-body-lg tracking-[0.16em] uppercase text-rl-red font-medium">
           THE AI STUDIO FOR BIOECONOMY INDUSTRIES
         </p>
