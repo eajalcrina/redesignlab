@@ -3,6 +3,7 @@
 import { useState, useCallback, useEffect } from 'react'
 import { createPortal } from 'react-dom'
 import { motion, AnimatePresence } from 'framer-motion'
+import Image from 'next/image'
 import { cn } from '@/lib/utils'
 import { supabase } from '@/lib/supabase'
 import {
@@ -228,16 +229,78 @@ export default function MaturityChecker({ inline = false }: MaturityCheckerProps
           {/* Screen 0: Welcome */}
           {step === 0 && (
             <Screen key="welcome" dir={dir}>
-              <p className="text-label-sm uppercase tracking-[0.18em] text-rl-red mb-6">RE-IA Maturity Checker</p>
-              <h2 className="font-display text-display-md md:text-display-lg text-text-on-dark mb-6 max-w-2xl">
-                Evalúa la madurez de tu organización frente a la inteligencia artificial aplicada
-              </h2>
-              <p className="text-body-lg text-text-muted mb-10 max-w-xl">
-                12 preguntas sobre 5 dimensiones criticas. Al final recibiras tu nivel, un mapa de fortalezas y debilidades, y las palancas prioritarias para avanzar.
-              </p>
-              <button onClick={next} className="inline-flex items-center gap-2 bg-rl-red text-white px-8 h-12 rounded font-sans font-medium hover:bg-[#d91f5b] transition-colors">
-                Comenzar <span aria-hidden>&rarr;</span>
-              </button>
+              {/* Hero background image + animated glow overlay */}
+              <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+                <Image
+                  src="/assets/diagnostico.jpg"
+                  alt=""
+                  fill
+                  sizes="100vw"
+                  priority
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-[#141414]/82" />
+              </div>
+              {/* Animated accents on top of the photo */}
+              <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+                <motion.div
+                  className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] md:w-[700px] md:h-[700px] rounded-full"
+                  style={{
+                    background: 'radial-gradient(circle, rgba(243,39,105,0.12) 0%, rgba(243,39,105,0.04) 40%, transparent 70%)',
+                  }}
+                  animate={{
+                    scale: [1, 1.15, 1],
+                    opacity: [0.6, 1, 0.6],
+                  }}
+                  transition={{
+                    duration: 6,
+                    repeat: Infinity,
+                    ease: 'easeInOut',
+                  }}
+                />
+                <motion.div
+                  className="absolute bottom-1/4 right-1/4 w-[300px] h-[300px] md:w-[400px] md:h-[400px] rounded-full"
+                  style={{
+                    background: 'radial-gradient(circle, rgba(243,39,105,0.08) 0%, transparent 60%)',
+                  }}
+                  animate={{
+                    scale: [1.1, 1, 1.1],
+                    opacity: [0.4, 0.8, 0.4],
+                  }}
+                  transition={{
+                    duration: 8,
+                    repeat: Infinity,
+                    ease: 'easeInOut',
+                  }}
+                />
+                {/* Subtle grid pattern — gives a "data" feel to the diagnostic context */}
+                <div
+                  className="absolute inset-0 opacity-[0.03]"
+                  style={{
+                    backgroundImage:
+                      'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+                    backgroundSize: '60px 60px',
+                  }}
+                />
+              </div>
+
+              <div className="relative z-10">
+                <p
+                  className="font-mono uppercase tracking-[0.2em] text-rl-red mb-6"
+                  style={{ fontSize: '16px', lineHeight: '24px', fontWeight: 400 }}
+                >
+                  RE·IA Maturity Checker
+                </p>
+                <h2 className="font-display text-display-md md:text-display-lg text-text-on-dark mb-6 max-w-2xl">
+                  Evalúa la madurez de tu organización frente a la inteligencia artificial aplicada.
+                </h2>
+                <p className="text-body-lg text-text-muted mb-10 max-w-xl">
+                  12 preguntas sobre 5 dimensiones críticas. Al final recibirás tu nivel, un mapa de fortalezas y debilidades, y las palancas prioritarias para avanzar.
+                </p>
+                <button onClick={next} className="inline-flex items-center gap-2 bg-rl-red text-white px-8 h-12 rounded font-sans font-medium hover:bg-[#d91f5b] transition-colors">
+                  Comenzar <span aria-hidden>&rarr;</span>
+                </button>
+              </div>
             </Screen>
           )}
 

@@ -24,7 +24,7 @@ export default function LandingHero() {
           <Button variant="primary" size="lg" href="/crear-valor">
             Ver nuestros servicios →
           </Button>
-          <Button variant="secondary" size="lg" href="/inteligencia-artificial#diagnostico" className="text-text-on-dark border-text-on-dark/20">
+          <Button variant="secondary" size="lg" href="/inteligencia-artificial/diagnostico" className="text-text-on-dark border-text-on-dark/20">
             Haz tu diagnóstico IA →
           </Button>
           <Link

@@ -78,7 +78,7 @@ export default function ReIntelligenceBlock({
                 Súmate a la red de Re. Intelligence &rarr;
               </Button>
               <Link
-                href="/inteligencia-artificial#diagnostico"
+                href="/inteligencia-artificial/diagnostico"
                 className="inline-flex items-center gap-2 text-body-md text-text-on-dark hover:text-rl-red transition-colors group"
               >
                 <span className="underline underline-offset-4 decoration-text-muted/40 group-hover:decoration-rl-red">

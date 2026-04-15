@@ -30,8 +30,8 @@ export default function FondosPage() {
       <HeroSection />
       <ProblemsSection />
       <CycleSection />
-      <FundServicesSection />
       <PortfolioIntelligence />
+      <FundServicesSection />
       <WhySection />
       <InstrumentsSection />
       <MarqueeSection />

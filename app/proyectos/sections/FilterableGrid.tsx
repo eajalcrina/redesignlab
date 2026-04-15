@@ -60,12 +60,13 @@ export default function FilterableGrid() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -12 }}
                   transition={{ duration: 0.3 }}
+                  className="h-full"
                 >
                   <Link
                     href={`/proyectos/${getProjectSlug(project)}`}
                     className={cn(
                       bgColor,
-                      'group relative overflow-hidden rounded-lg block min-h-[220px] p-6 flex-col justify-end',
+                      'group relative overflow-hidden rounded-lg block h-full min-h-[280px] p-6 flex flex-col justify-end',
                       'border border-border-dark hover:border-rl-red/50 transition-all duration-300',
                       'hover:-translate-y-1'
                     )}

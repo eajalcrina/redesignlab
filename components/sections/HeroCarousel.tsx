@@ -140,16 +140,19 @@ export default function HeroCarousel() {
         })}
       </div>
 
-      {/* Asymmetric dark overlay — heavier on the left where copy lives. */}
+      {/* Dark overlay — near-black on mobile (96%), editorial gradient on desktop */}
       <div
-        className="absolute -inset-1"
+        className="absolute -inset-1 bg-rl-dark/[0.96] md:bg-transparent"
+      />
+      <div
+        className="absolute -inset-1 hidden md:block"
         style={{
           background:
             'linear-gradient(to right, rgba(13,13,13,0.92) 0%, rgba(13,13,13,0.85) 45%, rgba(13,13,13,0.72) 100%)',
         }}
       />
-      {/* Subtle vertical gradient for top/bottom edge contrast */}
-      <div className="absolute -inset-1 bg-gradient-to-b from-rl-dark/30 via-transparent to-rl-dark/45" />
+      {/* Subtle vertical gradient for top/bottom edge contrast (desktop only) */}
+      <div className="absolute -inset-1 hidden md:block bg-gradient-to-b from-rl-dark/30 via-transparent to-rl-dark/45" />
     </div>
   )
 }

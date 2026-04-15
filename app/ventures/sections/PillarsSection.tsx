@@ -31,8 +31,8 @@ export default function PillarsSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {pillars.map((pillar, i) => (
-            <SectionReveal key={pillar.title} delay={i * 0.1}>
-              <div className="p-8 border border-border-light rounded hover:border-rl-red/20 hover:bg-rl-dark hover:text-text-on-dark transition-all duration-300 group">
+            <SectionReveal key={pillar.title} delay={i * 0.1} className="h-full">
+              <div className="h-full flex flex-col p-8 border border-border-light rounded hover:border-rl-red/20 hover:bg-rl-dark hover:text-text-on-dark transition-all duration-300 group">
                 <span className="font-mono text-mono-sm text-rl-red block mb-4">0{i + 1}</span>
                 <h3 className="font-display text-display-sm text-text-primary group-hover:text-text-on-dark mb-3 transition-colors">
                   {pillar.title}

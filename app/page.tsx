@@ -15,10 +15,10 @@ export default function Home() {
       <LandingHero />
       {/* 2. Aliados institucionales (puente tonal entre hero y Re. Intelligence) */}
       <AlliesMarquee />
-      {/* 3. Re. Intelligence */}
-      <LandingReIntelligence />
-      {/* 4. Tres formas de trabajar */}
+      {/* 3. Tres formas de trabajar */}
       <ThreePaths />
+      {/* 4. Re. Intelligence */}
+      <LandingReIntelligence />
       {/* 5. El problema que resolvemos */}
       <ProblemSection />
       {/* 6. IA para bioeconomía */}
