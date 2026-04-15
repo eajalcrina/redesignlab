@@ -4,6 +4,7 @@ import { useState, useCallback, useEffect } from 'react'
 import { createPortal } from 'react-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { cn } from '@/lib/utils'
+import { supabase } from '@/lib/supabase'
 import {
   LEVEL_PROFILE,
   BLOCK_INSIGHT,
@@ -133,6 +134,8 @@ export default function MaturityChecker() {
   const [companySize, setCompanySize] = useState<string | null>(null)
   const [answers, setAnswers] = useState<Record<string, number>>({})
   const [lead, setLead] = useState({ name: '', email: '', company: '', cargo: '', consent: false })
+  const [submitting, setSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState<string | null>(null)
 
   const goTo = useCallback((s: number, direction = 1) => { setDir(direction); setStep(s) }, [])
   const next = useCallback(() => goTo(step + 1, 1), [step, goTo])
@@ -363,7 +366,61 @@ export default function MaturityChecker() {
                 Ingresa tus datos para ver los resultados y recibir una copia por correo.
               </p>
               <form
-                onSubmit={(e) => { e.preventDefault(); if (lead.consent) next() }}
+                onSubmit={async (e) => {
+                  e.preventDefault()
+                  if (!lead.consent || submitting) return
+                  setSubmitting(true)
+                  setSubmitError(null)
+
+                  // Compute result payload up front so we can persist the full diagnostic.
+                  const industryId = (industry || 'otra') as IndustryId
+                  const blockAScore = answers.q1 + answers.q2 + answers.q3
+                  const blockBScore = answers.q4 + answers.q5 + answers.q6
+                  const blockCScore = answers.q7 + answers.q8
+                  const blockDScore = answers.q9 + answers.q10
+                  const blockEScore = answers.q11 + answers.q12
+                  const blockPct: Record<BK, number> = {
+                    A: blockAScore / 12,
+                    B: blockBScore / 12,
+                    C: blockCScore / 8,
+                    D: blockDScore / 8,
+                    E: blockEScore / 8,
+                  }
+                  const levers = computePriorityLevers(blockPct, industryId)
+
+                  if (supabase) {
+                    const { error } = await supabase.from('maturity_leads').insert({
+                      name: lead.name.trim(),
+                      email: lead.email.trim().toLowerCase(),
+                      company: lead.company.trim(),
+                      role: lead.cargo.trim() || null,
+                      consent: lead.consent,
+                      industry: industryId,
+                      company_size: companySize || 'unknown',
+                      answers,
+                      total_score: totalScore,
+                      block_a_score: blockAScore,
+                      block_b_score: blockBScore,
+                      block_c_score: blockCScore,
+                      block_d_score: blockDScore,
+                      block_e_score: blockEScore,
+                      maturity_level: level,
+                      maturity_name: LEVELS[level].name,
+                      priority_levers: levers,
+                      source: typeof window !== 'undefined' ? window.location.pathname : null,
+                      user_agent: typeof navigator !== 'undefined' ? navigator.userAgent : null,
+                      referrer: typeof document !== 'undefined' ? document.referrer || null : null,
+                    })
+                    if (error) {
+                      // eslint-disable-next-line no-console
+                      console.error('[maturity] supabase insert failed', error)
+                      setSubmitError('No pudimos guardar tus datos. Puedes continuar — tu resultado se verá localmente.')
+                    }
+                  }
+
+                  setSubmitting(false)
+                  next()
+                }}
                 className="flex flex-col gap-4 max-w-md w-full"
               >
                 <input placeholder="Nombre completo" value={lead.name} onChange={(e) => setLead((p) => ({ ...p, name: e.target.value }))} required className="bg-white/5 border border-border-dark rounded px-4 h-12 text-text-on-dark placeholder:text-text-muted text-body-md outline-none focus:border-rl-red transition-colors" />
@@ -376,11 +433,14 @@ export default function MaturityChecker() {
                 </label>
                 <button
                   type="submit"
-                  disabled={!lead.consent || !lead.name || !lead.email || !lead.company}
+                  disabled={!lead.consent || !lead.name || !lead.email || !lead.company || submitting}
                   className="mt-2 inline-flex items-center justify-center gap-2 bg-rl-red text-white px-8 h-12 rounded font-sans font-medium hover:bg-[#d91f5b] transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
                 >
-                  Ver resultados <span aria-hidden>&rarr;</span>
+                  {submitting ? 'Guardando...' : 'Ver resultados'} <span aria-hidden>&rarr;</span>
                 </button>
+                {submitError && (
+                  <p className="text-body-xs text-rl-red/80">{submitError}</p>
+                )}
               </form>
             </Screen>
           )}

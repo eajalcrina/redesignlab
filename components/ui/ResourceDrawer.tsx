@@ -3,9 +3,11 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { DURATION, EASE } from '@/lib/animations'
+import { supabase } from '@/lib/supabase'
 import Button from './Button'
 
-interface Resource {
+export interface Resource {
+  slug: string
   name: string
   description: string
   downloadUrl: string
@@ -18,23 +20,40 @@ interface ResourceDrawerProps {
 }
 
 export default function ResourceDrawer({ isOpen, resource, onClose }: ResourceDrawerProps) {
-  const [formState, setFormState] = useState<'idle' | 'submitting' | 'success'>('idle')
+  const [formState, setFormState] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
   const [formData, setFormData] = useState({ nombre: '', organizacion: '', email: '' })
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    if (!resource) return
     setFormState('submitting')
 
-    // Simulate submission — in production, call API route
-    await new Promise((resolve) => setTimeout(resolve, 1000))
-    setFormState('success')
+    if (supabase) {
+      const { error } = await supabase.from('resource_downloads').insert({
+        resource_slug: resource.slug,
+        resource_name: resource.name,
+        name: formData.nombre.trim(),
+        email: formData.email.trim().toLowerCase(),
+        organization: formData.organizacion.trim(),
+        source: typeof window !== 'undefined' ? window.location.pathname : null,
+        user_agent: typeof navigator !== 'undefined' ? navigator.userAgent : null,
+        referrer: typeof document !== 'undefined' ? document.referrer || null : null,
+      })
+      if (error) {
+        // eslint-disable-next-line no-console
+        console.error('[resource-download] supabase insert failed', error)
+        setFormState('error')
+        return
+      }
+    }
 
-    // Auto-close after 3 seconds
+    setFormState('success')
+    // Auto-close after 3.5 seconds
     setTimeout(() => {
       onClose()
       setFormState('idle')
       setFormData({ nombre: '', organizacion: '', email: '' })
-    }, 3000)
+    }, 3500)
   }
 
   return (
@@ -170,6 +189,11 @@ export default function ResourceDrawer({ isOpen, resource, onClose }: ResourceDr
                   >
                     {formState === 'submitting' ? 'Enviando...' : 'Descargar'}
                   </Button>
+                  {formState === 'error' && (
+                    <p className="mt-3 text-body-sm text-rl-red">
+                      No pudimos procesar la solicitud. Intenta nuevamente.
+                    </p>
+                  )}
                 </form>
               )}
             </div>
