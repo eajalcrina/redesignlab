@@ -63,55 +63,10 @@ const BLOCK_INFO: Record<BlockKey, { name: string; max: number; questions: strin
 }
 
 const LEVELS: Record<number, { name: string; range: [number, number]; tagline: string }> = {
-  1: { name: 'Observador', range: [12, 19], tagline: 'Tu organizacion esta en el punto de partida. La ventaja disponible es enorme.' },
-  2: { name: 'Experimentador', range: [20, 28], tagline: 'Hay iniciativas. El siguiente paso es profundidad, no mas cantidad.' },
-  3: { name: 'Constructor', range: [29, 38], tagline: 'Tienes capacidades reales. El reto ahora es integracion y permanencia.' },
-  4: { name: 'Lider', range: [39, 48], tagline: 'Estas entre las mas avanzadas de tu industria en LATAM.' },
-}
-
-// Legacy — kept for reference, replaced by LEVEL_PROFILE in data/maturity.ts
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const _levelDescriptions: Record<number, { definition: string; companies: string }> = {
-  1: {
-    definition: 'Tu organizacion esta en el punto de partida. La IA no es parte de las operaciones ni de las decisiones. La captura de datos es manual o inexistente, y las decisiones se basan en experiencia e intuicion.',
-    companies: 'Empresas familiares en transicion, cooperativas agricolas, operadores turisticos locales, pequenos exportadores de productos naturales.',
-  },
-  2: {
-    definition: 'Hay iniciativas aisladas de digitalizacion y algunas herramientas basicas de analisis. El reto es que estas iniciativas no estan conectadas entre si ni con la estrategia de negocio.',
-    companies: 'Medianas empresas agroindustriales, procesadoras de alimentos con sistemas ERP basicos, exportadores con trazabilidad parcial.',
-  },
-  3: {
-    definition: 'Tu organizacion tiene capacidades reales instaladas. Las herramientas de IA generan resultados medibles en al menos algunas areas. El reto ahora es integracion y permanencia.',
-    companies: 'Empresas con equipos de datos, exportadores con certificaciones internacionales, agroindustrias con monitoreo digital parcial.',
-  },
-  4: {
-    definition: 'La IA es parte del sistema operativo de tu organizacion. Las decisiones se toman con datos, los problemas se anticipan, y el reporte de impacto es continuo.',
-    companies: 'Lideres de industria con equipos de ciencia de datos, empresas con trazabilidad end-to-end, organizaciones con reporting automatizado.',
-  },
-}
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const _levelRecommendations: Record<number, string[]> = {
-  1: [
-    'Digitaliza los registros de las 3 operaciones mas criticas.',
-    'Configura monitoreo basico de tus mercados clave.',
-    'Define quien es el responsable del dato en tu organizacion.',
-  ],
-  2: [
-    'Elige las dos palancas de IA de mayor impacto y desarrollalas con profundidad.',
-    'Conecta las iniciativas existentes con metricas de negocio verificables.',
-    'Invierte en capacitacion del equipo directivo sobre criterio de IA.',
-  ],
-  3: [
-    'Integra las capacidades de IA existentes en un modelo operativo unificado.',
-    'Disena la gobernanza de datos y IA como sistema permanente.',
-    'Prepara la documentacion de impacto para acceder a capital de siguiente nivel.',
-  ],
-  4: [
-    'Asegurate de que tu ventaja en IA sea visible para compradores y fondos.',
-    'Evalua si puedes escalar tu modelo operativo sin escalar proporcionalmente tu equipo.',
-    'Considera Re. Intelligence para mantener ventaja competitiva continua.',
-  ],
+  1: { name: 'Observador', range: [12, 19], tagline: 'Tu organización está en el punto de partida. La ventaja disponible es enorme.' },
+  2: { name: 'Experimentador', range: [20, 28], tagline: 'Hay iniciativas. El siguiente paso es profundidad, no más cantidad.' },
+  3: { name: 'Constructor', range: [29, 38], tagline: 'Tienes capacidades reales. El reto ahora es integración y permanencia.' },
+  4: { name: 'Líder', range: [39, 48], tagline: 'Estás entre las más avanzadas de tu industria en LATAM.' },
 }
 
 // ── Animations ──────────────────────────────────────────────────────────────
@@ -155,16 +110,20 @@ export default function MaturityChecker() {
     return { key: k, ...info, score }
   })
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const _lowestBlocks = [...blockScores].sort((a, b) => a.score / a.max - b.score / b.max).slice(0, 3)
 
   const progress = Math.min(step / TOTAL_STEPS, 1)
 
-  const reset = () => {
-    setStep(0); setIndustry(null); setCompanySize(null); setAnswers({}); setLead({ name: '', email: '', company: '', cargo: '', consent: false })
-  }
+  const reset = useCallback(() => {
+    setStep(0)
+    setIndustry(null)
+    setCompanySize(null)
+    setAnswers({})
+    setLead({ name: '', email: '', company: '', cargo: '', consent: false })
+    setSubmitting(false)
+    setSubmitError(null)
+  }, [])
 
-  const close = useCallback(() => { setOpen(false); reset() }, [])
+  const close = useCallback(() => { setOpen(false); reset() }, [reset])
 
   // Lock body scroll + ESC handler while overlay is open
   useEffect(() => {
@@ -189,7 +148,7 @@ export default function MaturityChecker() {
       >
         <p className="text-label-sm uppercase tracking-[0.18em] text-rl-red mb-3">RE-IA Maturity Checker</p>
         <h3 className="font-display text-display-sm md:text-display-md text-text-on-dark mb-4">
-          Descubre en que nivel esta tu organizacion frente a la IA aplicada
+          Descubre en qué nivel está tu organización frente a la IA aplicada
         </h3>
         <p className="text-body-lg text-text-muted mb-6 max-w-xl">
           12 preguntas. 5 minutos. Un diagnostico accionable con prioridades claras.
@@ -250,7 +209,7 @@ export default function MaturityChecker() {
             <Screen key="welcome" dir={dir}>
               <p className="text-label-sm uppercase tracking-[0.18em] text-rl-red mb-6">RE-IA Maturity Checker</p>
               <h2 className="font-display text-display-md md:text-display-lg text-text-on-dark mb-6 max-w-2xl">
-                Evalua la madurez de tu organizacion frente a la inteligencia artificial aplicada
+                Evalúa la madurez de tu organización frente a la inteligencia artificial aplicada
               </h2>
               <p className="text-body-lg text-text-muted mb-10 max-w-xl">
                 12 preguntas sobre 5 dimensiones criticas. Al final recibiras tu nivel, un mapa de fortalezas y debilidades, y las palancas prioritarias para avanzar.
@@ -266,7 +225,7 @@ export default function MaturityChecker() {
             <Screen key="industry" dir={dir}>
               <p className="text-label-sm uppercase tracking-[0.18em] text-rl-red mb-4">Contexto</p>
               <h2 className="font-display text-display-sm md:text-display-md text-text-on-dark mb-8">
-                En que industria opera tu organizacion?
+                ¿En qué industria opera tu organización?
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-2xl w-full">
                 {INDUSTRIES.map((ind) => (
@@ -294,7 +253,7 @@ export default function MaturityChecker() {
             <Screen key="size" dir={dir}>
               <p className="text-label-sm uppercase tracking-[0.18em] text-rl-red mb-4">Contexto</p>
               <h2 className="font-display text-display-sm md:text-display-md text-text-on-dark mb-8">
-                Cuantas personas trabajan en tu organizacion?
+                ¿Cuántas personas trabajan en tu organización?
               </h2>
               <div className="flex flex-col gap-3 max-w-lg w-full">
                 {COMPANY_SIZES.map((s) => (
@@ -360,7 +319,7 @@ export default function MaturityChecker() {
             <Screen key="lead" dir={dir}>
               <p className="text-label-sm uppercase tracking-[0.18em] text-rl-red mb-4">Casi listo</p>
               <h2 className="font-display text-display-sm md:text-display-md text-text-on-dark mb-2">
-                Recibe tu diagnostico completo
+                Recibe tu diagnóstico completo
               </h2>
               <p className="text-body-lg text-text-muted mb-8 max-w-lg">
                 Ingresa tus datos para ver los resultados y recibir una copia por correo.
@@ -368,7 +327,9 @@ export default function MaturityChecker() {
               <form
                 onSubmit={async (e) => {
                   e.preventDefault()
-                  if (!lead.consent || submitting) return
+                  // Guard against double-submit (race on fast double-click) and missing data
+                  if (submitting) return
+                  if (!lead.consent || !lead.name.trim() || !lead.email.trim() || !lead.company.trim()) return
                   setSubmitting(true)
                   setSubmitError(null)
 

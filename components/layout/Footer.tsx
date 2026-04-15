@@ -1,36 +1,11 @@
 'use client'
 
-import { useState } from 'react'
 import Link from 'next/link'
 import { SITE_CONFIG, FOOTER_LINKS, NEWSLETTER } from '@/lib/constants'
-import { supabase } from '@/lib/supabase'
 import Divider from '@/components/ui/Divider'
-
-type NewsletterState = 'idle' | 'submitting' | 'success' | 'error'
-
-async function subscribeEmail(email: string): Promise<NewsletterState> {
-  if (!supabase) return 'error'
-  const { error } = await supabase.from('newsletter_subscribers').insert({
-    email: email.trim().toLowerCase(),
-    source: typeof window !== 'undefined' ? window.location.pathname : null,
-    user_agent: typeof navigator !== 'undefined' ? navigator.userAgent : null,
-    referrer: typeof document !== 'undefined' ? document.referrer || null : null,
-  })
-  // Unique violation = already subscribed → treat as success from UX perspective
-  if (error && error.code !== '23505') {
-    // eslint-disable-next-line no-console
-    console.error('[newsletter] insert failed', error)
-    return 'error'
-  }
-  return 'success'
-}
+import NewsletterForm from '@/components/ui/NewsletterForm'
 
 export default function Footer() {
-  const [mEmail, setMEmail] = useState('')
-  const [dEmail, setDEmail] = useState('')
-  const [mState, setMState] = useState<NewsletterState>('idle')
-  const [dState, setDState] = useState<NewsletterState>('idle')
-
   return (
     <footer className="section-dark">
       <div className="container-rl py-10 md:py-24">
@@ -49,45 +24,12 @@ export default function Footer() {
 
         <Divider mode="dark" className="mb-8 md:mb-16" />
 
-        {/* Newsletter — full width on mobile, first column on desktop */}
+        {/* Newsletter — full width on mobile, shown in column on desktop */}
         <div className="mb-10 md:mb-16 lg:hidden">
           <h3 className="text-label-sm uppercase text-text-muted mb-3">
             {NEWSLETTER.headline}
           </h3>
-          <form
-            onSubmit={async (e) => {
-              e.preventDefault()
-              if (mState === 'submitting' || !mEmail) return
-              setMState('submitting')
-              const r = await subscribeEmail(mEmail)
-              setMState(r)
-              if (r === 'success') setMEmail('')
-            }}
-            className="flex gap-2"
-          >
-            <input
-              type="email"
-              value={mEmail}
-              onChange={(e) => setMEmail(e.target.value)}
-              placeholder={NEWSLETTER.placeholder}
-              required
-              disabled={mState === 'submitting' || mState === 'success'}
-              className="flex-1 h-10 px-3 bg-transparent border border-border-dark text-text-on-dark text-body-sm rounded placeholder:text-text-muted/50 focus:outline-none focus:border-rl-red transition-colors disabled:opacity-60"
-            />
-            <button
-              type="submit"
-              disabled={mState === 'submitting' || mState === 'success'}
-              className="h-10 px-4 bg-rl-red text-white text-body-sm font-medium rounded hover:bg-[#d91f5b] transition-colors whitespace-nowrap disabled:opacity-60"
-            >
-              {mState === 'submitting' ? '...' : mState === 'success' ? '✓' : NEWSLETTER.cta}
-            </button>
-          </form>
-          {mState === 'success' && (
-            <p className="mt-2 text-body-xs text-rl-red">Gracias por suscribirte.</p>
-          )}
-          {mState === 'error' && (
-            <p className="mt-2 text-body-xs text-rl-red/80">No pudimos suscribirte. Intenta de nuevo.</p>
-          )}
+          <NewsletterForm variant="compact" />
         </div>
 
         {/* Links grid — 2 cols mobile, 5 cols desktop */}
@@ -97,46 +39,7 @@ export default function Footer() {
             <h3 className="text-label-md uppercase text-text-muted mb-4">
               {NEWSLETTER.headline}
             </h3>
-            <p className="text-body-sm text-text-muted mb-4">
-              {NEWSLETTER.body}
-            </p>
-            <form
-              onSubmit={async (e) => {
-                e.preventDefault()
-                if (dState === 'submitting' || !dEmail) return
-                setDState('submitting')
-                const r = await subscribeEmail(dEmail)
-                setDState(r)
-                if (r === 'success') setDEmail('')
-              }}
-              className="flex gap-2 mb-2"
-            >
-              <input
-                type="email"
-                value={dEmail}
-                onChange={(e) => setDEmail(e.target.value)}
-                placeholder={NEWSLETTER.placeholder}
-                required
-                disabled={dState === 'submitting' || dState === 'success'}
-                className="flex-1 h-10 px-4 bg-transparent border border-border-dark text-text-on-dark text-body-sm rounded placeholder:text-text-muted/50 focus:outline-none focus:border-rl-red transition-colors disabled:opacity-60"
-              />
-              <button
-                type="submit"
-                disabled={dState === 'submitting' || dState === 'success'}
-                className="h-10 px-6 bg-rl-red text-white text-body-sm font-medium rounded hover:bg-[#d91f5b] transition-colors whitespace-nowrap disabled:opacity-60"
-              >
-                {dState === 'submitting' ? '...' : dState === 'success' ? '✓' : NEWSLETTER.cta}
-              </button>
-            </form>
-            {dState === 'success' ? (
-              <p className="text-body-xs text-rl-red">Gracias por suscribirte.</p>
-            ) : dState === 'error' ? (
-              <p className="text-body-xs text-rl-red/80">No pudimos suscribirte. Intenta de nuevo.</p>
-            ) : (
-              <p className="text-body-xs text-text-muted/50">
-                {NEWSLETTER.disclaimer}
-              </p>
-            )}
+            <NewsletterForm variant="full" />
           </div>
 
           {/* Servicios */}
