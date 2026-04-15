@@ -65,6 +65,15 @@ export const ventures: Venture[] = [
     tags: ['Consumo Saludable', 'Biodiversidad Peruana', 'Producción Propia', 'Retail Consciente', 'E-Commerce'],
   },
   {
+    name: 'Thousandfold',
+    category: 'Agencia Creativa · Diseño Estratégico · Identidad de Marca',
+    location: 'América Latina',
+    tagline: 'La agencia creativa que construye las marcas del portafolio',
+    description: 'Thousandfold es la agencia creativa aliada del portafolio de Redesign Lab — responsable del diseño estratégico, la identidad visual y la comunicación de las ventures que se construyen desde el estudio. Opera en la intersección entre diseño, marca y narrativa para empresas que necesitan ser leídas, entendidas y recordadas en contextos exigentes: compradores globales, fondos de impacto, compradores premium. Su trabajo convierte la propuesta de valor de una venture en una expresión visual y verbal coherente — del logotipo al sitio web, de la presentación al pitch — sin perder la profundidad técnica del negocio detrás. Responsable del diseño y desarrollo de redesignlab.org y de la identidad visual de buena parte del portafolio.',
+    projection: 'Consolidarse como la agencia creativa de referencia para empresas de bioeconomía, climate tech y economía regenerativa en América Latina.',
+    tags: ['Agencia Creativa', 'Diseño Estratégico', 'Identidad de Marca', 'Desarrollo Web', 'Comunicación'],
+  },
+  {
     name: 'Startups4Climate',
     category: 'Plataforma con IA · Emprendimiento Climático',
     location: 'América Latina',

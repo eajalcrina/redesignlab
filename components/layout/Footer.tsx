@@ -218,7 +218,7 @@ export default function Footer() {
 
         <Divider mode="dark" className="mb-6 md:mb-8" />
 
-        {/* Bottom: Copyright */}
+        {/* Bottom: Copyright + credits */}
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-2 md:gap-4">
           <a
             href={`mailto:${SITE_CONFIG.email}`}
@@ -226,9 +226,22 @@ export default function Footer() {
           >
             {SITE_CONFIG.email}
           </a>
-          <p className="text-body-xs text-text-muted/70">
-            {SITE_CONFIG.copyright}
-          </p>
+          <div className="flex flex-col md:flex-row items-start md:items-center gap-1 md:gap-4">
+            <p className="text-body-xs text-text-muted/70">
+              {SITE_CONFIG.copyright}
+            </p>
+            <p className="text-body-xs text-text-muted/70">
+              Diseño y desarrollo por{' '}
+              <a
+                href="https://www.thousandfold.la/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-text-muted hover:text-rl-red transition-colors underline underline-offset-2 decoration-text-muted/30 hover:decoration-rl-red"
+              >
+                Thousandfold
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>
