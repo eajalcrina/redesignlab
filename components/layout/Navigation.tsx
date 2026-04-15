@@ -83,11 +83,27 @@ export default function Navigation() {
                   <Link
                     href={link.href}
                     className={cn(
-                      'text-body-sm text-text-muted hover:text-text-on-dark transition-colors duration-200 flex items-center gap-1',
+                      'group/link relative text-body-sm text-text-muted hover:text-text-on-dark transition-colors duration-200 flex items-center gap-1',
                       pathname === link.href && 'text-text-on-dark'
                     )}
                   >
-                    {link.label}
+                    <span className="relative inline-block">
+                      {link.label}
+                      {/* Ventures: persistent thin red underline, widens on hover */}
+                      {link.label === 'Ventures' && (
+                        <span
+                          aria-hidden="true"
+                          className="absolute -bottom-[5px] left-0 h-[1.5px] bg-rl-red transition-all duration-300 w-3 group-hover/link:w-full"
+                        />
+                      )}
+                    </span>
+                    {/* Fondos: brand red dot suffix (echoes the logo period) */}
+                    {link.label === 'Fondos' && (
+                      <span
+                        aria-hidden="true"
+                        className="ml-0.5 inline-block w-[5px] h-[5px] rounded-full bg-rl-red translate-y-[1px]"
+                      />
+                    )}
                     {hasSubmenu && (
                       <svg className="w-3 h-3 opacity-50" fill="none" viewBox="0 0 12 12">
                         <path d="M3 5L6 8L9 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />

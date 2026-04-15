@@ -18,7 +18,10 @@ export const metadata: Metadata = {
     'due diligence bioeconomía',
     'fondos impacto LATAM',
     'investment readiness bionegocios',
+    'portfolio intelligence',
+    'capital de impacto',
   ],
+  alternates: { canonical: '/fondos' },
 }
 
 export default function FondosPage() {

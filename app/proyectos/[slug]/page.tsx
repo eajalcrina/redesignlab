@@ -26,6 +26,13 @@ export function generateMetadata({ params }: ProjectPageProps): Metadata {
     title: project.title,
     description: project.keyline,
     keywords: project.tags,
+    alternates: { canonical: `/proyectos/${params.slug}` },
+    openGraph: {
+      title: project.title,
+      description: project.keyline,
+      type: 'article',
+      url: `/proyectos/${params.slug}`,
+    },
   }
 }
 

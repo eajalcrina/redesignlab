@@ -7,6 +7,8 @@ export const metadata: Metadata = {
   title: 'Conocimiento',
   description:
     'Recursos abiertos de Redesign Lab: guías, frameworks, benchmarks y herramientas para líderes de bioeconomía e inteligencia artificial.',
+  keywords: ['BIRF framework', 'investment readiness bioeconomía', 'guía due diligence bionegocios', 'recursos bioeconomía LATAM', 'frameworks impacto'],
+  alternates: { canonical: '/conocimiento' },
 }
 
 export default function ConocimientoPage() {

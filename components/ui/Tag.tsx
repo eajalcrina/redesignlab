@@ -16,7 +16,7 @@ export default function Tag({ children, color = 'red', className }: TagProps) {
   return (
     <span
       className={cn(
-        'inline-block uppercase text-label-sm font-sans font-semibold tracking-[0.18em]',
+        'inline-block uppercase text-label-sm font-mono font-normal tracking-[0.18em]',
         colorStyles[color],
         className
       )}

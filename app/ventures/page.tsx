@@ -13,7 +13,9 @@ import ConnectSection from './sections/ConnectSection'
 export const metadata: Metadata = {
   title: 'Ventures',
   description:
-    'Portafolio de ventures de Redesign Lab: Cotton Nation, Neofibers, Endemics, Rare by, GreenProd, Ecovive y Startups4Climate. +USD 26MM en facturación 2024.',
+    'Portafolio de ventures de Redesign Lab: Cotton Nation, Neofibers, Endemics, Rare by, GreenProd, Ecovive, Startups4Climate, Bio Business School y Thousandfold. +USD 26MM en facturación 2024.',
+  keywords: ['venture studio LATAM', 'portafolio bioeconomía', 'Cotton Nation', 'Neofibers', 'biocomercio amazónico', 'co-fundadores bioeconomía'],
+  alternates: { canonical: '/ventures' },
 }
 
 export default function VenturesPage() {

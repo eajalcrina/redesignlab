@@ -48,6 +48,13 @@ export function generateMetadata({ params }: VenturePageProps): Metadata {
     title: venture.name,
     description: venture.tagline || venture.description.slice(0, 160),
     keywords: venture.tags,
+    alternates: { canonical: `/ventures/${params.slug}` },
+    openGraph: {
+      title: `${venture.name} — Venture de Redesign Lab`,
+      description: venture.tagline || venture.description.slice(0, 160),
+      type: 'article',
+      url: `/ventures/${params.slug}`,
+    },
   }
 }
 

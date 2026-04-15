@@ -4,6 +4,7 @@ export interface TeamMember {
   bio: string
   quote?: string
   photo?: string
+  linkedin?: string
 }
 
 export const team: TeamMember[] = [
@@ -19,6 +20,7 @@ Lo que hace a su perfil inusual no es solo la estrategia. Es la capacidad de eje
 Su trayectoria institucional refleja el mismo principio: Experto en Negocios Sostenibles para la Delegación de la Unión Europea en Perú, mentor en MIT y Universidad de Chicago, consultor para ONUDI y líder de los Programas Climathon CATAL1.5T financiados por GIZ.`,
     quote: 'Hacemos que invertir en negocios sostenibles sea un buen negocio.',
     photo: '/assets/eddie.jpg',
+    linkedin: 'https://www.linkedin.com/in/eddieajalcrina',
   },
   {
     name: 'Lorenzo Ortiz',
@@ -30,5 +32,6 @@ Eso no es un detalle menor. Es la razón por la que Redesign Lab puede hacer lo 
 Ingeniero Industrial con postgrados en Finanzas y Business Analytics en Universidad del Pacífico, INCAE Business School y MIT. LATAM Fellow de Singularity University con mención en Tecnología. Ha sido miembro independiente de directorios de varias empresas.`,
     quote: 'El mayor impacto se genera a través de modelos de negocio rentables y sostenibles a largo plazo.',
     photo: '/assets/lorenzo.jpg',
+    linkedin: 'https://www.linkedin.com/in/lorenzoortiz/',
   },
 ]

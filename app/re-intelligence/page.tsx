@@ -12,6 +12,8 @@ export const metadata: Metadata = {
   title: 'Re. Intelligence',
   description:
     'Inteligencia estratégica para líderes de bioeconomía. USD 3,000/mes. Máximo 15 miembros. Briefings, modelos de IA, red de decisores y advisory 1:1.',
+  keywords: ['membresía estratégica bioeconomía', 'advisory C-Level LATAM', 'inteligencia estratégica IA', 'Re Intelligence', 'briefing mensual ejecutivo'],
+  alternates: { canonical: '/re-intelligence' },
 }
 
 export default function ReIntelligencePage() {

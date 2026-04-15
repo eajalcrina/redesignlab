@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     'modelo de negocio bioeconomía',
     'innovation blueprint',
   ],
+  alternates: { canonical: '/crear-valor' },
 }
 
 const accordionItems = [

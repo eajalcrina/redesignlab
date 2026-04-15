@@ -10,6 +10,8 @@ export const metadata: Metadata = {
   title: 'Cómo pensamos',
   description:
     'Nuestra tesis: la bioeconomía necesita un nuevo modelo de consultoría. Uno que combine diseño estratégico, operaciones reales e inteligencia artificial.',
+  keywords: ['tesis Redesign Lab', 'principios bioeconomía', 'criterio estratégico', 'manifiesto bioeconomía'],
+  alternates: { canonical: '/como-pensamos' },
 }
 
 export default function ComoPensamosPage() {

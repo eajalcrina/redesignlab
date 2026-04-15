@@ -17,6 +17,7 @@ export const metadata: Metadata = {
     'AI transformation roadmap',
     'escala bioeconomía',
   ],
+  alternates: { canonical: '/transformar-el-modelo' },
 }
 
 const accordionItems = [

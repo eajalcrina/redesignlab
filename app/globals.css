@@ -139,6 +139,15 @@
   .text-body-md { font-size: 16px; }
   .text-body-sm { font-size: 14px; }
   .text-body-xs { font-size: 12px; }
+  /* Section labels / eyebrows — JetBrains Mono uppercase for editorial cohesion */
+  .text-label-lg,
+  .text-label-md,
+  .text-label-sm {
+    font-family: var(--font-jetbrains), monospace;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+  }
   .text-label-lg { font-size: 13px; }
   .text-label-md { font-size: 11px; }
   .text-label-sm { font-size: 10px; }

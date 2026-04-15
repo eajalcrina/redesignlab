@@ -7,6 +7,8 @@ export const metadata: Metadata = {
   title: 'Proyectos',
   description:
     'Portafolio de proyectos de consultoría de Redesign Lab en bioeconomía: agroindustria, pesca, acuicultura, cosmética, turismo y biotecnología en América Latina.',
+  keywords: ['casos consultoría bioeconomía', 'proyectos LATAM', 'agroindustria pesca acuicultura', 'biocomercio amazónico', 'climate tech LATAM'],
+  alternates: { canonical: '/proyectos' },
 }
 
 export default function ProyectosPage() {

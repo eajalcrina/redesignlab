@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" fill="#0D0D0D"/>
+  <text
+    x="32"
+    y="48"
+    text-anchor="middle"
+    font-family="Mluvka, system-ui, -apple-system, 'Helvetica Neue', sans-serif"
+    font-size="44"
+    font-weight="500"
+    letter-spacing="-1"
+    fill="#FAFAF8"
+  >Re<tspan fill="#F32769">.</tspan></text>
+</svg>

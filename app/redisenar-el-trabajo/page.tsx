@@ -17,6 +17,7 @@ export const metadata: Metadata = {
     'IA operativa bioeconomía',
     'rediseño operativo',
   ],
+  alternates: { canonical: '/redisenar-el-trabajo' },
 }
 
 const accordionItems = [

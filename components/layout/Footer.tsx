@@ -17,9 +17,6 @@ export default function Footer() {
           <p className="mt-2 text-body-xs md:text-body-sm text-text-muted">
             {SITE_CONFIG.tagline}
           </p>
-          <p className="hidden md:block mt-1 text-body-sm text-text-muted">
-            {SITE_CONFIG.taglineEs}
-          </p>
         </div>
 
         <Divider mode="dark" className="mb-8 md:mb-16" />

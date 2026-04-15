@@ -12,6 +12,8 @@ export const metadata: Metadata = {
   title: 'Builders',
   description:
     'Red de expertos de alto perfil que co-construyen ventures y proyectos de bioeconomía con Redesign Lab. Dos formas de participar: Colaborador y Socio.',
+  keywords: ['red de expertos bioeconomía', 'builders LATAM', 'colaboradores Redesign Lab', 'venture co-building'],
+  alternates: { canonical: '/builders' },
 }
 
 export default function BuildersPage() {

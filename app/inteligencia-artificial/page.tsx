@@ -18,7 +18,10 @@ export const metadata: Metadata = {
     'IA bioeconomía',
     'inteligencia artificial agroindustria',
     'AI transformation LATAM',
+    'Re·IA framework',
+    'maturity checker IA',
   ],
+  alternates: { canonical: '/inteligencia-artificial' },
 }
 
 export default function InteligenciaArtificialPage() {

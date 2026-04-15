@@ -3,7 +3,6 @@ import ProblemSection from './(landing)/sections/ProblemSection'
 import ThreePaths from './(landing)/sections/ThreePaths'
 import LandingReIntelligence from './(landing)/sections/LandingReIntelligence'
 import AISection from './(landing)/sections/AISection'
-import FundsAccent from './(landing)/sections/FundsAccent'
 import KnowledgePreview from './(landing)/sections/KnowledgePreview'
 import TeamSection from './(landing)/sections/TeamSection'
 import AlliesMarquee from './(landing)/sections/AlliesMarquee'
@@ -24,13 +23,11 @@ export default function Home() {
       <ProblemSection />
       {/* 6. IA para bioeconomía */}
       <AISection />
-      {/* 7. Para fondos de inversión */}
-      <FundsAccent />
-      {/* 8. Conocimiento */}
+      {/* 7. Conocimiento */}
       <KnowledgePreview />
-      {/* 9. Quiénes somos */}
+      {/* 8. Quiénes somos */}
       <TeamSection />
-      {/* 10. CTA Final */}
+      {/* 9. CTA Final (acento rojo de marca) */}
       <FinalCta />
     </>
   )
