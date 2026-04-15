@@ -74,7 +74,7 @@ export default function ProjectsCarousel() {
         ref={scrollRef}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        className="flex gap-6 overflow-x-auto px-6 md:px-8 lg:px-12 xl:px-16 pb-4 snap-x snap-mandatory scrollbar-none"
+        className="flex gap-4 sm:gap-6 overflow-x-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 pb-4 snap-x snap-mandatory scrollbar-none"
         style={{ scrollbarWidth: 'none' }}
       >
         {projects.map((project) => (

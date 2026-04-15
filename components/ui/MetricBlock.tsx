@@ -67,7 +67,7 @@ export default function MetricBlock({
         size === 'hero' ? 'text-display-2xl lg:text-[120px] lg:leading-[0.95]' : 'text-display-lg'
       )}>
         {prefix && <span className="text-text-muted">{prefix}</span>}
-        <span>{count}</span>
+        <span>{count.toLocaleString('es-PE')}</span>
         {suffix && <span className="text-text-muted">{suffix}</span>}
       </p>
       <p className={cn(

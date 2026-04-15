@@ -9,7 +9,7 @@ interface HeroTextProps {
 }
 
 const headingClass =
-  'font-display text-[44px] leading-[1.02] tracking-[-0.02em] md:text-display-xl lg:text-[100px] lg:leading-[0.95] lg:tracking-[-0.04em] lg:font-normal max-w-5xl'
+  'font-display text-[34px] sm:text-[40px] leading-[1.05] tracking-[-0.02em] md:text-display-xl lg:text-[100px] lg:leading-[0.95] lg:tracking-[-0.04em] lg:font-normal max-w-5xl'
 
 /**
  * Two-line hero headline with overflow-hidden slide-up reveal.

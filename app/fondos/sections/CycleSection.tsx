@@ -21,7 +21,7 @@ const nodes = [
   {
     id: 'building',
     label: 'Value Building',
-    detail: 'Post-inversión, aceleramos el valor de la participada: rediseño operativo, adopción de IA, conexión con la red de Redesign Lab.',
+    detail: 'Post-inversión, aceleramos el valor del deal: transformación operacional u organizacional de las empresas del portafolio, adopción de IA y conexión con la red de Redesign Lab.',
   },
   {
     id: 'monitoring',
@@ -45,7 +45,7 @@ export default function CycleSection() {
         <SectionReveal>
           <Tag color="red" className="mb-4">Los cinco momentos del ciclo</Tag>
           <h2 className="font-display text-display-md md:text-display-lg text-text-on-dark max-w-3xl mb-16">
-            Estamos en cada etapa del ciclo de inversión.
+            Acompañamos al fondo y a las empresas de su portafolio en cada etapa.
           </h2>
         </SectionReveal>
 

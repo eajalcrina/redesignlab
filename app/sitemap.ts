@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/re-intelligence',
     '/fondos',
     '/inteligencia-artificial',
+    '/inteligencia-artificial/diagnostico',
     '/conocimiento',
     '/ventures',
     '/proyectos',

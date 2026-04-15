@@ -69,7 +69,7 @@ export default function ApplicationsSection() {
           <AnimatePresence mode="wait">
             <motion.span
               key={`bg-${active}`}
-              className="absolute top-1/2 right-8 -translate-y-1/2 font-display text-[200px] md:text-[300px] leading-none select-none pointer-events-none text-text-on-dark"
+              className="absolute top-1/2 right-4 md:right-8 -translate-y-1/2 font-display text-[120px] sm:text-[160px] md:text-[220px] lg:text-[300px] leading-none select-none pointer-events-none text-text-on-dark"
               initial={{ opacity: 0, filter: 'blur(20px)' }}
               animate={{ opacity: 0.03, filter: 'blur(0px)' }}
               exit={{ opacity: 0, filter: 'blur(20px)' }}

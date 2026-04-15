@@ -116,7 +116,7 @@ export function findVentureBySlug(slug: string): Venture | undefined {
 
 export const ventureMetrics = [
   { value: 10, label: 'empresas en el portafolio' },
-  { prefix: '+USD ', value: 26, suffix: 'MM', label: 'en facturación' },
+  { prefix: '+', value: 26, suffix: 'MM', label: 'USD facturados' },
   { prefix: '+', value: 150, label: 'comunidades beneficiadas' },
   { prefix: '+', value: 70000, label: 'Tn CO₂ capturadas o reducidas' },
   { prefix: '+', value: 3500, label: 'hectáreas bajo manejo regenerativo' },

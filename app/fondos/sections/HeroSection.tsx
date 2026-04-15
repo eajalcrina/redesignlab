@@ -49,7 +49,10 @@ export default function HeroSection() {
           <motion.div variants={item} className="flex items-center gap-3 sm:gap-4 mb-10 md:mb-12 flex-wrap">
             <span className="font-mono text-[10px] sm:text-xs tracking-[0.2em] text-white/60 shrink-0">{'// 01'}</span>
             <div className="w-6 sm:w-8 h-px bg-white/40 shrink-0" />
-            <span className="font-mono text-[10px] sm:text-[11px] tracking-[0.2em] text-white/85 uppercase">
+            <span
+              className="font-mono tracking-[0.2em] text-white/85 uppercase"
+              style={{ fontSize: '16px', lineHeight: '24px', fontWeight: 400 }}
+            >
               PARTNER ESTRATÉGICO PARA FONDOS DE IMPACTO
             </span>
           </motion.div>

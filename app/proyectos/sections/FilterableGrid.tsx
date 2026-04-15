@@ -22,45 +22,25 @@ export default function FilterableGrid() {
 
   return (
     <section className="section-neutral">
-      {/* Sticky filter bar */}
+      {/* Sticky filter bar — native dropdowns for clarity */}
       <div className="sticky top-16 md:top-20 z-30 bg-rl-neutral/95 backdrop-blur-sm border-b border-border-light">
         <div className="container-rl py-4">
-          <div className="flex flex-col md:flex-row gap-4 md:gap-8">
-            {/* Category filters */}
-            <div className="flex overflow-x-auto gap-2 pb-1 -mx-1 px-1 scrollbar-none" style={{ scrollbarWidth: 'none' }}>
-              {projectCategories.map((cat) => (
-                <button
-                  key={cat.value}
-                  onClick={() => setActiveCategory(cat.value)}
-                  className={cn(
-                    'px-4 py-2 text-body-sm transition-all duration-200 rounded whitespace-nowrap flex-shrink-0',
-                    activeCategory === cat.value
-                      ? 'bg-rl-dark text-text-on-dark'
-                      : 'text-text-secondary hover:text-text-primary'
-                  )}
-                >
-                  {cat.label}
-                </button>
-              ))}
-            </div>
-
-            {/* Industry filter */}
-            <div className="flex overflow-x-auto gap-2 pb-1 -mx-1 px-1 scrollbar-none" style={{ scrollbarWidth: 'none' }}>
-              {projectIndustries.map((ind) => (
-                <button
-                  key={ind}
-                  onClick={() => setActiveIndustry(ind)}
-                  className={cn(
-                    'px-3 py-1.5 text-body-xs transition-all duration-200 whitespace-nowrap flex-shrink-0',
-                    activeIndustry === ind
-                      ? 'text-rl-red font-medium'
-                      : 'text-text-tertiary hover:text-text-secondary'
-                  )}
-                >
-                  {ind}
-                </button>
-              ))}
-            </div>
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-stretch sm:items-center">
+            <FilterSelect
+              label="Categoría"
+              value={activeCategory}
+              onChange={setActiveCategory}
+              options={projectCategories.map((c) => ({ value: c.value, label: c.label }))}
+            />
+            <FilterSelect
+              label="Industria"
+              value={activeIndustry}
+              onChange={setActiveIndustry}
+              options={projectIndustries.map((i) => ({ value: i, label: i }))}
+            />
+            <span className="text-body-xs text-text-tertiary sm:ml-auto">
+              {filtered.length} proyecto{filtered.length === 1 ? '' : 's'}
+            </span>
           </div>
         </div>
       </div>
@@ -130,5 +110,42 @@ export default function FilterableGrid() {
         )}
       </div>
     </section>
+  )
+}
+
+interface FilterSelectProps {
+  label: string
+  value: string
+  onChange: (v: string) => void
+  options: { value: string; label: string }[]
+}
+
+function FilterSelect({ label, value, onChange, options }: FilterSelectProps) {
+  return (
+    <label className="flex-1 sm:max-w-xs relative block">
+      <span className="sr-only">{label}</span>
+      <span className="absolute left-4 top-1/2 -translate-y-1/2 text-label-sm text-text-tertiary pointer-events-none">
+        {label}
+      </span>
+      <select
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        className="appearance-none w-full h-11 pl-[92px] pr-10 bg-white border border-border-light rounded text-body-sm text-text-primary cursor-pointer hover:border-rl-red/40 focus:outline-none focus:border-rl-red transition-colors"
+      >
+        {options.map((o) => (
+          <option key={o.value} value={o.value}>
+            {o.label}
+          </option>
+        ))}
+      </select>
+      <svg
+        className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-text-tertiary"
+        viewBox="0 0 16 16"
+        fill="none"
+        aria-hidden="true"
+      >
+        <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    </label>
   )
 }

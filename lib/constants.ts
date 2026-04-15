@@ -22,7 +22,15 @@ export const NAV_LINKS = [
       { label: 'Builders', href: '/builders' },
     ]
   },
-  { label: 'IA', href: '/inteligencia-artificial' },
+  {
+    label: 'IA',
+    href: '/inteligencia-artificial',
+    hasSubmenu: true,
+    submenu: [
+      { label: 'Inteligencia artificial', href: '/inteligencia-artificial' },
+      { label: 'Diagnóstico', href: '/inteligencia-artificial/diagnostico' },
+    ]
+  },
   {
     label: 'Servicios',
     href: '/crear-valor',

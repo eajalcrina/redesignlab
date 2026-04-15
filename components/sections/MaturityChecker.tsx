@@ -81,8 +81,15 @@ const TOTAL_STEPS = 16 // welcome + industry + size + 12 questions + lead + resu
 
 // ── Component ───────────────────────────────────────────────────────────────
 
-export default function MaturityChecker() {
-  const [open, setOpen] = useState(false)
+interface MaturityCheckerProps {
+  /** When true, the checker renders inline (full section, no portal, no
+   *  entry card). Used on the dedicated /inteligencia-artificial/diagnostico
+   *  page. Defaults to false for the in-page overlay experience. */
+  inline?: boolean
+}
+
+export default function MaturityChecker({ inline = false }: MaturityCheckerProps = {}) {
+  const [open, setOpen] = useState(inline) // inline mode: always open
   const [step, setStep] = useState(0) // 0=welcome, 1=industry, 2=size, 3-14=questions, 15=lead, 16=results
   const [dir, setDir] = useState(1)
   const [industry, setIndustry] = useState<string | null>(null)
@@ -125,9 +132,9 @@ export default function MaturityChecker() {
 
   const close = useCallback(() => { setOpen(false); reset() }, [reset])
 
-  // Lock body scroll + ESC handler while overlay is open
+  // Lock body scroll + ESC handler while overlay is open (only in portal mode)
   useEffect(() => {
-    if (!open) return
+    if (!open || inline) return
     const prevOverflow = document.body.style.overflow
     document.body.style.overflow = 'hidden'
     const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') close() }
@@ -136,11 +143,11 @@ export default function MaturityChecker() {
       document.body.style.overflow = prevOverflow
       window.removeEventListener('keydown', onKey)
     }
-  }, [open, close])
+  }, [open, inline, close])
 
-  // ── Entry card ──────────────────────────────────────────────────────────
+  // ── Entry card — skipped in inline mode ─────────────────────────────────
 
-  if (!open) {
+  if (!open && !inline) {
     return (
       <button
         onClick={() => setOpen(true)}
@@ -160,19 +167,31 @@ export default function MaturityChecker() {
     )
   }
 
-  // ── Overlay (rendered via portal to escape any stacking context) ────────
+  // ── Overlay / Inline render ─────────────────────────────────────────────
+  // In overlay mode: portal to body with fixed positioning + close button.
+  // In inline mode: fills the hosting page as a natural section.
 
   if (typeof document === 'undefined') return null
 
+  const containerClasses = inline
+    ? 'relative min-h-screen bg-[#141414] overflow-hidden'
+    : 'fixed inset-0 z-[9999] bg-[#141414] overflow-y-auto'
+  const topBarClasses = inline
+    ? 'sticky top-0 z-20 pt-2 pb-2 px-4 md:px-6 flex items-center justify-between bg-[#141414]/95 backdrop-blur-sm border-b border-white/5'
+    : 'fixed top-0 left-0 right-0 z-[10000] pt-2 pb-2 px-4 md:px-6 flex items-center justify-between bg-[#141414]/90 backdrop-blur-sm border-b border-white/5'
+  const progressBarClasses = inline
+    ? 'sticky top-0 left-0 right-0 h-1 bg-white/5 z-30'
+    : 'fixed top-0 left-0 right-0 h-1 bg-white/5 z-[10001]'
+
   const overlay = (
-    <div className="fixed inset-0 z-[9999] bg-[#141414] overflow-y-auto">
+    <div className={containerClasses}>
       {/* Progress bar */}
-      <div className="fixed top-0 left-0 right-0 h-1 bg-white/5 z-[10001]">
+      <div className={progressBarClasses}>
         <motion.div className="h-full bg-rl-red" animate={{ width: `${progress * 100}%` }} transition={{ duration: 0.3 }} />
       </div>
 
       {/* Top bar — holds back/counter/close with consistent spacing */}
-      <div className="fixed top-0 left-0 right-0 z-[10000] pt-2 pb-2 px-4 md:px-6 flex items-center justify-between bg-[#141414]/90 backdrop-blur-sm border-b border-white/5">
+      <div className={topBarClasses}>
         {/* Back */}
         {step > 0 && step < TOTAL_STEPS ? (
           <button
@@ -191,14 +210,16 @@ export default function MaturityChecker() {
           </span>
         ) : <span />}
 
-        {/* Close */}
-        <button
-          onClick={close}
-          className="w-10 h-10 rounded-full border border-white/15 bg-white/5 hover:bg-rl-red hover:border-rl-red flex items-center justify-center text-white transition-colors"
-          aria-label="Cerrar diagnóstico"
-        >
-          <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M15 5L5 15M5 5l10 10" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" /></svg>
-        </button>
+        {/* Close — only in overlay mode */}
+        {!inline ? (
+          <button
+            onClick={close}
+            className="w-10 h-10 rounded-full border border-white/15 bg-white/5 hover:bg-rl-red hover:border-rl-red flex items-center justify-center text-white transition-colors"
+            aria-label="Cerrar diagnóstico"
+          >
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M15 5L5 15M5 5l10 10" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" /></svg>
+          </button>
+        ) : <span className="w-10" />}
       </div>
 
       {/* Content */}
@@ -592,7 +613,7 @@ export default function MaturityChecker() {
     </div>
   )
 
-  return createPortal(overlay, document.body)
+  return inline ? overlay : createPortal(overlay, document.body)
 }
 
 // ── Helpers ──────────────────────────────────────────────────────────────────

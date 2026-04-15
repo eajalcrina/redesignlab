@@ -11,7 +11,7 @@ export default function FinalCta() {
           <span className="inline-block uppercase font-sans tracking-[0.18em] text-white/80 mb-8" style={{ fontSize: '14px', lineHeight: '20px', fontWeight: 600 }}>
             THE FIRST AI STUDIO FOR BIOECONOMY INDUSTRIES
           </span>
-          <h2 className="font-display text-[44px] md:text-[52px] leading-[1.1] tracking-[-0.02em] font-normal text-white max-w-3xl mx-auto mb-8">
+          <h2 className="font-display text-[28px] sm:text-[36px] md:text-[44px] lg:text-[52px] leading-[1.15] md:leading-[1.1] tracking-[-0.02em] font-normal text-white max-w-3xl mx-auto mb-8">
             Empecemos a adoptar la inteligencia artificial para transformar tu industria.
           </h2>
         </SectionReveal>
