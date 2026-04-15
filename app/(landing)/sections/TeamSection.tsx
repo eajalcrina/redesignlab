@@ -61,7 +61,7 @@ export default function TeamSection() {
                 <h3 className="font-display text-display-sm text-text-primary mb-1">{member.name}</h3>
                 <p className="font-mono text-mono-sm text-rl-red mb-4">{member.role}</p>
                 <Divider variant="red" className="w-10 mb-4" />
-                <p className="text-body-sm text-text-secondary mb-4">{member.bio}</p>
+                <p className="text-body-sm text-text-secondary mb-4 whitespace-pre-line">{member.bio}</p>
                 {member.quote && (
                   <blockquote className="text-body-sm text-text-primary italic border-l-2 border-rl-red pl-4">
                     &ldquo;{member.quote}&rdquo;

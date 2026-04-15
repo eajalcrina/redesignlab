@@ -13,7 +13,9 @@ export const crearValorServices: Service[] = [
     duration: '2 semanas',
     price: 'USD 3,500 – 5,000',
     description:
-      'El Opportunity Scan responde la pregunta más cara de equivocar: ¿cuál de todas las oportunidades que percibo es la que más vale la pena desarrollar ahora? Cruza tres dimensiones simultáneamente: el estado del mercado global en el segmento de interés, los activos y capacidades reales de la organización, y las brechas de oferta que representan una ventana de entrada con ventaja competitiva defendible. El resultado no es un reporte de tendencias — es una recomendación accionable sobre dónde poner los recursos en los próximos doce meses.',
+      `Tu organización ve varias oportunidades posibles y no puede equivocarse al elegir. Cada mes invertido en la oportunidad equivocada es un año de desventaja competitiva — y los costos de revertir la decisión crecen con cada recurso ya comprometido.
+
+El Opportunity Scan cruza el estado del mercado global, los activos reales de tu empresa y las brechas de oferta para identificar la oportunidad con mejor retorno y menor riesgo. Entregamos una recomendación accionable sobre dónde poner los recursos en los próximos doce meses.`,
     includes: [
       'Análisis de mercado focalizado',
       'Mapeo de activos disponibles',
@@ -26,7 +28,9 @@ export const crearValorServices: Service[] = [
     duration: '5 a 7 semanas',
     price: '',
     description:
-      'Lanzar un nuevo producto o servicio sin haberlo diseñado con rigor es uno de los errores más costosos que una empresa puede cometer. No porque la idea sea mala — sino porque la distancia entre una buena idea y un producto que el mercado está dispuesto a comprar, al precio correcto y en el formato correcto, es mucho mayor de lo que parece antes de hacer el trabajo. El Innovation Blueprint cubre esa distancia antes de que la organización comprometa recursos en producción o implementación. Redesign Lab entrega el diseño completo. La organización es quien lo produce y lo lanza.',
+      `Lanzar un producto sin haberlo diseñado con rigor es uno de los errores más caros que una empresa puede cometer. La distancia entre una buena idea y un producto que el mercado está dispuesto a comprar — al precio y formato correctos — es mucho mayor de lo que parece antes de hacer el trabajo.
+
+El Innovation Blueprint cubre esa distancia antes de comprometer recursos en producción: investigación de mercado, MVP validado, proyección financiera y go-to-market con canales y narrativa. Entregamos el blueprint completo; tu organización lo produce y lo lanza.`,
     includes: [
       'Investigación de mercado y perfil de comprador',
       'Conceptualización del producto o servicio',
@@ -40,7 +44,9 @@ export const crearValorServices: Service[] = [
     duration: '4 a 6 semanas',
     price: '',
     description:
-      'Diseñar un nuevo negocio en bioeconomía sin un modelo robusto no es emprender — es apostar. El Bioventure Blueprint convierte una oportunidad identificada en un modelo de negocio verificable: cadena de valor definida, estructura de costos real, estrategia de certificación, modelo de distribución de valor con comunidades o productores y proyecciones financieras con supuestos explícitos.',
+      `Diseñar un nuevo negocio en bioeconomía sin un modelo robusto no es emprender — es apostar. Las variables son demasiadas (cadena, certificaciones, comunidades, mercado) y el costo de equivocarse es demasiado alto para resolverse en la marcha.
+
+El Bioventure Blueprint convierte una oportunidad identificada en un modelo verificable: cadena de valor definida, estructura de costos real, estrategia de certificación, distribución de valor con comunidades y proyecciones con supuestos explícitos. Todo lo que necesitas para ejecutar o levantar capital con confianza.`,
     includes: [
       'Diseño de modelo de negocio',
       'Cadena de valor completa',
@@ -54,7 +60,9 @@ export const crearValorServices: Service[] = [
     duration: '4 a 6 semanas',
     price: '',
     description:
-      'Muchas corporaciones tienen activos estratégicos que su modelo principal no está diseñado para valorizar: conocimiento territorial acumulado, relaciones con comunidades productoras, acceso a biodiversidad, tecnologías propias o cadenas de suministro que podrían ser la base de una empresa independiente con mercado propio. El Corporate Spin-off Design convierte esos activos en una empresa.',
+      `Tu corporación tiene activos que el modelo principal no está diseñado para valorizar: conocimiento territorial, relaciones con comunidades productoras, biodiversidad, tecnologías propias. Quedan atrapados dentro sin capturar el valor que podrían generar afuera como una empresa independiente.
+
+El Corporate Spin-off Design convierte esos activos en una empresa con modelo propio, arquitectura legal, gobernanza y caso de negocio listo para capital externo. La vía para liberar valor sin desenfocar el negocio central.`,
     includes: [
       'Diagnóstico de activos con potencial de spin-off',
       'Diseño de modelo de negocio independiente',
@@ -68,7 +76,9 @@ export const crearValorServices: Service[] = [
     duration: '4 semanas + 3 meses',
     price: 'USD 2,500 + fee de éxito 5-10%',
     description:
-      'Capital de impacto con estrategia real — y fee solo si hay resultado. Track record: USD 1.5 millones levantados para nuevos negocios y proyectos del portafolio. USD 80 millones acompañados en procesos de levantamiento para gran industria.',
+      `Tienes un negocio con mérito real pero no sabes cómo estructurar la conversación con fondos de impacto, capital verde o banca multilateral. Hablar el idioma correcto y llegar al fondo correcto es la diferencia entre levantar capital o no — y muchas veces entre escalar o cerrar.
+
+El Fundraising Estratégico diseña la narrativa de inversión, mapea los fondos activos correctos para tu caso y gestiona las postulaciones durante 3 meses — con fee de éxito solo si hay resultado. Track record: USD 1.5M levantados para el portafolio; USD 80M acompañados en gran industria.`,
     includes: [
       'Diagnóstico de madurez de inversión (BIRF)',
       'Mapeo actualizado de fondos activos',
@@ -82,7 +92,9 @@ export const crearValorServices: Service[] = [
     duration: '2 a 3 semanas',
     price: '',
     description:
-      'El impacto que no se puede demostrar no existe para el mercado. El Impact Value Report convierte la historia de impacto de una organización en un documento que resiste el escrutinio de un LP exigente, de un comprador que audita su cadena de suministro o de un organismo de certificación internacional.',
+      `El impacto que no se puede demostrar no existe para el mercado. Si un LP exigente, un comprador con auditoría ESG o una certificación internacional te pide evidencia, el storytelling no alcanza — y perder esos procesos bloquea el acceso a capital y a mercados premium.
+
+El Impact Value Report convierte tu historia de impacto en un documento que resiste ese escrutinio: alineado con estándares globales (IRIS+, GRI, TNFD) y construido sobre evidencia verificable. La puerta de entrada a los mercados y al capital que exigen pruebas, no declaraciones.`,
     includes: [
       'Diagnóstico del sistema de medición de impacto existente',
       'Alineación con estándares internacionales (IRIS+, GRI, TNFD)',
@@ -97,7 +109,9 @@ export const ventureCoBuilding: Service = {
   duration: 'Conversación directa',
   price: '',
   description:
-    'Cuando el activo es extraordinario, el fundador tiene la convicción y el mercado ya existe — pero la distancia entre la idea y la empresa requiere más que un entregable — Redesign Lab puede entrar como co-fundador operativo. Esto no es consultoría. Es construcción conjunta con piel en el juego desde el primer día.',
+    `Tienes un activo extraordinario, convicción de fundador y un mercado que existe — pero la distancia entre la idea y la empresa requiere mucho más que entregables. Necesitas alguien construyendo contigo, no asesorándote desde afuera.
+
+Venture Co-Building entra como co-fundador operativo: diseño del modelo, validación en campo, desarrollo de MVP, primeros clientes y acompañamiento de fundraising. No es consultoría — es construcción conjunta con piel en el juego desde el primer día.`,
   includes: [
     'Co-diseño del modelo de negocio',
     'Validación de mercado en campo',
@@ -115,7 +129,9 @@ export const redisenarTrabajoServices: Service[] = [
     duration: '6 a 8 semanas',
     price: '',
     description:
-      'La economía circular no es un principio de sostenibilidad — es un modelo de reducción de costos, apertura de mercados y generación de valor a partir de recursos que hoy se están descartando. El Circular Operations Redesign identifica dónde están esas oportunidades en la operación existente y diseña el camino para capturarlas.',
+      `Cada residuo o subproducto que descartas es margen que estás regalando, y cada proceso lineal es un costo creciente a medida que energía, agua y materias primas se vuelven más caras. Las empresas que no rediseñan su operación hoy compiten con costos estructurales más altos mañana.
+
+El Circular Operations Redesign identifica dónde están las oportunidades circulares concretas en tu operación y diseña el camino para capturarlas: iniciativas priorizadas por ROI, arquitectura de implementación y métricas de seguimiento. Reducción de costos y apertura de mercados premium al mismo tiempo.`,
     includes: [
       'Mapeo de flujos de materiales y energía',
       'Identificación de oportunidades circulares',
@@ -129,7 +145,9 @@ export const redisenarTrabajoServices: Service[] = [
     duration: '4 a 6 semanas',
     price: '',
     description:
-      'Una cadena de suministro que no se puede ver con precisión no se puede gestionar con inteligencia. Y una cadena que no se puede trazar no puede acceder a los mercados premium que hoy exigen visibilidad completa como condición de elegibilidad.',
+      `Una cadena de suministro que no se puede ver con precisión no se puede gestionar con inteligencia. Y una cadena que no se puede trazar queda fuera de los mercados premium que hoy exigen visibilidad completa como condición de compra.
+
+Supply Chain Intelligence diseña el sistema de trazabilidad adaptado a tu operación — incluyendo entornos remotos sin conectividad — con captura de datos, dashboard de gestión y protocolo de alertas. De caja negra a cadena auditable en semanas.`,
     includes: [
       'Diagnóstico de la cadena actual',
       'Diseño del sistema de trazabilidad',
@@ -143,7 +161,9 @@ export const redisenarTrabajoServices: Service[] = [
     duration: '6 a 10 semanas',
     price: '',
     description:
-      'La promesa de la IA para las industrias de bioeconomía es real. Pero la mayoría de las implementaciones fallan por la misma razón: se despliegan herramientas genéricas sobre procesos que no fueron diseñados para recibirlas.',
+      `La mayoría de las implementaciones de IA en bioeconomía fallan por la misma razón: se despliegan herramientas genéricas sobre procesos que no fueron diseñados para recibirlas. El resultado es gasto sin retorno, frustración organizacional y escepticismo que bloquea futuras iniciativas.
+
+Re.·IA Application diagnostica la madurez de tu organización, prioriza las aplicaciones con mayor impacto real y las implementa end-to-end: diseño, despliegue, capacitación y protocolo de mejora continua. IA que produce resultados verificables, no teatro tecnológico.`,
     includes: [
       'Diagnóstico de madurez Re.·IA',
       'Identificación de aplicaciones prioritarias',
@@ -159,7 +179,9 @@ export const reSprint: Service = {
   duration: '3 semanas',
   price: 'USD 4,000 · precio fijo',
   description:
-    'El Re. Sprint es el punto de entrada para organizaciones que quieren trabajar con Redesign Lab antes de comprometerse a un proyecto mayor — y para que Redesign Lab entienda en profundidad el contexto antes de recomendar algo que no se pueda ejecutar.',
+    `Quieres trabajar con Redesign Lab pero aún no tienes claridad sobre qué proyecto comprometerte — y nosotros necesitamos entender tu contexto en profundidad antes de recomendar algo que efectivamente se pueda ejecutar.
+
+El Re. Sprint es el punto de entrada para resolver ambas cosas: diagnóstico operativo completo, identificación de quick wins, plan de acción de 90 días y presentación ejecutiva de hallazgos. En 3 semanas tienes claridad sobre qué hacer primero; nosotros tenemos la base para una relación de fondo.`,
   includes: [
     'Diagnóstico operativo completo',
     'Identificación de quick wins',
@@ -174,7 +196,9 @@ export const transformarModeloServices: Service[] = [
     duration: '8 a 12 semanas',
     price: '',
     description:
-      'El modelo operativo de una organización es la forma en que todo funciona junto: estructura de decisión, flujos de información, distribución de responsabilidades, sistemas de gestión y mecanismos de aprendizaje. Cuando ese modelo fue diseñado para una etapa anterior — o cuando nunca fue diseñado deliberadamente — se convierte en el principal freno del crecimiento.',
+      `Tu modelo operativo fue diseñado para una etapa anterior — o nunca fue diseñado deliberadamente. Cuando eso pasa, la estructura se convierte en el principal freno del crecimiento: las decisiones se demoran, la información se pierde y cada nuevo proyecto tropieza con la organización misma.
+
+Operating Model Design rediseña estructura, flujos de información, sistemas de gestión y gobernanza para la etapa que viene, con plan de transición e hitos verificables. El rediseño que permite ejecutar lo que la estrategia ya definió.`,
     includes: [
       'Diagnóstico del modelo operativo actual',
       'Diseño del modelo objetivo',
@@ -188,7 +212,9 @@ export const transformarModeloServices: Service[] = [
     duration: '4 a 6 semanas',
     price: '',
     description:
-      'La mayoría de las hojas de ruta de adopción de IA tienen el mismo problema: fueron diseñadas por personas que conocen la tecnología pero no conocen la operación, o por personas que conocen la operación pero no saben lo que la IA puede hacer realmente.',
+      `La mayoría de las hojas de ruta de IA las diseña alguien que conoce la tecnología pero no la operación — o al revés. El resultado es un plan que no se puede ejecutar, o que no captura el valor real posible, y la organización termina con una hoja de ruta bonita que nadie sigue.
+
+AI Transformation Roadmap combina ambos lados: diagnóstico de madurez, oportunidades por función y proceso, hoja de ruta con tres horizontes, arquitectura tecnológica y plan de gestión del cambio. Un plan que el directorio puede aprobar y la operación puede ejecutar.`,
     includes: [
       'Diagnóstico de madurez Re.·IA',
       'Identificación de oportunidades por función y proceso',
@@ -202,7 +228,9 @@ export const transformarModeloServices: Service[] = [
     duration: '2 a 3 semanas',
     price: '',
     description:
-      'La brecha más crítica en la adopción de IA en las industrias de bioeconomía no está en la tecnología — está en los equipos directivos. Los líderes que no entienden qué puede y qué no puede hacer la IA delegan decisiones que deberían tomar ellos.',
+      `La brecha más crítica en la adopción de IA no está en la tecnología — está en el equipo directivo. Líderes que no entienden qué puede y qué no puede hacer la IA terminan delegando decisiones estratégicas al área técnica, y las iniciativas se dispersan sin criterio unificado.
+
+AI Leadership Sprint forma al directorio con un framework de toma de decisiones sobre IA, evalúa las iniciativas en curso y diseña el modelo de gobernanza de IA de la organización. Criterio ejecutivo, no cursos genéricos.`,
     includes: [
       'Programa de sesiones con el equipo directivo',
       'Framework de toma de decisiones sobre IA',
@@ -215,7 +243,9 @@ export const transformarModeloServices: Service[] = [
     duration: '4 a 6 semanas',
     price: '',
     description:
-      'Escalar una empresa de bioeconomía no es lo mismo que escalar una empresa de tecnología. Los activos naturales tienen sus propios tiempos. Las comunidades productoras tienen sus propias lógicas de gobernanza. Las certificaciones internacionales tienen sus propios procesos.',
+      `Escalar una empresa de bioeconomía no es lo mismo que escalar una de tecnología. Los activos naturales tienen sus tiempos, las comunidades productoras tienen sus lógicas de gobernanza y las certificaciones tienen sus procesos. Aplicar recetas de otros sectores rompe lo que hace funcionar al negocio.
+
+Scale Strategy diagnostica los factores no replicables de tu éxito actual y diseña un modelo de escala que los preserva: estrategia de entrada a nuevas geografías, arquitectura de gobernanza para escala y plan de inversión. Crecimiento sin romper el activo que te trajo hasta aquí.`,
     includes: [
       'Diagnóstico de los factores de éxito no replicables',
       'Diseño del modelo de escala',

@@ -24,7 +24,7 @@ export default function VentureCoBuilding({ service }: VentureCoBuildingProps) {
             <p className="text-body-lg text-rl-red mb-6">
               Para quienes no buscan un consultor — buscan un co-fundador.
             </p>
-            <p className="text-body-md text-text-muted max-w-2xl mx-auto mb-10">
+            <p className="text-body-md text-text-muted max-w-2xl mx-auto mb-10 whitespace-pre-line text-left sm:text-center">
               {service.description}
             </p>
             <Button

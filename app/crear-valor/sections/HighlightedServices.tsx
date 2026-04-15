@@ -31,7 +31,7 @@ export default function HighlightedServices({ services }: HighlightedServicesPro
                 <p className="font-mono text-mono-md text-rl-red mb-4">
                   {service.price ? `${service.duration} · ${service.price}` : service.duration}
                 </p>
-                <p className="text-body-md text-text-muted mb-6">
+                <p className="text-body-md text-text-muted mb-6 whitespace-pre-line">
                   {service.description}
                 </p>
                 <Button

@@ -54,7 +54,7 @@ export default function ServiceCard({
         {/* Description */}
         <p
           className={cn(
-            'text-body-sm max-w-xl',
+            'text-body-sm max-w-xl whitespace-pre-line',
             isSignature ? 'text-text-muted' : 'text-text-secondary'
           )}
         >

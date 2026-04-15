@@ -65,6 +65,20 @@ export const ventures: Venture[] = [
     tags: ['Consumo Saludable', 'Biodiversidad Peruana', 'Producción Propia', 'Retail Consciente', 'E-Commerce'],
   },
   {
+    name: 'Bio Business School',
+    category: 'Plataforma de Inteligencia · Bionegocios · Formación de BioBuilders',
+    location: 'América Latina',
+    tagline: 'Construye valor desde la biodiversidad',
+    description: `No es una escuela de negocios convencional. Bio Business School es la plataforma de inteligencia estratégica que convierte la biodiversidad de América Latina en activos económicos de impacto global — formando a la nueva generación de BioBuilders: líderes híbridos que dominan ciencia, tecnología y finanzas de impacto.
+
+Existe una brecha crítica entre el descubrimiento científico de frontera y la construcción de modelos de bionegocios técnica y financieramente viables. Las escuelas de negocios tradicionales formaron a quienes maximizan retorno a corto plazo, extraen valor de los ecosistemas y desconocen la biología molecular y el territorio. En la Amazonía perdemos valor porque nadie enseña a diseñar modelos rentables que protejan la vida.
+
+El programa central es un curso de 8 semanas de aprendizaje dual — DeepTech aplicado + Business Design — donde cada participante construye un proyecto de bionegocio real mientras aprende. Trabaja sobre casos reales de la Amazonía y ecosistemas críticos, incluye modelos financieros para territorios complejos, gobernanza de origen y protección de biodiversidad, y otorga membresía a la comunidad Biobuilders. Diseñado y dirigido por Eddie Ajalcriña y Lorenzo Ortiz.`,
+    hito: 'Primera cohorte Q2 2026 · Bio Business Playbook vol. 1 publicado',
+    projection: 'Posicionarse como la plataforma de referencia en LATAM para diseñar bionegocios que auto-financian la regeneración de los territorios donde operan.',
+    tags: ['Bionegocios', 'BioBuilders', 'DeepTech', 'Business Design', 'Biodiversidad', 'LATAM'],
+  },
+  {
     name: 'Thousandfold',
     category: 'Agencia Creativa · Diseño Estratégico · Identidad de Marca',
     location: 'América Latina',

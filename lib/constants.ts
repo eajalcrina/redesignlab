@@ -63,7 +63,6 @@ export const FOOTER_LINKS = {
       { label: 'Builders', href: '/builders' },
       { label: 'Conocimiento', href: '/conocimiento' },
       { label: 'IA para bioeconomía', href: '/inteligencia-artificial' },
-      { label: 'Cómo pensamos', href: '/como-pensamos' },
       { label: 'Proyectos', href: '/proyectos' },
     ],
   },
