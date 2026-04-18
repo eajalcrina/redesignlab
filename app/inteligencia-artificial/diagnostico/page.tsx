@@ -32,22 +32,32 @@ export const metadata: Metadata = {
 export default function DiagnosticoPage() {
   return (
     <>
-      {/* H1 accesible para crawlers y lectores de pantalla */}
-      <h1 className="sr-only">
-        Diagnóstico de Madurez IA para industrias de bioeconomía
-      </h1>
+      {/* Hero visible — H1 y primer párrafo contextual */}
+      <section className="section-dark pt-32 md:pt-40 pb-12 md:pb-16">
+        <div className="container-rl">
+          <span className="text-label-sm uppercase text-rl-red block mb-4">
+            Re·IA Maturity Checker
+          </span>
+          <h1 className="font-display text-display-lg md:text-display-xl text-text-on-dark max-w-4xl mb-6">
+            Diagnóstico de Madurez IA para industrias de bioeconomía
+          </h1>
+          <p className="text-body-lg text-text-muted max-w-3xl mb-10">
+            Evalúa el nivel de preparación de tu organización frente a la inteligencia
+            artificial aplicada a la bioeconomía. 12 preguntas en 5 dimensiones críticas
+            — estrategia, datos, talento, procesos y tecnología — en aproximadamente 4 minutos.
+          </p>
+          <a
+            href="#checker"
+            className="inline-flex items-center gap-2 text-body-sm uppercase tracking-wide text-rl-red hover:gap-3 transition-all"
+          >
+            Comenzar diagnóstico
+            <span aria-hidden="true">&darr;</span>
+          </a>
+        </div>
+      </section>
 
-      {/* Contenido introductorio indexable — se oculta visualmente encima del checker
-          pero alimenta relevancia semántica para Google */}
+      {/* SEO depth — párrafos adicionales indexables pero no visibles */}
       <div className="sr-only">
-        <p>
-          El Diagnóstico de Madurez IA de Redesign Lab evalúa el nivel de preparación
-          de tu organización frente a la inteligencia artificial aplicada a la bioeconomía.
-          A lo largo de 12 preguntas estructuradas en 5 dimensiones críticas — estrategia,
-          datos, talento, procesos y tecnología — identifica en aproximadamente 4 minutos
-          el estadio actual de adopción y los vacíos que separan a tu equipo de una operación
-          verdaderamente potenciada por IA.
-        </p>
         <p>
           El resultado es un diagnóstico personalizado por industria (agroindustria, pesca,
           acuicultura, forestal, cosmética, turismo regenerativo) con un plan accionable de 90 días:
@@ -74,7 +84,9 @@ export default function DiagnosticoPage() {
           </Link>
         </div>
       </div>
-      <MaturityChecker inline />
+      <div id="checker">
+        <MaturityChecker inline />
+      </div>
     </>
   )
 }
