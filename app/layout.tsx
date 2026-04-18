@@ -7,6 +7,13 @@ import CustomCursor from '@/components/animations/CustomCursor'
 import PageTransition from '@/components/animations/PageTransition'
 import GoogleTagManager, { GoogleTagManagerNoScript } from '@/components/analytics/GoogleTagManager'
 
+if (process.env.NODE_ENV !== 'production' && !process.env.NEXT_PUBLIC_GTM_ID) {
+  console.warn(
+    '[analytics] NEXT_PUBLIC_GTM_ID is not set — Google Tag Manager is disabled. ' +
+    'Set it in .env.local (see .env.local.example) or in Vercel env settings.'
+  )
+}
+
 const jetbrains = JetBrains_Mono({
   subsets: ['latin'],
   weight: ['300', '400', '500'],
@@ -114,13 +121,13 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(WEBSITE_JSON_LD) }}
         />
-        {process.env.NEXT_PUBLIC_GTM_ID && (
-          <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID} />
-        )}
       </head>
       <body className="font-sans antialiased">
         {process.env.NEXT_PUBLIC_GTM_ID && (
-          <GoogleTagManagerNoScript gtmId={process.env.NEXT_PUBLIC_GTM_ID} />
+          <>
+            <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID} />
+            <GoogleTagManagerNoScript gtmId={process.env.NEXT_PUBLIC_GTM_ID} />
+          </>
         )}
         <CustomCursor />
         <Navigation />
