@@ -11,7 +11,7 @@ import { crearValorServices, ventureCoBuilding } from '@/data/services'
 export const metadata: Metadata = {
   title: 'Crear valor',
   description:
-    'Diseñamos modelos de negocio que capturan el valor real de tu cadena productiva. Opportunity Scan, Innovation Blueprint, Bioventure Blueprint y Venture Co-Building.',
+    'Diseñamos modelos de negocio que capturan el valor real de tu cadena productiva: Opportunity Scan, Innovation Blueprint y Venture Co-Building.',
   keywords: [
     'consultoría bioeconomía',
     'venture building',

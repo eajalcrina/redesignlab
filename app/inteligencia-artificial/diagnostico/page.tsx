@@ -5,7 +5,7 @@ import MaturityChecker from '@/components/sections/MaturityChecker'
 export const metadata: Metadata = {
   title: 'Diagnóstico de Madurez IA',
   description:
-    'Evalúa el nivel de madurez de tu organización frente a la inteligencia artificial. Diagnóstico estructurado en 5 dimensiones críticas — 12 preguntas, 4 minutos — con resultado personalizado por industria.',
+    'Evalúa la madurez de tu organización frente a la IA. 12 preguntas, 4 minutos, resultado por industria y plan de 90 días en bioeconomía.',
   keywords: [
     'diagnóstico madurez IA',
     'RE·IA Maturity Checker',

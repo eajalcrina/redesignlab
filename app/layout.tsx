@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     template: '%s | Redesign Lab',
   },
   description:
-    'El primer AI Studio de América Latina dedicado a transformar industrias cuya ventaja competitiva depende de regenerar los sistemas naturales. Estrategia, IA aplicada y construcción de ventures en bioeconomía.',
+    'AI Studio de América Latina para industrias de bioeconomía. Estrategia, IA aplicada y construcción de ventures que regeneran los sistemas naturales.',
   keywords: [
     'AI Studio LATAM',
     'bioeconomía',
