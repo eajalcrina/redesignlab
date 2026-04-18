@@ -67,7 +67,7 @@ const ORG_JSON_LD = {
   name: 'Redesign Lab',
   alternateName: 'Redesign Lab — The AI Studio for Bioeconomy Industries',
   url: 'https://redesignlab.org',
-  logo: 'https://redesignlab.org/icon.svg',
+  logo: 'https://redesignlab.org/icon.png',
   email: 'hello@redesignlab.org',
   description:
     'El primer AI Studio de América Latina dedicado a transformar industrias cuya ventaja competitiva depende de regenerar los sistemas naturales.',

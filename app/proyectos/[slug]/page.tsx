@@ -51,8 +51,22 @@ export default function ProjectPage({ params }: ProjectPageProps) {
   const prevProject = currentIndex > 0 ? projects[currentIndex - 1] : null
   const nextProject = currentIndex < projects.length - 1 ? projects[currentIndex + 1] : null
 
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://redesignlab.org' },
+      { '@type': 'ListItem', position: 2, name: 'Proyectos', item: 'https://redesignlab.org/proyectos' },
+      { '@type': 'ListItem', position: 3, name: project.title, item: `https://redesignlab.org/proyectos/${params.slug}` },
+    ],
+  }
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       {/* Back button bar */}
       <div className="section-dark border-b border-border-dark pt-24 pb-6">
         <div className="container-rl">

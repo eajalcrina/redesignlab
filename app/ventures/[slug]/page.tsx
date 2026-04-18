@@ -66,8 +66,22 @@ export default function VenturePage({ params }: VenturePageProps) {
   const prevVenture = currentIndex > 0 ? ventures[currentIndex - 1] : null
   const nextVenture = currentIndex < ventures.length - 1 ? ventures[currentIndex + 1] : null
 
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://redesignlab.org' },
+      { '@type': 'ListItem', position: 2, name: 'Ventures', item: 'https://redesignlab.org/ventures' },
+      { '@type': 'ListItem', position: 3, name: venture.name, item: `https://redesignlab.org/ventures/${params.slug}` },
+    ],
+  }
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       {/* Back button bar */}
       <div className="section-dark border-b border-border-dark pt-24 pb-6">
         <div className="container-rl">
