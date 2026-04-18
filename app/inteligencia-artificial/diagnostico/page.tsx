@@ -84,7 +84,7 @@ export default function DiagnosticoPage() {
           </Link>
         </div>
       </div>
-      <div id="checker">
+      <div id="checker" className="scroll-mt-24">
         <MaturityChecker inline />
       </div>
     </>
