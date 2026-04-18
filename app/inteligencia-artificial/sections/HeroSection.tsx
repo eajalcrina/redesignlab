@@ -9,6 +9,7 @@ const originalText = 'La inteligencia artificial no reemplaza al experto.'
 const deleteTarget = 'no reemplaza al experto.'
 const correctionTarget = 'amplifica al experto.'
 const keepPart = originalText.slice(0, originalText.length - deleteTarget.length)
+const finalText = keepPart + correctionTarget // "La inteligencia artificial amplifica al experto."
 
 export default function HeroSection() {
   const [phase, setPhase] = useState<'typing' | 'pause' | 'deleting' | 'retyping' | 'done' | 'waiting'>('typing')
@@ -85,9 +86,7 @@ export default function HeroSection() {
 
         <h1 className="font-display text-display-lg md:text-display-xl lg:text-[80px] lg:leading-[0.97] lg:font-normal text-text-on-dark max-w-5xl">
           {/* SEO/a11y fallback — texto final completo para crawlers y lectores de pantalla */}
-          <span className="sr-only">
-            La inteligencia artificial amplifica al experto.
-          </span>
+          <span className="sr-only">{finalText}</span>
           {/* Versión animada visible */}
           <span aria-hidden="true">
             {displayed}
