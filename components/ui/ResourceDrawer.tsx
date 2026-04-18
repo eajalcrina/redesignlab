@@ -123,18 +123,15 @@ export default function ResourceDrawer({ isOpen, resource, onClose }: ResourceDr
                       />
                     </svg>
                   </motion.div>
-                  <h4 className="font-display text-display-sm text-text-primary mb-2">Listo</h4>
-                  <p className="text-body-sm text-text-secondary mb-6">
-                    Te enviamos el recurso a tu email.
+                  <h4 className="font-display text-display-sm text-text-primary mb-3">
+                    ¡Gracias por tu interés!
+                  </h4>
+                  <p className="text-body-md text-text-secondary mb-2 max-w-xs">
+                    En unos momentos te enviaremos <span className="text-text-primary font-medium">{resource.name}</span> a tu correo.
                   </p>
-                  <a
-                    href={resource.downloadUrl}
-                    className="text-body-sm text-rl-red hover:underline"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Descargar ahora &rarr;
-                  </a>
+                  <p className="text-body-sm text-text-tertiary">
+                    Revisa también tu carpeta de spam por si acaso.
+                  </p>
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="flex-1 flex flex-col">
