@@ -13,7 +13,7 @@ import ConnectSection from './sections/ConnectSection'
 export const metadata: Metadata = {
   title: 'Ventures',
   description:
-    'Portafolio de ventures de Redesign Lab: negocios regenerativos en algodón, fibras amazónicas, biomateriales, cosmética y clima para América Latina.',
+    'Portafolio de ventures de Redesign Lab en bioeconomía latinoamericana: algodón, fibras amazónicas, biomateriales y clima. +USD 26MM facturación.',
   keywords: ['venture studio LATAM', 'portafolio bioeconomía', 'Cotton Nation', 'Neofibers', 'biocomercio amazónico', 'co-fundadores bioeconomía'],
   alternates: { canonical: '/ventures' },
 }
