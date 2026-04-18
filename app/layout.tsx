@@ -5,6 +5,7 @@ import Navigation from '@/components/layout/Navigation'
 import Footer from '@/components/layout/Footer'
 import CustomCursor from '@/components/animations/CustomCursor'
 import PageTransition from '@/components/animations/PageTransition'
+import GoogleTagManager, { GoogleTagManagerNoScript } from '@/components/analytics/GoogleTagManager'
 
 const jetbrains = JetBrains_Mono({
   subsets: ['latin'],
@@ -113,8 +114,14 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(WEBSITE_JSON_LD) }}
         />
+        {process.env.NEXT_PUBLIC_GTM_ID && (
+          <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID} />
+        )}
       </head>
       <body className="font-sans antialiased">
+        {process.env.NEXT_PUBLIC_GTM_ID && (
+          <GoogleTagManagerNoScript gtmId={process.env.NEXT_PUBLIC_GTM_ID} />
+        )}
         <CustomCursor />
         <Navigation />
         <PageTransition>
