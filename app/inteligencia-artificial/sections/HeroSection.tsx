@@ -84,17 +84,24 @@ export default function HeroSection() {
         </motion.div>
 
         <h1 className="font-display text-display-lg md:text-display-xl lg:text-[80px] lg:leading-[0.97] lg:font-normal text-text-on-dark max-w-5xl">
-          {displayed}
-          {(phase === 'retyping' || phase === 'done' || phase === 'waiting') && corrected.length > 0 && (
-            <span className="text-rl-red">{corrected}</span>
-          )}
-          {phase !== 'done' && phase !== 'waiting' && (
-            <motion.span
-              className="inline-block w-[3px] h-[0.75em] bg-rl-red ml-1 align-middle"
-              animate={{ opacity: [1, 0] }}
-              transition={{ duration: 0.6, repeat: Infinity, repeatType: 'reverse' }}
-            />
-          )}
+          {/* SEO/a11y fallback — texto final completo para crawlers y lectores de pantalla */}
+          <span className="sr-only">
+            La inteligencia artificial amplifica al experto.
+          </span>
+          {/* Versión animada visible */}
+          <span aria-hidden="true">
+            {displayed}
+            {(phase === 'retyping' || phase === 'done' || phase === 'waiting') && corrected.length > 0 && (
+              <span className="text-rl-red">{corrected}</span>
+            )}
+            {phase !== 'done' && phase !== 'waiting' && (
+              <motion.span
+                className="inline-block w-[3px] h-[0.75em] bg-rl-red ml-1 align-middle"
+                animate={{ opacity: [1, 0] }}
+                transition={{ duration: 0.6, repeat: Infinity, repeatType: 'reverse' }}
+              />
+            )}
+          </span>
         </h1>
 
         <motion.p
