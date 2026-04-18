@@ -4,7 +4,10 @@ interface Props {
   gtmId: string
 }
 
+const GTM_ID_PATTERN = /^GTM-[A-Z0-9]+$/
+
 export default function GoogleTagManager({ gtmId }: Props) {
+  if (!GTM_ID_PATTERN.test(gtmId)) return null
   return (
     <Script
       id="gtm-script"
@@ -23,6 +26,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 }
 
 export function GoogleTagManagerNoScript({ gtmId }: Props) {
+  if (!GTM_ID_PATTERN.test(gtmId)) return null
   return (
     <noscript>
       <iframe
