@@ -8,6 +8,12 @@ const nextConfig = {
         destination: 'https://redesignlab.org/:path*',
         permanent: true,
       },
+      {
+        // Evita que /index sea indexado como duplicado del home
+        source: '/index',
+        destination: '/',
+        permanent: true,
+      },
     ]
   },
 }
