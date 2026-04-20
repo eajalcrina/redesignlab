@@ -12,7 +12,7 @@ const resources = [
     name: 'BIRF — Bionegocio Investment Readiness Framework',
     type: 'Disponible ahora · 15 páginas · PDF · Español',
     description: 'La herramienta que evalúa lo que el pitch deck no dice. Seis dimensiones de madurez, cuatro niveles de investment readiness, señales de identificación concretas.',
-    downloadUrl: '#',
+    downloadUrl: '/assets/conocimiento/BIRF_Reporte_RedesignLab_v2.pdf',
     mode: 'neutral' as const,
     available: true,
     image: '/assets/conocimiento/birf.jpg',

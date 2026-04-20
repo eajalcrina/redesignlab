@@ -48,6 +48,17 @@ export default function ResourceDrawer({ isOpen, resource, onClose }: ResourceDr
     }
 
     setFormState('success')
+
+    if (resource.downloadUrl && resource.downloadUrl !== '#' && typeof window !== 'undefined') {
+      const link = document.createElement('a')
+      link.href = resource.downloadUrl
+      link.download = ''
+      link.rel = 'noopener'
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+    }
+
     // Auto-close after 3.5 seconds
     setTimeout(() => {
       onClose()
@@ -127,11 +138,17 @@ export default function ResourceDrawer({ isOpen, resource, onClose }: ResourceDr
                     ¡Gracias por tu interés!
                   </h4>
                   <p className="text-body-md text-text-secondary mb-2 max-w-xs">
-                    En unos momentos te enviaremos <span className="text-text-primary font-medium">{resource.name}</span> a tu correo.
+                    Tu descarga de <span className="text-text-primary font-medium">{resource.name}</span> debería iniciarse en unos segundos.
                   </p>
-                  <p className="text-body-sm text-text-tertiary">
-                    Revisa también tu carpeta de spam por si acaso.
-                  </p>
+                  {resource.downloadUrl && resource.downloadUrl !== '#' && (
+                    <p className="text-body-sm text-text-tertiary">
+                      ¿No se inició?{' '}
+                      <a href={resource.downloadUrl} download className="text-rl-red underline">
+                        Descargar manualmente
+                      </a>
+                      .
+                    </p>
+                  )}
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="flex-1 flex flex-col">
