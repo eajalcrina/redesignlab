@@ -22,7 +22,7 @@ const resources = [
     name: 'Re.·IA — Una propuesta para industrias de bioeconomía',
     type: 'Disponible ahora · PDF · Español',
     description: 'Cómo la inteligencia artificial produce valor real en industrias donde el activo central es un sistema vivo. Cuatro dimensiones de madurez y diagnóstico de autoevaluación.',
-    downloadUrl: '#',
+    downloadUrl: '/assets/conocimiento/Modelo_ReIA_RedesignLab.pdf',
     mode: 'dark' as const,
     available: true,
     image: '/assets/conocimiento/re-ia.jpg',
