@@ -7,10 +7,30 @@ import Tag from '@/components/ui/Tag'
 import { DURATION, EASE } from '@/lib/animations'
 
 const steps = [
-  { number: '01', title: 'Solicitud', detail: 'Completas un breve formulario con tu perfil y contexto.' },
-  { number: '02', title: 'Conversación', detail: 'Una llamada de 30 minutos para entender tus necesidades y validar el fit.' },
-  { number: '03', title: 'Evaluación', detail: 'Evaluamos si el perfil enriquece a la red actual y viceversa.' },
-  { number: '04', title: 'Inicio', detail: 'Si hay fit, comienzas el próximo mes con tu primer briefing.' },
+  {
+    number: '01',
+    title: 'Solicitud',
+    detail:
+      'Nombre, organización, rol, industria y la pregunta que más importa: ¿cuál es el desafío más crítico que enfrenta tu empresa en los próximos seis meses — y por qué crees que no puedes resolverlo solo? Esa pregunta no es un trámite. Es el primer filtro real.',
+  },
+  {
+    number: '02',
+    title: 'Evaluación',
+    detail:
+      '48 horas hábiles. ¿Tiene esta empresa el perfil y el momento donde Re. Intelligence produce el mayor valor? Si no hay alineación, se comunica con claridad y se sugiere el camino más apropiado.',
+  },
+  {
+    number: '03',
+    title: 'Conversación de fit',
+    detail:
+      '30 minutos sin compromiso. Para verificar que lo que está en la solicitud coincide con la empresa real — y para que el fundador entienda exactamente en qué está entrando.',
+  },
+  {
+    number: '04',
+    title: 'Onboarding',
+    detail:
+      'Compromiso mínimo de 3 meses — el período de inmersión, definición y activación. Cancelación después del período mínimo: aviso con 30 días. Sin penalidades.',
+  },
 ]
 
 export default function ApplicationProcess() {
@@ -20,7 +40,7 @@ export default function ApplicationProcess() {
     <section className="section-neutral py-24 md:py-32" ref={ref}>
       <div className="container-rl">
         <SectionReveal>
-          <Tag color="red" className="mb-4">Proceso de solicitud</Tag>
+          <Tag color="red" className="mb-4">El proceso de solicitud</Tag>
           <h2 className="font-display text-display-md md:text-display-lg text-text-primary max-w-3xl mb-16">
             Cuatro pasos para entrar.
           </h2>
@@ -50,6 +70,17 @@ export default function ApplicationProcess() {
             ))}
           </div>
         </div>
+
+        <SectionReveal delay={0.4}>
+          <div className="border-t border-border-light mt-16 pt-8 max-w-3xl">
+            <p className="font-mono text-mono-sm text-rl-red uppercase tracking-[0.18em] mb-3">
+              Compromiso mínimo
+            </p>
+            <p className="text-body-md text-text-secondary">
+              3 meses — el período de inmersión, definición y activación descrito más arriba. Después del período mínimo, la cancelación requiere aviso con 30 días. Sin penalidades.
+            </p>
+          </div>
+        </SectionReveal>
       </div>
     </section>
   )

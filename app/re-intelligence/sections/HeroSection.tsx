@@ -1,7 +1,9 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Button from '@/components/ui/Button'
 import { DURATION, EASE, STAGGER } from '@/lib/animations'
+import { SITE_CONFIG } from '@/lib/constants'
 
 export default function HeroSection() {
   const container = {
@@ -13,31 +15,32 @@ export default function HeroSection() {
     visible: { opacity: 1, y: 0, transition: { duration: DURATION.normal, ease: EASE.out } },
   }
 
-  // 3 filled, 12 empty
   const totalSlots = 15
   const filledSlots = 3
 
   return (
     <section className="bg-[#080808] text-text-on-dark min-h-[80vh] flex items-center">
       <div className="container-rl py-32 md:py-40">
-        <motion.div initial="hidden" animate="visible" variants={container} className="max-w-[720px]">
+        <motion.div initial="hidden" animate="visible" variants={container} className="max-w-[780px]">
           <motion.p variants={item} className="font-mono text-mono-lg text-rl-red mb-6">
-            USD 3,000 / mes
+            USD 3,000 / mes · máximo 15 miembros
           </motion.p>
 
-          <motion.h1 variants={item} className="font-display text-display-lg md:text-display-xl text-text-on-dark mb-4">
-            Re. Intelligence
+          <motion.h1 variants={item} className="font-display text-display-lg md:text-display-xl text-text-on-dark mb-8">
+            Hay decisiones que no se pueden tomar bien sin el criterio correcto en el momento correcto.
+            <span className="block text-rl-red mt-2">Re. Intelligence existe para ese momento.</span>
           </motion.h1>
 
-          <motion.p variants={item} className="text-body-lg text-text-muted mb-6">
-            Un servicio exclusivo de Redesign Lab para acompañar a líderes de industrias de bioeconomía en su transformación estratégica con inteligencia artificial, criterio de mercado y acceso directo al equipo senior.
+          <motion.p variants={item} className="text-body-xl text-text-muted italic mb-10 max-w-[640px]">
+            El estratega, el analista y el conector que tu empresa no tiene en nómina.
           </motion.p>
 
-          <motion.p variants={item} className="text-body-xl text-text-on-dark font-medium mb-8">
-            Máximo 15 miembros. Siempre.
-          </motion.p>
+          <motion.div variants={item} className="mb-10">
+            <Button variant="primary" size="lg" href={SITE_CONFIG.calendarUrl}>
+              Agendar primera reunión &rarr;
+            </Button>
+          </motion.div>
 
-          {/* Availability dots */}
           <motion.div variants={item} className="flex items-center gap-2 mb-4">
             {Array.from({ length: totalSlots }).map((_, i) => (
               <div

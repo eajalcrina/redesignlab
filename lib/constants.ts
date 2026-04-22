@@ -9,6 +9,7 @@ export const SITE_CONFIG = {
   address: 'Av. Roosevelt 5957, Miraflores',
   city: 'Lima — Perú',
   copyright: '© 2026 Redesign Ventures SAC',
+  calendarUrl: 'https://calendar.app.google/C8nGhVz5m6SAR61r5',
 }
 
 export const NAV_LINKS = [

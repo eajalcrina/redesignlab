@@ -1,18 +1,27 @@
 import type { Metadata } from 'next'
 import HeroSection from './sections/HeroSection'
+import ForWhomIntroSection from './sections/ForWhomIntroSection'
 import WhatItIsSection from './sections/WhatItIsSection'
-import BenefitsSection from './sections/BenefitsSection'
+import FirstThreeMonthsSection from './sections/FirstThreeMonthsSection'
 import RealMonthSection from './sections/RealMonthSection'
-import ArchetypesSection from './sections/ArchetypesSection'
+import BenefitsSection from './sections/BenefitsSection'
 import WhyFifteenSection from './sections/WhyFifteenSection'
+import ArchetypesSection from './sections/ArchetypesSection'
 import ApplicationProcess from './sections/ApplicationProcess'
+import ClosingNoteSection from './sections/ClosingNoteSection'
 import CtaSection from './sections/CtaSection'
 
 export const metadata: Metadata = {
-  title: 'Re. Intelligence',
+  title: 'Re. Intelligence | Redesign Lab — Acompañamiento estratégico continuo para líderes de bioeconomía',
   description:
-    'Inteligencia estratégica para líderes de bioeconomía. USD 3,000/mes. Máximo 15 miembros. Briefings, modelos de IA, red de decisores y advisory 1:1.',
-  keywords: ['membresía estratégica bioeconomía', 'advisory C-Level LATAM', 'inteligencia estratégica IA', 'Re Intelligence', 'briefing mensual ejecutivo'],
+    'Re. Intelligence es el equipo de estrategia, análisis e inteligencia que tu empresa necesita — sin la estructura que no puedes sostener. Para líderes de empresas medianas en bioeconomía que toman decisiones de alta consecuencia solos.',
+  keywords: [
+    'acompañamiento estratégico bioeconomía',
+    'advisory fundadores LATAM',
+    'inteligencia estratégica IA',
+    'Re Intelligence',
+    'estrategia empresa mediana',
+  ],
   alternates: { canonical: '/re-intelligence' },
 }
 
@@ -20,12 +29,15 @@ export default function ReIntelligencePage() {
   return (
     <>
       <HeroSection />
+      <ForWhomIntroSection />
       <WhatItIsSection />
-      <BenefitsSection />
+      <FirstThreeMonthsSection />
       <RealMonthSection />
-      <ArchetypesSection />
+      <BenefitsSection />
       <WhyFifteenSection />
+      <ArchetypesSection />
       <ApplicationProcess />
+      <ClosingNoteSection />
       <CtaSection />
     </>
   )
