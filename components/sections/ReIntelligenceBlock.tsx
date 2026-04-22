@@ -11,11 +11,11 @@ interface ReIntelligenceBlockProps {
 }
 
 const benefits = [
-  'Acceso C-Level directo cada mes con Eddie Ajalcriña y Lorenzo Ortiz',
-  'Brief mensual de inteligencia estratégica diseñado para tu industria',
-  'Consultas express con la red de especialistas en bioeconomía e IA',
+  '4 horas de trabajo directo cada mes con los socios fundadores de Redesign Lab',
+  'Re. Intelligence Brief mensual personalizado al contexto específico de la empresa',
+  '2 consultas de 30 min con especialistas de la red de Builders',
   'Acceso anticipado a frameworks, herramientas y publicaciones propias',
-  'Prioridad en proyectos y condiciones preferenciales en todos los servicios',
+  'Prioridad en servicios complementarios de Redesign Lab y su red',
 ]
 
 export default function ReIntelligenceBlock({
@@ -27,7 +27,7 @@ export default function ReIntelligenceBlock({
         <div className="max-w-[720px] mx-auto">
           <SectionReveal>
             <Tag color="red" className="mb-6">
-              EMPIEZA A TRANSFORMAR TU NEGOCIO
+              ACOMPAÑAMIENTO ESTRATÉGICO CONTINUO
             </Tag>
 
             <h2 className="font-display text-display-md md:text-display-lg text-text-on-dark mb-4">
@@ -35,21 +35,21 @@ export default function ReIntelligenceBlock({
             </h2>
 
             <p className="font-display text-display-sm text-rl-red mb-6">
-              Asesoría estratégica impulsada por IA para desbloquear el siguiente nivel de tu empresa.
+              El estratega, el analista y el conector que tu empresa no tiene en nómina.
             </p>
 
             <p className="font-mono text-mono-lg text-text-muted mb-8">
-              USD 3,000 / mes &middot; Solo 15 cupos al año
+              USD 3,000 / mes &middot; máximo 15 miembros
             </p>
 
             <Divider variant="red" className="w-16 mb-8" animated />
 
             <p className="text-body-lg text-text-on-dark mb-6">
-              Acompañamiento continuo del equipo senior de Redesign Lab para los líderes que están tomando las decisiones que definirán los próximos cinco años de su industria.
+              El equipo de pensamiento estratégico externo de tu empresa — el que procesa la información, diseña los escenarios, mapea las oportunidades y entrega los planes para que tu equipo accione.
             </p>
 
             <p className="text-body-md text-text-muted mb-4">
-              No es una suscripción a contenido genérico ni un programa de mentoría más. Es acceso directo al criterio, la red y la inteligencia de mercado que ya está construyendo el portafolio de bioeconomía más relevante de América Latina — aplicado al contexto específico de tu empresa, cada mes.
+              Para fundadores o gerencia general de empresas medianas en bioeconomía que ya funcionan — y donde el pensamiento estratégico recae sobre las mismas personas que atienden la operación diaria. No es falta de capacidad: es falta de tiempo y de estructura. Re. Intelligence resuelve exactamente eso.
             </p>
 
             <p className="text-body-md text-text-on-dark/80 mb-12 italic">
@@ -75,7 +75,7 @@ export default function ReIntelligenceBlock({
           <SectionReveal delay={0.3}>
             <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8">
               <Button variant="primary" size="lg" href="/re-intelligence">
-                Súmate a la red de Re. Intelligence &rarr;
+                Conocer Re. Intelligence &rarr;
               </Button>
               <Link
                 href="/inteligencia-artificial/diagnostico"
@@ -88,7 +88,7 @@ export default function ReIntelligenceBlock({
               </Link>
             </div>
             <p className="text-body-sm text-text-muted/70 mt-4">
-              Conversación previa de fit · Sin compromiso
+              30 minutos de conversación de fit · Sin compromiso
             </p>
           </SectionReveal>
         </div>
