@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import SectionReveal from '@/components/animations/SectionReveal'
-import Tag from '@/components/ui/Tag'
 import { DURATION, EASE } from '@/lib/animations'
 
 const months = [
@@ -83,19 +82,17 @@ export default function FirstThreeMonthsSection() {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.05 })
 
   return (
-    <section className="section-neutral py-24 md:py-32" ref={ref}>
-      <div className="container-rl">
-        <SectionReveal>
-          <Tag color="red" className="mb-4">Los primeros tres meses</Tag>
-          <h2 className="font-display text-display-md md:text-display-lg text-text-primary max-w-3xl mb-6">
-            El punto de partida correcto para una relación que debe funcionar.
-          </h2>
-          <p className="text-body-lg text-text-secondary max-w-3xl mb-20">
-            Re. Intelligence no empieza con una reunión de kickoff genérica. Empieza con un proceso estructurado de tres meses diseñado para que, al final del período, tanto Redesign Lab como la empresa tengan el entendimiento profundo y el plan concreto que hacen que el acompañamiento produzca valor real desde el cuarto mes en adelante.
-          </p>
-        </SectionReveal>
+    <div ref={ref}>
+      <SectionReveal>
+        <p className="text-body-lg text-text-secondary max-w-3xl mb-6">
+          Re. Intelligence Pro no empieza con una reunión de kickoff genérica. Empieza con un proceso estructurado de tres meses para articular flujos de información, calibrar los Redesign Lab al negocio específico y producir el primer plan accionable. Desde el cuarto mes en adelante, el acompañamiento entra al ciclo mensual estándar.
+        </p>
+        <p className="font-mono text-mono-sm text-text-tertiary uppercase tracking-[0.18em] mb-20">
+          Light no requiere onboarding · inicia con la primera sesión de trabajo
+        </p>
+      </SectionReveal>
 
-        <div className="relative">
+      <div className="relative">
           {/* Vertical timeline line */}
           <motion.div
             className="hidden md:block absolute top-0 bottom-0 left-8 w-px bg-rl-red origin-top"
@@ -159,9 +156,8 @@ export default function FirstThreeMonthsSection() {
                 </div>
               </motion.div>
             ))}
-          </div>
         </div>
       </div>
-    </section>
+    </div>
   )
 }

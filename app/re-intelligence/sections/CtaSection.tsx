@@ -9,12 +9,14 @@ export default function CtaSection() {
     <section className="bg-[#080808] py-24 md:py-32">
       <div className="container-rl text-center">
         <SectionReveal>
-          <p className="font-mono text-mono-lg text-rl-red mb-6">USD 3,000 / mes · máximo 15 miembros</p>
+          <p className="font-mono text-mono-lg text-rl-red mb-6">
+            Light USD 900 / mes · Pro USD 3,000 / mes
+          </p>
           <h2 className="font-display text-display-md md:text-display-lg text-text-on-dark max-w-3xl mx-auto mb-6">
             Si ya sabes qué estás construyendo, piensa con nosotros en cómo construirlo mejor.
           </h2>
           <p className="text-body-lg text-text-muted max-w-xl mx-auto mb-12">
-            Completa tu solicitud y conversamos esta semana.
+            30 minutos de conversación de fit. Sin compromiso. La conversación define cuál versión es la correcta.
           </p>
           <Button variant="primary" size="lg" href={SITE_CONFIG.calendarUrl}>
             Agendar primera reunión &rarr;

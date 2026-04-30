@@ -21,9 +21,9 @@ export default function HeroSection() {
   return (
     <section className="bg-[#080808] text-text-on-dark min-h-[80vh] flex items-center">
       <div className="container-rl py-32 md:py-40">
-        <motion.div initial="hidden" animate="visible" variants={container} className="max-w-[780px]">
+        <motion.div initial="hidden" animate="visible" variants={container} className="max-w-[820px]">
           <motion.p variants={item} className="font-mono text-mono-lg text-rl-red mb-6">
-            USD 3,000 / mes · máximo 15 miembros
+            USD 900 – 3,000 / mes · dos versiones
           </motion.p>
 
           <motion.h1 variants={item} className="font-display text-display-lg md:text-display-xl text-text-on-dark mb-8">
@@ -32,16 +32,16 @@ export default function HeroSection() {
           </motion.h1>
 
           <motion.p variants={item} className="text-body-xl text-text-muted italic mb-10 max-w-[640px]">
-            El estratega, el analista y el conector que tu empresa no tiene en nómina.
+            El equipo de inteligencia estratégica externo de tu empresa.
           </motion.p>
 
-          <motion.div variants={item} className="mb-10">
+          <motion.div variants={item} className="mb-12">
             <Button variant="primary" size="lg" href={SITE_CONFIG.calendarUrl}>
               Agendar primera reunión &rarr;
             </Button>
           </motion.div>
 
-          <motion.div variants={item} className="flex items-center gap-2 mb-4">
+          <motion.div variants={item} className="flex items-center gap-2 mb-3">
             {Array.from({ length: totalSlots }).map((_, i) => (
               <div
                 key={i}
@@ -52,7 +52,7 @@ export default function HeroSection() {
             ))}
           </motion.div>
           <motion.p variants={item} className="font-mono text-mono-sm text-text-muted">
-            {filledSlots}/{totalSlots} miembros activos
+            {filledSlots}/{totalSlots} empresas activas en Re. Intelligence Pro
           </motion.p>
         </motion.div>
       </div>

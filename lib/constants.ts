@@ -10,6 +10,7 @@ export const SITE_CONFIG = {
   city: 'Lima — Perú',
   copyright: '© 2026 Redesign Ventures SAC',
   calendarUrl: 'https://calendar.app.google/C8nGhVz5m6SAR61r5',
+  calendarUrlFit: 'https://calendar.app.google/8w3Q2gRY87vVBtMCA',
 }
 
 export const NAV_LINKS = [

@@ -3,13 +3,6 @@
 import SectionReveal from '@/components/animations/SectionReveal'
 import Tag from '@/components/ui/Tag'
 
-const gaps = [
-  'Un director de estrategia que procese la información del negocio y diseñe el plan de crecimiento',
-  'Un analista de mercado que monitoree el ecosistema y detecte oportunidades antes de que sean obvias',
-  'Un especialista en financiamiento que mapee fondos y sepa exactamente a qué capital puede acceder la empresa',
-  'Un equipo que resuelva los problemas del negocio con criterio externo — sin el sesgo de quien está adentro todos los días',
-]
-
 const founderPains = [
   '¿Cómo resuelvo este problema operativo que no termina de arreglarse?',
   '¿Cómo organizo al equipo para que la operación sea más eficiente — y no dependa tanto de mí?',
@@ -18,14 +11,19 @@ const founderPains = [
   '¿Qué fondos reales puedo conseguir para el próximo paso?',
 ]
 
+const distinctions = [
+  { he: 'Re. Intelligence', does: 'Pensamiento, análisis, escenarios, planes accionables.' },
+  { he: 'Tu equipo', does: 'La ejecución de los planes — siempre.' },
+]
+
 export default function ForWhomIntroSection() {
   return (
     <section className="section-neutral py-24 md:py-32">
       <div className="container-rl">
         <SectionReveal>
-          <Tag color="red" className="mb-4">Para quién es esto — antes de explicar qué es</Tag>
+          <Tag color="red" className="mb-4">El problema que Re. Intelligence resuelve</Tag>
           <h2 className="font-display text-display-md md:text-display-lg text-text-primary max-w-3xl mb-16">
-            Hay un perfil de empresa que el mercado de consultoría convencional no sabe servir bien.
+            El pensamiento estratégico recae sobre las mismas personas que también gestionan la operación.
           </h2>
         </SectionReveal>
 
@@ -33,13 +31,13 @@ export default function ForWhomIntroSection() {
           <SectionReveal delay={0.1}>
             <div className="max-w-2xl space-y-6 text-body-lg text-text-secondary">
               <p>
-                No es una startup que necesita mentoría. Tampoco es una corporación con un equipo directivo completo — CFO, CMO, director de estrategia, jefe de planeamiento — dedicado a pensar, procesar información y diseñar planes.
-              </p>
-              <p>
-                Es la empresa mediana que ya funciona. Que tiene clientes reales, operación probada y un fundador o dos socios que llevan el negocio con claridad y convicción. Pero donde todo el pensamiento estratégico — el análisis de mercado, la identificación de oportunidades, el mapeo de financiamiento, la resolución de los problemas que frenan el crecimiento — recae sobre las mismas personas que también tienen que atender la operación diaria.
+                En la empresa mediana que ya funciona — con clientes reales, operación probada y un equipo comprometido — el pensamiento estratégico y el análisis de información recaen sobre las mismas personas que gestionan la operación diaria.
               </p>
               <p className="text-text-primary">
-                No es falta de capacidad. Es falta de tiempo y de estructura.
+                No es falta de capacidad. Es falta de estructura, tiempo y criterio externo.
+              </p>
+              <p>
+                Re. Intelligence es el equipo de inteligencia estratégica externo de tu empresa. <span className="text-text-primary font-medium">No reemplaza a tu equipo — lo potencia.</span> Produce la inteligencia que permite que las decisiones sean mejores, más rápidas y con más claridad de la que el equipo puede generar solo.
               </p>
             </div>
 
@@ -59,9 +57,16 @@ export default function ForWhomIntroSection() {
               </p>
             </div>
 
-            <p className="font-display text-display-sm text-text-primary pt-12">
-              Re. Intelligence resuelve exactamente eso.
-            </p>
+            <div className="max-w-2xl mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
+              {distinctions.map((d) => (
+                <div key={d.he} className="border-t border-border-light pt-4">
+                  <p className="font-mono text-mono-sm text-rl-red uppercase tracking-[0.18em] mb-2">
+                    {d.he}
+                  </p>
+                  <p className="text-body-md text-text-primary">{d.does}</p>
+                </div>
+              ))}
+            </div>
           </SectionReveal>
 
           <SectionReveal delay={0.2}>
@@ -72,12 +77,22 @@ export default function ForWhomIntroSection() {
                 típicamente no tiene
               </p>
               <ul className="space-y-5 mb-8">
-                {gaps.map((gap) => (
-                  <li key={gap} className="flex items-start gap-3 text-body-sm text-text-muted">
-                    <span className="w-1.5 h-1.5 rounded-full bg-rl-red mt-2 flex-shrink-0" />
-                    <span>{gap}</span>
-                  </li>
-                ))}
+                <li className="flex items-start gap-3 text-body-sm text-text-muted">
+                  <span className="w-1.5 h-1.5 rounded-full bg-rl-red mt-2 flex-shrink-0" />
+                  <span>Un director de estrategia que procese la información y diseñe el plan de crecimiento</span>
+                </li>
+                <li className="flex items-start gap-3 text-body-sm text-text-muted">
+                  <span className="w-1.5 h-1.5 rounded-full bg-rl-red mt-2 flex-shrink-0" />
+                  <span>Un analista de mercado que monitoree el ecosistema y detecte oportunidades antes de que sean obvias</span>
+                </li>
+                <li className="flex items-start gap-3 text-body-sm text-text-muted">
+                  <span className="w-1.5 h-1.5 rounded-full bg-rl-red mt-2 flex-shrink-0" />
+                  <span>Un especialista en financiamiento que mapee fondos y sepa a qué capital puede acceder</span>
+                </li>
+                <li className="flex items-start gap-3 text-body-sm text-text-muted">
+                  <span className="w-1.5 h-1.5 rounded-full bg-rl-red mt-2 flex-shrink-0" />
+                  <span>Un equipo que resuelva problemas con criterio externo — sin el sesgo de quien está adentro todos los días</span>
+                </li>
               </ul>
               <div className="pt-6 border-t border-border-dark">
                 <p className="font-display text-display-sm text-text-on-dark">

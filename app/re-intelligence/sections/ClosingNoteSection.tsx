@@ -1,6 +1,5 @@
 'use client'
 
-import Link from 'next/link'
 import SectionReveal from '@/components/animations/SectionReveal'
 import Tag from '@/components/ui/Tag'
 
@@ -19,17 +18,13 @@ export default function ClosingNoteSection() {
           <SectionReveal delay={0.1}>
             <div className="space-y-6 text-body-lg text-text-muted">
               <p>
-                Es correcto para empresas que ya tienen un modelo funcionando — y que entienden que las decisiones del próximo año van a determinar si lo que están construyendo llega a donde puede llegar.
+                Es correcto para los que ya saben qué están construyendo — y que necesitan que alguien piense con ellos en cómo construirlo mejor, más rápido y con más inteligencia de la que pueden generar solos.
               </p>
               <p>
-                No es correcto para empresas que todavía están definiendo su modelo de negocio — el punto de partida correcto es{' '}
-                <Link href="/crear-valor" className="text-rl-red underline decoration-rl-red/40 hover:decoration-rl-red transition-colors">
-                  Crear valor →
-                </Link>
-                {' '}— ni para empresas que necesitan un proyecto específico con entregable definido: cualquiera de las tres direcciones de servicio de Redesign Lab tiene lo que necesitan.
+                Light o Pro depende del tipo de acompañamiento que el momento del negocio requiere. Light si necesitas un interlocutor externo de criterio para acompañar las decisiones — sin integración sistemática de datos. Pro si necesitas que alguien articule la información del negocio, la procese y entregue planes accionables que tu equipo va a ejecutar mes a mes.
               </p>
-              <p className="text-text-on-dark">
-                Re. Intelligence es para los que ya saben qué están construyendo — y que necesitan que alguien piense con ellos en cómo construirlo mejor, más rápido y con más inteligencia de la que pueden generar solos.
+              <p className="text-text-on-dark font-medium pt-2">
+                La conversación de fit decide cuál es la correcta.
               </p>
             </div>
           </SectionReveal>

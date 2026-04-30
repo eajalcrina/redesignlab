@@ -10,10 +10,10 @@ interface ReIntelligenceBlockProps {
   expanded?: boolean
 }
 
-const benefits = [
+const benefits: React.ReactNode[] = [
   '4 horas de trabajo directo cada mes con los socios fundadores de Redesign Lab',
   'Re. Intelligence Brief mensual personalizado al contexto específico de la empresa',
-  '2 consultas de 30 min con especialistas de la red de Builders',
+  <>2 consultas de 30 min con especialistas de la <Link href="/builders" className="underline decoration-rl-red/40 hover:decoration-rl-red transition-colors">red de Builders</Link></>,
   'Acceso anticipado a frameworks, herramientas y publicaciones propias',
   'Prioridad en servicios complementarios de Redesign Lab y su red',
 ]
