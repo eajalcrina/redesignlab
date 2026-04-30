@@ -57,10 +57,10 @@ export default function ApplicationProcess() {
             <div className="hidden md:flex items-center justify-center w-4 h-4 rounded-full bg-rl-neutral border-2 border-rl-red mb-6" />
             <span className="font-mono text-mono-sm text-rl-red block mb-2">02</span>
             <h3 className="font-display text-display-sm text-text-primary mb-3">
-              Agendar una reunión
+              Agendar la reunión de fit
             </h3>
             <p className="text-body-md text-text-secondary">
-              Con el formulario recibido, el equipo de Redesign Lab revisa el perfil de la empresa y confirma la reunión en <span className="text-text-primary font-medium">48 horas hábiles</span>. La reunión es de <span className="text-text-primary font-medium">30 minutos</span> — una conversación informada, no una presentación desde cero. Si hay alineación real, se define la versión y se activa el onboarding. Si no la hay, se comunica con claridad y se sugiere el camino más apropiado.
+              Inmediatamente después de enviar el formulario, agendas la conversación de <span className="text-text-primary font-medium">30 minutos</span> directamente desde el calendario del equipo. Eddie y Lorenzo llegan con tu información ya revisada — no se gasta tiempo en presentaciones desde cero. Si hay alineación real, se define la versión y se activa el onboarding. Si no la hay, se comunica con claridad en la misma reunión y se sugiere el camino más apropiado.
             </p>
           </motion.div>
 

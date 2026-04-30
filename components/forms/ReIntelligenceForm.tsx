@@ -110,33 +110,27 @@ export default function ReIntelligenceForm() {
         className="bg-rl-dark text-text-on-dark rounded p-8 md:p-10"
       >
         <p className="font-mono text-mono-sm text-rl-red uppercase tracking-[0.18em] mb-4">
-          Solicitud recibida
+          Solicitud recibida · Paso 2 / 3
         </p>
         <p className="font-display text-display-sm text-text-on-dark mb-4">
-          Gracias. Te contactamos en 48 horas hábiles.
+          Ahora agenda tu reunión de fit.
         </p>
         <p className="text-body-md text-text-muted mb-8">
-          Eddie Ajalcriña o Lorenzo Ortiz revisan personalmente cada solicitud. Si hay alineación
-          con Re. Intelligence, recibirás una invitación a la conversación de fit. Si no la hay, te
-          comunicamos con claridad y sugerimos el camino más apropiado.
+          Tu información ya llegó al equipo. El siguiente paso es agendar directamente la conversación de 30 minutos con Eddie Ajalcriña o Lorenzo Ortiz — llegarán a la reunión con tu información ya revisada.
         </p>
 
-        <div className="border-t border-border-dark pt-6">
-          <p className="text-label-sm uppercase text-rl-red mb-3">
-            ¿Quieres avanzar más rápido?
-          </p>
-          <p className="text-body-sm text-text-muted mb-5">
-            Puedes agendar tú mismo la conversación de fit de 30 minutos directamente en el calendario del equipo.
-          </p>
-          <a
-            href={SITE_CONFIG.calendarUrlFit}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 h-12 px-8 bg-rl-red text-white font-medium rounded hover:bg-[#d91f5b] transition-colors"
-          >
-            Agendar conversación de fit &rarr;
-          </a>
-        </div>
+        <a
+          href={SITE_CONFIG.calendarUrlFit}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 h-12 px-8 bg-rl-red text-white font-medium rounded hover:bg-[#d91f5b] transition-colors"
+        >
+          Agendar reunión de fit &rarr;
+        </a>
+
+        <p className="text-body-xs text-text-muted/70 mt-5">
+          Sin compromiso · Si no hay alineación con Re. Intelligence, te lo comunicamos en la misma reunión y sugerimos el camino más apropiado.
+        </p>
       </motion.div>
     )
   }
@@ -284,7 +278,7 @@ export default function ReIntelligenceForm() {
           {state === 'submitting' ? 'Enviando…' : 'Enviar solicitud →'}
         </button>
         <p className="text-body-xs text-text-muted/70">
-          Te respondemos en 48 horas hábiles · Tus datos quedan privados.
+          Después del envío agendarás la reunión directamente · Tus datos quedan privados.
         </p>
       </div>
 
