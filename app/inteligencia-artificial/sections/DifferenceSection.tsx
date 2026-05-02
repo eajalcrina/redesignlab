@@ -39,7 +39,7 @@ export default function DifferenceSection() {
               <h3 className="text-label-md uppercase text-text-muted mb-6">Lo que no hacemos</h3>
               <ul className="space-y-4">
                 {[
-                  'IA por la IA — solo implementamos donde hay impacto real medible',
+                  'IA por la IA: solo implementamos donde hay impacto real medible',
                   'Soluciones genéricas que no entienden la industria',
                   'Proyectos de 18 meses sin resultados intermedios',
                   'Promesas de automatización total que ignoran el factor humano',

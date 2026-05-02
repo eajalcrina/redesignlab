@@ -39,7 +39,7 @@ const industries = [
       'Optimización de alimentación con modelos predictivos',
       'Control de calidad de agua automatizado',
     ],
-    insight: 'La acuicultura combina biología y operaciones a escala — la IA es el puente entre ambas.',
+    insight: 'La acuicultura combina biología y operaciones a escala. La IA es el puente entre ambas.',
   },
   {
     id: 'cosmetica',
@@ -50,7 +50,7 @@ const industries = [
       'Trazabilidad de ingredientes de biodiversidad',
       'Personalización de productos con datos de consumidor',
     ],
-    insight: 'La cosmética natural compite con storytelling y trazabilidad — la IA hace verificables ambas promesas.',
+    insight: 'La cosmética natural compite con storytelling y trazabilidad. La IA hace verificables ambas promesas.',
   },
   {
     id: 'turismo',
@@ -61,7 +61,7 @@ const industries = [
       'Monitoreo de impacto ambiental en destinos',
       'Pricing dinámico basado en datos de mercado',
     ],
-    insight: 'El turismo regenerativo necesita medir lo que la conservación genera — la IA hace posible esa medición a escala.',
+    insight: 'El turismo regenerativo necesita medir lo que la conservación genera. La IA hace posible esa medición a escala.',
   },
   {
     id: 'alimentos',
@@ -72,7 +72,7 @@ const industries = [
       'Control de calidad automatizado con visión por computadora',
       'Certificación y etiquetado inteligente',
     ],
-    insight: 'El mercado de alimentos y bebidas con origen verificable y propiedades funcionales es uno de los de mayor crecimiento — la IA hace verificable la promesa que el consumidor premium exige.',
+    insight: 'El mercado de alimentos y bebidas con origen verificable y propiedades funcionales es uno de los de mayor crecimiento. La IA hace verificable la promesa que el consumidor premium exige.',
   },
 ]
 

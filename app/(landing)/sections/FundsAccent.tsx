@@ -22,7 +22,7 @@ export default function FundsAccent() {
 
         <SectionReveal delay={0.6}>
           <p className="text-body-lg text-white/80 max-w-3xl mb-8">
-            Nuestra experiencia como venture studio asegura un de-risking real de las inversiones de impacto para los fondos de inversión — no solo diagnóstico, sino la capacidad de acompañar el cierre de las brechas antes de que el capital se mueva.
+            Nuestra experiencia como venture studio asegura un de-risking real de las inversiones de impacto para los fondos de inversión. No solo diagnóstico, sino la capacidad de acompañar el cierre de las brechas antes de que el capital se mueva.
           </p>
 
           <p className="text-body-lg text-white font-semibold max-w-3xl mb-12">

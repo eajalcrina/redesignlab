@@ -10,7 +10,7 @@ const problems = [
   {
     title: 'No conocen la industria desde adentro',
     description:
-      'El análisis financiero no captura el riesgo operativo real de una industria de bioeconomía. Necesitas alguien que haya estado en la planta, en la cadena, en el territorio — no solo en el modelo de Excel.',
+      'El análisis financiero no captura el riesgo operativo real de una industria de bioeconomía. Necesitas alguien que haya estado en la planta, en la cadena, en el territorio. No solo en el modelo de Excel.',
   },
   {
     title: 'Los founders no están preparados para el capital',

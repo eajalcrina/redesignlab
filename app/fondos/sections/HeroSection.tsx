@@ -84,7 +84,7 @@ export default function HeroSection() {
             variants={item}
             className="text-body-lg text-white/85 max-w-3xl mt-10 whitespace-pre-line"
           >
-            {`Nuestra experiencia como venture studio asegura un de-risking real de las inversiones de impacto para los fondos de inversión — no solo diagnóstico, sino la capacidad de acompañar el cierre de las brechas antes de que el capital se mueva.
+            {`Nuestra experiencia como venture studio asegura un de-risking real de las inversiones de impacto para los fondos de inversión, no solo diagnóstico, sino la capacidad de acompañar el cierre de las brechas antes de que el capital se mueva.
 
 El resultado: inversiones de impacto de mejor calidad y mayor probabilidad de generar el retorno que el fondo proyectó.`}
           </motion.p>

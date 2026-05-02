@@ -20,7 +20,7 @@ export default function TeamSection() {
             En estos años construimos la red de expertos y aliados que hace posible el portafolio.
           </p>
           <p className="text-body-lg text-text-secondary max-w-3xl mb-12">
-            Somos dos fundadores con trayectorias complementarias — emprendimiento, estrategia, operaciones e inversión — que hemos estado en ambos lados de la mesa. Sobre esa base hemos articulado una red activa de expertos senior, científicos, operadores en territorio, fondos y marcas globales que hoy co-construye con nosotros los proyectos más ambiciosos de bioeconomía en América Latina. Esa red es el verdadero equipo de Redesign Lab.
+            Somos dos fundadores con trayectorias complementarias (emprendimiento, estrategia, operaciones e inversión) que hemos estado en ambos lados de la mesa. Sobre esa base hemos articulado una red activa de expertos senior, científicos, operadores en territorio, fondos y marcas globales que hoy co-construye con nosotros los proyectos más ambiciosos de bioeconomía en América Latina. Esa red es el verdadero equipo de Redesign Lab.
           </p>
         </SectionReveal>
 

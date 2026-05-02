@@ -13,7 +13,7 @@ export default function CtaSection() {
             Construyamos el futuro de la bioeconomía en América Latina.
           </h2>
           <p className="text-body-lg text-text-muted max-w-xl mx-auto mb-12">
-            Si su perfil combina el conocimiento del campo con el rigor corporativo, y está buscando el apalancamiento institucional para dar un salto en impacto y retorno — contáctenos.
+            Si su perfil combina el conocimiento del campo con el rigor corporativo, y está buscando el apalancamiento institucional para dar un salto en impacto y retorno, contáctenos.
           </p>
           <Button variant="primary" size="lg" href={`mailto:${SITE_CONFIG.email}?subject=${encodeURIComponent('Builders — Postulación')}`}>
             Postúlese o contáctenos directamente &rarr;

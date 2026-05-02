@@ -41,7 +41,7 @@ export default function ReIntelligencePage() {
         id="lo-que-incluye"
         tag="Lo que incluye cada mes"
         heading="Cada versión, en detalle."
-        preview="11 entregables al mes — 5 en Lite, 6 en Pro. La bolsa de 4 horas es el corazón de ambos."
+        preview="11 entregables al mes: 5 en Lite, 6 en Pro. La bolsa de 4 horas es el corazón de ambos."
         tone="neutral"
       >
         <BenefitsSection />
@@ -71,7 +71,7 @@ export default function ReIntelligencePage() {
         id="por-que-quince"
         tag="Aplica a Re. Intelligence Pro"
         heading="¿Por qué 15 empresas y no más?"
-        preview="El límite estructural de Pro — explicado. Lite no tiene límite de empresas activas."
+        preview="El límite estructural de Pro, explicado. Lite no tiene límite de empresas activas."
         tone="dark"
       >
         <WhyFifteenSection />

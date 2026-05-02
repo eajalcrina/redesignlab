@@ -13,7 +13,7 @@ export default function CtaSection() {
             La conversación correcta comienza aquí
           </h2>
           <p className="text-body-lg text-text-muted max-w-xl mx-auto mb-12">
-            Redesign Lab trabaja con un número acotado de fondos por año — los que tienen el mandato, la seriedad operativa y el horizonte de inversión compatibles con lo que las industrias de bioeconomía requieren.
+            Redesign Lab trabaja con un número acotado de fondos por año: los que tienen el mandato, la seriedad operativa y el horizonte de inversión compatibles con lo que las industrias de bioeconomía requieren.
           </p>
           <Button variant="primary" size="lg" href={`mailto:${SITE_CONFIG.email}?subject=${encodeURIComponent('Fondos — Conversemos')}`}>
             Iniciar conversación &rarr;

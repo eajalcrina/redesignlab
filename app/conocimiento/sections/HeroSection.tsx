@@ -25,7 +25,7 @@ export default function HeroSection() {
             Lo que sabemos, lo compartimos.
           </motion.h1>
           <motion.p variants={item} className="text-body-xl text-text-muted max-w-2xl">
-            Recursos, frameworks y datos que usamos internamente — abiertos para el ecosistema.
+            Recursos, frameworks y datos que usamos internamente, abiertos para el ecosistema.
           </motion.p>
         </motion.div>
       </div>

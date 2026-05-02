@@ -9,7 +9,7 @@ const services = [
     name: 'Technical Due Diligence',
     duration: 'Por empresa evaluada',
     price: '',
-    description: 'El Technical Due Diligence aplica el BIRF — Bionegocio Investment Readiness Framework — como herramienta de diagnóstico estructurado, combinado con visita de campo y entrevistas con todos los actores clave de la cadena.',
+    description: 'El Technical Due Diligence aplica el BIRF (Bionegocio Investment Readiness Framework) como herramienta de diagnóstico estructurado, combinado con visita de campo y entrevistas con todos los actores clave de la cadena.',
     includes: [
       'Aplicación del BIRF',
       'Visita de campo (según alcance)',

@@ -9,7 +9,7 @@ import ResourceDrawer from '@/components/ui/ResourceDrawer'
 const resources = [
   {
     slug: 'birf',
-    name: 'BIRF — Bionegocio Investment Readiness Framework',
+    name: 'BIRF: Bionegocio Investment Readiness Framework',
     type: 'Disponible ahora · 15 páginas · PDF · Español',
     description: 'La herramienta que evalúa lo que el pitch deck no dice. Seis dimensiones de madurez, cuatro niveles de investment readiness, señales de identificación concretas.',
     downloadUrl: '/assets/conocimiento/BIRF_Reporte_RedesignLab_v2.pdf',
@@ -19,7 +19,7 @@ const resources = [
   },
   {
     slug: 're-ia-propuesta',
-    name: 'Re.·IA — Una propuesta para industrias de bioeconomía',
+    name: 'Re.·IA: Una propuesta para industrias de bioeconomía',
     type: 'Disponible ahora · PDF · Español',
     description: 'Cómo la inteligencia artificial produce valor real en industrias donde el activo central es un sistema vivo. Cuatro dimensiones de madurez y diagnóstico de autoevaluación.',
     downloadUrl: '/assets/conocimiento/Modelo_ReIA_RedesignLab.pdf',
@@ -31,7 +31,7 @@ const resources = [
     slug: 'due-diligence-tecnico',
     name: 'Guía de Due Diligence Técnico para Bionegocios',
     type: 'Disponible ahora · PDF · Español',
-    description: 'Las preguntas que hay que hacer en el territorio, las señales que hay que observar y los documentos que hay que solicitar — con criterio técnico, no solo financiero.',
+    description: 'Las preguntas que hay que hacer en el territorio, las señales que hay que observar y los documentos que hay que solicitar, con criterio técnico y no solo financiero.',
     downloadUrl: '#',
     mode: 'neutral' as const,
     available: true,
@@ -49,9 +49,9 @@ const resources = [
   },
   {
     slug: 'innovation-matrix',
-    name: 'Innovation Matrix — Un framework para industrias de bioeconomía',
+    name: 'Innovation Matrix: Un framework para industrias de bioeconomía',
     type: 'Disponible ahora · 30 páginas · PDF · Español',
-    description: 'Cómo decidir dónde poner tus recursos de innovación. Dos dimensiones, cuatro arquetipos y una matriz que revela el patrón completo de tu portafolio en 30 minutos — sin consultores, sin software.',
+    description: 'Cómo decidir dónde poner tus recursos de innovación. Dos dimensiones, cuatro arquetipos y una matriz que revela el patrón completo de tu portafolio en 30 minutos, sin consultores, sin software.',
     downloadUrl: '/assets/conocimiento/Innovation_Matrix_RedesignLab.pdf',
     mode: 'neutral' as const,
     available: true,

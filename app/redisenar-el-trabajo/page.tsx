@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 
 const accordionItems = [
   {
-    question: '¿Tiene tu operación potencial que no estás capturando — mermas que podrían ser recursos, cuellos de botella que frenan la escala?',
+    question: '¿Tiene tu operación potencial que no estás capturando: mermas que podrían ser recursos, cuellos de botella que frenan la escala?',
     answer:
       'El Circular Operations Redesign identifica dónde están esas oportunidades en la operación existente y diseña el camino para capturarlas.',
   },
@@ -37,7 +37,7 @@ const accordionItems = [
       'Re.·IA Application diagnostica la madurez de tu operación y diseña la implementación de IA sobre procesos preparados para recibirla.',
   },
   {
-    question: '¿Necesitas demostrar circularidad real en tu operación — como ventaja competitiva que reduce costos y abre mercados?',
+    question: '¿Necesitas demostrar circularidad real en tu operación, como ventaja competitiva que reduce costos y abre mercados?',
     answer:
       'El Circular Operations Redesign mapea flujos de materiales y energía, identifica oportunidades circulares y diseña iniciativas priorizadas con métricas de seguimiento.',
   },
@@ -54,13 +54,13 @@ const processSteps = [
     number: '02',
     title: 'Implementación iterativa',
     description:
-      'El trabajo se ejecuta en ciclos cortos con revisión constante — no en un proceso lineal que termina con una presentación que nadie puede implementar.',
+      'El trabajo se ejecuta en ciclos cortos con revisión constante, no en un proceso lineal que termina con una presentación que nadie puede implementar.',
   },
   {
     number: '03',
     title: 'Transferencia y activación',
     description:
-      'El equipo queda operando la solución — no dependiendo de Redesign Lab para sostenerla. Ese es el criterio de éxito de cada proyecto.',
+      'El equipo queda operando la solución, no dependiendo de Redesign Lab para sostenerla. Ese es el criterio de éxito de cada proyecto.',
   },
 ]
 

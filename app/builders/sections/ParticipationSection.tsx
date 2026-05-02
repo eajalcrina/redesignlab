@@ -17,7 +17,7 @@ const tabs = [
       'Fee por proyecto estratégico',
       'Participación directa en utilidades mediante revenue share durante la ejecución.'
     ],
-    commitment: 'Flexible — por proyecto',
+    commitment: 'Flexible · por proyecto',
   },
   {
     id: 'socio',

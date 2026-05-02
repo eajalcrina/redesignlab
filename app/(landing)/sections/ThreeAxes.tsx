@@ -11,7 +11,7 @@ const axes = [
   {
     number: '02',
     title: 'BIOECONOMÍA',
-    description: 'No es una tendencia de reporte ESG. Es el modelo económico que viene — donde la rentabilidad y la salud de los sistemas naturales son la misma apuesta. Los negocios que liderarán el próximo ciclo están anclados en sistemas vivos, bien diseñados y bien conectados con los mercados que ya están pagando el premium por eso.',
+    description: 'No es una tendencia de reporte ESG. Es el modelo económico que viene, donde la rentabilidad y la salud de los sistemas naturales son la misma apuesta. Los negocios que liderarán el próximo ciclo están anclados en sistemas vivos, bien diseñados y bien conectados con los mercados que ya están pagando el premium por eso.',
   },
   {
     number: '03',

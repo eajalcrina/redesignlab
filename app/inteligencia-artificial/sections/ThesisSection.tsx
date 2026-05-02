@@ -17,7 +17,7 @@ export default function ThesisSection() {
               </h2>
               <Divider variant="red" className="w-16 mb-6" animated />
               <p className="text-body-lg text-text-secondary">
-                El 90% de los proyectos de IA en industrias tradicionales fracasan porque tratan la IA como un fin, no como un medio. En bioeconomía, el valor no está en el modelo — está en los datos de campo que lo alimentan.
+                El 90% de los proyectos de IA en industrias tradicionales fracasan porque tratan la IA como un fin, no como un medio. En bioeconomía, el valor no está en el modelo. Está en los datos de campo que lo alimentan.
               </p>
             </div>
           </SectionReveal>

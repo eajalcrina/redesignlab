@@ -25,7 +25,7 @@ export default function DimensionsSection() {
     <section className="section-neutral py-24 md:py-32" ref={containerRef}>
       <div className="container-rl">
         <SectionReveal>
-          <Tag color="red" className="mb-4">Re.·IA — Las 4 dimensiones</Tag>
+          <Tag color="red" className="mb-4">Re.·IA: Las 4 dimensiones</Tag>
           <h2 className="font-display text-display-md md:text-display-lg text-text-primary max-w-3xl mb-16">
             Cuatro formas de aplicar IA a la bioeconomía.
           </h2>

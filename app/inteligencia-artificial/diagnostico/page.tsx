@@ -44,7 +44,7 @@ export default function DiagnosticoPage() {
           <p className="text-body-lg text-text-muted max-w-3xl mb-10">
             Evalúa el nivel de preparación de tu organización frente a la inteligencia
             artificial aplicada a la bioeconomía. 12 preguntas en 5 dimensiones críticas
-            — estrategia, datos, talento, procesos y tecnología — en aproximadamente 4 minutos.
+            (estrategia, datos, talento, procesos y tecnología) en aproximadamente 4 minutos.
           </p>
           <a
             href="#checker"

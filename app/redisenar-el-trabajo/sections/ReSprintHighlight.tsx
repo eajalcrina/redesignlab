@@ -30,7 +30,7 @@ export default function ReSprintHighlight({ service }: ReSprintHighlightProps) {
             {service.description}
           </p>
           <p className="text-body-sm text-white/50 max-w-lg mx-auto italic mb-8">
-            Muchos proyectos en esta dirección comienzan con un Re. Sprint. Algunos Re. Sprints concluyen con la recomendación de no seguir — y eso también es valor.
+            Muchos proyectos en esta dirección comienzan con un Re. Sprint. Algunos Re. Sprints concluyen con la recomendación de no seguir, y eso también es valor.
           </p>
           <Button
             variant="secondary"

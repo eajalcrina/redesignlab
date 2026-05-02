@@ -81,7 +81,7 @@ export default function WhatItIsSection() {
             Distinto nivel de integración. Mismas cuatro verticales.
           </h2>
           <p className="text-body-lg text-text-muted max-w-3xl mb-16">
-            Re. Intelligence existe en dos modalidades. Ambas trabajan sobre las mismas cuatro verticales estratégicas. La diferencia no está en los temas que cubre, sino en la profundidad de integración con los procesos y la información de la empresa.
+            Re. Intelligence existe en dos modalidades. Ambas trabajan sobre las mismas cuatro verticales estratégicas. La diferencia no está en el scope temático, sino en la profundidad de integración con los procesos y la información de la empresa.
           </p>
         </SectionReveal>
 

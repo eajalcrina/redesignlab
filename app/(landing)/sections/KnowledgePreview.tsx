@@ -10,18 +10,18 @@ import Divider from '@/components/ui/Divider'
 const resources = [
   {
     label: 'RECURSO DESTACADO',
-    title: 'BIRF — Bionegocio Investment Readiness Framework',
+    title: 'BIRF: Bionegocio Investment Readiness Framework',
     description:
-      'La herramienta que evalúa lo que el pitch deck no dice. Seis dimensiones de madurez, cuatro niveles de investment readiness, señales de identificación concretas y tres casos de referencia aplicados. Diseñada para fondos de impacto que necesitan un diagnóstico técnico estructurado — y para bionegocios que quieren saber con honestidad dónde están antes de sentarse con un inversor.',
+      'La herramienta que evalúa lo que el pitch deck no dice. Seis dimensiones de madurez, cuatro niveles de investment readiness, señales de identificación concretas y tres casos de referencia aplicados. Diseñada para fondos de impacto que necesitan un diagnóstico técnico estructurado, y para bionegocios que quieren saber con honestidad dónde están antes de sentarse con un inversor.',
     meta: '15 páginas · PDF · Español · Descarga gratuita',
     cta: 'Descargar el BIRF',
     href: '#',
   },
   {
     label: 'INTELIGENCIA ARTIFICIAL',
-    title: 'Re.·IA — Inteligencia Artificial para Bionegocios',
+    title: 'Re.·IA: Inteligencia Artificial para Bionegocios',
     description:
-      'El framework que conecta capacidades de IA con las operaciones reales de un bionegocio. Diagnóstico de madurez tecnológica, casos de uso priorizados por impacto, y una hoja de ruta para implementar IA donde realmente genera valor — no donde suena bien.',
+      'El framework que conecta capacidades de IA con las operaciones reales de un bionegocio. Diagnóstico de madurez tecnológica, casos de uso priorizados por impacto, y una hoja de ruta para implementar IA donde realmente genera valor, no donde suena bien.',
     meta: 'Framework · PDF · Español',
     cta: 'Explorar Re.·IA',
     href: '#',
@@ -39,7 +39,7 @@ const resources = [
     label: 'COMUNIDADES NATIVAS',
     title: 'Guía de Trabajo con Comunidades Nativas',
     description:
-      'Protocolo operativo para proyectos que involucran comunidades nativas y pueblos originarios. Desde el consentimiento informado hasta la distribución de beneficios — diseñado a partir de experiencia real en territorio amazónico.',
+      'Protocolo operativo para proyectos que involucran comunidades nativas y pueblos originarios. Desde el consentimiento informado hasta la distribución de beneficios, diseñado a partir de experiencia real en territorio amazónico.',
     meta: 'Guía · PDF · Español',
     cta: 'Descargar la guía',
     href: '#',
@@ -67,10 +67,10 @@ export default function KnowledgePreview() {
           <SectionReveal>
             <Tag color="red" className="mb-4">Conocimiento</Tag>
             <h2 className="font-display text-display-md text-text-primary mb-4">
-              Lo que hemos aprendido — disponible para el ecosistema.
+              Lo que hemos aprendido, disponible para el ecosistema.
             </h2>
             <p className="text-body-md text-text-secondary mb-6">
-              Redesign Lab publica frameworks y guías construidos a partir de trabajo real en campo. No teoría — herramientas que ya han sido aplicadas en proyectos con consecuencias reales.
+              Redesign Lab publica frameworks y guías construidos a partir de trabajo real en campo. No teoría. Herramientas que ya han sido aplicadas en proyectos con consecuencias reales.
             </p>
             <Button variant="text" href="/conocimiento" className="text-text-primary">
               Ver todos los recursos &rarr;

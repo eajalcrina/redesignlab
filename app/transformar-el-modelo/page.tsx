@@ -24,10 +24,10 @@ const accordionItems = [
   {
     question: '¿Has llegado al límite de lo que el modelo actual puede producir y la próxima etapa requiere repensar la arquitectura completa?',
     answer:
-      'Operating Model Design rediseña la estructura completa de cómo tu organización crea, entrega y captura valor — desde la estructura de decisión hasta los mecanismos de aprendizaje.',
+      'Operating Model Design rediseña la estructura completa de cómo tu organización crea, entrega y captura valor, desde la estructura de decisión hasta los mecanismos de aprendizaje.',
   },
   {
-    question: '¿Necesitas integrar la IA en el núcleo del modelo operativo — no solo como herramienta que el equipo usa ocasionalmente?',
+    question: '¿Necesitas integrar la IA en el núcleo del modelo operativo, no solo como herramienta que el equipo usa ocasionalmente?',
     answer:
       'El AI Transformation Roadmap diseña la hoja de ruta con tres horizontes, combinando conocimiento de la tecnología con conocimiento de la operación.',
   },
@@ -72,7 +72,7 @@ export default function TransformarElModeloPage() {
         line1="Optimizar lo que existe..."
         line2="ya no es suficiente."
         line1Style="muted"
-        subtitle="Algunas organizaciones no tienen un problema de operación ni de oportunidad. Tienen un modelo que funcionó — y que ya no alcanza para llevarlas a donde necesitan llegar. Lo que necesitan no es hacer mejor lo que hacen. Es repensar cómo están organizadas para crear valor."
+        subtitle="Algunas organizaciones no tienen un problema de operación ni de oportunidad. Tienen un modelo que funcionó, y que ya no alcanza para llevarlas a donde necesitan llegar. Lo que necesitan no es hacer mejor lo que hacen. Es repensar cómo están organizadas para crear valor."
       />
 
       <ReIntelligenceBlock expanded />

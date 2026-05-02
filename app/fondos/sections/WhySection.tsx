@@ -5,7 +5,7 @@ import Tag from '@/components/ui/Tag'
 
 const left = [
   'Due diligence técnico con visita de campo en comunidades amazónicas, zonas pesqueras y territorios agrícolas remotos',
-  'Diagnóstico con el BIRF — la única herramienta de investment readiness diseñada específicamente para bionegocios de bioeconomía en LATAM',
+  'Diagnóstico con el BIRF, la única herramienta de investment readiness diseñada específicamente para bionegocios de bioeconomía en LATAM',
   'Monitoreo de portafolio con IA que cubre variables técnicas y de activo natural',
   'Acompañamiento pre-inversión ejecutado por el mismo equipo que co-funda ventures del sector',
   'Track record: USD 1.5 millones levantados + USD 80 millones acompañados',

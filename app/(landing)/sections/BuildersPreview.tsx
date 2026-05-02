@@ -15,7 +15,7 @@ export default function BuildersPreview() {
               Expertos que necesitan que su expertise sirva para algo más grande.
             </h2>
             <p className="text-body-lg text-text-secondary mb-8">
-              La Red de Builders de Redesign Lab conecta a expertos de alto perfil — Business Designers, ingenieros de trazabilidad, científicos de datos, especialistas en finanzas de impacto, agrónomos regenerativos, expertos en go-to-market internacional — con proyectos donde su conocimiento produce impacto real. Los Builders colaboran en proyectos, participan en Re. Share — el programa de valor compartido de la red — y acceden, cuando hay alineación, a oportunidades de inversión y co-fundación en el portafolio.
+              La Red de Builders de Redesign Lab conecta a expertos de alto perfil (Business Designers, ingenieros de trazabilidad, científicos de datos, especialistas en finanzas de impacto, agrónomos regenerativos, expertos en go-to-market internacional) con proyectos donde su conocimiento produce impacto real. Los Builders colaboran en proyectos, participan en Re. Share, el programa de valor compartido de la red, y acceden, cuando hay alineación, a oportunidades de inversión y co-fundación en el portafolio.
             </p>
             <Button variant="text" href="/builders" className="text-text-primary">
               Conocer la Red de Builders &rarr;

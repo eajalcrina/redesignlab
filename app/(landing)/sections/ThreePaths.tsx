@@ -8,19 +8,19 @@ import Button from '@/components/ui/Button'
 const paths = [
   {
     title: 'Crear valor',
-    description: 'Para organizaciones que tienen un activo o una oportunidad que todavía no han capturado — y que necesitan el diseño del modelo, la estructura del nuevo negocio o la estrategia para acceder al capital correcto.',
+    description: 'Para organizaciones que tienen un activo o una oportunidad que todavía no han capturado y necesitan el diseño del modelo, la estructura del nuevo negocio o la estrategia para acceder al capital correcto.',
     services: 'Opportunity Scan · Innovation Blueprint · Bioventure Blueprint · Corporate Spin-off Design · Fundraising Estratégico · Impact Value Report',
     href: '/crear-valor',
   },
   {
     title: 'Rediseñar el trabajo',
-    description: 'Para organizaciones que ya tienen un negocio funcionando — y que necesitan que funcione mucho mejor. Más eficiente, más trazable, más circular, más inteligente.',
+    description: 'Para organizaciones que ya tienen un negocio funcionando y necesitan que funcione mucho mejor. Más eficiente, más trazable, más circular, más inteligente.',
     services: 'Re. Sprint · Circular Operations Redesign · Supply Chain Intelligence · Re.·IA Application',
     href: '/redisenar-el-trabajo',
   },
   {
     title: 'Transformar el modelo',
-    description: 'Para organizaciones que han llegado al límite de lo que el modelo actual puede producir — y que necesitan repensar la arquitectura completa del negocio para la siguiente etapa.',
+    description: 'Para organizaciones que han llegado al límite de lo que el modelo actual puede producir y necesitan repensar la arquitectura completa del negocio para la siguiente etapa.',
     services: 'Operating Model Design · AI Transformation Roadmap · AI Leadership Sprint · Scale Strategy',
     href: '/transformar-el-modelo',
   },

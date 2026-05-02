@@ -9,7 +9,7 @@ import ResourceDrawer, { type Resource } from '@/components/ui/ResourceDrawer'
 const resources: (Resource & { type: string })[] = [
   {
     slug: 'ia-bioeconomia-guia',
-    name: 'Guía: IA para bioeconomía — por dónde empezar',
+    name: 'Guía: IA para bioeconomía, por dónde empezar',
     type: 'PDF',
     description: 'Un framework práctico para identificar y priorizar casos de uso de IA en industrias de bioeconomía.',
     downloadUrl: '#',

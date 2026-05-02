@@ -26,7 +26,7 @@ export default function DiagnosticSection() {
             Mide la madurez de tu organización frente a la IA.
           </h2>
           <p className="text-body-lg text-text-muted max-w-2xl mb-10">
-            Un diagnóstico estructurado en 5 dimensiones críticas para organizaciones de bioeconomía en América Latina — 12 preguntas, 4 minutos, resultado personalizado por industria y plan de 90 días.
+            Un diagnóstico estructurado en 5 dimensiones críticas para organizaciones de bioeconomía en América Latina: 12 preguntas, 4 minutos, resultado personalizado por industria y plan de 90 días.
           </p>
         </SectionReveal>
 

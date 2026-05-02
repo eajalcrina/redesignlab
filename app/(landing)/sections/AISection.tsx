@@ -50,7 +50,7 @@ export default function AISection() {
             Los problemas de la bioeconomía no son genéricos.
           </h2>
           <p className="text-body-lg text-text-muted max-w-3xl mb-16">
-            Hay muchas firmas que pueden hablar de inteligencia artificial con autoridad. Hay muy pocas que pueden hablar de bioeconomía amazónica con la misma autoridad. Y prácticamente ninguna que pueda hacer las dos cosas al mismo tiempo — con proyectos reales, resultados verificables y conocimiento de primera mano del territorio.
+            Hay muchas firmas que pueden hablar de inteligencia artificial con autoridad. Hay muy pocas que pueden hablar de bioeconomía amazónica con la misma autoridad. Y prácticamente ninguna que pueda hacer las dos cosas al mismo tiempo: con proyectos reales, resultados verificables y conocimiento de primera mano del territorio.
           </p>
         </SectionReveal>
 

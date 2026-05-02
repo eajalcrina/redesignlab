@@ -71,7 +71,7 @@ export default function ReShareSection() {
             </div>
 
             <p className="text-body-lg text-text-muted max-w-xl mx-auto">
-              Re. Share es el modelo de participación que alinea incentivos. No eres un proveedor — eres un co-constructor con skin in the game.
+              Re. Share es el modelo de participación que alinea incentivos. No eres un proveedor. Eres un co-constructor con skin in the game.
             </p>
           </motion.div>
         </div>

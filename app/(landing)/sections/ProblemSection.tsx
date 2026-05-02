@@ -31,7 +31,7 @@ const problems = [
     number: '03',
     statement: 'Tenemos el modelo y el capital. No tenemos la velocidad.',
     bullets: [
-      'Una organización que sabe lo que quiere hacer pero opera a la velocidad de los ciclos de consultoría convencional — cuando el mercado se mueve a la velocidad de la IA.',
+      'Una organización que sabe lo que quiere hacer pero opera a la velocidad de los ciclos de consultoría convencional, cuando el mercado se mueve a la velocidad de la IA.',
       'Un fondo con portafolio de bionegocios que no tiene la capacidad técnica interna para monitorear las variables que realmente importan.',
       'Un equipo directivo que toma decisiones de alta consecuencia sin la inteligencia de mercado que esas decisiones merecen.',
     ],

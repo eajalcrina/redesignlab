@@ -16,10 +16,10 @@ export default function CtaSection() {
             
             <div className="text-body-lg text-text-muted space-y-6 mb-12">
               <p>
-                Nuestro trabajo no comienza en una sala de reuniones. Comienza donde el activo natural existe — en la cocha amazónica, en la parcela del pequeño agricultor, en la planta de procesamiento, en la mesa de negociación con el fondo de impacto.
+                Nuestro trabajo no comienza en una sala de reuniones. Comienza donde el activo natural existe: en la cocha amazónica, en la parcela del pequeño agricultor, en la planta de procesamiento, en la mesa de negociación con el fondo de impacto.
               </p>
               <p>
-                Si está buscando un aliado que combine ese conocimiento territorial con la capacidad de estructurar inversiones, diseñar modelos de negocio escalables y conectar su organización con mercados y capital de primer nivel — conversemos.
+                Si está buscando un aliado que combine ese conocimiento territorial con la capacidad de estructurar inversiones, diseñar modelos de negocio escalables y conectar su organización con mercados y capital de primer nivel. Conversemos.
               </p>
             </div>
             

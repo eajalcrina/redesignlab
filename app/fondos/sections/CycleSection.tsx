@@ -16,7 +16,7 @@ const nodes = [
   {
     id: 'diligence',
     label: 'Due Diligence',
-    detail: 'Due diligence técnica y operativa en campo. Validamos el modelo, la cadena, el equipo y el territorio — no solo los números.',
+    detail: 'Due diligence técnica y operativa en campo. Validamos el modelo, la cadena, el equipo y el territorio. No solo los números.',
   },
   {
     id: 'building',
@@ -31,7 +31,7 @@ const nodes = [
   {
     id: 'impact',
     label: 'Impact Reporting',
-    detail: 'Definimos métricas de impacto del portafolio, implementamos sistemas de monitoreo continuo y generamos los reportes que los LP y el mercado exigen — con datos verificables de campo.',
+    detail: 'Definimos métricas de impacto del portafolio, implementamos sistemas de monitoreo continuo y generamos los reportes que los LP y el mercado exigen, con datos verificables de campo.',
   },
 ]
 

@@ -28,7 +28,7 @@ export default function HeroSection() {
             Construimos los negocios que el planeta necesita <span className="text-white">hoy.</span>
           </motion.h1>
           <motion.p variants={item} className="text-body-lg text-text-muted mb-6 max-w-3xl mx-auto">
-            Somos un Venture Studio especializado en el desarrollo de negocios sostenibles que generan impacto real en América Latina y el Caribe. Trabajamos con un número deliberadamente reducido de proyectos — los que tienen el potencial y la solidez para convertirse en referentes globales de su industria.
+            Somos un Venture Studio especializado en el desarrollo de negocios sostenibles que generan impacto real en América Latina y el Caribe. Trabajamos con un número deliberadamente reducido de proyectos: los que tienen el potencial y la solidez para convertirse en referentes globales de su industria.
           </motion.p>
           <motion.p variants={item} className="text-body-md text-text-muted/70 max-w-3xl mx-auto">
             Esto no es una convocatoria abierta. Es un ecosistema de construcción selectiva.

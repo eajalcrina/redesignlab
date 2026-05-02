@@ -16,7 +16,7 @@ export default function VenturesPreview() {
             El portafolio de ventures.
           </h2>
           <p className="text-body-lg text-text-muted max-w-3xl mb-16">
-            Redesign Lab no solo asesora — co-funda. El portafolio activo incluye empresas en agricultura regenerativa, biomateriales, biotecnología, cosmética natural, suplementos, consumo saludable e innovación climática.
+            Redesign Lab no solo asesora. Co-funda. El portafolio activo incluye empresas en agricultura regenerativa, biomateriales, biotecnología, cosmética natural, suplementos, consumo saludable e innovación climática.
           </p>
         </SectionReveal>
 

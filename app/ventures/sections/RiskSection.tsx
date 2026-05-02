@@ -9,7 +9,7 @@ import { DURATION, EASE } from '@/lib/animations'
 const risks = [
   {
     title: 'Para emprendedores con visión',
-    detail: 'Sus ideas de impacto mueren en la etapa inicial. No por falta de capital únicamente — sino por falta de un socio estratégico que sepa construir, que conozca los mercados internacionales desde adentro, que haya estado en el campo y en la mesa de negociación al mismo tiempo.',
+    detail: 'Sus ideas de impacto mueren en la etapa inicial. No por falta de capital únicamente, sino por falta de un socio estratégico que sepa construir, que conozca los mercados internacionales desde adentro, que haya estado en el campo y en la mesa de negociación al mismo tiempo.',
   },
   {
     title: 'Para inversores con propósito',
@@ -33,7 +33,7 @@ export default function RiskSection() {
             Lo que hemos visto de primera mano durante cinco años.
           </h2>
           <p className="text-body-lg text-text-secondary max-w-3xl mb-12">
-            Las mejores oportunidades del ecosistema de bioeconomía en América Latina no se pierden por falta de potencial. Se pierden por falta del socio correcto en el momento correcto — o porque el capital llega antes de que la empresa esté lista para recibirlo. Lo hemos visto en tres frentes simultáneos:
+            Las mejores oportunidades del ecosistema de bioeconomía en América Latina no se pierden por falta de potencial. Se pierden por falta del socio correcto en el momento correcto, o porque el capital llega antes de que la empresa esté lista para recibirlo. Lo hemos visto en tres frentes simultáneos:
           </p>
         </SectionReveal>
 

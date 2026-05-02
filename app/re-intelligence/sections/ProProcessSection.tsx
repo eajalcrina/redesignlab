@@ -19,12 +19,12 @@ const steps = [
   {
     number: '03',
     title: 'Traducción a inteligencia accionable',
-    body: 'Los análisis se convierten en material concreto para el comité de gerencia y en planes de acción ágiles: qué hacer, en qué orden, qué mide el avance y qué señala que hay que ajustar.',
+    body: 'Los análisis se convierten en insights para el comité de gerencia y en planes de acción ágiles: qué hacer, en qué orden, qué mide el avance y qué señala que hay que ajustar.',
   },
   {
     number: '04',
     title: 'Sesiones de trabajo con el equipo de gerencia',
-    body: 'Los análisis y planes se presentan y trabajan en sesiones directas con el equipo directivo. Las 4 horas mensuales se destinan a estas sesiones, con un entregable estructurado que ancla la conversación y las decisiones.',
+    body: 'Los insights y planes se presentan y trabajan en sesiones directas con el equipo directivo. Las 4 horas mensuales se destinan a estas sesiones, con un entregable estructurado que ancla la conversación y las decisiones.',
   },
   {
     number: '05',

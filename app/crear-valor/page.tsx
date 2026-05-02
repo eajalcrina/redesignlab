@@ -23,14 +23,14 @@ export const metadata: Metadata = {
 
 const accordionItems = [
   {
-    question: '¿Tienes un activo — territorial, natural, institucional — que vale más de lo que estás capturando?',
+    question: '¿Tienes un activo (territorial, natural, institucional) que vale más de lo que estás capturando?',
     answer:
       'El Opportunity Scan o el Bioventure Blueprint son el punto de partida correcto para convertir ese activo en un modelo de negocio verificable.',
   },
   {
     question: '¿Quieres lanzar un nuevo producto o servicio, pero necesitas validar que el mercado existe antes de producir?',
     answer:
-      'El Innovation Blueprint diseña el producto completo — investigación, MVP, validación, go-to-market — antes de comprometer recursos en producción.',
+      'El Innovation Blueprint diseña el producto completo (investigación, MVP, validación, go-to-market) antes de comprometer recursos en producción.',
   },
   {
     question: '¿Quieres lanzar un nuevo negocio o un spin-off corporativo?',
@@ -40,7 +40,7 @@ const accordionItems = [
   {
     question: '¿Necesitas capital de cooperación, fondos de impacto o deuda verde?',
     answer:
-      'El Fundraising Estratégico diseña la estrategia, mapea los fondos y gestiona las postulaciones — con fee solo si hay resultado.',
+      'El Fundraising Estratégico diseña la estrategia, mapea los fondos y gestiona las postulaciones. Fee solo si hay resultado.',
   },
   {
     question: '¿Necesitas demostrar el valor de impacto que ya generas?',
@@ -66,7 +66,7 @@ const processSteps = [
     number: '03',
     title: 'Entregable y transferencia',
     description:
-      'El documento que resiste el uso real — no solo la presentación. Sesión de trabajo para garantizar que el equipo puede ejecutar lo que se diseñó.',
+      'El documento que resiste el uso real, no solo la presentación. Sesión de trabajo para garantizar que el equipo puede ejecutar lo que se diseñó.',
   },
 ]
 
@@ -77,7 +77,7 @@ export default function CrearValorPage() {
         tag="CREAR VALOR"
         line1="Lo que tienes vale más de lo que el modelo actual puede capturar."
         line2="Diseñamos el modelo que captura ese valor."
-        subtitle="Algunas organizaciones no tienen un problema de ejecución. Tienen una oportunidad que todavía no han capturado — porque no saben exactamente cuál es, cómo estructurarla, cómo diseñarla o cómo financiarla."
+        subtitle="Algunas organizaciones no tienen un problema de ejecución. Tienen una oportunidad que todavía no han capturado porque no saben exactamente cuál es, cómo estructurarla, cómo diseñarla o cómo financiarla."
       />
 
       <AccordionSection
