@@ -24,7 +24,7 @@ const verticales: Vertical[] = [
     number: 'I',
     title: 'Estrategia de Negocios y Tecnología',
     intro:
-      'La estrategia de negocio y la tecnología no son dimensiones separadas — la tecnología es una palanca de la estrategia, no un área de soporte. Este bloque trabaja ambas dimensiones de forma integrada.',
+      'La estrategia de negocio y la tecnología no son dimensiones separadas. La tecnología es una palanca de la estrategia, no un área de soporte. Este bloque trabaja ambas dimensiones de forma integrada.',
     blocks: [
       {
         heading: 'Negocios',
@@ -40,7 +40,7 @@ const verticales: Vertical[] = [
     number: 'II',
     title: 'Estrategia de Operaciones y Finanzas',
     intro:
-      'Las dos dimensiones de eficiencia y sostenibilidad del modelo. Se analizan juntas porque las decisiones operativas tienen consecuencias financieras directas — y las restricciones financieras definen el espacio de lo operativamente posible.',
+      'Las dos dimensiones de eficiencia y sostenibilidad del modelo. Se analizan juntas porque las decisiones operativas tienen consecuencias financieras directas, y las restricciones financieras definen el espacio de lo operativamente posible.',
     blocks: [
       {
         heading: 'Operaciones',
@@ -60,7 +60,7 @@ const verticales: Vertical[] = [
   {
     number: 'IV',
     title: 'Estrategia de Impacto',
-    body: 'Medición y comunicación del impacto generado por la empresa — ambiental, social, económico. Alineación entre la estrategia de negocio y los compromisos de impacto, y su traducción en valor diferencial ante clientes, inversores y aliados. En las industrias de bioeconomía, el impacto no es un reporte de sostenibilidad — es parte de la tesis de valor.',
+    body: 'Medición y comunicación del impacto generado por la empresa: ambiental, social, económico. Alineación entre la estrategia de negocio y los compromisos de impacto, y su traducción en valor diferencial ante clientes, inversores y aliados. En las industrias de bioeconomía, el impacto no es un reporte de sostenibilidad. Es parte de la tesis de valor.',
   },
 ]
 
@@ -76,7 +76,7 @@ export default function RealMonthSection() {
             Un mismo marco. Cuatro frentes que mueven el negocio.
           </h2>
           <p className="text-body-lg text-text-muted max-w-3xl mb-16">
-            Re. Intelligence trabaja sobre cuatro verticales estratégicas que cubren el espacio completo de decisiones que mueven una empresa mediana. Ambas versiones (Lite y Pro) operan sobre el mismo marco — el nivel de profundidad y la forma de intervención varía, pero el alcance temático es el mismo.
+            Re. Intelligence trabaja sobre cuatro verticales estratégicas que cubren el espacio completo de decisiones que mueven una empresa mediana. Ambas versiones (Lite y Pro) operan sobre el mismo marco. El nivel de profundidad y la forma de intervención varía, pero el alcance temático es el mismo.
           </p>
         </SectionReveal>
 

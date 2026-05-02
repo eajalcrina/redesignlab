@@ -4,7 +4,7 @@ import SectionReveal from '@/components/animations/SectionReveal'
 
 const addonItems = [
   'Mapeo de fondos, instrumentos y convocatorias disponibles para el perfil específico de la empresa.',
-  'Diagnóstico de preparación para la inversión — revisión de tesis, materiales y estructura.',
+  'Diagnóstico de preparación para la inversión: revisión de tesis, materiales y estructura.',
   'Acompañamiento en la construcción del caso de inversión y narrativa para inversores.',
   'Conexión con la red de fondos e inversores del ecosistema de Redesign Lab.',
 ]

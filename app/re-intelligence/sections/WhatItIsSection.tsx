@@ -10,11 +10,11 @@ const versions = [
     mark: '◎',
     name: 'Re. Intelligence Lite',
     price: 'USD 900 / mes',
-    headline: 'Acceso directo al criterio estratégico senior — en el momento que más importa.',
+    headline: 'Acceso directo al criterio estratégico senior cuando más importa.',
     description:
-      'Acompañamiento estratégico continuo a través de las cuatro verticales, aplicado a las decisiones y desafíos que el equipo directivo trae a cada sesión. No hay integración de flujos de datos — el criterio se aplica sobre la información que la empresa comparte en el espacio de trabajo conjunto.',
+      'Acompañamiento estratégico continuo a través de las cuatro verticales, aplicado a las decisiones y desafíos que el equipo directivo trae a cada sesión. No hay integración de datos del negocio. El criterio se aplica sobre la información que la empresa comparte en las sesiones de trabajo.',
     forWhom:
-      'Fundadores o equipos directivos que necesitan un interlocutor externo de criterio para contrastar decisiones, validar pivots y mantener el foco en el escalamiento — sin requerir la integración sistemática de los datos del negocio.',
+      'Fundadores o equipos directivos que necesitan un interlocutor externo de criterio para contrastar decisiones, validar pivots y mantener el foco en el escalamiento, sin requerir la integración sistemática de los datos del negocio.',
     accent: false,
   },
   {
@@ -26,7 +26,7 @@ const versions = [
     description:
       'Integra el equipo de inteligencia estratégica de Redesign Lab a los procesos y flujos de información de la empresa. El trabajo sobre las cuatro verticales parte del análisis sistemático de la información real que el negocio genera, procesada en los Redesign Lab y traducida en planes accionables que se presentan al comité de gerencia.',
     forWhom:
-      'Empresas que necesitan que alguien articule la información del negocio, la procese con inteligencia y entregue análisis, brechas, oportunidades y planes accionables — mes a mes, en todos los frentes críticos.',
+      'Empresas que necesitan que alguien articule la información del negocio, la procese y entregue análisis, brechas, oportunidades y planes de acción concretos, mes a mes, en todos los frentes críticos.',
     accent: true,
   },
 ]
@@ -50,10 +50,10 @@ const comparison: ComparisonRow[] = [
     pro: 'Articulación e integración de flujos de datos del negocio',
   },
   { key: 'procesamiento', row: 'Procesamiento en los Redesign Lab', light: 'No', pro: 'Sí' },
-  { key: 'analisis', row: 'Análisis sistemático de brechas y oportunidades', light: 'No', pro: 'Sí — por vertical, cada mes' },
-  { key: 'planes', row: 'Planes accionables estructurados', light: 'No', pro: 'Sí — entregados mensualmente' },
+  { key: 'analisis', row: 'Análisis sistemático de brechas y oportunidades', light: 'No', pro: 'Sí, por vertical cada mes' },
+  { key: 'planes', row: 'Planes de acción estructurados', light: 'No', pro: 'Sí, entregados mensualmente' },
   { key: 'brief', row: 'Re. Intelligence Brief mensual', light: 'No', pro: 'Sí' },
-  { key: 'alertas', row: 'Alertas de oportunidades de financiamiento', light: 'Sí — mensual', pro: 'Sí — mensual, integradas al análisis' },
+  { key: 'alertas', row: 'Alertas de oportunidades de financiamiento', light: 'Sí, mensual', pro: 'Sí, mensual, integradas al análisis' },
   { key: 'limite', row: 'Límite de empresas activas', light: 'Abierto', pro: 'Máximo 15' },
   { key: 'fundraising', row: 'Inversión / Fundraising', light: 'Add-on', pro: 'Add-on' },
   {
@@ -81,7 +81,7 @@ export default function WhatItIsSection() {
             Distinto nivel de integración. Mismas cuatro verticales.
           </h2>
           <p className="text-body-lg text-text-muted max-w-3xl mb-16">
-            Re. Intelligence existe en dos modalidades. Ambas trabajan sobre las mismas cuatro verticales estratégicas — la diferencia no es de scope temático, sino de profundidad de integración con los procesos y la información de la empresa.
+            Re. Intelligence existe en dos modalidades. Ambas trabajan sobre las mismas cuatro verticales estratégicas. La diferencia no está en los temas que cubre, sino en la profundidad de integración con los procesos y la información de la empresa.
           </p>
         </SectionReveal>
 

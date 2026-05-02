@@ -10,14 +10,14 @@ const archetypes = [
   {
     title: 'El fundador que opera solo',
     description:
-      'Dirige una empresa de bioeconomía que ya funciona — y donde todo el pensamiento estratégico recae sobre él. No porque no tenga capacidad. Porque no tiene el tiempo ni el equipo para separar el pensamiento de la operación.',
+      'Dirige una empresa de bioeconomía que ya funciona, donde todo el pensamiento estratégico recae sobre él. No porque no tenga capacidad. Porque no tiene el tiempo ni el equipo para separar el pensamiento de la operación.',
     fit: 'Re. Intelligence le da el equipo de estrategia que no puede contratar.',
   },
   {
     title: 'El equipo fundador sin área corporativa',
     description:
       'Dos o tres socios que construyeron una empresa con talento operativo sólido pero sin las posiciones corporativas que las grandes empresas tienen para pensar el negocio: dirección estratégica, análisis de mercado, gestión de financiamiento.',
-    fit: 'Re. Intelligence es ese equipo corporativo — externo, senior, con IA como motor de análisis.',
+    fit: 'Re. Intelligence es ese equipo corporativo: externo, senior, con IA como motor de análisis.',
   },
   {
     title: 'El director de inversión de un fondo',
@@ -31,7 +31,7 @@ const notForItems: { text: React.ReactNode }[] = [
   {
     text: (
       <>
-        Empresas que todavía están definiendo su modelo de negocio — el punto de partida correcto es{' '}
+        Empresas que todavía están definiendo su modelo de negocio. El punto de partida correcto es{' '}
         <Link href="/crear-valor" className="text-rl-red underline decoration-rl-red/40 hover:decoration-rl-red transition-colors">
           Crear Valor →
         </Link>
@@ -39,10 +39,10 @@ const notForItems: { text: React.ReactNode }[] = [
     ),
   },
   {
-    text: 'Empresas que necesitan un proyecto específico con entregable definido — cualquiera de las tres líneas de servicio de Redesign Lab.',
+    text: 'Empresas que necesitan un proyecto específico con entregable definido. Cualquiera de las tres líneas de servicio de Redesign Lab.',
   },
   {
-    text: 'Empresas que esperan que Re. Intelligence ejecute los planes — Re. Intelligence produce la inteligencia. La ejecución es del equipo de la empresa.',
+    text: 'Empresas que esperan que Re. Intelligence ejecute los planes. Re. Intelligence produce la inteligencia; la ejecución es del equipo de la empresa.',
   },
 ]
 

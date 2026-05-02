@@ -13,7 +13,7 @@ export default function ApplicationProcess() {
     <div ref={ref}>
       <SectionReveal>
         <p className="text-body-lg text-text-secondary max-w-3xl mb-20">
-          Desde el contacto inicial hasta la primera sesión de trabajo. El formulario asegura que la primera reunión llegue con contexto real — no se gasta tiempo en presentaciones genéricas.
+          Desde el contacto inicial hasta la primera sesión de trabajo. El formulario asegura que la primera reunión llegue con contexto real. No se gasta tiempo en presentaciones genéricas.
         </p>
       </SectionReveal>
 
@@ -28,10 +28,10 @@ export default function ApplicationProcess() {
               </h3>
             </div>
             <p className="text-body-md text-text-secondary mb-6">
-              El formulario es el punto de partida. Permite que el equipo de Redesign Lab llegue a la primera reunión con contexto real sobre la empresa — sin perder tiempo en presentaciones genéricas.
+              El formulario es el punto de partida. Permite que el equipo de Redesign Lab llegue a la primera reunión con contexto real sobre la empresa, sin perder tiempo en presentaciones genéricas.
             </p>
             <p className="text-body-md text-text-secondary border-l-2 border-rl-red pl-4 italic">
-              <span className="text-text-primary font-medium">La pregunta que más importa:</span> ¿cuál es el desafío más crítico que enfrenta tu empresa en los próximos seis meses — y por qué crees que no puedes resolverlo solo? Esa pregunta no es un trámite. Es el primer filtro real.
+              <span className="text-text-primary font-medium">La pregunta que más importa:</span> ¿cuál es el desafío más crítico que enfrenta tu empresa en los próximos seis meses y por qué crees que no puedes resolverlo solo? Esa pregunta no es un trámite. Es el primer filtro real.
             </p>
           </div>
 
@@ -60,7 +60,7 @@ export default function ApplicationProcess() {
               Agendar la reunión de fit
             </h3>
             <p className="text-body-md text-text-secondary">
-              Inmediatamente después de enviar el formulario, agendas la conversación de <span className="text-text-primary font-medium">30 minutos</span> directamente desde el calendario del equipo. Eddie y Lorenzo llegan con tu información ya revisada — no se gasta tiempo en presentaciones desde cero. Si hay alineación real, se define la versión y se activa el onboarding. Si no la hay, se comunica con claridad en la misma reunión y se sugiere el camino más apropiado.
+              Inmediatamente después de enviar el formulario, agendas la conversación de <span className="text-text-primary font-medium">30 minutos</span> directamente desde el calendario del equipo. Eddie y Lorenzo llegan con tu información ya revisada. No se gasta tiempo en presentaciones desde cero. Si hay alineación real, se define la versión y se activa el onboarding. Si no la hay, se comunica con claridad en la misma reunión y se sugiere el camino más apropiado.
             </p>
           </motion.div>
 

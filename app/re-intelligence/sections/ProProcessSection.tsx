@@ -9,27 +9,27 @@ const steps = [
   {
     number: '01',
     title: 'Articulación de flujos de información',
-    body: 'Re. Intelligence trabaja junto con la empresa para mapear y estructurar los flujos de información que el negocio ya genera — datos operativos, financieros, comerciales, tecnológicos, de impacto — y los conecta a los Redesign Lab, la plataforma de procesamiento de información de Redesign Lab.',
+    body: 'Re. Intelligence trabaja junto con la empresa para mapear y estructurar los datos que el negocio ya genera (operativos, financieros, comerciales, tecnológicos, de impacto) y los conecta a los Redesign Lab, la plataforma de procesamiento de información de Redesign Lab.',
   },
   {
     number: '02',
     title: 'Procesamiento y análisis',
-    body: 'Los Redesign Lab procesan la información con IA y criterio territorial sobre las cuatro verticales estratégicas. El resultado no son dashboards — son análisis de brechas, mapas de oportunidades y escenarios calibrados con la realidad específica de cada empresa.',
+    body: 'Los Redesign Lab procesan la información con IA y criterio territorial sobre las cuatro verticales estratégicas. El resultado no son dashboards. Son análisis de brechas, mapas de oportunidades y escenarios calibrados al negocio de cada empresa.',
   },
   {
     number: '03',
     title: 'Traducción a inteligencia accionable',
-    body: 'Los análisis se convierten en insights para el comité de gerencia y en planes de acción ágiles: qué hacer, en qué orden, con qué métricas de seguimiento y con qué criterios para ajustar en tiempo real.',
+    body: 'Los análisis se convierten en material concreto para el comité de gerencia y en planes de acción ágiles: qué hacer, en qué orden, qué mide el avance y qué señala que hay que ajustar.',
   },
   {
     number: '04',
     title: 'Sesiones de trabajo con el equipo de gerencia',
-    body: 'Los planes e insights se presentan y trabajan en sesiones directas con el equipo directivo. Las 4 horas mensuales se destinan a estas sesiones — donde hay un entregable estructurado que ancla la conversación y las decisiones.',
+    body: 'Los análisis y planes se presentan y trabajan en sesiones directas con el equipo directivo. Las 4 horas mensuales se destinan a estas sesiones, con un entregable estructurado que ancla la conversación y las decisiones.',
   },
   {
     number: '05',
     title: 'Ejecución a cargo del equipo de la empresa',
-    body: 'Re. Intelligence produce la inteligencia. La ejecución es del equipo de la empresa — con la claridad que el análisis externo hace posible.',
+    body: 'Re. Intelligence produce la inteligencia. La ejecución es del equipo de la empresa, con la claridad que el análisis externo genera.',
   },
 ]
 
@@ -40,7 +40,7 @@ export default function ProProcessSection() {
     <div ref={ref}>
       <SectionReveal>
         <p className="text-body-lg text-text-secondary max-w-3xl mb-16">
-          En Pro, las 4 horas mensuales no se gastan nivelando contexto. Llegan con análisis ya hecho — porque el ciclo de cinco pasos corre cada mes, antes y después de la sesión.
+          En Pro, las 4 horas mensuales no se gastan nivelando contexto. Llegan con análisis ya hecho porque el ciclo de cinco pasos corre cada mes, antes y después de la sesión.
         </p>
       </SectionReveal>
 

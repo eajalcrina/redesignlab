@@ -24,7 +24,7 @@ const months = [
       },
     ],
     closing:
-      'El output del Mes 1 no es una estrategia. Es una serie de escenarios — descripciones rigurosas de cómo podría verse el negocio en 18–36 meses bajo distintas decisiones y condiciones de mercado. La empresa elige con qué escenario se identifica — con criterio, no con intuición.',
+      'El output del Mes 1 no es una estrategia. Es una serie de escenarios: descripciones rigurosas de cómo podría verse el negocio en 18–36 meses bajo distintas decisiones y condiciones de mercado. La empresa elige con qué escenario se identifica, con criterio, no con intuición.',
     outputs: [
       'Diagnóstico profundo del negocio, el mercado y el equipo',
       'Mapa de oportunidades y riesgos identificados con IA y criterio territorial',
@@ -46,7 +46,7 @@ const months = [
       },
     ],
     closing:
-      'El output del Mes 2 es un plan de negocio accionable — no un documento de estrategia corporativa para presentar a un directorio. Un plan concreto: qué se va a hacer, en qué orden, con qué recursos, con qué métricas de seguimiento y con qué criterios para saber si está funcionando.',
+      'El output del Mes 2 es un plan de negocio concreto, no un documento de estrategia corporativa para presentar a un directorio. Qué se hace, en qué orden, con qué recursos, qué mide el avance y qué señala que algo no está funcionando.',
     outputs: [
       'Evaluación detallada de cada escenario con el equipo directivo',
       'Decisión de escenario y ajuste de variables en función de la realidad del negocio',

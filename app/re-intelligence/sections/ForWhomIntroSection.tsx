@@ -5,15 +5,15 @@ import Tag from '@/components/ui/Tag'
 
 const founderPains = [
   '¿Cómo resuelvo este problema operativo que no termina de arreglarse?',
-  '¿Cómo organizo al equipo para que la operación sea más eficiente — y no dependa tanto de mí?',
+  '¿Cómo organizo al equipo para que la operación sea más eficiente y no dependa tanto de mí?',
   '¿Cómo ajusto la estrategia comercial para alcanzar las metas del año?',
-  '¿Estoy leyendo el mercado bien — o se me está escapando algo?',
+  '¿Estoy leyendo el mercado bien, o se me está escapando algo?',
   '¿Qué fondos reales puedo conseguir para el próximo paso?',
 ]
 
 const distinctions = [
   { he: 'Re. Intelligence', does: 'Pensamiento, análisis, escenarios, planes accionables.' },
-  { he: 'Tu equipo', does: 'La ejecución de los planes — siempre.' },
+  { he: 'Tu equipo', does: 'La ejecución de los planes, siempre.' },
 ]
 
 export default function ForWhomIntroSection() {
@@ -31,13 +31,13 @@ export default function ForWhomIntroSection() {
           <SectionReveal delay={0.1}>
             <div className="max-w-2xl space-y-6 text-body-lg text-text-secondary">
               <p>
-                En la empresa mediana que ya funciona — con clientes reales, operación probada y un equipo comprometido — el pensamiento estratégico y el análisis de información recaen sobre las mismas personas que gestionan la operación diaria.
+                En la empresa mediana que ya funciona (con clientes reales, operación probada y un equipo comprometido) el pensamiento estratégico y el análisis de información recaen sobre las mismas personas que gestionan la operación diaria.
               </p>
               <p className="text-text-primary">
                 No es falta de capacidad. Es falta de estructura, tiempo y criterio externo.
               </p>
               <p>
-                Re. Intelligence es el equipo de inteligencia estratégica externo de tu empresa. <span className="text-text-primary font-medium">No reemplaza a tu equipo — lo potencia.</span> Produce la inteligencia que permite que las decisiones sean mejores, más rápidas y con más claridad de la que el equipo puede generar solo.
+                Re. Intelligence es el equipo de inteligencia estratégica externo de tu empresa. <span className="text-text-primary font-medium">No reemplaza a tu equipo. Lo potencia.</span> Produce la inteligencia que permite que las decisiones sean mejores, más rápidas y con más claridad de la que el equipo puede generar solo.
               </p>
             </div>
 
@@ -53,7 +53,7 @@ export default function ForWhomIntroSection() {
                 ))}
               </ul>
               <p className="text-body-md text-text-secondary">
-                Muchas veces los fundadores tienen una estrategia clara — pero no siempre es la correcta. Re. Intelligence te ayuda a <span className="text-text-primary font-medium">validar, pivotar o mejorar</span> tu estrategia de negocio, con las mejores herramientas disponibles y la experiencia del equipo senior de Redesign Lab.
+                Muchas veces los fundadores tienen una estrategia clara, pero no siempre es la correcta. Re. Intelligence te ayuda a <span className="text-text-primary font-medium">validar, pivotar o mejorar</span> tu estrategia de negocio, con las mejores herramientas disponibles y la experiencia del equipo senior de Redesign Lab.
               </p>
             </div>
 
@@ -91,7 +91,7 @@ export default function ForWhomIntroSection() {
                 </li>
                 <li className="flex items-start gap-3 text-body-sm text-text-muted">
                   <span className="w-1.5 h-1.5 rounded-full bg-rl-red mt-2 flex-shrink-0" />
-                  <span>Un equipo que resuelva problemas con criterio externo — sin el sesgo de quien está adentro todos los días</span>
+                  <span>Un equipo que resuelva problemas con criterio externo, sin el sesgo de quien está adentro todos los días</span>
                 </li>
               </ul>
               <div className="pt-6 border-t border-border-dark">
