@@ -21,7 +21,7 @@ export default function ClosingNoteSection() {
                 Es correcto para los que ya saben qué están construyendo — y que necesitan que alguien piense con ellos en cómo construirlo mejor, más rápido y con más inteligencia de la que pueden generar solos.
               </p>
               <p>
-                Light o Pro depende del tipo de acompañamiento que el momento del negocio requiere. Light si necesitas un interlocutor externo de criterio para acompañar las decisiones — sin integración sistemática de datos. Pro si necesitas que alguien articule la información del negocio, la procese y entregue planes accionables que tu equipo va a ejecutar mes a mes.
+                Lite o Pro depende del tipo de acompañamiento que el momento del negocio requiere. Lite si necesitas un interlocutor externo de criterio para acompañar las decisiones — sin integración sistemática de datos. Pro si necesitas que alguien articule la información del negocio, la procese y entregue planes accionables que tu equipo va a ejecutar mes a mes.
               </p>
               <p className="text-text-on-dark font-medium pt-2">
                 La conversación de fit decide cuál es la correcta.

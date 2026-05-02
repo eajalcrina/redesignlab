@@ -17,7 +17,7 @@ export default function AddonSection() {
           Para empresas en proceso de levantar capital o que buscan conectarse con instrumentos de financiamiento, Re. Intelligence puede activar el módulo de Inversión y Fundraising como servicio complementario.
         </p>
         <p className="font-mono text-mono-sm text-rl-red uppercase tracking-[0.18em]">
-          Disponible para Light y Pro · Estructura caso a caso
+          Disponible para Lite y Pro · Estructura caso a caso
         </p>
       </SectionReveal>
 

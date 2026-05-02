@@ -45,7 +45,7 @@ export default function BenefitsSection() {
             <div className="flex items-center gap-3 mb-6">
               <span className="text-rl-red font-mono text-mono-lg">◎</span>
               <p className="font-mono text-mono-sm uppercase tracking-[0.18em] text-text-tertiary">
-                Light · USD 900 / mes
+                Lite · USD 900 / mes
               </p>
             </div>
 

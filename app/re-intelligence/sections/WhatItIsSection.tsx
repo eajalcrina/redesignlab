@@ -8,7 +8,7 @@ import Tag from '@/components/ui/Tag'
 const versions = [
   {
     mark: '◎',
-    name: 'Re. Intelligence Light',
+    name: 'Re. Intelligence Lite',
     price: 'USD 900 / mes',
     headline: 'Acceso directo al criterio estratégico senior — en el momento que más importa.',
     description:
@@ -131,7 +131,7 @@ export default function WhatItIsSection() {
           <div className="hidden md:block border border-border-dark rounded overflow-hidden">
             <div className="grid grid-cols-[1.4fr_1fr_1fr] bg-rl-red/10 border-b border-border-dark">
               <div className="px-5 py-4 text-label-sm uppercase text-text-muted">Variable</div>
-              <div className="px-5 py-4 text-label-sm uppercase text-text-on-dark border-l border-border-dark">Light</div>
+              <div className="px-5 py-4 text-label-sm uppercase text-text-on-dark border-l border-border-dark">Lite</div>
               <div className="px-5 py-4 text-label-sm uppercase text-rl-red border-l border-border-dark">Pro</div>
             </div>
             {comparison.map((row, i) => (
@@ -163,7 +163,7 @@ export default function WhatItIsSection() {
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-text-on-dark/70 mb-1.5">
-                      Light
+                      Lite
                     </p>
                     <p className="text-body-sm text-text-muted leading-snug">{row.light}</p>
                   </div>

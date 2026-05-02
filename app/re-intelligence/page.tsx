@@ -15,14 +15,14 @@ import ClosingNoteSection from './sections/ClosingNoteSection'
 import CtaSection from './sections/CtaSection'
 
 export const metadata: Metadata = {
-  title: 'Re. Intelligence | Redesign Lab — Light & Pro: Inteligencia estratégica continua para empresas medianas en bioeconomía',
+  title: 'Re. Intelligence | Redesign Lab — Lite & Pro: Inteligencia estratégica continua para empresas medianas en bioeconomía',
   description:
-    'Re. Intelligence es el equipo de inteligencia estratégica externo de tu empresa. Dos versiones: Light (USD 900/mes) y Pro (USD 3,000/mes, máximo 15 empresas). Para fundadores y gerencia general que necesitan decidir mejor sobre las cuatro verticales del negocio.',
+    'Re. Intelligence es el equipo de inteligencia estratégica externo de tu empresa. Dos versiones: Lite (USD 900/mes) y Pro (USD 3,000/mes, máximo 15 empresas). Para fundadores y gerencia general que necesitan decidir mejor sobre las cuatro verticales del negocio.',
   keywords: [
     'acompañamiento estratégico bioeconomía',
     'advisory fundadores LATAM',
     'inteligencia estratégica IA',
-    'Re Intelligence Light',
+    'Re Intelligence Lite',
     'Re Intelligence Pro',
     'estrategia empresa mediana',
   ],
@@ -41,7 +41,7 @@ export default function ReIntelligencePage() {
         id="lo-que-incluye"
         tag="Lo que incluye cada mes"
         heading="Cada versión, en detalle."
-        preview="11 entregables al mes — 5 en Light, 6 en Pro. La bolsa de 4 horas es el corazón de ambos."
+        preview="11 entregables al mes — 5 en Lite, 6 en Pro. La bolsa de 4 horas es el corazón de ambos."
         tone="neutral"
       >
         <BenefitsSection />
@@ -61,7 +61,7 @@ export default function ReIntelligencePage() {
         id="onboarding-pro"
         tag="Pro · Los primeros tres meses"
         heading="El onboarding que hace posible la integración."
-        preview="Inmersión → Definición → Activación. Light arranca directo, sin onboarding."
+        preview="Inmersión → Definición → Activación. Lite arranca directo, sin onboarding."
         tone="neutral"
       >
         <FirstThreeMonthsSection />
@@ -71,7 +71,7 @@ export default function ReIntelligencePage() {
         id="por-que-quince"
         tag="Aplica a Re. Intelligence Pro"
         heading="¿Por qué 15 empresas y no más?"
-        preview="El límite estructural de Pro — explicado. Light no tiene límite de empresas activas."
+        preview="El límite estructural de Pro — explicado. Lite no tiene límite de empresas activas."
         tone="dark"
       >
         <WhyFifteenSection />
@@ -81,7 +81,7 @@ export default function ReIntelligencePage() {
         id="fundraising"
         tag="Servicio complementario"
         heading="Inversión y Fundraising."
-        preview="Add-on disponible para Light y Pro · estructura caso a caso según el momento de la empresa."
+        preview="Add-on disponible para Lite y Pro · estructura caso a caso según el momento de la empresa."
         tone="neutral"
       >
         <AddonSection />

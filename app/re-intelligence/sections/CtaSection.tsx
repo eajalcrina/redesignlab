@@ -10,7 +10,7 @@ export default function CtaSection() {
       <div className="container-rl text-center">
         <SectionReveal>
           <p className="font-mono text-mono-lg text-rl-red mb-6">
-            Light USD 900 / mes · Pro USD 3,000 / mes
+            Lite USD 900 / mes · Pro USD 3,000 / mes
           </p>
           <h2 className="font-display text-display-md md:text-display-lg text-text-on-dark max-w-3xl mx-auto mb-6">
             Si ya sabes qué estás construyendo, piensa con nosotros en cómo construirlo mejor.

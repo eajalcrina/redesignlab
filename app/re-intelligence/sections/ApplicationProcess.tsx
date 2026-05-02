@@ -75,7 +75,7 @@ export default function ApplicationProcess() {
               Onboarding
             </h3>
             <p className="text-body-md text-text-secondary mb-3">
-              <span className="text-text-primary font-medium">Light:</span> inicia con la primera sesión de trabajo. Sin período de espera.
+              <span className="text-text-primary font-medium">Lite:</span> inicia con la primera sesión de trabajo. Sin período de espera.
             </p>
             <p className="text-body-md text-text-secondary">
               <span className="text-text-primary font-medium">Pro:</span> contempla un período de onboarding de 3 meses (Inmersión → Definición → Activación) antes de entrar al ciclo mensual estándar.

@@ -76,7 +76,7 @@ export default function RealMonthSection() {
             Un mismo marco. Cuatro frentes que mueven el negocio.
           </h2>
           <p className="text-body-lg text-text-muted max-w-3xl mb-16">
-            Re. Intelligence trabaja sobre cuatro verticales estratégicas que cubren el espacio completo de decisiones que mueven una empresa mediana. Ambas versiones (Light y Pro) operan sobre el mismo marco — el nivel de profundidad y la forma de intervención varía, pero el alcance temático es el mismo.
+            Re. Intelligence trabaja sobre cuatro verticales estratégicas que cubren el espacio completo de decisiones que mueven una empresa mediana. Ambas versiones (Lite y Pro) operan sobre el mismo marco — el nivel de profundidad y la forma de intervención varía, pero el alcance temático es el mismo.
           </p>
         </SectionReveal>
 

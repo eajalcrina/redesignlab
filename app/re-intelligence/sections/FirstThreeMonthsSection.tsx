@@ -88,7 +88,7 @@ export default function FirstThreeMonthsSection() {
           Re. Intelligence Pro no empieza con una reunión de kickoff genérica. Empieza con un proceso estructurado de tres meses para articular flujos de información, calibrar los Redesign Lab al negocio específico y producir el primer plan accionable. Desde el cuarto mes en adelante, el acompañamiento entra al ciclo mensual estándar.
         </p>
         <p className="font-mono text-mono-sm text-text-tertiary uppercase tracking-[0.18em] mb-20">
-          Light no requiere onboarding · inicia con la primera sesión de trabajo
+          Lite no requiere onboarding · inicia con la primera sesión de trabajo
         </p>
       </SectionReveal>
 

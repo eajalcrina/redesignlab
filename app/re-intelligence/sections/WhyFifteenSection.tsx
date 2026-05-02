@@ -28,7 +28,7 @@ export default function WhyFifteenSection() {
             Cuando los 15 cupos están completos, hay lista de espera. No hay excepciones.
           </p>
           <p className="text-body-md text-text-muted italic pt-2 opacity-70">
-            Re. Intelligence Light no tiene límite de empresas activas — el formato no requiere la misma intensidad de integración por miembro.
+            Re. Intelligence Lite no tiene límite de empresas activas — el formato no requiere la misma intensidad de integración por miembro.
           </p>
         </div>
       </SectionReveal>
