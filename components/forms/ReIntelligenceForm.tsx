@@ -116,7 +116,7 @@ export default function ReIntelligenceForm() {
           Ahora agenda tu reunión de fit.
         </p>
         <p className="text-body-md text-text-muted mb-8">
-          Tu información ya llegó al equipo. El siguiente paso es agendar directamente la conversación de 30 minutos con Eddie Ajalcriña o Lorenzo Ortiz — llegarán a la reunión con tu información ya revisada.
+          Tu información ya llegó al equipo. El siguiente paso es agendar directamente la conversación de 30 minutos con Eddie Ajalcriña o Lorenzo Ortiz. Llegarán a la reunión con tu información ya revisada.
         </p>
 
         <a
@@ -260,7 +260,7 @@ export default function ReIntelligenceForm() {
           <textarea
             value={data.main_challenge}
             onChange={(e) => update('main_challenge', e.target.value)}
-            placeholder="¿Cuál es el desafío más crítico que enfrenta tu empresa en los próximos seis meses — y por qué crees que no puedes resolverlo solo?"
+            placeholder="¿Cuál es el desafío más crítico que enfrenta tu empresa en los próximos seis meses, y por qué crees que no puedes resolverlo solo?"
             disabled={locked}
             required
             rows={5}

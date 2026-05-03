@@ -13,9 +13,9 @@ export const crearValorServices: Service[] = [
     duration: '2 semanas',
     price: 'USD 3,500 – 5,000',
     description:
-      `Tu organización ve varias oportunidades posibles y no puede equivocarse al elegir. Cada mes invertido en la oportunidad equivocada es un año de desventaja competitiva — y los costos de revertir la decisión crecen con cada recurso ya comprometido.
+      `Tu organización ve varias oportunidades posibles y no puede equivocarse al elegir. Cada mes invertido en la oportunidad equivocada es un año de desventaja competitiva, y los costos de revertir la decisión crecen con cada recurso ya comprometido.
 
-El Opportunity Scan cruza el estado del mercado global, los activos reales de tu empresa y las brechas de oferta para identificar la oportunidad con mejor retorno y menor riesgo. Entregamos una recomendación accionable sobre dónde poner los recursos en los próximos doce meses.`,
+El Opportunity Scan cruza el estado del mercado global, los activos reales de tu empresa y las brechas de oferta para identificar la oportunidad con mejor retorno y menor riesgo. Entregamos una recomendación concreta sobre dónde poner los recursos en los próximos doce meses.`,
     includes: [
       'Análisis de mercado focalizado',
       'Mapeo de activos disponibles',
@@ -28,7 +28,7 @@ El Opportunity Scan cruza el estado del mercado global, los activos reales de tu
     duration: '5 a 7 semanas',
     price: '',
     description:
-      `Lanzar un producto sin haberlo diseñado con rigor es uno de los errores más caros que una empresa puede cometer. La distancia entre una buena idea y un producto que el mercado está dispuesto a comprar — al precio y formato correctos — es mucho mayor de lo que parece antes de hacer el trabajo.
+      `Lanzar un producto sin haberlo diseñado con rigor es uno de los errores más caros que una empresa puede cometer. La distancia entre una buena idea y un producto que el mercado está dispuesto a comprar (al precio y formato correctos) es mucho mayor de lo que parece antes de hacer el trabajo.
 
 El Innovation Blueprint cubre esa distancia antes de comprometer recursos en producción: investigación de mercado, MVP validado, proyección financiera y go-to-market con canales y narrativa. Entregamos el blueprint completo; tu organización lo produce y lo lanza.`,
     includes: [
@@ -44,7 +44,7 @@ El Innovation Blueprint cubre esa distancia antes de comprometer recursos en pro
     duration: '4 a 6 semanas',
     price: '',
     description:
-      `Diseñar un nuevo negocio en bioeconomía sin un modelo robusto no es emprender — es apostar. Las variables son demasiadas (cadena, certificaciones, comunidades, mercado) y el costo de equivocarse es demasiado alto para resolverse en la marcha.
+      `Diseñar un nuevo negocio en bioeconomía sin un modelo robusto no es emprender. Es apostar. Las variables son demasiadas (cadena, certificaciones, comunidades, mercado) y el costo de equivocarse es demasiado alto para resolverse en la marcha.
 
 El Bioventure Blueprint convierte una oportunidad identificada en un modelo verificable: cadena de valor definida, estructura de costos real, estrategia de certificación, distribución de valor con comunidades y proyecciones con supuestos explícitos. Todo lo que necesitas para ejecutar o levantar capital con confianza.`,
     includes: [
@@ -76,9 +76,9 @@ El Corporate Spin-off Design convierte esos activos en una empresa con modelo pr
     duration: '4 semanas + 3 meses',
     price: 'USD 2,500 + fee de éxito 5-10%',
     description:
-      `Tienes un negocio con mérito real pero no sabes cómo estructurar la conversación con fondos de impacto, capital verde o banca multilateral. Hablar el idioma correcto y llegar al fondo correcto es la diferencia entre levantar capital o no — y muchas veces entre escalar o cerrar.
+      `Tienes un negocio con mérito real pero no sabes cómo estructurar la conversación con fondos de impacto, capital verde o banca multilateral. Hablar el idioma correcto y llegar al fondo correcto es la diferencia entre levantar capital o no, y muchas veces entre escalar o cerrar.
 
-El Fundraising Estratégico diseña la narrativa de inversión, mapea los fondos activos correctos para tu caso y gestiona las postulaciones durante 3 meses — con fee de éxito solo si hay resultado. Track record: USD 1.5M levantados para el portafolio; USD 80M acompañados en gran industria.`,
+El Fundraising Estratégico diseña la narrativa de inversión, mapea los fondos activos correctos para tu caso y gestiona las postulaciones durante 3 meses, con fee de éxito solo si hay resultado. Track record: USD 1.5M levantados para el portafolio; USD 80M acompañados en gran industria.`,
     includes: [
       'Diagnóstico de madurez de inversión (BIRF)',
       'Mapeo actualizado de fondos activos',
@@ -92,7 +92,7 @@ El Fundraising Estratégico diseña la narrativa de inversión, mapea los fondos
     duration: '2 a 3 semanas',
     price: '',
     description:
-      `El impacto que no se puede demostrar no existe para el mercado. Si un LP exigente, un comprador con auditoría ESG o una certificación internacional te pide evidencia, el storytelling no alcanza — y perder esos procesos bloquea el acceso a capital y a mercados premium.
+      `El impacto que no se puede demostrar no existe para el mercado. Si un LP exigente, un comprador con auditoría ESG o una certificación internacional te pide evidencia, el storytelling no alcanza, y perder esos procesos bloquea el acceso a capital y a mercados premium.
 
 El Impact Value Report convierte tu historia de impacto en un documento que resiste ese escrutinio: alineado con estándares globales (IRIS+, GRI, TNFD) y construido sobre evidencia verificable. La puerta de entrada a los mercados y al capital que exigen pruebas, no declaraciones.`,
     includes: [
@@ -109,9 +109,9 @@ export const ventureCoBuilding: Service = {
   duration: 'Conversación directa',
   price: '',
   description:
-    `Tienes un activo extraordinario, convicción de fundador y un mercado que existe — pero la distancia entre la idea y la empresa requiere mucho más que entregables. Necesitas alguien construyendo contigo, no asesorándote desde afuera.
+    `Tienes un activo extraordinario, convicción de fundador y un mercado que existe, pero la distancia entre la idea y la empresa requiere mucho más que entregables. Necesitas alguien construyendo contigo, no asesorándote desde afuera.
 
-Venture Co-Building entra como co-fundador operativo: diseño del modelo, validación en campo, desarrollo de MVP, primeros clientes y acompañamiento de fundraising. No es consultoría — es construcción conjunta con piel en el juego desde el primer día.`,
+Venture Co-Building entra como co-fundador operativo: diseño del modelo, validación en campo, desarrollo de MVP, primeros clientes y acompañamiento de fundraising. No es consultoría. Es construcción conjunta con piel en el juego desde el primer día.`,
   includes: [
     'Co-diseño del modelo de negocio',
     'Validación de mercado en campo',
@@ -147,7 +147,7 @@ El Circular Operations Redesign identifica dónde están las oportunidades circu
     description:
       `Una cadena de suministro que no se puede ver con precisión no se puede gestionar con inteligencia. Y una cadena que no se puede trazar queda fuera de los mercados premium que hoy exigen visibilidad completa como condición de compra.
 
-Supply Chain Intelligence diseña el sistema de trazabilidad adaptado a tu operación — incluyendo entornos remotos sin conectividad — con captura de datos, dashboard de gestión y protocolo de alertas. De caja negra a cadena auditable en semanas.`,
+Supply Chain Intelligence diseña el sistema de trazabilidad adaptado a tu operación (incluyendo entornos remotos sin conectividad) con captura de datos, dashboard de gestión y protocolo de alertas. De caja negra a cadena auditable en semanas.`,
     includes: [
       'Diagnóstico de la cadena actual',
       'Diseño del sistema de trazabilidad',
@@ -179,7 +179,7 @@ export const reSprint: Service = {
   duration: '3 semanas',
   price: 'USD 4,000 · precio fijo',
   description:
-    `Quieres trabajar con Redesign Lab pero aún no tienes claridad sobre qué proyecto comprometerte — y nosotros necesitamos entender tu contexto en profundidad antes de recomendar algo que efectivamente se pueda ejecutar.
+    `Quieres trabajar con Redesign Lab pero aún no tienes claridad sobre qué proyecto comprometerte, y nosotros necesitamos entender tu contexto en profundidad antes de recomendar algo que efectivamente se pueda ejecutar.
 
 El Re. Sprint es el punto de entrada para resolver ambas cosas: diagnóstico operativo completo, identificación de quick wins, plan de acción de 90 días y presentación ejecutiva de hallazgos. En 3 semanas tienes claridad sobre qué hacer primero; nosotros tenemos la base para una relación de fondo.`,
   includes: [
@@ -196,7 +196,7 @@ export const transformarModeloServices: Service[] = [
     duration: '8 a 12 semanas',
     price: '',
     description:
-      `Tu modelo operativo fue diseñado para una etapa anterior — o nunca fue diseñado deliberadamente. Cuando eso pasa, la estructura se convierte en el principal freno del crecimiento: las decisiones se demoran, la información se pierde y cada nuevo proyecto tropieza con la organización misma.
+      `Tu modelo operativo fue diseñado para una etapa anterior, o nunca fue diseñado deliberadamente. Cuando eso pasa, la estructura se convierte en el principal freno del crecimiento: las decisiones se demoran, la información se pierde y cada nuevo proyecto tropieza con la organización misma.
 
 Operating Model Design rediseña estructura, flujos de información, sistemas de gestión y gobernanza para la etapa que viene, con plan de transición e hitos verificables. El rediseño que permite ejecutar lo que la estrategia ya definió.`,
     includes: [
@@ -212,7 +212,7 @@ Operating Model Design rediseña estructura, flujos de información, sistemas de
     duration: '4 a 6 semanas',
     price: '',
     description:
-      `La mayoría de las hojas de ruta de IA las diseña alguien que conoce la tecnología pero no la operación — o al revés. El resultado es un plan que no se puede ejecutar, o que no captura el valor real posible, y la organización termina con una hoja de ruta bonita que nadie sigue.
+      `La mayoría de las hojas de ruta de IA las diseña alguien que conoce la tecnología pero no la operación, o al revés. El resultado es un plan que no se puede ejecutar, o que no captura el valor real posible, y la organización termina con una hoja de ruta bonita que nadie sigue.
 
 AI Transformation Roadmap combina ambos lados: diagnóstico de madurez, oportunidades por función y proceso, hoja de ruta con tres horizontes, arquitectura tecnológica y plan de gestión del cambio. Un plan que el directorio puede aprobar y la operación puede ejecutar.`,
     includes: [
@@ -228,7 +228,7 @@ AI Transformation Roadmap combina ambos lados: diagnóstico de madurez, oportuni
     duration: '2 a 3 semanas',
     price: '',
     description:
-      `La brecha más crítica en la adopción de IA no está en la tecnología — está en el equipo directivo. Líderes que no entienden qué puede y qué no puede hacer la IA terminan delegando decisiones estratégicas al área técnica, y las iniciativas se dispersan sin criterio unificado.
+      `La brecha más crítica en la adopción de IA no está en la tecnología. Está en el equipo directivo. Líderes que no entienden qué puede y qué no puede hacer la IA terminan delegando decisiones estratégicas al área técnica, y las iniciativas se dispersan sin criterio unificado.
 
 AI Leadership Sprint forma al directorio con un framework de toma de decisiones sobre IA, evalúa las iniciativas en curso y diseña el modelo de gobernanza de IA de la organización. Criterio ejecutivo, no cursos genéricos.`,
     includes: [

@@ -45,11 +45,11 @@ export default function ReIntelligenceBlock({
             <Divider variant="red" className="w-16 mb-8" animated />
 
             <p className="text-body-lg text-text-on-dark mb-6">
-              El equipo de pensamiento estratégico externo de tu empresa — el que procesa la información, diseña los escenarios, mapea las oportunidades y entrega los planes para que tu equipo accione.
+              El equipo de pensamiento estratégico externo de tu empresa: el que procesa la información, diseña los escenarios, mapea las oportunidades y entrega los planes para que tu equipo accione.
             </p>
 
             <p className="text-body-md text-text-muted mb-4">
-              Para fundadores o gerencia general de empresas medianas en bioeconomía que ya funcionan — y donde el pensamiento estratégico recae sobre las mismas personas que atienden la operación diaria. No es falta de capacidad: es falta de tiempo y de estructura. Re. Intelligence resuelve exactamente eso.
+              Para fundadores o gerencia general de empresas medianas en bioeconomía que ya funcionan, y donde el pensamiento estratégico recae sobre las mismas personas que atienden la operación diaria. No es falta de capacidad: es falta de tiempo y de estructura. Re. Intelligence resuelve exactamente eso.
             </p>
 
             <p className="text-body-md text-text-on-dark/80 mb-12 italic">
