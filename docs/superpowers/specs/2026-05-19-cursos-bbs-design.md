@@ -163,3 +163,14 @@ Render condicional por `ProgramDetail` según campos presentes:
 - Estilo light-dominante con heroes oscuros; sin regresiones de layout en mobile/desktop.
 - `npm run build` y `next lint` pasan; JSON-LD válido; sitemap incluye las 6 URLs.
 - La casilla de correo inserta en `newsletter_subscribers` con `source=/cursos-bbs`.
+
+## 13. Addendum v2 (2026-05-19) — cambios solicitados tras preview
+
+- **Temario de cursos:** los 3 cursos ahora tienen `curriculum` (4 módulos c/u, sin agrupación por mes). `CurriculumMonth.month` pasó a opcional; `Curriculum.tsx` muestra "Temario" sin cabeceras de mes para cursos y "El recorrido" con meses para diplomados.
+- **Hero eyebrow:** en el detalle, el tag del hero usa `program.title` (no `program.code`), porque "CURSO/DIPLOMADO 0X" no identificaba bien el programa.
+- **Inscripción embebida (reemplaza Google Form en detalles):** componente `EnrollForm` (sección `#inscripcion`) en TODAS las sub-páginas (cursos y diplomados). Campos: nombre, correo, teléfono, empresa, cargo, ¿cómo te enteraste? Inserta en la tabla Supabase **`bbs_enrollments`** (RLS anon-insert). Al enviar con éxito, muestra: botón **Mercadopago** (`program.mercadopagoUrl`, placeholder hasta tener links) + enlace **"Otros medios de pago"** → WhatsApp `wa.me/51989338401` con mensaje "Quiero inscribirme al programa {título}".
+- **CTAs:** "Quiero inscribirme" (hero) y "Inscríbete aquí" (PriceBlock) hacen scroll a `#inscripcion`. La tarjeta del hub "Inscribirse" enlaza a `/cursos-bbs/{slug}#inscripcion`.
+
+### Pendientes del usuario (placeholders a reemplazar)
+- `mercadopagoUrl` por programa en `data/bbs.ts` (links de checkout Mercadopago).
+- `BBS_FORM_URL` en `lib/constants.ts` sigue como `'#'` (usado solo en el botón "Regístrate aquí" de "Próximas cohortes" del hub).
