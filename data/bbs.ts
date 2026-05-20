@@ -26,6 +26,7 @@ export interface BBSProgram {
   collaborator?: string
   enrollUrl?: string
   mercadopagoUrl?: string
+  heroImage?: string
 
   hero: { lines: string[]; paragraph: string }
   problem?: { heading: string; body: string[] }
@@ -45,6 +46,7 @@ export interface BBSProgram {
 // ============================================================
 const iaNuevosProfesionales: BBSProgram = {
   slug: 'ia-nuevos-profesionales',
+  heroImage: '/cursos-bbs/ia-nuevos-profesionales.jpg',
   type: 'curso',
   code: 'CURSO EJECUTIVO 01',
   title: 'IA para Nuevos Profesionales',
@@ -214,6 +216,7 @@ const iaNuevosProfesionales: BBSProgram = {
 // ============================================================
 const iaPymesEmprendimientos: BBSProgram = {
   slug: 'ia-pymes-emprendimientos',
+  heroImage: '/cursos-bbs/ia-pymes-emprendimientos.jpg',
   type: 'curso',
   code: 'CURSO EJECUTIVO 02',
   title: 'IA para Pymes y Emprendimientos',
@@ -397,6 +400,7 @@ const iaPymesEmprendimientos: BBSProgram = {
 // ============================================================
 const marcasRegenerativas: BBSProgram = {
   slug: 'marcas-regenerativas',
+  heroImage: '/cursos-bbs/marcas-regenerativas.jpg',
   type: 'curso',
   code: 'CURSO EJECUTIVO 03',
   title: 'Construcción de Marcas Regenerativas',
@@ -590,6 +594,7 @@ const marcasRegenerativas: BBSProgram = {
 // ============================================================
 const negociosRegenerativos: BBSProgram = {
   slug: 'negocios-regenerativos',
+  heroImage: '/cursos-bbs/negocios-regenerativos.jpg',
   type: 'diplomado',
   code: 'DIPLOMADO EJECUTIVO 01',
   title: 'Diseño de Negocios Regenerativos',
@@ -856,6 +861,7 @@ const negociosRegenerativos: BBSProgram = {
 // ============================================================
 const economiaCircularIndustria: BBSProgram = {
   slug: 'economia-circular-industria',
+  heroImage: '/cursos-bbs/economia-circular-industria.jpg',
   type: 'diplomado',
   code: 'DIPLOMADO EJECUTIVO 02',
   title: 'Economía Circular para la Industria',

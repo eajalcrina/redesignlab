@@ -24,9 +24,11 @@ export default function ProgramDetail({ program }: { program: BBSProgram }) {
         </div>
       </nav>
       <ProgramHero
-        tag={program.title}
+        tag={program.type === 'curso' ? 'Curso Ejecutivo BBS' : 'Diplomado Ejecutivo BBS'}
+        title={program.title}
         lines={program.hero.lines}
         paragraph={program.hero.paragraph}
+        image={program.heroImage}
         ctaLabel="Quiero inscribirme"
         ctaHref="#inscripcion"
       />
