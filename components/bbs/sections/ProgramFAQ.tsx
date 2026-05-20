@@ -14,7 +14,7 @@ export default function ProgramFAQ({ items }: ProgramFAQProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   return (
-    <section className="section-neutral py-24 md:py-32">
+    <section className="section-neutral py-14 md:py-20">
       <div className="container-rl">
         <SectionReveal>
           <Tag color="red" className="mb-4">

@@ -68,7 +68,7 @@ export default function EnrollForm({ program }: EnrollFormProps) {
   const mercadopagoExternal = mercadopagoHref.startsWith('http')
 
   return (
-    <section id="inscripcion" className="section-neutral py-24 md:py-32">
+    <section id="inscripcion" className="section-neutral py-14 md:py-20">
       <div className="container-rl">
         <SectionReveal>
           <Tag color="red" className="mb-4">

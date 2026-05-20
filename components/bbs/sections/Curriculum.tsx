@@ -1,8 +1,11 @@
 'use client'
 
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import SectionReveal from '@/components/animations/SectionReveal'
 import Tag from '@/components/ui/Tag'
 import type { CurriculumMonth } from '@/data/bbs'
+import { DURATION, EASE } from '@/lib/animations'
 
 interface CurriculumProps {
   months: CurriculumMonth[]
@@ -11,8 +14,15 @@ interface CurriculumProps {
 export default function Curriculum({ months }: CurriculumProps) {
   const hasMonths = months.some((m) => m.month)
 
+  // Default: first module open (key "0-0")
+  const [openKey, setOpenKey] = useState<string | null>('0-0')
+
+  function toggleKey(key: string) {
+    setOpenKey((prev) => (prev === key ? null : key))
+  }
+
   return (
-    <section className="bg-rl-white py-24 md:py-32">
+    <section className="bg-rl-white py-14 md:py-20">
       <div className="container-rl">
         <SectionReveal>
           <Tag color="red" className="mb-4">
@@ -23,12 +33,12 @@ export default function Curriculum({ months }: CurriculumProps) {
           </h2>
         </SectionReveal>
 
-        <div className="space-y-16">
+        <div className="space-y-10">
           {months.map((month, mi) => (
-            <SectionReveal key={mi} delay={mi * 0.08}>
+            <SectionReveal key={mi} delay={mi * 0.05}>
               <div>
                 {month.month && (
-                  <div className="mb-6 pb-4 border-b border-border-light">
+                  <div className="mb-4 pb-4 border-b border-border-light">
                     <h3 className="font-display text-display-sm text-text-primary">
                       {month.month}
                     </h3>
@@ -40,21 +50,55 @@ export default function Curriculum({ months }: CurriculumProps) {
                   </div>
                 )}
 
-                <ul className="space-y-6">
-                  {month.modules.map((mod, moi) => (
-                    <li key={moi} className="flex gap-4">
-                      <span className="font-mono text-mono-sm text-rl-red flex-shrink-0 w-24">
-                        {mod.code}
-                      </span>
-                      <div>
-                        <p className="font-display text-display-sm text-text-primary mb-1">
-                          {mod.title}
-                        </p>
-                        <p className="text-body-md text-text-secondary">{mod.body}</p>
+                <div>
+                  {month.modules.map((mod, moi) => {
+                    const key = `${mi}-${moi}`
+                    const isOpen = openKey === key
+                    return (
+                      <div key={moi} className="border-b border-border-light">
+                        <button
+                          onClick={() => toggleKey(key)}
+                          aria-expanded={isOpen}
+                          aria-controls={`curriculum-panel-${key}`}
+                          className="w-full py-5 flex items-center justify-between gap-4 text-left"
+                        >
+                          <div className="flex items-center gap-4">
+                            <span className="font-mono text-mono-sm text-rl-red flex-shrink-0 w-20">
+                              {mod.code}
+                            </span>
+                            <span className="font-display text-display-sm text-text-primary">
+                              {mod.title}
+                            </span>
+                          </div>
+                          <motion.span
+                            animate={{ rotate: isOpen ? 45 : 0 }}
+                            transition={{ duration: 0.2 }}
+                            className="text-rl-red text-xl flex-shrink-0"
+                          >
+                            +
+                          </motion.span>
+                        </button>
+
+                        <AnimatePresence>
+                          {isOpen && (
+                            <motion.div
+                              id={`curriculum-panel-${key}`}
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: 'auto', opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              transition={{ duration: DURATION.fast, ease: EASE.out }}
+                              className="overflow-hidden"
+                            >
+                              <p className="text-body-md text-text-secondary pb-5 max-w-2xl pl-24">
+                                {mod.body}
+                              </p>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
                       </div>
-                    </li>
-                  ))}
-                </ul>
+                    )
+                  })}
+                </div>
               </div>
             </SectionReveal>
           ))}

@@ -2,9 +2,7 @@ import Link from 'next/link'
 import type { BBSProgram } from '@/data/bbs'
 import ProgramHero from './ProgramHero'
 import Problem from './sections/Problem'
-import ForWhom from './sections/ForWhom'
-import Outcomes from './sections/Outcomes'
-import Includes from './sections/Includes'
+import ProgramTabs from './ProgramTabs'
 import Curriculum from './sections/Curriculum'
 import FrameworkSpotlight from './sections/FrameworkSpotlight'
 import Perks from './sections/Perks'
@@ -34,9 +32,12 @@ export default function ProgramDetail({ program }: { program: BBSProgram }) {
         ctaHref="#inscripcion"
       />
       {program.problem && <Problem heading={program.problem.heading} body={program.problem.body} />}
-      {program.forWhom && <ForWhom items={program.forWhom} notFor={program.notFor} />}
-      {program.outcomes && <Outcomes items={program.outcomes} />}
-      {program.includes && <Includes items={program.includes} />}
+      <ProgramTabs
+        forWhom={program.forWhom}
+        notFor={program.notFor}
+        outcomes={program.outcomes}
+        includes={program.includes}
+      />
       {program.curriculum && <Curriculum months={program.curriculum} />}
       {program.framework && <FrameworkSpotlight blocks={program.framework} />}
       <Perks all={program.perks.all} topHeading={program.perks.topHeading} top={program.perks.top} />

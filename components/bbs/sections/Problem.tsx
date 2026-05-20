@@ -10,7 +10,7 @@ interface ProblemProps {
 
 export default function Problem({ heading, body }: ProblemProps) {
   return (
-    <section className="bg-rl-white py-24 md:py-32">
+    <section className="bg-rl-white py-14 md:py-20">
       <div className="container-rl">
         <SectionReveal>
           <Tag color="red" className="mb-4">

@@ -9,7 +9,7 @@ interface FrameworkSpotlightProps {
 
 export default function FrameworkSpotlight({ blocks }: FrameworkSpotlightProps) {
   return (
-    <section className="section-dark py-24 md:py-32">
+    <section className="section-dark py-14 md:py-20">
       <div className="container-rl">
         <SectionReveal>
           <Tag color="neutral" className="mb-4">

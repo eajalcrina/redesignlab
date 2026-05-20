@@ -11,7 +11,7 @@ interface PerksProps {
 
 export default function Perks({ all, topHeading, top }: PerksProps) {
   return (
-    <section className="section-neutral py-24 md:py-32">
+    <section className="section-neutral py-14 md:py-20">
       <div className="container-rl">
         <SectionReveal>
           <Tag color="red" className="mb-4">
