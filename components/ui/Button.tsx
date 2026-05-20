@@ -3,11 +3,12 @@
 import { cn } from '@/lib/utils'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import type { AnchorHTMLAttributes } from 'react'
 
 type ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'text'
 type ButtonSize = 'sm' | 'md' | 'lg'
 
-interface ButtonProps {
+interface ButtonProps extends Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'href' | 'onClick'> {
   children: React.ReactNode
   variant?: ButtonVariant
   size?: ButtonSize
@@ -43,6 +44,7 @@ export default function Button({
   className,
   type = 'button',
   disabled = false,
+  ...rest
 }: ButtonProps) {
   const baseClasses = cn(
     'inline-flex items-center justify-center font-sans font-medium transition-all duration-200 cursor-pointer rounded',
@@ -70,7 +72,7 @@ export default function Button({
 
   if (href) {
     return (
-      <Link href={href} className={baseClasses}>
+      <Link href={href} className={baseClasses} {...rest}>
         {content}
       </Link>
     )
