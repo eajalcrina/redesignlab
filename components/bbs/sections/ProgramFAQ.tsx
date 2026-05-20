@@ -31,6 +31,8 @@ export default function ProgramFAQ({ items }: ProgramFAQProps) {
               <div className="border-b border-border-light">
                 <button
                   onClick={() => setOpenIndex(openIndex === i ? null : i)}
+                  aria-expanded={openIndex === i}
+                  aria-controls={`faq-panel-${i}`}
                   className="w-full py-6 flex items-start justify-between gap-4 text-left"
                 >
                   <span className="font-display text-display-sm text-text-primary">
@@ -48,6 +50,7 @@ export default function ProgramFAQ({ items }: ProgramFAQProps) {
                 <AnimatePresence>
                   {openIndex === i && (
                     <motion.div
+                      id={`faq-panel-${i}`}
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}

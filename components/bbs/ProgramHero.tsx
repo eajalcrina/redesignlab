@@ -28,15 +28,16 @@ export default function ProgramHero({ tag, lines, paragraph, ctaLabel, ctaHref }
           <motion.div variants={item}>
             <Tag color="neutral" className="mb-8">{tag}</Tag>
           </motion.div>
-          {lines.map((line, i) => (
-            <motion.h1
-              key={i}
-              variants={item}
-              className="font-display text-display-lg md:text-display-xl lg:text-[72px] lg:leading-[1.0] lg:font-normal text-text-on-dark max-w-5xl"
-            >
-              {line}
-            </motion.h1>
-          ))}
+          <motion.h1
+            variants={item}
+            className="font-display text-display-lg md:text-display-xl lg:text-[72px] lg:leading-[1.0] lg:font-normal text-text-on-dark max-w-5xl"
+          >
+            {lines.map((line, i) => (
+              <motion.span key={i} variants={item} className="block">
+                {line}
+              </motion.span>
+            ))}
+          </motion.h1>
           <motion.div
             variants={{ hidden: { scaleX: 0, originX: 0 }, visible: { scaleX: 1, transition: { duration: DURATION.slow, ease: EASE.out } } }}
             className="h-0.5 bg-rl-red w-24 my-6"
