@@ -40,11 +40,7 @@ export default function ProgramDetail({ program }: { program: BBSProgram }) {
       {program.framework && <FrameworkSpotlight blocks={program.framework} />}
       <Perks all={program.perks.all} topHeading={program.perks.topHeading} top={program.perks.top} />
       <Faculty items={program.faculty} />
-      <PriceBlock
-        price={program.price}
-        note={`Incluye ${program.deliverable}. Cupos limitados por cohorte.`}
-        ctaHref="#inscripcion"
-      />
+      <PriceBlock program={program} ctaHref="#inscripcion" />
       <ProgramFAQ items={program.faq} />
       <EnrollForm program={program} />
     </>
