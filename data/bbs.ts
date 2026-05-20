@@ -604,7 +604,7 @@ const negociosRegenerativos: BBSProgram = {
   price: { usd: '$297 USD', pen: 'S/. 1,080' },
   startDate: '22 Junio 2026',
   collaborator: 'Thousandfold · thousandfold.la',
-  mercadopagoUrl: 'https://mpago.la/21bE5wA',
+  mercadopagoUrl: 'https://mpago.la/15oTnjX',
 
   hero: {
     lines: [
