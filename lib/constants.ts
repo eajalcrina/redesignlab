@@ -13,6 +13,9 @@ export const SITE_CONFIG = {
   calendarUrlFit: 'https://calendar.app.google/8w3Q2gRY87vVBtMCA',
 }
 
+// Placeholder del Google Form de inscripción BBS (reemplazar cuando esté disponible).
+export const BBS_FORM_URL = '#'
+
 export const NAV_LINKS = [
   {
     label: 'Mindset',
@@ -22,6 +25,7 @@ export const NAV_LINKS = [
       { label: 'Cómo pensamos', href: '/como-pensamos' },
       { label: 'Conocimiento', href: '/conocimiento' },
       { label: 'Builders', href: '/builders' },
+      { label: 'Cursos BBS', href: '/cursos-bbs' },
     ]
   },
   {
