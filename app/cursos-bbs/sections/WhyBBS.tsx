@@ -3,10 +3,9 @@
 import Link from 'next/link'
 import SectionReveal from '@/components/animations/SectionReveal'
 import Tag from '@/components/ui/Tag'
-import Button from '@/components/ui/Button'
 import NewsletterForm from '@/components/ui/NewsletterForm'
+import CohortInterestForm from '@/components/bbs/CohortInterestForm'
 import { bbsPrograms } from '@/data/bbs'
-import { BBS_FORM_URL } from '@/lib/constants'
 
 // ── Helpers ────────────────────────────────────────────────────────────────
 
@@ -175,8 +174,6 @@ function WhereToStartBlock() {
 // ── Sub-block 3: Próximas cohortes (dark) ─────────────────────────────────
 
 function ProximasCohortes() {
-  const isExternal = BBS_FORM_URL.startsWith('http')
-
   return (
     <section className="section-dark py-24 md:py-32">
       <div className="container-rl max-w-2xl">
@@ -189,22 +186,21 @@ function ProximasCohortes() {
             Los programas se lanzan en cohortes con cupos limitados por una razón pedagógica: la sustentación ante comité, el feedback personalizado y la calidad de la comunidad requieren grupos donde todos puedan ser vistos y acompañados con el estándar que cada programa propone.
           </p>
           <p className="text-body-lg text-text-muted mb-10">
-            Para recibir información sobre la próxima cohorte de cualquier programa:
+            Regístrate y te avisamos cuando abra la próxima cohorte:
           </p>
         </SectionReveal>
 
         <SectionReveal delay={0.1}>
-          <NewsletterForm variant="full" className="mb-8" />
+          <CohortInterestForm className="mb-10" />
         </SectionReveal>
 
         <SectionReveal delay={0.18}>
-          <Button
-            variant="primary"
-            href={BBS_FORM_URL}
-            {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-          >
-            Regístrate aquí
-          </Button>
+          <div className="border-t border-border-dark pt-8">
+            <p className="text-body-xs text-text-muted/60 mb-3">
+              ¿Solo quieres novedades? Déjanos tu correo:
+            </p>
+            <NewsletterForm variant="compact" />
+          </div>
         </SectionReveal>
       </div>
     </section>

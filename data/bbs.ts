@@ -58,6 +58,7 @@ const iaNuevosProfesionales: BBSProgram = {
   deliverable: 'Propuesta de Transformación Corporativa con IA',
   price: { usd: '$70 USD', pen: 'S/. 250' },
   startDate: '22 Junio 2026',
+  mercadopagoUrl: 'https://mpago.la/1jKjPEn',
 
   hero: {
     lines: [
@@ -225,6 +226,7 @@ const iaPymesEmprendimientos: BBSProgram = {
   deliverable: 'Plan de Adopción de IA en la empresa',
   price: { usd: '$150 USD', pen: 'S/. 540' },
   startDate: '22 Junio 2026',
+  mercadopagoUrl: 'https://mpago.la/1RjZaXc',
 
   hero: {
     lines: [
@@ -409,6 +411,7 @@ const marcasRegenerativas: BBSProgram = {
   price: { usd: '$70 USD', pen: 'S/. 250' },
   startDate: '22 Junio 2026',
   collaborator: 'Thousandfold · thousandfold.la',
+  mercadopagoUrl: 'https://mpago.la/21bE5wA',
 
   hero: {
     lines: [
@@ -601,6 +604,7 @@ const negociosRegenerativos: BBSProgram = {
   price: { usd: '$297 USD', pen: 'S/. 1,080' },
   startDate: '22 Junio 2026',
   collaborator: 'Thousandfold · thousandfold.la',
+  mercadopagoUrl: 'https://mpago.la/21bE5wA',
 
   hero: {
     lines: [
@@ -865,6 +869,7 @@ const economiaCircularIndustria: BBSProgram = {
   deliverable: 'Roadmap de Implementación de Economía Circular',
   price: { usd: '$297 USD', pen: 'S/. 1,080' },
   startDate: '22 Junio 2026',
+  mercadopagoUrl: 'https://mpago.la/13k8XxN',
 
   hero: {
     lines: [
