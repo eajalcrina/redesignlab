@@ -3,12 +3,8 @@
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import type { BBSProgram } from '@/data/bbs'
-import { BBS_FORM_URL } from '@/lib/constants'
 
 export default function ProgramCard({ program }: { program: BBSProgram }) {
-  const enrollHref = program.enrollUrl || BBS_FORM_URL
-  const external = enrollHref.startsWith('http')
-
   return (
     <motion.div whileHover={{ y: -4 }} transition={{ duration: 0.2 }} className="h-full">
       <div className="group relative flex h-full flex-col border border-border-light rounded p-8 bg-rl-white hover:border-rl-red/40 transition-colors">
@@ -25,14 +21,13 @@ export default function ProgramCard({ program }: { program: BBSProgram }) {
           >
             Ver programa →
           </Link>
-          <a
-            href={enrollHref}
-            {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+          <Link
+            href={`/cursos-bbs/${program.slug}#inscripcion`}
             className="relative z-10 text-body-sm font-medium text-rl-red hover:underline"
             aria-label={`Inscribirse en ${program.title}`}
           >
             Inscribirse
-          </a>
+          </Link>
         </div>
       </div>
     </motion.div>

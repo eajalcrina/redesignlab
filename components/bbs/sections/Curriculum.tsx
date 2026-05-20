@@ -9,15 +9,17 @@ interface CurriculumProps {
 }
 
 export default function Curriculum({ months }: CurriculumProps) {
+  const hasMonths = months.some((m) => m.month)
+
   return (
     <section className="bg-rl-white py-24 md:py-32">
       <div className="container-rl">
         <SectionReveal>
           <Tag color="red" className="mb-4">
-            El recorrido
+            {hasMonths ? 'El recorrido' : 'Temario'}
           </Tag>
           <h2 className="font-display text-display-md md:text-display-lg text-text-primary max-w-3xl mb-12">
-            El programa, semana a semana
+            {hasMonths ? 'El programa, semana a semana' : 'Temario'}
           </h2>
         </SectionReveal>
 
@@ -25,16 +27,18 @@ export default function Curriculum({ months }: CurriculumProps) {
           {months.map((month, mi) => (
             <SectionReveal key={mi} delay={mi * 0.08}>
               <div>
-                <div className="mb-6 pb-4 border-b border-border-light">
-                  <h3 className="font-display text-display-sm text-text-primary">
-                    {month.month}
-                  </h3>
-                  {month.subtitle && (
-                    <p className="text-body-md text-text-tertiary italic mt-1">
-                      {month.subtitle}
-                    </p>
-                  )}
-                </div>
+                {month.month && (
+                  <div className="mb-6 pb-4 border-b border-border-light">
+                    <h3 className="font-display text-display-sm text-text-primary">
+                      {month.month}
+                    </h3>
+                    {month.subtitle && (
+                      <p className="text-body-md text-text-tertiary italic mt-1">
+                        {month.subtitle}
+                      </p>
+                    )}
+                  </div>
+                )}
 
                 <ul className="space-y-6">
                   {month.modules.map((mod, moi) => (

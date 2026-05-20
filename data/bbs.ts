@@ -5,7 +5,7 @@
 export type ProgramType = 'curso' | 'diplomado'
 
 export interface CurriculumMonth {
-  month: string
+  month?: string
   subtitle?: string
   modules: { code: string; title: string; body: string }[]
 }
@@ -25,6 +25,7 @@ export interface BBSProgram {
   startDate: string
   collaborator?: string
   enrollUrl?: string
+  mercadopagoUrl?: string
 
   hero: { lines: string[]; paragraph: string }
   problem?: { heading: string; body: string[] }
@@ -123,6 +124,33 @@ const iaNuevosProfesionales: BBSProgram = {
     'Sustentación ante Comité BBS — con feedback estratégico real de Eddie, Lorenzo y un especialista invitado del mundo corporativo',
     'Inclusión en la Base de Datos de Talento BBS — al completar el programa',
     'Comunidad BBS de por vida — profesionales que lideran la transformación corporativa con IA en América Latina',
+  ],
+
+  curriculum: [
+    {
+      modules: [
+        {
+          code: 'Módulo 01',
+          title: 'El Ecosistema Corporativo con IA: Oportunidad, Riesgo y Criterio',
+          body: 'El punto de partida no es una herramienta — es un diagnóstico honesto del nuevo mercado laboral. Entenderás qué está cambiando realmente en las organizaciones latinoamericanas, por qué la IA amplifica tanto los buenos resultados como los errores, y cuál es la diferencia entre el profesional que usa IA como atajo y el que la usa como amplificador de criterio.',
+        },
+        {
+          code: 'Módulo 02',
+          title: 'Pensamiento Crítico y Sistémico: La Base que la IA Amplifica',
+          body: 'Antes de amplificar con herramientas, hay que tener algo bueno que amplificar. Desarrollarás los frameworks de pensamiento crítico y visión sistémica que hacen que tus directivas a la IA produzcan resultados de calidad — y aprenderás a formular contextos y prompts que convierten a Claude en un copiloto estratégico real.',
+        },
+        {
+          code: 'Módulo 03',
+          title: 'Ejecución con Criterio: Investiga, Diseña y Valida con IA',
+          body: 'Con el pensamiento afilado, este módulo lo convierte en producción ejecutiva de alto impacto. Aprenderás a investigar soluciones con profundidad, diseñar propuestas con estructura ejecutiva que mueven decisiones y usar la IA para anticipar objeciones y validar supuestos antes de presentar ante cualquier comité.',
+        },
+        {
+          code: 'Módulo 04',
+          title: 'Liderazgo de la Transformación: Posiciónate como el Profesional que las Empresas Necesitan',
+          body: 'El módulo de cierre integra la narrativa de liderazgo corporativo con IA y la sustentación de la propuesta de transformación ante el comité evaluador. Aprenderás a construir la marca profesional del líder de transformación — no sobre herramientas, sino sobre resultados y criterio demostrado.',
+        },
+      ],
+    },
   ],
 
   perks: {
@@ -271,6 +299,33 @@ const iaPymesEmprendimientos: BBSProgram = {
     'Sustentación ante Comité BBS — con feedback estratégico real de Eddie, Lorenzo y un especialista invitado con experiencia en transformación de Pymes',
     'Certificado de Bio Business School respaldado por Redesign Lab',
     'Comunidad BBS de por vida — empresarios y fundadores que están construyendo empresas más inteligentes en América Latina',
+  ],
+
+  curriculum: [
+    {
+      modules: [
+        {
+          code: 'Módulo 01',
+          title: 'Inteligencia de Mercado para Empresas Reales',
+          body: 'Antes de adoptar IA, hay que entender el terreno competitivo con precisión. Aprenderás a construir un sistema de inteligencia de mercado usando IA — análisis competitivo, segmentación de clientes y detección de oportunidades — que normalmente requiere consultores externos y que con las herramientas correctas puedes tener en días.',
+        },
+        {
+          code: 'Módulo 02',
+          title: 'Pensamiento Aumentado: Rediseña tu Producto, Servicio o Proceso con IA',
+          body: 'La IA como el mejor asesor estratégico que tu empresa puede tener: sin ego, disponible siempre y capaz de cuestionar tus supuestos en tiempo real. Aprenderás a diagnosticar tu empresa con profundidad, identificar oportunidades no capturadas y rediseñar tu oferta o tus procesos con criterio estratégico — no con intuición.',
+        },
+        {
+          code: 'Módulo 03',
+          title: 'Ejecución Aumentada: Automatiza, Controla y Escala con IA',
+          body: 'De la estrategia a la operación. Aprenderás a automatizar los procesos que más tiempo consumen, construir sistemas de control y métricas que te permiten tomar decisiones con datos, y diseñar el plan de adopción cultural que lleva a tu equipo a usar IA sin resistencia y con resultados medibles.',
+        },
+        {
+          code: 'Módulo 04',
+          title: 'Posicionamiento y Narrativa: Comunica el Cambio al Mercado',
+          body: 'La adopción de IA no es solo un cambio interno — es un argumento de mercado. Aprenderás a comunicar la evolución de tu empresa a clientes, talento y potenciales inversores, y presentarás tu Plan de Adopción de IA completo ante el comité evaluador del programa.',
+        },
+      ],
+    },
   ],
 
   framework: [
@@ -429,6 +484,33 @@ const marcasRegenerativas: BBSProgram = {
     'Sustentación ante Comité BBS — con feedback estratégico de Eddie, Lorenzo y un especialista invitado con experiencia en marcas regenerativas con presencia internacional',
     'Certificado de Bio Business School respaldado por Redesign Lab',
     'Comunidad BBS de por vida — fundadores y dueños de marcas regenerativas que se abren puertas mutuamente en América Latina y más allá',
+  ],
+
+  curriculum: [
+    {
+      modules: [
+        {
+          code: 'Módulo 01',
+          title: 'Qué es y qué no es una Marca Regenerativa: Salir del Ecogenérico',
+          body: 'El módulo que destruye el mito del greenwashing bien intencionado. Entenderás con datos reales por qué el 73% de las marcas de impacto en LATAM son percibidas como ecogenéricas, qué las tiene atrapadas ahí y qué tienen en común las marcas regenerativas que sí capturan 4 veces más valor — con el diagnóstico honesto de tu propia marca como entregable.',
+        },
+        {
+          code: 'Módulo 02',
+          title: 'Arquitectura de Marca: Construir desde el Territorio hacia el Mundo',
+          body: 'Con la brecha diagnosticada, este módulo construye la arquitectura que la cierra. Usando el framework RIZOMA de Thousandfold, diseñarás los cinco pilares que hacen a tu marca genuinamente irreplicable — propósito, origen, promesa, personalidad y prueba — y mapearás los nodos del ecosistema de valor que tu marca necesita activar para escalar.',
+        },
+        {
+          code: 'Módulo 03',
+          title: 'Narrativa de Marca y Estrategia de Comunicación',
+          body: 'La historia de origen es el activo más difícil de copiar que tiene una marca latinoamericana. Aprenderás a construirla en tres capas — para el cliente final, para la industria y para el movimiento cultural — y a diseñar la estrategia de comunicación que construye credibilidad en nichos especializados sin depender de pauta pagada.',
+        },
+        {
+          code: 'Módulo 04',
+          title: 'Marca en el Mercado: de la Identidad a la Tracción Comercial',
+          body: 'El módulo que conecta la marca construida con el mercado real. Aprenderás a diseñar la estrategia de entrada activando los nodos correctos del ecosistema RIZOMA, a justificar un precio premium con argumentos reales de origen y prueba, y a construir el plan de lanzamiento que convierte la arquitectura de marca en tracción comercial medible.',
+        },
+      ],
+    },
   ],
 
   framework: [

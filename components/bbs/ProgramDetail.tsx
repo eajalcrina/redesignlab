@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import type { BBSProgram } from '@/data/bbs'
-import { BBS_FORM_URL } from '@/lib/constants'
 import ProgramHero from './ProgramHero'
 import Problem from './sections/Problem'
 import ForWhom from './sections/ForWhom'
@@ -12,9 +11,9 @@ import Perks from './sections/Perks'
 import Faculty from './sections/Faculty'
 import ProgramFAQ from './sections/ProgramFAQ'
 import PriceBlock from './sections/PriceBlock'
+import EnrollForm from './EnrollForm'
 
 export default function ProgramDetail({ program }: { program: BBSProgram }) {
-  const enrollHref = program.enrollUrl || BBS_FORM_URL
   return (
     <>
       <nav aria-label="Breadcrumb" className="section-dark">
@@ -25,11 +24,11 @@ export default function ProgramDetail({ program }: { program: BBSProgram }) {
         </div>
       </nav>
       <ProgramHero
-        tag={program.code}
+        tag={program.title}
         lines={program.hero.lines}
         paragraph={program.hero.paragraph}
         ctaLabel="Quiero inscribirme"
-        ctaHref={enrollHref}
+        ctaHref="#inscripcion"
       />
       {program.problem && <Problem heading={program.problem.heading} body={program.problem.body} />}
       {program.forWhom && <ForWhom items={program.forWhom} notFor={program.notFor} />}
@@ -42,9 +41,10 @@ export default function ProgramDetail({ program }: { program: BBSProgram }) {
       <PriceBlock
         price={program.price}
         note={`Incluye ${program.deliverable}. Cupos limitados por cohorte.`}
-        ctaHref={enrollHref}
+        ctaHref="#inscripcion"
       />
       <ProgramFAQ items={program.faq} />
+      <EnrollForm program={program} />
     </>
   )
 }
