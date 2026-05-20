@@ -29,6 +29,7 @@ export default function ProgramDetail({ program }: { program: BBSProgram }) {
         lines={program.hero.lines}
         paragraph={program.hero.paragraph}
         image={program.heroImage}
+        accent={program.heroAccent}
         ctaLabel="Quiero inscribirme"
         ctaHref="#inscripcion"
       />
