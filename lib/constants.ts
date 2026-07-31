@@ -92,10 +92,9 @@ export const FOOTER_LINKS = {
 export const NEWSLETTER = {
   headline: 'Mantente informado',
   body: 'Cuando Redesign Lab publica algo nuevo — un recurso, un análisis, una publicación relevante para las industrias en las que trabaja — puedes recibirlo directamente. Sin frecuencia fija. Solo cuando hay algo que vale la pena compartir.',
-  placeholder: 'tu@empresa.com',
   cta: 'Suscribirme →',
-  success: 'Listo. Solo cuando haya algo que valga la pena.',
   disclaimer: 'Puedes darte de baja en cualquier momento.',
+  subscribeUrl: 'https://campaigns.redesignlab.org/subscription/form',
 }
 
 export const ALLIES_LABEL = 'Hemos colaborado con'

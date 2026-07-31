@@ -197,9 +197,9 @@ function ProximasCohortes() {
         <SectionReveal delay={0.18}>
           <div className="border-t border-border-dark pt-8">
             <p className="text-body-xs text-text-muted/60 mb-3">
-              ¿Solo quieres novedades? Déjanos tu correo:
+              ¿Solo quieres novedades?
             </p>
-            <NewsletterForm variant="compact" />
+            <NewsletterForm />
           </div>
         </SectionReveal>
       </div>

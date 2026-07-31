@@ -26,7 +26,7 @@ export default function Footer() {
           <h3 className="text-label-sm uppercase text-text-muted mb-3">
             {NEWSLETTER.headline}
           </h3>
-          <NewsletterForm variant="compact" />
+          <NewsletterForm />
         </div>
 
         {/* Links grid — 2 cols mobile, 5 cols desktop */}
@@ -36,7 +36,7 @@ export default function Footer() {
             <h3 className="text-label-md uppercase text-text-muted mb-4">
               {NEWSLETTER.headline}
             </h3>
-            <NewsletterForm variant="full" />
+            <NewsletterForm />
           </div>
 
           {/* Servicios */}
@@ -130,6 +130,12 @@ export default function Footer() {
             <p className="text-body-xs text-text-muted/70">
               {SITE_CONFIG.copyright}
             </p>
+            <Link
+              href="/privacidad"
+              className="text-body-xs text-text-muted/70 hover:text-text-on-dark transition-colors underline underline-offset-2 decoration-text-muted/30 hover:decoration-text-on-dark"
+            >
+              Política de Privacidad
+            </Link>
             <p className="text-body-xs text-text-muted/70">
               Diseño y desarrollo por{' '}
               <a
