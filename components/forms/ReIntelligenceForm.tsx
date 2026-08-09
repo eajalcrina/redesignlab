@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { supabase } from '@/lib/supabase'
 import { SITE_CONFIG } from '@/lib/constants'
 import { DURATION, EASE } from '@/lib/animations'
 
@@ -68,31 +67,34 @@ export default function ReIntelligenceForm() {
     setState('submitting')
     setErrorMessage(null)
 
-    if (!supabase) {
-      setErrorMessage('La captura de datos está desactivada en este entorno.')
-      setState('error')
-      return
-    }
+    try {
+      const res = await fetch('/api/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          form: 're-intelligence',
+          data: {
+            contact_name: data.contact_name.trim(),
+            country: data.country.trim() || null,
+            phone: data.phone.trim() || null,
+            email: data.email.trim().toLowerCase(),
+            company_legal_name: data.company_legal_name.trim(),
+            annual_revenue_bucket: data.annual_revenue_bucket || null,
+            product_or_service: data.product_or_service.trim() || null,
+            website: data.website.trim() || null,
+            social_handle: data.social_handle.trim() || null,
+            main_challenge: data.main_challenge.trim(),
+            source: typeof window !== 'undefined' ? window.location.pathname : null,
+            user_agent: typeof navigator !== 'undefined' ? navigator.userAgent : null,
+            referrer: typeof document !== 'undefined' ? document.referrer || null : null,
+          },
+        }),
+      })
 
-    const { error } = await supabase.from('re_intelligence_applications').insert({
-      contact_name: data.contact_name.trim(),
-      country: data.country.trim() || null,
-      phone: data.phone.trim() || null,
-      email: data.email.trim().toLowerCase(),
-      company_legal_name: data.company_legal_name.trim(),
-      annual_revenue_bucket: data.annual_revenue_bucket || null,
-      product_or_service: data.product_or_service.trim() || null,
-      website: data.website.trim() || null,
-      social_handle: data.social_handle.trim() || null,
-      main_challenge: data.main_challenge.trim(),
-      source: typeof window !== 'undefined' ? window.location.pathname : null,
-      user_agent: typeof navigator !== 'undefined' ? navigator.userAgent : null,
-      referrer: typeof document !== 'undefined' ? document.referrer || null : null,
-    })
-
-    if (error) {
+      if (!res.ok) throw new Error('request failed')
+    } catch (err) {
       // eslint-disable-next-line no-console
-      console.error('[re-intelligence] insert failed', error)
+      console.error('[re-intelligence] submit failed', err)
       setErrorMessage('No pudimos enviar la solicitud. Intenta de nuevo o escríbenos por correo.')
       setState('error')
       return

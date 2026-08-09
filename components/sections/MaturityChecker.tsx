@@ -5,7 +5,6 @@ import { createPortal } from 'react-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
 import { cn } from '@/lib/utils'
-import { supabase } from '@/lib/supabase'
 import {
   LEVEL_PROFILE,
   BLOCK_INSIGHT,
@@ -433,34 +432,41 @@ export default function MaturityChecker({ inline = false }: MaturityCheckerProps
                   }
                   const levers = computePriorityLevers(blockPct, industryId)
 
-                  if (supabase) {
-                    const { error } = await supabase.from('maturity_leads').insert({
-                      name: lead.name.trim(),
-                      email: lead.email.trim().toLowerCase(),
-                      company: lead.company.trim(),
-                      role: lead.cargo.trim() || null,
-                      consent: lead.consent,
-                      industry: industryId,
-                      company_size: companySize || 'unknown',
-                      answers,
-                      total_score: totalScore,
-                      block_a_score: blockAScore,
-                      block_b_score: blockBScore,
-                      block_c_score: blockCScore,
-                      block_d_score: blockDScore,
-                      block_e_score: blockEScore,
-                      maturity_level: level,
-                      maturity_name: LEVELS[level].name,
-                      priority_levers: levers,
-                      source: typeof window !== 'undefined' ? window.location.pathname : null,
-                      user_agent: typeof navigator !== 'undefined' ? navigator.userAgent : null,
-                      referrer: typeof document !== 'undefined' ? document.referrer || null : null,
+                  try {
+                    const res = await fetch('/api/lead', {
+                      method: 'POST',
+                      headers: { 'Content-Type': 'application/json' },
+                      body: JSON.stringify({
+                        form: 'maturity-checker',
+                        data: {
+                          name: lead.name.trim(),
+                          email: lead.email.trim().toLowerCase(),
+                          company: lead.company.trim(),
+                          role: lead.cargo.trim() || null,
+                          consent: lead.consent,
+                          industry: industryId,
+                          company_size: companySize || 'unknown',
+                          answers,
+                          total_score: totalScore,
+                          block_a_score: blockAScore,
+                          block_b_score: blockBScore,
+                          block_c_score: blockCScore,
+                          block_d_score: blockDScore,
+                          block_e_score: blockEScore,
+                          maturity_level: level,
+                          maturity_name: LEVELS[level].name,
+                          priority_levers: levers,
+                          source: typeof window !== 'undefined' ? window.location.pathname : null,
+                          user_agent: typeof navigator !== 'undefined' ? navigator.userAgent : null,
+                          referrer: typeof document !== 'undefined' ? document.referrer || null : null,
+                        },
+                      }),
                     })
-                    if (error) {
-                      // eslint-disable-next-line no-console
-                      console.error('[maturity] supabase insert failed', error)
-                      setSubmitError('No pudimos guardar tus datos. Puedes continuar, tu resultado se verá localmente.')
-                    }
+                    if (!res.ok) throw new Error('request failed')
+                  } catch (err) {
+                    // eslint-disable-next-line no-console
+                    console.error('[maturity] submit failed', err)
+                    setSubmitError('No pudimos guardar tus datos. Puedes continuar, tu resultado se verá localmente.')
                   }
 
                   setSubmitting(false)

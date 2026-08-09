@@ -3,7 +3,6 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { DURATION, EASE } from '@/lib/animations'
-import { supabase } from '@/lib/supabase'
 import Button from './Button'
 
 export interface Resource {
@@ -28,23 +27,30 @@ export default function ResourceDrawer({ isOpen, resource, onClose }: ResourceDr
     if (!resource) return
     setFormState('submitting')
 
-    if (supabase) {
-      const { error } = await supabase.from('resource_downloads').insert({
-        resource_slug: resource.slug,
-        resource_name: resource.name,
-        name: formData.nombre.trim(),
-        email: formData.email.trim().toLowerCase(),
-        organization: formData.organizacion.trim(),
-        source: typeof window !== 'undefined' ? window.location.pathname : null,
-        user_agent: typeof navigator !== 'undefined' ? navigator.userAgent : null,
-        referrer: typeof document !== 'undefined' ? document.referrer || null : null,
+    try {
+      const res = await fetch('/api/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          form: 'resource-download',
+          data: {
+            resource_slug: resource.slug,
+            resource_name: resource.name,
+            name: formData.nombre.trim(),
+            email: formData.email.trim().toLowerCase(),
+            organization: formData.organizacion.trim(),
+            source: typeof window !== 'undefined' ? window.location.pathname : null,
+            user_agent: typeof navigator !== 'undefined' ? navigator.userAgent : null,
+            referrer: typeof document !== 'undefined' ? document.referrer || null : null,
+          },
+        }),
       })
-      if (error) {
-        // eslint-disable-next-line no-console
-        console.error('[resource-download] supabase insert failed', error)
-        setFormState('error')
-        return
-      }
+      if (!res.ok) throw new Error('request failed')
+    } catch (err) {
+      // eslint-disable-next-line no-console
+      console.error('[resource-download] submit failed', err)
+      setFormState('error')
+      return
     }
 
     setFormState('success')

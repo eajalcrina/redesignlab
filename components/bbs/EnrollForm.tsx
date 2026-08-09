@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import { supabase } from '@/lib/supabase'
 import { bbsWhatsappUrl } from '@/lib/constants'
 import type { BBSProgram } from '@/data/bbs'
 import SectionReveal from '@/components/animations/SectionReveal'
@@ -29,30 +28,33 @@ export default function EnrollForm({ program }: EnrollFormProps) {
     e.preventDefault()
     if (isSubmitting) return
 
-    if (!supabase) {
-      setFormState('error')
-      return
-    }
-
     setFormState('submitting')
 
-    const { error } = await supabase.from('bbs_enrollments').insert({
-      program_slug: program.slug,
-      program_title: program.title,
-      name: name.trim(),
-      email: email.trim().toLowerCase(),
-      phone: phone.trim(),
-      company: company.trim() || null,
-      role: role.trim() || null,
-      referral_source: referralSource || null,
-      source: typeof window !== 'undefined' ? window.location.pathname : null,
-      user_agent: typeof navigator !== 'undefined' ? navigator.userAgent : null,
-      referrer: typeof document !== 'undefined' ? document.referrer || null : null,
-    })
-
-    if (error && error.code !== '23505') {
+    try {
+      const res = await fetch('/api/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          form: 'enroll',
+          data: {
+            program_slug: program.slug,
+            program_title: program.title,
+            name: name.trim(),
+            email: email.trim().toLowerCase(),
+            phone: phone.trim(),
+            company: company.trim() || null,
+            role: role.trim() || null,
+            referral_source: referralSource || null,
+            source: typeof window !== 'undefined' ? window.location.pathname : null,
+            user_agent: typeof navigator !== 'undefined' ? navigator.userAgent : null,
+            referrer: typeof document !== 'undefined' ? document.referrer || null : null,
+          },
+        }),
+      })
+      if (!res.ok) throw new Error('request failed')
+    } catch (err) {
       // eslint-disable-next-line no-console
-      console.error('[bbs_enrollments] insert failed', error)
+      console.error('[bbs_enrollments] submit failed', err)
       setFormState('error')
       return
     }

@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import { supabase } from '@/lib/supabase'
 import { bbsPrograms } from '@/data/bbs'
 import Button from '@/components/ui/Button'
 
@@ -24,26 +23,29 @@ export default function CohortInterestForm({ className = '' }: CohortInterestFor
     e.preventDefault()
     if (isSubmitting) return
 
-    if (!supabase) {
-      setFormState('error')
-      return
-    }
-
     setFormState('submitting')
 
-    const { error } = await supabase.from('bbs_cohort_interest').insert({
-      name: name.trim(),
-      email: email.trim().toLowerCase(),
-      phone: phone.trim() || null,
-      program_interest: programInterest || null,
-      source: typeof window !== 'undefined' ? window.location.pathname : null,
-      user_agent: typeof navigator !== 'undefined' ? navigator.userAgent : null,
-      referrer: typeof document !== 'undefined' ? document.referrer || null : null,
-    })
-
-    if (error && error.code !== '23505') {
+    try {
+      const res = await fetch('/api/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          form: 'cohort-interest',
+          data: {
+            name: name.trim(),
+            email: email.trim().toLowerCase(),
+            phone: phone.trim() || null,
+            program_interest: programInterest || null,
+            source: typeof window !== 'undefined' ? window.location.pathname : null,
+            user_agent: typeof navigator !== 'undefined' ? navigator.userAgent : null,
+            referrer: typeof document !== 'undefined' ? document.referrer || null : null,
+          },
+        }),
+      })
+      if (!res.ok) throw new Error('request failed')
+    } catch (err) {
       // eslint-disable-next-line no-console
-      console.error('[bbs_cohort_interest] insert failed', error)
+      console.error('[bbs_cohort_interest] submit failed', err)
       setFormState('error')
       return
     }
