@@ -94,7 +94,7 @@ export const NEWSLETTER = {
   body: 'Cuando Redesign Lab publica algo nuevo — un recurso, un análisis, una publicación relevante para las industrias en las que trabaja — puedes recibirlo directamente. Sin frecuencia fija. Solo cuando hay algo que vale la pena compartir.',
   cta: 'Suscribirme →',
   disclaimer: 'Puedes darte de baja en cualquier momento.',
-  subscribeUrl: 'https://campaigns.redesignlab.org/subscription/form',
+  subscribeUrl: 'https://campaigns.redesignlab.org/subscription/form?l=5cd15323-897f-4e0a-b4a7-876d608bfa07',
 }
 
 export const ALLIES_LABEL = 'Hemos colaborado con'
