@@ -23,7 +23,7 @@ export default function HeroSection() {
       <div className="container-rl py-32 md:py-40">
         <motion.div initial="hidden" animate="visible" variants={container} className="max-w-[820px]">
           <motion.p variants={item} className="font-mono text-mono-lg text-rl-red mb-6">
-            USD 900 – 3,000 / mes · dos versiones
+            USD 300 – 900 / mes · dos versiones
           </motion.p>
 
           <motion.h1 variants={item} className="font-display text-display-lg md:text-display-xl text-text-on-dark mb-8">

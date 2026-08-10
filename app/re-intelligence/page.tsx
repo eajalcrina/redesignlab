@@ -17,7 +17,7 @@ import CtaSection from './sections/CtaSection'
 export const metadata: Metadata = {
   title: 'Re. Intelligence | Redesign Lab — Lite & Pro: Inteligencia estratégica continua para empresas medianas en bioeconomía',
   description:
-    'Re. Intelligence es el equipo de inteligencia estratégica externo de tu empresa. Dos versiones: Lite (USD 900/mes) y Pro (USD 3,000/mes, máximo 15 empresas). Para fundadores y gerencia general que necesitan decidir mejor sobre las cuatro verticales del negocio.',
+    'Re. Intelligence es el equipo de inteligencia estratégica externo de tu empresa. Dos versiones: Lite (USD 300/mes) y Pro (USD 900/mes, máximo 15 empresas). Para fundadores y gerencia general que necesitan decidir mejor sobre las cuatro verticales del negocio.',
   keywords: [
     'acompañamiento estratégico bioeconomía',
     'advisory fundadores LATAM',

@@ -39,7 +39,7 @@ export default function ReIntelligenceBlock({
             </p>
 
             <p className="font-mono text-mono-lg text-text-muted mb-8">
-              USD 3,000 / mes &middot; máximo 15 miembros
+              USD 900 / mes &middot; máximo 15 miembros
             </p>
 
             <Divider variant="red" className="w-16 mb-8" animated />

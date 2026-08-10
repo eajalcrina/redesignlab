@@ -9,7 +9,7 @@ const versions = [
   {
     mark: '◎',
     name: 'Re. Intelligence Lite',
-    price: 'USD 900 / mes',
+    price: 'USD 300 / mes',
     headline: 'Acceso directo al criterio estratégico senior cuando más importa.',
     description:
       'Acompañamiento estratégico continuo a través de las cuatro verticales, aplicado a las decisiones y desafíos que el equipo directivo trae a cada sesión. No hay integración de datos del negocio. El criterio se aplica sobre la información que la empresa comparte en las sesiones de trabajo.',
@@ -20,7 +20,7 @@ const versions = [
   {
     mark: '◉',
     name: 'Re. Intelligence Pro',
-    price: 'USD 3,000 / mes',
+    price: 'USD 900 / mes',
     extra: 'máximo 15 empresas activas',
     headline: 'La inteligencia del negocio, procesada y convertida en planes que tu equipo puede ejecutar.',
     description:
@@ -39,7 +39,7 @@ interface ComparisonRow {
 }
 
 const comparison: ComparisonRow[] = [
-  { key: 'precio', row: 'Precio', light: 'USD 900 / mes', pro: 'USD 3,000 / mes' },
+  { key: 'precio', row: 'Precio', light: 'USD 300 / mes', pro: 'USD 900 / mes' },
   { key: 'verticales-cubiertas', row: 'Verticales cubiertas', light: 'Las 4 verticales', pro: 'Las 4 verticales' },
   { key: 'horas', row: 'Horas de acompañamiento', light: '4 h / mes', pro: '4 h / mes' },
   { key: 'sesiones', row: 'Sesiones con comité de gerencia', light: 'Sí', pro: 'Sí' },

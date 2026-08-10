@@ -46,7 +46,7 @@ export default function PortfolioIntelligence() {
               Re. Portfolio Intelligence
             </h3>
             <p className="font-mono text-mono-md text-rl-red mb-6">
-              USD 3,000 / mes
+              USD 1,500 / mes
             </p>
             <ul className="space-y-3 mb-8">
               {features.map((feature) => (
