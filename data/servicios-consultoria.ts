@@ -1,5 +1,3 @@
-import type { AuthorityStat } from '@/components/sections/services/AuthoritySection'
-
 export interface ConsultoriaCategoryContent {
   slug: 'pon-orden' | 'consigue-capital' | 'vende-mas'
   navLabel: string
@@ -8,12 +6,12 @@ export interface ConsultoriaCategoryContent {
   kicker: string
   h1: string
   tagline: string
+  authorityLine: string
   familiarHeading: string
   familiarBullets: string[]
   familiarClosing: string
   processIntro?: string
   steps: { label: 'Diagnóstico' | 'Sprint' | 'Rediseño y consolidación'; body: string }[]
-  authorityStats: AuthorityStat[]
   extraSection?: { heading: string; body: string }
   iaBlurb: string
   ctaLabel: string
@@ -29,6 +27,10 @@ export const CONSULTORIA_CATEGORIES: Record<'pon-orden' | 'consigue-capital' | '
     kicker: 'RUTA 01',
     h1: 'Pon Orden',
     tagline: 'Cuando la empresa está desordenada, perdiendo dinero, o el crecimiento tropieza con la propia organización.',
+    // PENDIENTE DE VALIDAR: cifra de resultado dada por Eddie en la sesión de revisión de
+    // diseño (no formaba parte del documento original) — confirmar que "más de 15%" es la
+    // cifra exacta que quiere publicar antes de producción.
+    authorityLine: 'Con nuestro servicio nuestros clientes han logrado 15%+ de reducción de costos, aumentando el margen del negocio para invertir en crecimiento.',
     familiarHeading: '¿Te suena familiar?',
     familiarBullets: [
       'Me cuesta pagar la planilla y siento que tengo un equipo muy grande.',
@@ -56,16 +58,11 @@ export const CONSULTORIA_CATEGORIES: Record<'pon-orden' | 'consigue-capital' | '
         body: 'Rediseñamos la estructura completa: procesos, flujos de información, gobernanza y sistemas de gestión, con plan de transición y métricas de seguimiento. No es un informe que queda en un cajón. Es la arquitectura que tu equipo opera después de que nos vamos.',
       },
     ],
-    // PENDIENTE DE VALIDAR: cifra de resultado dada por Eddie en la sesión de revisión de
-    // diseño (no formaba parte del documento original) — confirmar que "más de 15%" es la
-    // cifra exacta que quiere publicar antes de producción.
-    authorityStats: [
-      {
-        value: '15%+',
-        label: 'de reducción de costos, aumentando el margen del negocio para invertir en crecimiento.',
-      },
-    ],
-    iaBlurb: 'En Pon Orden: procesos optimizados para gestionar operaciones de forma más inteligente.',
+    // PENDIENTE DE VALIDAR: texto ampliado por Claude a partir del bloque largo de
+    // "Integración con IA" de ACELERA, adaptado a Pon Orden. No es copy dictado por Eddie
+    // línea por línea — confirmar antes de publicar.
+    iaBlurb:
+      'No es un servicio aparte. Es parte de cómo diagnosticamos, priorizamos y rediseñamos tu operación. La usamos para procesar tu información financiera y operativa más rápido y con más precisión, y para identificar exactamente dónde se está perdiendo el margen. Pero el objetivo no es que nosotros trabajemos más rápido. Es que tu equipo se quede con algo: diseñamos y entregamos skills a la medida de tu negocio para que los use y los replique después de que el proyecto termina. El orden que dejamos no se apaga cuando nos vamos.',
     ctaLabel: 'Quiero poner orden en mi negocio →',
   },
 
@@ -77,7 +74,8 @@ export const CONSULTORIA_CATEGORIES: Record<'pon-orden' | 'consigue-capital' | '
       'Diagnóstico de tu capacidad real de financiamiento, mapeo de fondos y acompañamiento hasta el resultado. Fondos no reembolsables, deuda de impacto o venta de acciones.',
     kicker: 'RUTA 02',
     h1: 'Consigue Capital',
-    tagline: 'Cuando el negocio tiene una oportunidad real de crecer, pero no sabes cómo estructurar la conversación con quien tiene el dinero.',
+    tagline: 'Cuando el negocio tiene una oportunidad real de crecer, pero no sabes cómo estructurar un proyecto de inversión y levantar capital de impacto que se ajuste a tu realidad.',
+    authorityLine: 'Hemos levantado más de 1.5 millones de dólares para empresas en etapa temprana, y acompañado el proceso de levantamiento de 80 millones de dólares para industrias consolidadas.',
     familiarHeading: '¿Te suena familiar?',
     familiarBullets: [
       'Sé que mi negocio tiene potencial, pero no sé cómo explicárselo a un inversionista o a un fondo.',
@@ -106,11 +104,9 @@ export const CONSULTORIA_CATEGORIES: Record<'pon-orden' | 'consigue-capital' | '
         body: 'Convertimos tu historia en evidencia que resiste el escrutinio de un fondo exigente. Gestionamos las postulaciones y acompañamos el proceso hasta el resultado. Trabajamos con un fee de éxito solo si hay resultado, no un precio fijo que ancla expectativa sin garantizar nada.',
       },
     ],
-    authorityStats: [
-      { value: 'USD 1.5M', label: 'levantados para el portafolio.' },
-      { value: 'USD 80M', label: 'acompañados en gran industria.' },
-    ],
-    iaBlurb: 'En Consigue Capital: procesos optimizados para el mapeo de fondos y la evaluación de capital de impacto.',
+    // PENDIENTE DE VALIDAR: texto ampliado por Claude, mismo criterio que en Pon Orden — ver nota arriba.
+    iaBlurb:
+      'No es un servicio aparte. Es parte de cómo mapeamos fondos, evaluamos tu capacidad de acceso a capital y construimos tu narrativa de inversión. La usamos para procesar el ecosistema de fondos activos más rápido y con más precisión, y para identificar qué instrumento y qué fuente calzan mejor con tu momento. Pero el objetivo no es que nosotros trabajemos más rápido. Es que tu equipo se quede con la capacidad de mapear y evaluar oportunidades de capital por su cuenta, después de que el proyecto termina.',
     ctaLabel: 'Quiero explorar cómo conseguir capital →',
   },
 
@@ -121,7 +117,8 @@ export const CONSULTORIA_CATEGORIES: Record<'pon-orden' | 'consigue-capital' | '
     metaDescription: 'Diagnóstico de marca, modelo de ingresos y gestión comercial. Mejora lo que ya vendes o valida un producto nuevo antes de lanzarlo.',
     kicker: 'RUTA 03',
     h1: 'Vende más',
-    tagline: 'Cuando necesitas crecer los ingresos: vender más de lo que ya tienes, o lanzar algo nuevo.',
+    tagline: 'Cuando necesitas aumentar los ingresos: vender más de lo que ya tienes, o lanzar algo nuevo.',
+    authorityLine: 'Hemos logrado llevar a empresas de nuestro portafolio a más de 20 millones de dólares en facturación anual, y lanzado nuevos productos en los principales mercados de Europa y EEUU.',
     familiarHeading: '¿Te suena familiar?',
     familiarBullets: [
       'Mis ventas están estancadas y no tengo claro por qué, ni qué hacer para moverlas.',
@@ -153,16 +150,9 @@ export const CONSULTORIA_CATEGORIES: Record<'pon-orden' | 'consigue-capital' | '
       heading: 'Creación y lanzamiento de nuevos productos',
       body: 'Lanzar sin haber validado es apostar, no emprender. Diseñamos y validamos el producto o negocio antes de comprometer un sol en producirlo: investigación de mercado, validación, proyección financiera y estrategia de lanzamiento.',
     },
-    // PENDIENTE DE VALIDAR: cifra de resultado dada por Eddie en la sesión de revisión de
-    // diseño (no formaba parte del documento original) — confirmar el nombre/caso exacto de
-    // la empresa referenciada antes de publicar, si se quiere citar el caso con más detalle.
-    authorityStats: [
-      {
-        value: 'USD 20M+',
-        label: 'de facturación anual alcanzada en una empresa que ayudamos a escalar.',
-      },
-    ],
-    iaBlurb: 'En Vende más: aplicada a marketing, análisis comercial y estrategia de ingresos.',
+    // PENDIENTE DE VALIDAR: texto ampliado por Claude, mismo criterio que en Pon Orden — ver nota arriba.
+    iaBlurb:
+      'No es un servicio aparte. Es parte de cómo diagnosticamos tu marca, tu modelo de ingresos y tu proceso comercial. La usamos para analizar el desempeño comercial y el mercado más rápido y con más precisión, y para identificar dónde está la oportunidad de ingreso que todavía no has capturado. Pero el objetivo no es que nosotros trabajemos más rápido. Es que tu equipo se quede con algo: diseñamos y entregamos skills a la medida de tu negocio para que los use y los replique después de que el proyecto termina.',
     ctaLabel: 'Quiero vender más →',
   },
 }

@@ -15,9 +15,9 @@ const nextConfig = {
         permanent: true,
       },
       {
-        // Re. Intelligence -> Rediseña tu negocio (producto fusionado a un solo nivel)
+        // Re. Intelligence -> ACELERA (producto fusionado a un solo nivel)
         source: '/re-intelligence',
-        destination: '/redisena-tu-negocio',
+        destination: '/acelera',
         permanent: true,
       },
       {

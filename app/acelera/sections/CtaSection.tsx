@@ -15,7 +15,7 @@ export default function CtaSection() {
           <p className="text-body-lg text-text-muted max-w-xl mx-auto mb-12">
             30 minutos de conversación de fit. Sin compromiso.
           </p>
-          <Button variant="primary" size="lg" href={SITE_CONFIG.calendarUrl}>
+          <Button variant="primary" size="lg" href={SITE_CONFIG.calendarUrlFit}>
             Agendar conversación de fit &rarr;
           </Button>
         </SectionReveal>

@@ -43,10 +43,10 @@ export const NAV_LINKS = [
   },
   {
     label: 'Servicios',
-    href: '/redisena-tu-negocio',
+    href: '/acelera',
     hasSubmenu: true,
     submenu: [
-      { label: 'Rediseña tu negocio', href: '/redisena-tu-negocio' },
+      { label: 'ACELERA', href: '/acelera' },
       { label: 'Pon Orden', href: '/pon-orden' },
       { label: 'Consigue Capital', href: '/consigue-capital' },
       { label: 'Vende más', href: '/vende-mas' },
@@ -58,7 +58,7 @@ export const NAV_LINKS = [
 ] as const
 
 export const SERVICE_PATHS = [
-  { label: 'Rediseña tu negocio', href: '/redisena-tu-negocio' },
+  { label: 'ACELERA', href: '/acelera' },
   { label: 'Pon Orden', href: '/pon-orden' },
   { label: 'Consigue Capital', href: '/consigue-capital' },
   { label: 'Vende más', href: '/vende-mas' },
@@ -68,7 +68,7 @@ export const FOOTER_LINKS = {
   servicios: {
     titulo: 'Servicios',
     links: [
-      { label: 'Rediseña tu negocio', href: '/redisena-tu-negocio' },
+      { label: 'ACELERA', href: '/acelera' },
       { label: 'Pon Orden', href: '/pon-orden' },
       { label: 'Consigue Capital', href: '/consigue-capital' },
       { label: 'Vende más', href: '/vende-mas' },

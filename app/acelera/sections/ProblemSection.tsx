@@ -12,7 +12,7 @@ const founderPains = [
 ]
 
 const distinctions = [
-  { he: 'Rediseña tu negocio', does: 'Pensamiento, análisis, escenarios, planes accionables.' },
+  { he: 'ACELERA', does: 'Pensamiento, análisis, escenarios, planes accionables.' },
   { he: 'Tu equipo', does: 'La ejecución de los planes, siempre.' },
 ]
 
@@ -37,7 +37,7 @@ export default function ProblemSection() {
                 No es falta de capacidad. Es falta de estructura, tiempo y criterio externo.
               </p>
               <p>
-                Rediseña tu negocio es el equipo de gerentes externos de tu empresa. <span className="text-text-primary font-medium">No reemplaza a tu equipo. Lo potencia.</span> Produce el criterio que permite que las decisiones sean mejores, más rápidas y con más claridad de la que el equipo puede generar solo.
+                ACELERA es el equipo de gerentes externos de tu empresa. <span className="text-text-primary font-medium">No reemplaza a tu equipo. Lo potencia.</span> Produce el criterio que permite que las decisiones sean mejores, más rápidas y con más claridad de la que el equipo puede generar solo.
               </p>
             </div>
 
@@ -53,7 +53,7 @@ export default function ProblemSection() {
                 ))}
               </ul>
               <p className="text-body-md text-text-secondary">
-                Muchas veces los fundadores tienen una estrategia clara, pero no siempre es la correcta. Rediseña tu negocio te ayuda a <span className="text-text-primary font-medium">validar, pivotar o mejorar</span> tu estrategia de negocio, con las mejores herramientas disponibles y la experiencia del equipo senior de Redesign Lab.
+                Muchas veces los fundadores tienen una estrategia clara, pero no siempre es la correcta. ACELERA te ayuda a <span className="text-text-primary font-medium">validar, pivotar o mejorar</span> tu estrategia de negocio, con las mejores herramientas disponibles y la experiencia del equipo senior de Redesign Lab.
               </p>
             </div>
 
@@ -96,7 +96,7 @@ export default function ProblemSection() {
               </ul>
               <div className="pt-6 border-t border-border-dark">
                 <p className="font-display text-display-sm text-text-on-dark">
-                  Rediseña tu negocio es todo eso.
+                  ACELERA es todo eso.
                 </p>
                 <p className="text-body-sm text-text-muted mt-2">
                   Sin contratar a nadie.

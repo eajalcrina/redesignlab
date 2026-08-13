@@ -18,7 +18,7 @@ const REVENUE_BUCKETS = [
 type RevenueBucket = (typeof REVENUE_BUCKETS)[number]
 
 export const SERVICE_INTEREST_OPTIONS = [
-  'Asesoría estratégica (Rediseña tu negocio)',
+  'Asesoría estratégica (ACELERA)',
   'Ruta: Pon Orden',
   'Ruta: Consigue Capital',
   'Ruta: Vende más',
@@ -41,7 +41,7 @@ interface FormData {
 }
 
 interface ReIntelligenceFormProps {
-  /** Preselects the service-interest dropdown. Defaults to "Rediseña tu negocio". */
+  /** Preselects the service-interest dropdown. Defaults to "ACELERA". */
   defaultServiceInterest?: ServiceInterest
 }
 

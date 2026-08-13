@@ -31,15 +31,11 @@ export default function ReIntelligenceBlock({
             </Tag>
 
             <h2 className="font-display text-display-md md:text-display-lg text-text-on-dark mb-4">
-              Rediseña tu negocio
+              ACELERA
             </h2>
 
             <p className="font-display text-display-sm text-rl-red mb-6">
               Un equipo de gerentes externos con más de 15 años de experiencia.
-            </p>
-
-            <p className="font-mono text-mono-lg text-text-muted mb-8">
-              S/ 2,000 / mes
             </p>
 
             <Divider variant="red" className="w-16 mb-8" animated />
@@ -74,8 +70,8 @@ export default function ReIntelligenceBlock({
 
           <SectionReveal delay={0.3}>
             <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8">
-              <Button variant="primary" size="lg" href="/redisena-tu-negocio">
-                Conocer Rediseña tu negocio &rarr;
+              <Button variant="primary" size="lg" href="/acelera">
+                Conocer ACELERA &rarr;
               </Button>
               <Link
                 href="/inteligencia-artificial/diagnostico"

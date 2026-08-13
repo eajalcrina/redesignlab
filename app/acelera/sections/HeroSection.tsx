@@ -31,15 +31,15 @@ export default function HeroSection() {
           </motion.div>
 
           <motion.h1 variants={item} className="font-display text-display-2xl md:text-[56px] lg:text-[64px] leading-[0.98] text-text-on-dark mb-8">
-            Rediseña tu negocio
+            ACELERA
           </motion.h1>
 
           <motion.p variants={item} className="text-body-xl text-text-muted italic mb-10 max-w-[640px]">
-            Un equipo de gerentes externos con más de 15 años de experiencia, accesible para empresas en crecimiento que ya funcionan.
+            Contrata el servicio de un equipo de gerentes con más de 15 años de experiencia, sin aumentar tu planilla. Ideal para empresas que buscan crecer de forma acelerada.
           </motion.p>
 
           <motion.div variants={item} className="mb-12">
-            <Button variant="primary" size="lg" href={SITE_CONFIG.calendarUrl}>
+            <Button variant="primary" size="lg" href={SITE_CONFIG.calendarUrlFit}>
               Agendar conversación de fit &rarr;
             </Button>
           </motion.div>

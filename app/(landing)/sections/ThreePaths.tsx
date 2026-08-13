@@ -14,13 +14,13 @@ const paths = [
   },
   {
     title: 'Consigue Capital',
-    description: 'Cuando el negocio tiene una oportunidad real de crecer, pero no sabes cómo estructurar la conversación con quien tiene el dinero.',
+    description: 'Cuando el negocio tiene una oportunidad real de crecer, pero no sabes cómo conseguir capital.',
     services: 'Diagnóstico · Sprint · Rediseño y consolidación',
     href: '/consigue-capital',
   },
   {
     title: 'Vende más',
-    description: 'Cuando necesitas crecer los ingresos: vender más de lo que ya tienes, o lanzar algo nuevo.',
+    description: 'Cuando necesitas aumentar los ingresos: vender más, o lanzar algo nuevo.',
     services: 'Diagnóstico · Sprint · Rediseño y consolidación',
     href: '/vende-mas',
   },

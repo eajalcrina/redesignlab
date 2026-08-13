@@ -87,7 +87,7 @@ export default function FourVerticalsSection() {
             Un mismo marco. Cuatro frentes que mueven el negocio.
           </h2>
           <p className="text-body-lg text-text-muted max-w-3xl mb-16">
-            Rediseña tu negocio trabaja sobre cuatro verticales estratégicas que cubren el espacio completo de decisiones que mueven una empresa en crecimiento.
+            ACELERA trabaja sobre cuatro verticales estratégicas que cubren el espacio completo de decisiones que mueven una empresa en crecimiento.
           </p>
         </SectionReveal>
 

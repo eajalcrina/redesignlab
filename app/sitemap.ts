@@ -10,7 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '',
     '/crear-valor',
     '/transformar-el-modelo',
-    '/redisena-tu-negocio',
+    '/acelera',
     '/pon-orden',
     '/consigue-capital',
     '/vende-mas',

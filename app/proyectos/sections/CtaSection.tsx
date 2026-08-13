@@ -27,7 +27,7 @@ export default function CtaSection() {
               <Button variant="primary" size="lg" href={`mailto:${SITE_CONFIG.email}?subject=${encodeURIComponent('Proyectos — Conversemos')}`}>
                 Hablar con el equipo &rarr;
               </Button>
-              <Button variant="secondary" size="lg" href="/redisena-tu-negocio" className="text-text-on-dark border-text-on-dark/20">
+              <Button variant="secondary" size="lg" href="/acelera" className="text-text-on-dark border-text-on-dark/20">
                 Ver nuestros servicios &rarr;
               </Button>
             </div>

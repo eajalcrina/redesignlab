@@ -27,10 +27,10 @@ export default function CrossLinks({ currentSlug }: CrossLinksProps) {
               </Link>
             ))}
             <Link
-              href="/redisena-tu-negocio"
+              href="/acelera"
               className="group block p-6 border-2 border-rl-red bg-rl-red/5 rounded hover:bg-rl-red/10 transition-colors"
             >
-              <p className="font-display text-display-sm text-text-primary mb-2">Rediseña tu negocio</p>
+              <p className="font-display text-display-sm text-text-primary mb-2">ACELERA</p>
               <p className="text-body-sm text-text-secondary mb-4">¿Buscas acompañamiento continuo, no solo resolver algo puntual?</p>
               <span className="text-body-sm text-rl-red group-hover:underline">Conocer &rarr;</span>
             </Link>

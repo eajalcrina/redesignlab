@@ -653,8 +653,8 @@ export default function MaturityChecker({ inline = false }: MaturityCheckerProps
                       </a>
                     )}
                     {level >= 3 && (
-                      <a href="/redisena-tu-negocio" className="text-body-md text-text-muted hover:text-rl-red transition-colors inline-flex items-center gap-2">
-                        Conocer Rediseña tu negocio <span aria-hidden>&rarr;</span>
+                      <a href="/acelera" className="text-body-md text-text-muted hover:text-rl-red transition-colors inline-flex items-center gap-2">
+                        Conocer ACELERA <span aria-hidden>&rarr;</span>
                       </a>
                     )}
                     <a href="mailto:eddie@redesignlab.org" className="inline-flex items-center gap-2 bg-rl-red text-white px-6 h-10 rounded font-sans font-medium hover:bg-[#d91f5b] transition-colors w-fit mt-2">

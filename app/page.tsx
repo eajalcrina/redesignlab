@@ -12,11 +12,11 @@ export default function Home() {
     <>
       {/* 1. Hero */}
       <LandingHero />
-      {/* 2. Aliados institucionales (puente tonal entre hero y Rediseña tu negocio) */}
+      {/* 2. Aliados institucionales (puente tonal entre hero y ACELERA) */}
       <AlliesMarquee />
       {/* 3. Tres formas de trabajar */}
       <ThreePaths />
-      {/* 4. Rediseña tu negocio */}
+      {/* 4. ACELERA */}
       <LandingReIntelligence />
       {/* 5. IA para bioeconomía */}
       <AISection />

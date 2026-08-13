@@ -163,7 +163,7 @@ function buildEnvelope(form: LeadForm, data: any): LeadEnvelope {
   switch (form) {
     case 're-intelligence':
       return {
-        emailSubject: `Nuevo lead · ${data.service_interest || 'Rediseña tu negocio'} — ${data.company_legal_name || 'sin empresa'}`,
+        emailSubject: `Nuevo lead · ${data.service_interest || 'ACELERA'} — ${data.company_legal_name || 'sin empresa'}`,
         emailFields: [
           ['Servicio de interés', data.service_interest],
           ['Nombre', data.contact_name],
