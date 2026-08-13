@@ -7,22 +7,22 @@ import Button from '@/components/ui/Button'
 
 const paths = [
   {
-    title: 'Crear valor',
-    description: 'Para organizaciones que tienen un activo o una oportunidad que todavía no han capturado y necesitan el diseño del modelo, la estructura del nuevo negocio o la estrategia para acceder al capital correcto.',
-    services: 'Opportunity Scan · Innovation Blueprint · Bioventure Blueprint · Corporate Spin-off Design · Fundraising Estratégico · Impact Value Report',
-    href: '/crear-valor',
+    title: 'Pon Orden',
+    description: 'Cuando la empresa está desordenada, perdiendo dinero, o el crecimiento tropieza con la propia organización.',
+    services: 'Diagnóstico · Sprint · Rediseño y consolidación',
+    href: '/pon-orden',
   },
   {
-    title: 'Rediseñar el trabajo',
-    description: 'Para organizaciones que ya tienen un negocio funcionando y necesitan que funcione mucho mejor. Más eficiente, más trazable, más circular, más inteligente.',
-    services: 'Re. Sprint · Circular Operations Redesign · Supply Chain Intelligence · Re.·IA Application',
-    href: '/redisenar-el-trabajo',
+    title: 'Consigue Capital',
+    description: 'Cuando el negocio tiene mérito real, pero no sabes cómo estructurar la conversación con quien tiene el dinero.',
+    services: 'Diagnóstico · Sprint · Rediseño y consolidación',
+    href: '/consigue-capital',
   },
   {
-    title: 'Transformar el modelo',
-    description: 'Para organizaciones que han llegado al límite de lo que el modelo actual puede producir y necesitan repensar la arquitectura completa del negocio para la siguiente etapa.',
-    services: 'Operating Model Design · AI Transformation Roadmap · AI Leadership Sprint · Scale Strategy',
-    href: '/transformar-el-modelo',
+    title: 'Vende más',
+    description: 'Cuando necesitas crecer los ingresos: vender más de lo que ya tienes, o lanzar algo nuevo.',
+    services: 'Diagnóstico · Sprint · Rediseño y consolidación',
+    href: '/vende-mas',
   },
 ]
 
@@ -48,7 +48,7 @@ export default function ThreePaths() {
       <div className="container-rl">
         <SectionReveal>
           <h2 className="font-display text-display-md md:text-display-lg text-text-primary max-w-3xl mb-4">
-            Tres formas de trabajar con Redesign Lab.
+            Tres puertas de entrada para trabajar con Redesign Lab.
           </h2>
           <p className="text-body-xl text-text-secondary max-w-2xl mb-12">
             Cada organización tiene un punto de entrada. Solo uno es el correcto en este momento.
