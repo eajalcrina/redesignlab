@@ -3,6 +3,7 @@ import ServiceHero from '@/components/sections/services/ServiceHero'
 import FamiliarSection from '@/components/sections/services/FamiliarSection'
 import ThreeStepProcess from '@/components/sections/services/ThreeStepProcess'
 import ServiceCta from '@/components/sections/services/ServiceCta'
+import CrossLinks from '@/components/sections/services/CrossLinks'
 import { CONSULTORIA_CATEGORIES } from '@/data/servicios-consultoria'
 
 const content = CONSULTORIA_CATEGORIES['consigue-capital']
@@ -33,6 +34,8 @@ export default function ConsigueCapitalPage() {
           </div>
         </div>
       )}
+
+      <CrossLinks currentSlug="consigue-capital" />
 
       <ServiceCta
         category={content.category}

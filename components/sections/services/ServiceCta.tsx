@@ -2,6 +2,7 @@
 
 import SectionReveal from '@/components/animations/SectionReveal'
 import ServiciosConsultoriaForm from '@/components/forms/ServiciosConsultoriaForm'
+import Tag from '@/components/ui/Tag'
 
 type Category = 'Pon Orden' | 'Consigue Capital' | 'Vende más'
 
@@ -18,11 +19,12 @@ export default function ServiceCta({ category, ctaLabel, messagePlaceholder, iaB
       <div className="container-rl">
         <SectionReveal>
           <h2 className="font-display text-display-md md:text-display-lg text-text-on-dark max-w-2xl mb-4">
-            {ctaLabel}
+            {ctaLabel.replace(/\s*→\s*$/, '')} <span aria-hidden="true">→</span>
           </h2>
           <p className="text-body-lg text-text-muted max-w-xl mb-4">
             Conversación de fit de 30 minutos · Sin compromiso
           </p>
+          <Tag color="red" className="mb-2">Integración con IA</Tag>
           <p className="text-body-sm text-text-muted/70 italic max-w-xl mb-12">
             {iaBlurb}
           </p>

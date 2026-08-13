@@ -34,7 +34,7 @@ export default function HeroSection() {
             S/ 2,000 / mes
           </motion.p>
 
-          <motion.h1 variants={item} className="font-display text-display-lg md:text-display-xl text-text-on-dark mb-8">
+          <motion.h1 variants={item} className="font-display text-display-xl md:text-display-2xl text-text-on-dark mb-8">
             Rediseña tu negocio
           </motion.h1>
 
