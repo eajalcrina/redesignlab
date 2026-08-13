@@ -5,7 +5,6 @@ import SectionReveal from '@/components/animations/SectionReveal'
 import Button from '@/components/ui/Button'
 import Tag from '@/components/ui/Tag'
 import Divider from '@/components/ui/Divider'
-import { SITE_CONFIG } from '@/lib/constants'
 
 interface ReIntelligenceBlockProps {
   expanded?: boolean
