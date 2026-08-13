@@ -24,7 +24,7 @@ export const CONSULTORIA_CATEGORIES: Record<'pon-orden' | 'consigue-capital' | '
     slug: 'pon-orden',
     navLabel: 'Pon Orden',
     category: 'Pon Orden',
-    metaTitle: 'Pon Orden | Redesign Lab',
+    metaTitle: 'Pon Orden',
     metaDescription:
       'Diagnóstico integral, plan de acción inmediato y rediseño de tu operación. Para empresas en crecimiento que sienten que el negocio se les desordenó.',
     kicker: 'SERVICIOS',
@@ -66,7 +66,7 @@ export const CONSULTORIA_CATEGORIES: Record<'pon-orden' | 'consigue-capital' | '
     slug: 'consigue-capital',
     navLabel: 'Consigue Capital',
     category: 'Consigue Capital',
-    metaTitle: 'Consigue Capital | Redesign Lab',
+    metaTitle: 'Consigue Capital',
     metaDescription:
       'Diagnóstico de tu capacidad real de financiamiento, mapeo de fondos y acompañamiento hasta el resultado. Fondos no reembolsables, deuda de impacto o venta de acciones.',
     kicker: 'SERVICIOS',
@@ -110,7 +110,7 @@ export const CONSULTORIA_CATEGORIES: Record<'pon-orden' | 'consigue-capital' | '
     slug: 'vende-mas',
     navLabel: 'Vende más',
     category: 'Vende más',
-    metaTitle: 'Vende más | Redesign Lab',
+    metaTitle: 'Vende más',
     metaDescription: 'Diagnóstico de marca, modelo de ingresos y gestión comercial. Mejora lo que ya vendes o valida un producto nuevo antes de lanzarlo.',
     kicker: 'SERVICIOS',
     h1: 'Vende más',

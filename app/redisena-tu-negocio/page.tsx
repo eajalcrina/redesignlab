@@ -16,7 +16,7 @@ import ClosingNoteSection from './sections/ClosingNoteSection'
 import CtaSection from './sections/CtaSection'
 
 export const metadata: Metadata = {
-  title: 'Rediseña tu negocio | Redesign Lab',
+  title: 'Rediseña tu negocio',
   description:
     'Un equipo de gerentes externos con más de 15 años de experiencia, para empresas en crecimiento que necesitan pensar su estrategia sin armar un equipo interno. S/ 2,000/mes.',
   keywords: [
