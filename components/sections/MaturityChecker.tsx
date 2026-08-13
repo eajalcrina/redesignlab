@@ -648,13 +648,13 @@ export default function MaturityChecker({ inline = false }: MaturityCheckerProps
                       Descargar el Framework RE-IA completo <span aria-hidden>&rarr;</span>
                     </a>
                     {level <= 2 && (
-                      <a href="/redisenar-el-trabajo" className="text-body-md text-text-muted hover:text-rl-red transition-colors inline-flex items-center gap-2">
-                        Explorar el Re. Sprint, tu punto de entrada <span aria-hidden>&rarr;</span>
+                      <a href="/pon-orden" className="text-body-md text-text-muted hover:text-rl-red transition-colors inline-flex items-center gap-2">
+                        Explorar Pon Orden, tu punto de entrada <span aria-hidden>&rarr;</span>
                       </a>
                     )}
                     {level >= 3 && (
-                      <a href="/re-intelligence" className="text-body-md text-text-muted hover:text-rl-red transition-colors inline-flex items-center gap-2">
-                        Conocer Re. Intelligence <span aria-hidden>&rarr;</span>
+                      <a href="/redisena-tu-negocio" className="text-body-md text-text-muted hover:text-rl-red transition-colors inline-flex items-center gap-2">
+                        Conocer Rediseña tu negocio <span aria-hidden>&rarr;</span>
                       </a>
                     )}
                     <a href="mailto:eddie@redesignlab.org" className="inline-flex items-center gap-2 bg-rl-red text-white px-6 h-10 rounded font-sans font-medium hover:bg-[#d91f5b] transition-colors w-fit mt-2">

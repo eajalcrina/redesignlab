@@ -13,11 +13,11 @@ export default function Home() {
     <>
       {/* 1. Hero */}
       <LandingHero />
-      {/* 2. Aliados institucionales (puente tonal entre hero y Re. Intelligence) */}
+      {/* 2. Aliados institucionales (puente tonal entre hero y Rediseña tu negocio) */}
       <AlliesMarquee />
       {/* 3. Tres formas de trabajar */}
       <ThreePaths />
-      {/* 4. Re. Intelligence */}
+      {/* 4. Rediseña tu negocio */}
       <LandingReIntelligence />
       {/* 5. El problema que resolvemos */}
       <ProblemSection />
