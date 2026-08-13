@@ -5,6 +5,7 @@ import SectionReveal from '@/components/animations/SectionReveal'
 import Button from '@/components/ui/Button'
 import Tag from '@/components/ui/Tag'
 import Divider from '@/components/ui/Divider'
+import { SITE_CONFIG } from '@/lib/constants'
 
 interface ReIntelligenceBlockProps {
   expanded?: boolean
@@ -12,7 +13,7 @@ interface ReIntelligenceBlockProps {
 
 const benefits: React.ReactNode[] = [
   '4 horas de trabajo directo cada mes con los socios fundadores de Redesign Lab',
-  'Re. Intelligence Brief mensual personalizado al contexto específico de la empresa',
+  'Acompañamiento estratégico continuo sobre las cuatro verticales del negocio',
   <>2 consultas de 30 min con especialistas de la <Link href="/builders" className="underline decoration-rl-red/40 hover:decoration-rl-red transition-colors">red de Builders</Link></>,
   'Acceso anticipado a frameworks, herramientas y publicaciones propias',
   'Prioridad en servicios complementarios de Redesign Lab y su red',
@@ -31,29 +32,29 @@ export default function ReIntelligenceBlock({
             </Tag>
 
             <h2 className="font-display text-display-md md:text-display-lg text-text-on-dark mb-4">
-              Re. Intelligence
+              Rediseña tu negocio
             </h2>
 
             <p className="font-display text-display-sm text-rl-red mb-6">
-              El estratega, el analista y el conector que tu empresa no tiene en nómina.
+              Un equipo de gerentes externos con más de 15 años de experiencia.
             </p>
 
             <p className="font-mono text-mono-lg text-text-muted mb-8">
-              USD 900 / mes &middot; máximo 15 miembros
+              S/ 2,000 / mes
             </p>
 
             <Divider variant="red" className="w-16 mb-8" animated />
 
             <p className="text-body-lg text-text-on-dark mb-6">
-              El equipo de pensamiento estratégico externo de tu empresa: el que procesa la información, diseña los escenarios, mapea las oportunidades y entrega los planes para que tu equipo accione.
+              Ejecutado directamente por Eddie Ajalcriña y Lorenzo Ortiz. Sin intermediarios. El mismo rigor con el que las grandes corporaciones toman decisiones estratégicas, aplicado a tu negocio, a tu escala y a tu presupuesto.
             </p>
 
             <p className="text-body-md text-text-muted mb-4">
-              Para fundadores o gerencia general de empresas medianas en bioeconomía que ya funcionan, y donde el pensamiento estratégico recae sobre las mismas personas que atienden la operación diaria. No es falta de capacidad: es falta de tiempo y de estructura. Re. Intelligence resuelve exactamente eso.
+              Para fundadores o equipos directivos de empresas en crecimiento en Perú que necesitan un equipo de gerentes externos para contrastar decisiones, validar pivots y sostener el foco en el crecimiento — sin el costo de armar un equipo de estrategia interno.
             </p>
 
             <p className="text-body-md text-text-on-dark/80 mb-12 italic">
-              Solo 15 miembros activos a la vez. Porque con 16, el producto deja de ser lo que es.
+              Solo 15 empresas activas a la vez. Porque con 16, el servicio deja de ser lo que es.
             </p>
           </SectionReveal>
 
@@ -74,8 +75,8 @@ export default function ReIntelligenceBlock({
 
           <SectionReveal delay={0.3}>
             <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8">
-              <Button variant="primary" size="lg" href="/re-intelligence">
-                Conocer Re. Intelligence &rarr;
+              <Button variant="primary" size="lg" href="/redisena-tu-negocio">
+                Conocer Rediseña tu negocio &rarr;
               </Button>
               <Link
                 href="/inteligencia-artificial/diagnostico"
