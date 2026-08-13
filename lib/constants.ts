@@ -43,13 +43,13 @@ export const NAV_LINKS = [
   },
   {
     label: 'Servicios',
-    href: '/crear-valor',
+    href: '/redisena-tu-negocio',
     hasSubmenu: true,
     submenu: [
-      { label: 'Crear valor', href: '/crear-valor' },
-      { label: 'Rediseñar el trabajo', href: '/redisenar-el-trabajo' },
-      { label: 'Transformar el modelo', href: '/transformar-el-modelo' },
-      { label: 'Re. Intelligence', href: '/re-intelligence' },
+      { label: 'Rediseña tu negocio', href: '/redisena-tu-negocio' },
+      { label: 'Pon Orden', href: '/pon-orden' },
+      { label: 'Consigue Capital', href: '/consigue-capital' },
+      { label: 'Vende más', href: '/vende-mas' },
     ]
   },
   { label: 'Fondos', href: '/fondos' },
@@ -58,20 +58,21 @@ export const NAV_LINKS = [
 ] as const
 
 export const SERVICE_PATHS = [
-  { label: 'Crear valor', href: '/crear-valor' },
-  { label: 'Rediseñar el trabajo', href: '/redisenar-el-trabajo' },
-  { label: 'Transformar el modelo', href: '/transformar-el-modelo' },
+  { label: 'Rediseña tu negocio', href: '/redisena-tu-negocio' },
+  { label: 'Pon Orden', href: '/pon-orden' },
+  { label: 'Consigue Capital', href: '/consigue-capital' },
+  { label: 'Vende más', href: '/vende-mas' },
 ] as const
 
 export const FOOTER_LINKS = {
   servicios: {
     titulo: 'Servicios',
     links: [
-      { label: 'Crear valor', href: '/crear-valor' },
-      { label: 'Rediseñar el trabajo', href: '/redisenar-el-trabajo' },
-      { label: 'Transformar el modelo', href: '/transformar-el-modelo' },
+      { label: 'Rediseña tu negocio', href: '/redisena-tu-negocio' },
+      { label: 'Pon Orden', href: '/pon-orden' },
+      { label: 'Consigue Capital', href: '/consigue-capital' },
+      { label: 'Vende más', href: '/vende-mas' },
       { label: 'Para fondos', href: '/fondos' },
-      { label: 'Re. Intelligence', href: '/re-intelligence' },
     ],
   },
   ecosistema: {
