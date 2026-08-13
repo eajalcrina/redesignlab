@@ -131,7 +131,7 @@ export default function ReIntelligenceForm() {
         </a>
 
         <p className="text-body-xs text-text-muted/70 mt-5">
-          Sin compromiso · Si no hay alineación con Re. Intelligence, te lo comunicamos en la misma reunión y sugerimos el camino más apropiado.
+          Sin compromiso · Si no hay alineación, te lo comunicamos en la misma reunión y sugerimos el camino más apropiado.
         </p>
       </motion.div>
     )
@@ -144,7 +144,7 @@ export default function ReIntelligenceForm() {
       noValidate
     >
       <p className="font-mono text-mono-sm text-rl-red uppercase tracking-[0.18em] mb-6">
-        Formulario · Re. Intelligence
+        Formulario · Rediseña tu negocio
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-5">
