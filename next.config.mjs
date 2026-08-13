@@ -14,6 +14,18 @@ const nextConfig = {
         destination: '/',
         permanent: true,
       },
+      {
+        // Re. Intelligence -> Rediseña tu negocio (producto fusionado a un solo nivel)
+        source: '/re-intelligence',
+        destination: '/redisena-tu-negocio',
+        permanent: true,
+      },
+      {
+        // Rediseñar el trabajo -> Pon Orden (contenido absorbido en la nueva categoría)
+        source: '/redisenar-el-trabajo',
+        destination: '/pon-orden',
+        permanent: true,
+      },
     ]
   },
 }

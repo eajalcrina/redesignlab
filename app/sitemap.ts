@@ -9,9 +9,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
     '',
     '/crear-valor',
-    '/redisenar-el-trabajo',
     '/transformar-el-modelo',
-    '/re-intelligence',
+    '/redisena-tu-negocio',
+    '/pon-orden',
+    '/consigue-capital',
+    '/vende-mas',
     '/fondos',
     '/inteligencia-artificial',
     '/inteligencia-artificial/diagnostico',
