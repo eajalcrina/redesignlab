@@ -3,7 +3,6 @@ import { notifyLead, type LeadForm } from '@/lib/lead-notify'
 
 const KNOWN_FORMS: LeadForm[] = [
   're-intelligence',
-  'servicios-consultoria',
   'cohort-interest',
   'enroll',
   'maturity-checker',

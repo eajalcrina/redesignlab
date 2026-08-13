@@ -140,7 +140,6 @@ async function appendSheetRow(tabName: string, values: SheetValue[]): Promise<bo
 
 export type LeadForm =
   | 're-intelligence'
-  | 'servicios-consultoria'
   | 'cohort-interest'
   | 'enroll'
   | 'maturity-checker'
@@ -164,8 +163,9 @@ function buildEnvelope(form: LeadForm, data: any): LeadEnvelope {
   switch (form) {
     case 're-intelligence':
       return {
-        emailSubject: `Nuevo lead · Re. Intelligence — ${data.company_legal_name || 'sin empresa'}`,
+        emailSubject: `Nuevo lead · ${data.service_interest || 'Rediseña tu negocio'} — ${data.company_legal_name || 'sin empresa'}`,
         emailFields: [
+          ['Servicio de interés', data.service_interest],
           ['Nombre', data.contact_name],
           ['País', data.country],
           ['Celular', data.phone],
@@ -181,6 +181,7 @@ function buildEnvelope(form: LeadForm, data: any): LeadEnvelope {
         sheetTab: 'Re. Intelligence',
         sheetRow: [
           ts,
+          data.service_interest || '',
           data.contact_name || '',
           data.country || '',
           data.phone || '',
@@ -191,33 +192,6 @@ function buildEnvelope(form: LeadForm, data: any): LeadEnvelope {
           data.website || '',
           data.social_handle || '',
           data.main_challenge || '',
-          data.source || '',
-          data.user_agent || '',
-          data.referrer || '',
-        ],
-      }
-
-    case 'servicios-consultoria':
-      return {
-        emailSubject: `Nuevo lead · ${data.category || 'Servicios'} — ${data.company || data.contact_name || 'sin nombre'}`,
-        emailFields: [
-          ['Categoría', data.category],
-          ['Nombre', data.contact_name],
-          ['Empresa', data.company],
-          ['Email', data.email],
-          ['Teléfono', data.phone],
-          ['Situación', data.message],
-          ['Página de origen', data.source],
-        ],
-        sheetTab: 'Servicios de Consultoría',
-        sheetRow: [
-          ts,
-          data.category || '',
-          data.contact_name || '',
-          data.company || '',
-          data.email || '',
-          data.phone || '',
-          data.message || '',
           data.source || '',
           data.user_agent || '',
           data.referrer || '',

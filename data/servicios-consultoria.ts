@@ -1,7 +1,8 @@
+import type { AuthorityStat } from '@/components/sections/services/AuthoritySection'
+
 export interface ConsultoriaCategoryContent {
   slug: 'pon-orden' | 'consigue-capital' | 'vende-mas'
   navLabel: string
-  category: 'Pon Orden' | 'Consigue Capital' | 'Vende más'
   metaTitle: string
   metaDescription: string
   kicker: string
@@ -12,18 +13,16 @@ export interface ConsultoriaCategoryContent {
   familiarClosing: string
   processIntro?: string
   steps: { label: 'Diagnóstico' | 'Sprint' | 'Rediseño y consolidación'; body: string }[]
-  credentialsLine?: string
+  authorityStats: AuthorityStat[]
   extraSection?: { heading: string; body: string }
   iaBlurb: string
   ctaLabel: string
-  messagePlaceholder: string
 }
 
 export const CONSULTORIA_CATEGORIES: Record<'pon-orden' | 'consigue-capital' | 'vende-mas', ConsultoriaCategoryContent> = {
   'pon-orden': {
     slug: 'pon-orden',
     navLabel: 'Pon Orden',
-    category: 'Pon Orden',
     metaTitle: 'Pon Orden',
     metaDescription:
       'Diagnóstico integral, plan de acción inmediato y rediseño de tu operación. Para empresas en crecimiento que sienten que el negocio se les desordenó.',
@@ -57,15 +56,22 @@ export const CONSULTORIA_CATEGORIES: Record<'pon-orden' | 'consigue-capital' | '
         body: 'Rediseñamos la estructura completa: procesos, flujos de información, gobernanza y sistemas de gestión, con plan de transición y métricas de seguimiento. No es un informe que queda en un cajón. Es la arquitectura que tu equipo opera después de que nos vamos.',
       },
     ],
+    // PENDIENTE DE VALIDAR: cifra de resultado dada por Eddie en la sesión de revisión de
+    // diseño (no formaba parte del documento original) — confirmar que "más de 15%" es la
+    // cifra exacta que quiere publicar antes de producción.
+    authorityStats: [
+      {
+        value: '15%+',
+        label: 'de reducción de costos, aumentando el margen del negocio para invertir en crecimiento.',
+      },
+    ],
     iaBlurb: 'En Pon Orden: procesos optimizados para gestionar operaciones de forma más inteligente.',
     ctaLabel: 'Quiero poner orden en mi negocio →',
-    messagePlaceholder: '¿Qué parte de tu operación sientes que se desordenó? Cuéntanos qué está pasando.',
   },
 
   'consigue-capital': {
     slug: 'consigue-capital',
     navLabel: 'Consigue Capital',
-    category: 'Consigue Capital',
     metaTitle: 'Consigue Capital',
     metaDescription:
       'Diagnóstico de tu capacidad real de financiamiento, mapeo de fondos y acompañamiento hasta el resultado. Fondos no reembolsables, deuda de impacto o venta de acciones.',
@@ -100,16 +106,17 @@ export const CONSULTORIA_CATEGORIES: Record<'pon-orden' | 'consigue-capital' | '
         body: 'Convertimos tu historia en evidencia que resiste el escrutinio de un fondo exigente. Gestionamos las postulaciones y acompañamos el proceso hasta el resultado. Trabajamos con un fee de éxito solo si hay resultado, no un precio fijo que ancla expectativa sin garantizar nada.',
       },
     ],
-    credentialsLine: 'Track record: USD 1.5M levantados para el portafolio; USD 80M acompañados en gran industria.',
+    authorityStats: [
+      { value: 'USD 1.5M', label: 'levantados para el portafolio.' },
+      { value: 'USD 80M', label: 'acompañados en gran industria.' },
+    ],
     iaBlurb: 'En Consigue Capital: procesos optimizados para el mapeo de fondos y la evaluación de capital de impacto.',
     ctaLabel: 'Quiero explorar cómo conseguir capital →',
-    messagePlaceholder: '¿Qué tipo de capital estás buscando y para qué lo necesitas? Cuéntanos tu situación.',
   },
 
   'vende-mas': {
     slug: 'vende-mas',
     navLabel: 'Vende más',
-    category: 'Vende más',
     metaTitle: 'Vende más',
     metaDescription: 'Diagnóstico de marca, modelo de ingresos y gestión comercial. Mejora lo que ya vendes o valida un producto nuevo antes de lanzarlo.',
     kicker: 'RUTA 03',
@@ -146,8 +153,16 @@ export const CONSULTORIA_CATEGORIES: Record<'pon-orden' | 'consigue-capital' | '
       heading: 'Creación y lanzamiento de nuevos productos',
       body: 'Lanzar sin haber validado es apostar, no emprender. Diseñamos y validamos el producto o negocio antes de comprometer un sol en producirlo: investigación de mercado, validación, proyección financiera y estrategia de lanzamiento.',
     },
+    // PENDIENTE DE VALIDAR: cifra de resultado dada por Eddie en la sesión de revisión de
+    // diseño (no formaba parte del documento original) — confirmar el nombre/caso exacto de
+    // la empresa referenciada antes de publicar, si se quiere citar el caso con más detalle.
+    authorityStats: [
+      {
+        value: 'USD 20M+',
+        label: 'de facturación anual alcanzada en una empresa que ayudamos a escalar.',
+      },
+    ],
     iaBlurb: 'En Vende más: aplicada a marketing, análisis comercial y estrategia de ingresos.',
     ctaLabel: 'Quiero vender más →',
-    messagePlaceholder: '¿Qué quieres vender más: lo que ya tienes, o algo nuevo? Cuéntanos tu situación.',
   },
 }
