@@ -7,22 +7,22 @@ import Button from '@/components/ui/Button'
 
 const paths = [
   {
-    title: 'Crear valor',
-    description: 'Para organizaciones que tienen un activo o una oportunidad que todavía no han capturado y necesitan el diseño del modelo, la estructura del nuevo negocio o la estrategia para acceder al capital correcto.',
-    services: 'Opportunity Scan · Innovation Blueprint · Bioventure Blueprint · Corporate Spin-off Design · Fundraising Estratégico · Impact Value Report',
-    href: '/crear-valor',
+    title: 'Pon Orden',
+    description: 'Cuando la empresa está desordenada, perdiendo dinero, o el crecimiento tropieza con la propia organización.',
+    services: 'Diagnóstico · Sprint · Rediseño y consolidación',
+    href: '/pon-orden',
   },
   {
-    title: 'Rediseñar el trabajo',
-    description: 'Para organizaciones que ya tienen un negocio funcionando y necesitan que funcione mucho mejor. Más eficiente, más trazable, más circular, más inteligente.',
-    services: 'Re. Sprint · Circular Operations Redesign · Supply Chain Intelligence · Re.·IA Application',
-    href: '/redisenar-el-trabajo',
+    title: 'Consigue Capital',
+    description: 'Cuando el negocio tiene una oportunidad real de crecer, pero no sabes cómo conseguir capital.',
+    services: 'Diagnóstico · Sprint · Rediseño y consolidación',
+    href: '/consigue-capital',
   },
   {
-    title: 'Transformar el modelo',
-    description: 'Para organizaciones que han llegado al límite de lo que el modelo actual puede producir y necesitan repensar la arquitectura completa del negocio para la siguiente etapa.',
-    services: 'Operating Model Design · AI Transformation Roadmap · AI Leadership Sprint · Scale Strategy',
-    href: '/transformar-el-modelo',
+    title: 'Vende más',
+    description: 'Cuando necesitas aumentar los ingresos: vender más, o lanzar algo nuevo.',
+    services: 'Diagnóstico · Sprint · Rediseño y consolidación',
+    href: '/vende-mas',
   },
 ]
 
@@ -48,10 +48,10 @@ export default function ThreePaths() {
       <div className="container-rl">
         <SectionReveal>
           <h2 className="font-display text-display-md md:text-display-lg text-text-primary max-w-3xl mb-4">
-            Tres formas de trabajar con Redesign Lab.
+            Tres puertas de entrada para trabajar con Redesign Lab.
           </h2>
           <p className="text-body-xl text-text-secondary max-w-2xl mb-12">
-            Cada organización tiene un punto de entrada. Solo uno es el correcto en este momento.
+            En nuestros años trabajando con empresas en Perú y Latinoamérica hemos visto los mismos desafíos repetirse en distintos momentos del crecimiento de un negocio. Identificarlos es el primer paso de nuestro propósito: ayudarte a llevar tu empresa al siguiente nivel. Cada organización tiene un punto de entrada. Solo uno es el correcto en este momento.
           </p>
         </SectionReveal>
 
@@ -77,11 +77,11 @@ export default function ThreePaths() {
 
                 <div className="relative z-10 flex flex-col h-full">
                   <span className="font-mono text-mono-sm text-rl-red block mb-4">0{i + 1}</span>
-                  <h3 className="font-display text-[26px] sm:text-[32px] md:text-[36px] lg:text-[44px] leading-[1.05] text-text-primary group-hover:text-text-on-dark mb-5 transition-colors">
-                    {path.title}
-                  </h3>
-                  <p className="text-body-sm text-text-secondary group-hover:text-text-muted mb-4 flex-1 transition-colors">
+                  <p className="font-display text-[20px] sm:text-[23px] md:text-[25px] leading-[1.2] text-text-primary group-hover:text-text-on-dark mb-5 flex-1 transition-colors">
                     {path.description}
+                  </p>
+                  <p className="font-mono text-mono-sm uppercase tracking-[0.14em] text-rl-red mb-1 transition-colors">
+                    Ruta: {path.title}
                   </p>
                   <p className="text-body-xs text-text-tertiary group-hover:text-text-muted/60 mb-6 transition-colors">
                     {path.services}

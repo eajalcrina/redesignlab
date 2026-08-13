@@ -14,6 +14,18 @@ const nextConfig = {
         destination: '/',
         permanent: true,
       },
+      {
+        // Re. Intelligence -> ACELERA (producto fusionado a un solo nivel)
+        source: '/re-intelligence',
+        destination: '/acelera',
+        permanent: true,
+      },
+      {
+        // Rediseñar el trabajo -> Pon Orden (contenido absorbido en la nueva categoría)
+        source: '/redisenar-el-trabajo',
+        destination: '/pon-orden',
+        permanent: true,
+      },
     ]
   },
 }

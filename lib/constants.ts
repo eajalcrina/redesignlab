@@ -20,6 +20,11 @@ export const BBS_WHATSAPP_NUMBER = '51989338401'
 export const bbsWhatsappUrl = (programTitle: string) =>
   `https://wa.me/${BBS_WHATSAPP_NUMBER}?text=${encodeURIComponent(`Quiero inscribirme al programa ${programTitle}`)}`
 
+// WhatsApp directo del equipo, para CTAs de Servicios (mismo número que SITE_CONFIG.phone).
+export const WHATSAPP_NUMBER = '51989338401'
+export const whatsappUrl = (message: string) =>
+  `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`
+
 export const NAV_LINKS = [
   {
     label: 'Mindset',
@@ -43,13 +48,13 @@ export const NAV_LINKS = [
   },
   {
     label: 'Servicios',
-    href: '/crear-valor',
+    href: '/acelera',
     hasSubmenu: true,
     submenu: [
-      { label: 'Crear valor', href: '/crear-valor' },
-      { label: 'Rediseñar el trabajo', href: '/redisenar-el-trabajo' },
-      { label: 'Transformar el modelo', href: '/transformar-el-modelo' },
-      { label: 'Re. Intelligence', href: '/re-intelligence' },
+      { label: 'ACELERA', href: '/acelera' },
+      { label: 'Pon Orden', href: '/pon-orden' },
+      { label: 'Consigue Capital', href: '/consigue-capital' },
+      { label: 'Vende más', href: '/vende-mas' },
     ]
   },
   { label: 'Fondos', href: '/fondos' },
@@ -58,20 +63,21 @@ export const NAV_LINKS = [
 ] as const
 
 export const SERVICE_PATHS = [
-  { label: 'Crear valor', href: '/crear-valor' },
-  { label: 'Rediseñar el trabajo', href: '/redisenar-el-trabajo' },
-  { label: 'Transformar el modelo', href: '/transformar-el-modelo' },
+  { label: 'ACELERA', href: '/acelera' },
+  { label: 'Pon Orden', href: '/pon-orden' },
+  { label: 'Consigue Capital', href: '/consigue-capital' },
+  { label: 'Vende más', href: '/vende-mas' },
 ] as const
 
 export const FOOTER_LINKS = {
   servicios: {
     titulo: 'Servicios',
     links: [
-      { label: 'Crear valor', href: '/crear-valor' },
-      { label: 'Rediseñar el trabajo', href: '/redisenar-el-trabajo' },
-      { label: 'Transformar el modelo', href: '/transformar-el-modelo' },
+      { label: 'ACELERA', href: '/acelera' },
+      { label: 'Pon Orden', href: '/pon-orden' },
+      { label: 'Consigue Capital', href: '/consigue-capital' },
+      { label: 'Vende más', href: '/vende-mas' },
       { label: 'Para fondos', href: '/fondos' },
-      { label: 'Re. Intelligence', href: '/re-intelligence' },
     ],
   },
   ecosistema: {

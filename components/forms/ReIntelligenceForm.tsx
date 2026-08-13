@@ -17,7 +17,17 @@ const REVENUE_BUCKETS = [
 
 type RevenueBucket = (typeof REVENUE_BUCKETS)[number]
 
+export const SERVICE_INTEREST_OPTIONS = [
+  'Asesoría estratégica (ACELERA)',
+  'Ruta: Pon Orden',
+  'Ruta: Consigue Capital',
+  'Ruta: Vende más',
+] as const
+
+export type ServiceInterest = (typeof SERVICE_INTEREST_OPTIONS)[number]
+
 interface FormData {
+  service_interest: ServiceInterest
   contact_name: string
   country: string
   phone: string
@@ -30,21 +40,25 @@ interface FormData {
   main_challenge: string
 }
 
-const initialData: FormData = {
-  contact_name: '',
-  country: '',
-  phone: '',
-  email: '',
-  company_legal_name: '',
-  annual_revenue_bucket: '',
-  product_or_service: '',
-  website: '',
-  social_handle: '',
-  main_challenge: '',
+interface ReIntelligenceFormProps {
+  /** Preselects the service-interest dropdown. Defaults to "ACELERA". */
+  defaultServiceInterest?: ServiceInterest
 }
 
-export default function ReIntelligenceForm() {
-  const [data, setData] = useState<FormData>(initialData)
+export default function ReIntelligenceForm({ defaultServiceInterest }: ReIntelligenceFormProps = {}) {
+  const [data, setData] = useState<FormData>(() => ({
+    service_interest: defaultServiceInterest ?? SERVICE_INTEREST_OPTIONS[0],
+    contact_name: '',
+    country: '',
+    phone: '',
+    email: '',
+    company_legal_name: '',
+    annual_revenue_bucket: '',
+    product_or_service: '',
+    website: '',
+    social_handle: '',
+    main_challenge: '',
+  }))
   const [state, setState] = useState<State>('idle')
   const [errorMessage, setErrorMessage] = useState<string | null>(null)
 
@@ -74,6 +88,7 @@ export default function ReIntelligenceForm() {
         body: JSON.stringify({
           form: 're-intelligence',
           data: {
+            service_interest: data.service_interest,
             contact_name: data.contact_name.trim(),
             country: data.country.trim() || null,
             phone: data.phone.trim() || null,
@@ -131,7 +146,7 @@ export default function ReIntelligenceForm() {
         </a>
 
         <p className="text-body-xs text-text-muted/70 mt-5">
-          Sin compromiso · Si no hay alineación con Re. Intelligence, te lo comunicamos en la misma reunión y sugerimos el camino más apropiado.
+          Sin compromiso · Si no hay alineación, te lo comunicamos en la misma reunión y sugerimos el camino más apropiado.
         </p>
       </motion.div>
     )
@@ -144,10 +159,26 @@ export default function ReIntelligenceForm() {
       noValidate
     >
       <p className="font-mono text-mono-sm text-rl-red uppercase tracking-[0.18em] mb-6">
-        Formulario · Re. Intelligence
+        Formulario
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-5">
+        <Field label="¿Qué te interesa?" required className="md:col-span-2">
+          <select
+            value={data.service_interest}
+            onChange={(e) => update('service_interest', e.target.value as ServiceInterest)}
+            disabled={locked}
+            required
+            className={`${inputCls} appearance-none pr-8`}
+          >
+            {SERVICE_INTEREST_OPTIONS.map((opt) => (
+              <option key={opt} value={opt} className="bg-rl-dark text-text-on-dark">
+                {opt}
+              </option>
+            ))}
+          </select>
+        </Field>
+
         <Field label="Nombre de contacto" required>
           <input
             type="text"

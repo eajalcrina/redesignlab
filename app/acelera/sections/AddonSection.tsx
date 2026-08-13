@@ -1,5 +1,9 @@
 'use client'
 
+// PENDIENTE DE VALIDAR: contenido operativo heredado de Re. Intelligence Pro.
+// No fue parte del copy aprobado explícitamente por Eddie para "Rediseña tu negocio".
+// Confirmar antes de publicar en producción (ver docs/superpowers/plans/2026-08-12-servicios-redesign.md, Tarea 10).
+
 import SectionReveal from '@/components/animations/SectionReveal'
 
 const addonItems = [
