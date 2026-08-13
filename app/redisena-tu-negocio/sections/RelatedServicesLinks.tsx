@@ -13,7 +13,7 @@ export default function RelatedServicesLinks() {
             Cómo suele empezar esta relación.
           </h2>
           <p className="text-body-lg text-text-secondary max-w-2xl mb-14">
-            Casi nadie empieza aquí. Empieza resolviendo algo puntual — poner orden, conseguir capital o vender más — y se convierte en esto cuando el negocio confía en que hay alguien pensando en todo, no solo en lo urgente de esta semana.
+            Usualmente empieza por apagar el incendio más urgente para la empresa — poner orden, conseguir capital o vender más — y se convierte en esto cuando el negocio confía en que hay alguien pensando en todo, no solo en lo urgente de esta semana.
           </p>
         </SectionReveal>
 

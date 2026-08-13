@@ -27,14 +27,10 @@ export default function HeroSection() {
       <div className="container-rl py-32 md:py-40">
         <motion.div initial="hidden" animate="visible" variants={container} className="max-w-[820px]">
           <motion.div variants={item} className="mb-6">
-            <Tag color="red">ACOMPAÑAMIENTO ESTRATÉGICO CONTINUO</Tag>
+            <Tag color="red">SERVICIO DE ACOMPAÑAMIENTO ESTRATÉGICO</Tag>
           </motion.div>
 
-          <motion.p variants={item} className="font-mono text-mono-lg text-rl-red mb-6">
-            S/ 2,000 / mes
-          </motion.p>
-
-          <motion.h1 variants={item} className="font-display text-display-xl md:text-display-2xl text-text-on-dark mb-8">
+          <motion.h1 variants={item} className="font-display text-display-2xl md:text-[56px] lg:text-[64px] leading-[0.98] text-text-on-dark mb-8">
             Rediseña tu negocio
           </motion.h1>
 

@@ -27,7 +27,7 @@ export const CONSULTORIA_CATEGORIES: Record<'pon-orden' | 'consigue-capital' | '
     metaTitle: 'Pon Orden',
     metaDescription:
       'Diagnóstico integral, plan de acción inmediato y rediseño de tu operación. Para empresas en crecimiento que sienten que el negocio se les desordenó.',
-    kicker: 'SERVICIOS',
+    kicker: 'RUTA 01',
     h1: 'Pon Orden',
     tagline: 'Cuando la empresa está desordenada, perdiendo dinero, o el crecimiento tropieza con la propia organización.',
     familiarHeading: '¿Te suena familiar?',
@@ -69,9 +69,9 @@ export const CONSULTORIA_CATEGORIES: Record<'pon-orden' | 'consigue-capital' | '
     metaTitle: 'Consigue Capital',
     metaDescription:
       'Diagnóstico de tu capacidad real de financiamiento, mapeo de fondos y acompañamiento hasta el resultado. Fondos no reembolsables, deuda de impacto o venta de acciones.',
-    kicker: 'SERVICIOS',
+    kicker: 'RUTA 02',
     h1: 'Consigue Capital',
-    tagline: 'Cuando el negocio tiene mérito real, pero no sabes cómo estructurar la conversación con quien tiene el dinero.',
+    tagline: 'Cuando el negocio tiene una oportunidad real de crecer, pero no sabes cómo estructurar la conversación con quien tiene el dinero.',
     familiarHeading: '¿Te suena familiar?',
     familiarBullets: [
       'Sé que mi negocio tiene potencial, pero no sé cómo explicárselo a un inversionista o a un fondo.',
@@ -112,7 +112,7 @@ export const CONSULTORIA_CATEGORIES: Record<'pon-orden' | 'consigue-capital' | '
     category: 'Vende más',
     metaTitle: 'Vende más',
     metaDescription: 'Diagnóstico de marca, modelo de ingresos y gestión comercial. Mejora lo que ya vendes o valida un producto nuevo antes de lanzarlo.',
-    kicker: 'SERVICIOS',
+    kicker: 'RUTA 03',
     h1: 'Vende más',
     tagline: 'Cuando necesitas crecer los ingresos: vender más de lo que ya tienes, o lanzar algo nuevo.',
     familiarHeading: '¿Te suena familiar?',

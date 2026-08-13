@@ -20,10 +20,10 @@ const archetypes = [
     fit: 'Rediseña tu negocio es ese equipo corporativo: externo, senior, con IA como motor de análisis.',
   },
   {
-    title: 'El director de inversión de un fondo',
+    title: 'El Gerente General sin comité de gerencia',
     description:
-      'Con portafolio en bioeconomía que necesita inteligencia continua sobre el ecosistema y criterio externo para las decisiones de acompañamiento donde la proximidad con las empresas invertidas puede nublar el juicio.',
-    fit: 'Rediseña tu negocio le da perspectiva externa con conocimiento territorial real.',
+      'Dirige la operación diaria de una empresa que no es necesariamente suya, sin un equipo de gerentes que lo respalde en las decisiones más urgentes. Contratar gerencias es caro, así que el equipo se queda en personal junior operativo — y eso termina limitando cuánto puede crecer la empresa.',
+    fit: 'Rediseña tu negocio le da el equipo de gerentes que profesionaliza la empresa, por una fracción del costo y sin sumar planilla.',
   },
 ]
 

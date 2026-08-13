@@ -24,10 +24,10 @@ export default function ReIntelligenceBlock({
   return (
     <section className="bg-[#080808] text-text-on-dark py-24 md:py-32">
       <div className="container-rl">
-        <div className="max-w-[720px] mx-auto">
+        <div className="max-w-[760px] mx-auto border-2 border-rl-red/30 bg-rl-red/[0.04] rounded-lg p-8 md:p-14">
           <SectionReveal>
             <Tag color="red" className="mb-6">
-              ACOMPAÑAMIENTO ESTRATÉGICO CONTINUO
+              SERVICIO DE ACOMPAÑAMIENTO ESTRATÉGICO
             </Tag>
 
             <h2 className="font-display text-display-md md:text-display-lg text-text-on-dark mb-4">

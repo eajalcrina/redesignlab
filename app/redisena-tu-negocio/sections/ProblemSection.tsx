@@ -83,7 +83,7 @@ export default function ProblemSection() {
                 </li>
                 <li className="flex items-start gap-3 text-body-sm text-text-muted">
                   <span className="w-1.5 h-1.5 rounded-full bg-rl-red mt-2 flex-shrink-0" />
-                  <span>Un analista de mercado que monitoree el ecosistema y detecte oportunidades antes de que sean obvias</span>
+                  <span>Un experto de mercado que monitoree el ecosistema y detecte oportunidades antes de que sean obvias</span>
                 </li>
                 <li className="flex items-start gap-3 text-body-sm text-text-muted">
                   <span className="w-1.5 h-1.5 rounded-full bg-rl-red mt-2 flex-shrink-0" />

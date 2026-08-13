@@ -27,7 +27,7 @@ export default function ServiceHero({ kicker, h1, tagline }: ServiceHeroProps) {
           <motion.div variants={item} className="mb-6">
             <Tag color="red">{kicker}</Tag>
           </motion.div>
-          <motion.h1 variants={item} className="font-display text-display-lg md:text-display-xl text-text-on-dark mb-8">
+          <motion.h1 variants={item} className="font-display text-display-xl md:text-display-2xl text-text-on-dark mb-8">
             {h1}
           </motion.h1>
           <motion.p variants={item} className="text-body-xl text-text-muted italic max-w-[640px]">

@@ -14,7 +14,7 @@ const paths = [
   },
   {
     title: 'Consigue Capital',
-    description: 'Cuando el negocio tiene mérito real, pero no sabes cómo estructurar la conversación con quien tiene el dinero.',
+    description: 'Cuando el negocio tiene una oportunidad real de crecer, pero no sabes cómo estructurar la conversación con quien tiene el dinero.',
     services: 'Diagnóstico · Sprint · Rediseño y consolidación',
     href: '/consigue-capital',
   },
@@ -51,7 +51,7 @@ export default function ThreePaths() {
             Tres puertas de entrada para trabajar con Redesign Lab.
           </h2>
           <p className="text-body-xl text-text-secondary max-w-2xl mb-12">
-            Cada organización tiene un punto de entrada. Solo uno es el correcto en este momento.
+            En nuestros años trabajando con empresas en Perú y Latinoamérica hemos visto los mismos desafíos repetirse en distintos momentos del crecimiento de un negocio. Identificarlos es el primer paso de nuestro propósito: ayudarte a llevar tu empresa al siguiente nivel. Cada organización tiene un punto de entrada. Solo uno es el correcto en este momento.
           </p>
         </SectionReveal>
 
@@ -77,11 +77,11 @@ export default function ThreePaths() {
 
                 <div className="relative z-10 flex flex-col h-full">
                   <span className="font-mono text-mono-sm text-rl-red block mb-4">0{i + 1}</span>
-                  <h3 className="font-display text-[26px] sm:text-[32px] md:text-[36px] lg:text-[44px] leading-[1.05] text-text-primary group-hover:text-text-on-dark mb-5 transition-colors">
-                    {path.title}
-                  </h3>
-                  <p className="text-body-sm text-text-secondary group-hover:text-text-muted mb-4 flex-1 transition-colors">
+                  <p className="font-display text-[20px] sm:text-[23px] md:text-[25px] leading-[1.2] text-text-primary group-hover:text-text-on-dark mb-5 flex-1 transition-colors">
                     {path.description}
+                  </p>
+                  <p className="font-mono text-mono-sm uppercase tracking-[0.14em] text-rl-red mb-1 transition-colors">
+                    Ruta: {path.title}
                   </p>
                   <p className="text-body-xs text-text-tertiary group-hover:text-text-muted/60 mb-6 transition-colors">
                     {path.services}
