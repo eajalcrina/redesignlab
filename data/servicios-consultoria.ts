@@ -15,6 +15,7 @@ export interface ConsultoriaCategoryContent {
   extraSection?: { heading: string; body: string }
   iaBlurb: string
   ctaLabel: string
+  whatsappMessage: string
 }
 
 export const CONSULTORIA_CATEGORIES: Record<'pon-orden' | 'consigue-capital' | 'vende-mas', ConsultoriaCategoryContent> = {
@@ -64,6 +65,7 @@ export const CONSULTORIA_CATEGORIES: Record<'pon-orden' | 'consigue-capital' | '
     iaBlurb:
       'No es un servicio aparte. Es parte de cómo diagnosticamos, priorizamos y rediseñamos tu operación. La usamos para procesar tu información financiera y operativa más rápido y con más precisión, y para identificar exactamente dónde se está perdiendo el margen. Pero el objetivo no es que nosotros trabajemos más rápido. Es que tu equipo se quede con algo: diseñamos y entregamos skills a la medida de tu negocio para que los use y los replique después de que el proyecto termina. El orden que dejamos no se apaga cuando nos vamos.',
     ctaLabel: 'Quiero poner orden en mi negocio →',
+    whatsappMessage: 'Hola, quiero conversar sobre Pon Orden.',
   },
 
   'consigue-capital': {
@@ -108,6 +110,7 @@ export const CONSULTORIA_CATEGORIES: Record<'pon-orden' | 'consigue-capital' | '
     iaBlurb:
       'No es un servicio aparte. Es parte de cómo mapeamos fondos, evaluamos tu capacidad de acceso a capital y construimos tu narrativa de inversión. La usamos para procesar el ecosistema de fondos activos más rápido y con más precisión, y para identificar qué instrumento y qué fuente calzan mejor con tu momento. Pero el objetivo no es que nosotros trabajemos más rápido. Es que tu equipo se quede con la capacidad de mapear y evaluar oportunidades de capital por su cuenta, después de que el proyecto termina.',
     ctaLabel: 'Quiero explorar cómo conseguir capital →',
+    whatsappMessage: 'Hola, quiero conversar sobre Consigue Capital.',
   },
 
   'vende-mas': {
@@ -154,5 +157,6 @@ export const CONSULTORIA_CATEGORIES: Record<'pon-orden' | 'consigue-capital' | '
     iaBlurb:
       'No es un servicio aparte. Es parte de cómo diagnosticamos tu marca, tu modelo de ingresos y tu proceso comercial. La usamos para analizar el desempeño comercial y el mercado más rápido y con más precisión, y para identificar dónde está la oportunidad de ingreso que todavía no has capturado. Pero el objetivo no es que nosotros trabajemos más rápido. Es que tu equipo se quede con algo: diseñamos y entregamos skills a la medida de tu negocio para que los use y los replique después de que el proyecto termina.',
     ctaLabel: 'Quiero vender más →',
+    whatsappMessage: 'Hola, quiero conversar sobre Vende más.',
   },
 }

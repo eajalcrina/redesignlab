@@ -48,7 +48,7 @@ export default function VendeMasPage() {
       )}
 
       <IABlurbSection iaBlurb={content.iaBlurb} />
-      <ServiceCta ctaLabel={content.ctaLabel} />
+      <ServiceCta ctaLabel={content.ctaLabel} whatsappMessage={content.whatsappMessage} />
       <CrossLinks currentSlug="vende-mas" />
     </>
   )

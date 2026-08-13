@@ -20,6 +20,11 @@ export const BBS_WHATSAPP_NUMBER = '51989338401'
 export const bbsWhatsappUrl = (programTitle: string) =>
   `https://wa.me/${BBS_WHATSAPP_NUMBER}?text=${encodeURIComponent(`Quiero inscribirme al programa ${programTitle}`)}`
 
+// WhatsApp directo del equipo, para CTAs de Servicios (mismo número que SITE_CONFIG.phone).
+export const WHATSAPP_NUMBER = '51989338401'
+export const whatsappUrl = (message: string) =>
+  `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`
+
 export const NAV_LINKS = [
   {
     label: 'Mindset',

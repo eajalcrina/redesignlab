@@ -2,7 +2,7 @@
 
 import SectionReveal from '@/components/animations/SectionReveal'
 import Button from '@/components/ui/Button'
-import { SITE_CONFIG } from '@/lib/constants'
+import { SITE_CONFIG, whatsappUrl } from '@/lib/constants'
 
 export default function CtaSection() {
   return (
@@ -15,9 +15,22 @@ export default function CtaSection() {
           <p className="text-body-lg text-text-muted max-w-xl mx-auto mb-12">
             30 minutos de conversación de fit. Sin compromiso.
           </p>
-          <Button variant="primary" size="lg" href={SITE_CONFIG.calendarUrlFit}>
-            Agendar conversación de fit &rarr;
-          </Button>
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-center gap-4 sm:gap-8">
+            <Button variant="primary" size="lg" href={SITE_CONFIG.calendarUrlFit}>
+              Agendar conversación de fit &rarr;
+            </Button>
+            <a
+              href={whatsappUrl('Hola, quiero conversar sobre ACELERA.')}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-body-md text-text-on-dark hover:text-rl-red transition-colors group"
+            >
+              <span className="underline underline-offset-4 decoration-text-muted/40 group-hover:decoration-rl-red">
+                Escríbenos por WhatsApp
+              </span>
+              <span className="text-rl-red transition-transform group-hover:translate-x-1">&rarr;</span>
+            </a>
+          </div>
         </SectionReveal>
       </div>
     </section>

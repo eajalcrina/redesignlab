@@ -31,7 +31,7 @@ export default function PonOrdenPage() {
       />
       <ThreeStepProcess steps={content.steps} intro={content.processIntro} />
       <IABlurbSection iaBlurb={content.iaBlurb} />
-      <ServiceCta ctaLabel={content.ctaLabel} />
+      <ServiceCta ctaLabel={content.ctaLabel} whatsappMessage={content.whatsappMessage} />
       <CrossLinks currentSlug="pon-orden" />
     </>
   )
