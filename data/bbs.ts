@@ -545,7 +545,7 @@ const marcasRegenerativas: BBSProgram = {
     topHeading: 'Para los 2 mejores Brand Starter Kits del cohorte:',
     top: [
       'Sesión de asesoría estratégica de marca — 60 minutos individuales con Eddie Ajalcriña y Lorenzo Ortiz para revisar la arquitectura de la marca, identificar los próximos pasos de implementación y definir la estrategia de entrada al mercado con criterio real. Este es el perk más valioso: acceso directo a los creadores del framework con foco total en tu marca.',
-      'Vitrina en el ecosistema BBS — presentación de la marca en el newsletter de BBS y redes de la comunidad Biobuilders, con visibilidad ante inversores, compradores y aliados estratégicos de la plataforma',
+      'Vitrina en el ecosistema BBS — presentación de la marca en el newsletter de BBS y redes de la comunidad BBS, con visibilidad ante inversores, compradores y aliados estratégicos de la plataforma',
       'Caso de referencia presentado en las redes de Redesign Lab y Thousandfold como ejemplo de lo que es posible cuando una marca regenerativa se construye con método',
     ],
   },

@@ -92,7 +92,7 @@ export default function TransformarElModeloPage() {
       <CrossNavSection
         links={[
           { label: 'Crear valor', href: '/crear-valor' },
-          { label: 'Rediseñar el trabajo', href: '/redisenar-el-trabajo' },
+          { label: 'Pon Orden', href: '/pon-orden' },
         ]}
       />
     </>

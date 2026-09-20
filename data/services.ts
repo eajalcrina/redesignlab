@@ -174,22 +174,6 @@ Re.·IA Application diagnostica la madurez de tu organización, prioriza las apl
   },
 ]
 
-export const reSprint: Service = {
-  name: 'Re. Sprint',
-  duration: '3 semanas',
-  price: 'USD 4,000 · precio fijo',
-  description:
-    `Quieres trabajar con Redesign Lab pero aún no tienes claridad sobre qué proyecto comprometerte, y nosotros necesitamos entender tu contexto en profundidad antes de recomendar algo que efectivamente se pueda ejecutar.
-
-El Re. Sprint es el punto de entrada para resolver ambas cosas: diagnóstico operativo completo, identificación de quick wins, plan de acción de 90 días y presentación ejecutiva de hallazgos. En 3 semanas tienes claridad sobre qué hacer primero; nosotros tenemos la base para una relación de fondo.`,
-  includes: [
-    'Diagnóstico operativo completo',
-    'Identificación de quick wins',
-    'Plan de acción de 90 días',
-    'Presentación ejecutiva de hallazgos',
-  ],
-}
-
 export const transformarModeloServices: Service[] = [
   {
     name: 'Operating Model Design',

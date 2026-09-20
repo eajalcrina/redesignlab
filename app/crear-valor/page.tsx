@@ -110,9 +110,9 @@ export default function CrearValorPage() {
         title="¿No es lo que necesitas?"
         links={[
           {
-            label: 'Rediseñar el trabajo',
-            href: '/redisenar-el-trabajo',
-            description: 'Si tu organización ya tiene clara su oportunidad y lo que necesita es que la operación funcione mejor, el camino es Rediseñar el trabajo →',
+            label: 'Pon Orden',
+            href: '/pon-orden',
+            description: 'Si tu organización ya tiene clara su oportunidad y lo que necesita es que la operación funcione mejor, el camino es Pon Orden →',
           },
           {
             label: 'Transformar el modelo',

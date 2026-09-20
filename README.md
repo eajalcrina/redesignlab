@@ -36,6 +36,27 @@ npm run build
 
 Trazabilidad de cambios relevantes del sitio, del más reciente al más antiguo. Cada entrada indica el motivo, qué cambió, el impacto en SEO y dónde está el código.
 
+### 2026-09-20 · Alineación de copy tras Bio/Builders y servicios
+
+**Rama:** `fix/copy-alignment`
+
+**Por qué:** una auditoría de texto y de Search Console encontró menciones desalineadas con la nueva arquitectura (Bio/Builders, ACELERA, Pon Orden, Consigue Capital, Vende más).
+
+**Qué cambió**
+
+- `/crear-valor` y `/transformar-el-modelo`: los enlaces cruzados a `/redisenar-el-trabajo` (que redirige) ahora apuntan directamente a `/pon-orden`. **No se agregaron redirects** para estas dos rutas: sigue vigente la decisión de dejarlas vivas y en el sitemap (ver `docs/superpowers/plans/2026-08-12-servicios-redesign.md`).
+- Se eliminó el término **"BioBuilders"** del contenido de BBS y Ventures (`data/ventures.ts`, `data/bbs.ts`) para no confundirlo con la red Bio/Builders: ahora dice "líderes de bionegocios" y "comunidad BBS". El wording es una propuesta y puede ajustarse.
+- Se eliminó `reSprint` de `data/services.ts` (dato huérfano, no se importaba en ningún lado).
+
+**Sin cambios (a propósito)**
+
+- Categorías de proyectos ("Crear valor", "Rediseñar el trabajo", "Transformar el modelo"): mapearlas a los servicios nuevos requiere una decisión de contenido pendiente.
+- `/acelera`: cuatro secciones huérfanas con copy de "Re. Intelligence Pro/Lite" (`AddonSection`, `ClosingNoteSection`, `WhyFifteenSection`, `FirstThreeMonthsSection`) no se renderizan y se conservan como material de referencia hasta rehacer el copy. El hero muestra "3/15 empresas activas", valor pendiente de validar.
+
+**Search Console:** se inició la validación de la corrección de `/proyectos/13-ia-para-prospeccion-de-bioactivos-amazonicos` (marcada sin canonical; en producción sí lo tiene). Las otras páginas "no indexadas" son variantes `http`/`www` (redirects), una imagen social antigua (404) y archivos técnicos (`manifest`, `favicon`, fuente): no requieren acción.
+
+**Verificación:** `tsc`, `npm run lint` y `npm run build` sin errores.
+
 ### 2026-09-20 · Bio/Builders reemplaza a Builders
 
 **Rama:** `feat/biobuilders-page` · **Commit:** `b9b9634`
