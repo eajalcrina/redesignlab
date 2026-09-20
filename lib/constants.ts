@@ -17,6 +17,10 @@ export const SITE_CONFIG = {
 export const BBS_FORM_URL = '#'
 
 export const BBS_WHATSAPP_NUMBER = '51989338401'
+export const BIOBUILDERS_FORM_URL = 'https://forms.gle/V4DgjHSDM589hJ1W9'
+export const BIOBUILDERS_WHATSAPP_URL = `https://wa.me/${BBS_WHATSAPP_NUMBER}?text=${encodeURIComponent('Hola, soy un bionegocio')}`
+export const BIOBUILDERS_BOOKING_URL = 'https://calendar.app.google/j4bJRNs2ZhHvuXqP6'
+
 export const bbsWhatsappUrl = (programTitle: string) =>
   `https://wa.me/${BBS_WHATSAPP_NUMBER}?text=${encodeURIComponent(`Quiero inscribirme al programa ${programTitle}`)}`
 
@@ -33,7 +37,6 @@ export const NAV_LINKS = [
     submenu: [
       { label: 'Cómo pensamos', href: '/como-pensamos' },
       { label: 'Conocimiento', href: '/conocimiento' },
-      { label: 'Builders', href: '/builders' },
       { label: 'Cursos BBS', href: '/cursos-bbs' },
     ]
   },
@@ -57,9 +60,16 @@ export const NAV_LINKS = [
       { label: 'Vende más', href: '/vende-mas' },
     ]
   },
-  { label: 'Fondos', href: '/fondos' },
+  {
+    label: 'Bio/Builders',
+    href: '/biobuilders',
+    hasSubmenu: true,
+    submenu: [
+      { label: 'Ventures', href: '/ventures' },
+      { label: 'Fondos', href: '/fondos' },
+    ]
+  },
   { label: 'Proyectos', href: '/proyectos' },
-  { label: 'Ventures', href: '/ventures' },
 ] as const
 
 export const SERVICE_PATHS = [
@@ -84,7 +94,7 @@ export const FOOTER_LINKS = {
     titulo: 'Ecosistema',
     links: [
       { label: 'Ventures', href: '/ventures' },
-      { label: 'Builders', href: '/builders' },
+      { label: 'Bio/Builders', href: '/biobuilders' },
       { label: 'Conocimiento', href: '/conocimiento' },
       { label: 'IA para bioeconomía', href: '/inteligencia-artificial' },
       { label: 'Proyectos', href: '/proyectos' },

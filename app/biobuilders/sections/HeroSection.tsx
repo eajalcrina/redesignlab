@@ -2,7 +2,9 @@
 
 import { motion } from 'framer-motion'
 import { DURATION, EASE, STAGGER } from '@/lib/animations'
+import { BIOBUILDERS_FORM_URL } from '@/lib/constants'
 import Tag from '@/components/ui/Tag'
+import Button from '@/components/ui/Button'
 
 export default function HeroSection() {
   const container = {
@@ -25,28 +27,27 @@ export default function HeroSection() {
       <div className="container-rl py-32 md:py-40 relative z-10">
         <motion.div initial="hidden" animate="visible" variants={container}>
           <motion.div variants={item}>
-            <Tag color="neutral" className="mb-8">Builders</Tag>
+            <Tag color="red" className="mb-8">Bio/Builders · Red de desarrolladores de negocio</Tag>
           </motion.div>
 
-          <motion.h1 variants={item} className="font-display text-display-lg md:text-display-xl lg:text-[72px] lg:leading-[0.97] text-text-muted max-w-5xl">
-            No buscamos freelancers.
+          <motion.h1 variants={item} className="font-display text-display-lg md:text-display-xl lg:text-[72px] lg:leading-[0.97] text-text-on-dark max-w-5xl">
+            La bioeconomía de América Latina tiene todo, menos quien la escale.
           </motion.h1>
 
           <motion.div
             variants={{ hidden: { scaleX: 0, originX: 0 }, visible: { scaleX: 1, transition: { duration: DURATION.slow, ease: EASE.out } } }}
-            className="h-0.5 bg-rl-red w-24 my-6"
+            className="h-0.5 bg-rl-red w-24 my-8"
           />
 
-          <motion.h2 variants={item} className="font-display text-display-lg md:text-display-xl lg:text-[72px] lg:leading-[0.97] text-text-on-dark max-w-5xl">
-            Buscamos arquitectos de industrias.
-          </motion.h2>
+          <motion.p variants={item} className="text-body-xl md:text-body-xl-dt text-text-muted max-w-2xl">
+            Bio/Builders es la red que conecta a expertos en escalar empresas con bionegocios que necesitan activar su potencial para competir en el mercado.
+          </motion.p>
 
-          <motion.p variants={item} className="mt-8 text-body-xl text-text-muted max-w-2xl">
-            Una red selecta de expertos senior que co-construyen con Redesign Lab los negocios sostenibles más ambiciosos de América Latina.
-          </motion.p>
-          <motion.p variants={item} className="mt-6 text-body-md text-text-muted/70 max-w-2xl">
-            Esto no es un portal de talento ni una bolsa de trabajo. Construir modelos de bioeconomía que conecten innovación con mercado requiere un nivel de especialidad y visión estratégica que no se delega...
-          </motion.p>
+          <motion.div variants={item} className="mt-10">
+            <Button size="lg" href={BIOBUILDERS_FORM_URL} target="_blank" rel="noopener noreferrer">
+              Postula a la red &rarr;
+            </Button>
+          </motion.div>
         </motion.div>
       </div>
     </section>

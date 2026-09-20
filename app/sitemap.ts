@@ -21,7 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/ventures',
     '/proyectos',
     '/como-pensamos',
-    '/builders',
+    '/biobuilders',
     '/cursos-bbs',
   ]
 

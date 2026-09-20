@@ -89,16 +89,9 @@ export default function Navigation() {
                   >
                     <span className="relative inline-block">
                       {link.label}
-                      {/* Ventures: persistent thin red underline, widens on hover */}
-                      {link.label === 'Ventures' && (
-                        <span
-                          aria-hidden="true"
-                          className="absolute -bottom-[5px] left-0 h-[1.5px] bg-rl-red transition-all duration-300 w-3 group-hover/link:w-full"
-                        />
-                      )}
                     </span>
-                    {/* Fondos: brand red dot suffix (echoes the logo period) */}
-                    {link.label === 'Fondos' && (
+                    {/* Bio/Builders: brand red dot suffix (echoes the logo period) */}
+                    {link.label === 'Bio/Builders' && (
                       <span
                         aria-hidden="true"
                         className="ml-0.5 inline-block w-[5px] h-[5px] rounded-full bg-rl-red translate-y-[1px]"
@@ -111,38 +104,36 @@ export default function Navigation() {
                     )}
                   </Link>
 
-                  {/* Desktop dropdown */}
+                  {/* Desktop dropdown — siempre en el DOM (visibility) para que los enlaces sean rastreables */}
                   {hasSubmenu && (
-                    <AnimatePresence>
-                      {activeSubmenu === link.label && (
-                        <motion.div
-                          initial={{ opacity: 0, y: -4 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: -4 }}
-                          transition={{ duration: 0.15 }}
-                          className="absolute top-full left-1/2 -translate-x-1/2 pt-3"
-                          onMouseEnter={() => handleMouseEnter(link.label)}
-                          onMouseLeave={handleMouseLeave}
-                        >
-                          <div className="bg-rl-dark/95 backdrop-blur-md py-4 px-6 rounded-b-lg border border-border-dark border-t-0 min-w-[220px] shadow-xl">
-                            <div className="flex flex-col gap-3">
-                              {link.submenu!.map((sub) => (
-                                <Link
-                                  key={sub.href}
-                                  href={sub.href}
-                                  className={cn(
-                                    'text-body-sm text-text-muted hover:text-text-on-dark transition-colors duration-200 whitespace-nowrap',
-                                    pathname === sub.href && 'text-rl-red'
-                                  )}
-                                >
-                                  {sub.label}
-                                </Link>
-                              ))}
-                            </div>
-                          </div>
-                        </motion.div>
+                    <div
+                      className={cn(
+                        'absolute top-full left-1/2 -translate-x-1/2 pt-3 transition-all duration-150',
+                        activeSubmenu === link.label
+                          ? 'opacity-100 visible translate-y-0'
+                          : 'opacity-0 invisible -translate-y-1 pointer-events-none'
                       )}
-                    </AnimatePresence>
+                      onMouseEnter={() => handleMouseEnter(link.label)}
+                      onMouseLeave={handleMouseLeave}
+                    >
+                      <div className="bg-rl-dark/95 backdrop-blur-md py-4 px-6 rounded-b-lg border border-border-dark border-t-0 min-w-[220px] shadow-xl">
+                        <div className="flex flex-col gap-3">
+                          {link.submenu!.map((sub) => (
+                            <Link
+                              key={sub.href}
+                              href={sub.href}
+                              tabIndex={activeSubmenu === link.label ? 0 : -1}
+                              className={cn(
+                                'text-body-sm text-text-muted hover:text-text-on-dark transition-colors duration-200 whitespace-nowrap',
+                                pathname === sub.href && 'text-rl-red'
+                              )}
+                            >
+                              {sub.label}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
                   )}
                 </div>
               )
@@ -233,7 +224,12 @@ export default function Navigation() {
                             transition={{ duration: 0.2 }}
                             className="overflow-hidden flex flex-col items-center gap-3 mt-3"
                           >
-                            {link.submenu!.map((sub) => (
+                            {[
+                              ...(link.submenu!.some((sub) => sub.href === link.href)
+                                ? []
+                                : [{ label: link.label, href: link.href }]),
+                              ...link.submenu!,
+                            ].map((sub) => (
                               <Link
                                 key={sub.href}
                                 href={sub.href}

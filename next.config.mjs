@@ -9,6 +9,12 @@ const nextConfig = {
         permanent: true,
       },
       {
+        // Bio/Builders reemplaza a la página preliminar /builders
+        source: '/builders',
+        destination: '/biobuilders',
+        permanent: true,
+      },
+      {
         // Evita que /index sea indexado como duplicado del home
         source: '/index',
         destination: '/',
