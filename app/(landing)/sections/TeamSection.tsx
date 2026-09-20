@@ -89,10 +89,10 @@ export default function TeamSection() {
               El equipo se extiende más allá de los fundadores. Expertos senior co-construyen con nosotros los negocios más ambiciosos de bioeconomía en América Latina.
             </p>
             <Link
-              href="/builders"
+              href="/biobuilders"
               className="inline-flex items-center gap-2 text-body-lg text-text-primary hover:text-rl-red transition-colors font-medium group"
             >
-              Súmate a la Red de Builders
+              Súmate a Bio/Builders
               <span className="text-rl-red transition-transform group-hover:translate-x-1">&rarr;</span>
             </Link>
           </div>

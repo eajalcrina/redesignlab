@@ -60,10 +60,10 @@ const comparison: ComparisonRow[] = [
     key: 'builders',
     row: (
       <Link
-        href="/builders"
+        href="/biobuilders"
         className="underline decoration-rl-red/40 hover:decoration-rl-red transition-colors"
       >
-        Acceso a red de Builders
+        Acceso a red de Bio/Builders
       </Link>
     ),
     light: 'Prioritario',

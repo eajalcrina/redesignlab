@@ -6,10 +6,10 @@ import SectionReveal from '@/components/animations/SectionReveal'
 
 const BuildersLink = () => (
   <Link
-    href="/builders"
+    href="/biobuilders"
     className="text-rl-red underline decoration-rl-red/40 hover:decoration-rl-red transition-colors"
   >
-    red de Builders
+    red de Bio/Builders
   </Link>
 )
 
