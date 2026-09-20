@@ -54,13 +54,15 @@ Trazabilidad de cambios relevantes del sitio, del más reciente al más antiguo.
   - Ventures y Fondos pasan a su submenú; Bio/Builders sale del submenú de Mindset.
   - Los submenús de escritorio ahora siempre están en el HTML (se ocultan con CSS) para que los enlaces sigan siendo rastreables.
   - En mobile, el submenú incluye el enlace a la página principal.
-- **Enlaces internos** apuntan a `/biobuilders` y el label visible pasa de "Builders" a "Bio/Builders" (menú, footer, home, TeamSection, Re. Intelligence). Se actualizó el copy de `BuildersPreview` en la home.
+- **Enlaces internos** apuntan a `/biobuilders` y el label visible pasa de "Builders" a "Bio/Builders" (menú, footer, home, TeamSection, `ReIntelligenceBlock`). Se actualizó el copy de `BuildersPreview` en la home.
 
 **Impacto SEO**
 
 - `/builders` → `/biobuilders` con redirect permanente para conservar enlaces externos (LinkedIn, formulario).
 - `/ventures` y `/fondos` siguen enlazadas desde el menú (ahora dentro del submenú) y desde el footer. Vigilar impresiones y posición de ambas URL en Search Console durante las 3–4 semanas posteriores a publicar.
 - Reindexar `/biobuilders` en Search Console tras el despliegue.
+
+**Integración con `main`:** antes del PR se integró `main` (rediseño de servicios, PR #1). Se resolvieron 3 conflictos: se aceptó la eliminación de `app/re-intelligence/sections/{BenefitsSection,WhatItIsSection}.tsx` (ruta reemplazada por `/acelera`) y en `ReIntelligenceBlock.tsx` se conservó el texto nuevo de `main` con el enlace a `/biobuilders`. El menú final combina los Servicios nuevos (ACELERA, Pon Orden, Consigue Capital, Vende más) con Bio/Builders.
 
 **Verificación:** `tsc`, `npm run lint` y `npm run build` sin errores; revisión visual en escritorio y mobile (375 px).
 

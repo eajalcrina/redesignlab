@@ -12,16 +12,16 @@ const founderPains = [
 ]
 
 const distinctions = [
-  { he: 'Re. Intelligence', does: 'Pensamiento, análisis, escenarios, planes accionables.' },
+  { he: 'ACELERA', does: 'Pensamiento, análisis, escenarios, planes accionables.' },
   { he: 'Tu equipo', does: 'La ejecución de los planes, siempre.' },
 ]
 
-export default function ForWhomIntroSection() {
+export default function ProblemSection() {
   return (
     <section className="section-neutral py-24 md:py-32">
       <div className="container-rl">
         <SectionReveal>
-          <Tag color="red" className="mb-4">El problema que Re. Intelligence resuelve</Tag>
+          <Tag color="red" className="mb-4">El problema que resolvemos</Tag>
           <h2 className="font-display text-display-md md:text-display-lg text-text-primary max-w-3xl mb-16">
             El pensamiento estratégico recae sobre las mismas personas que también gestionan la operación.
           </h2>
@@ -31,13 +31,13 @@ export default function ForWhomIntroSection() {
           <SectionReveal delay={0.1}>
             <div className="max-w-2xl space-y-6 text-body-lg text-text-secondary">
               <p>
-                En la empresa mediana que ya funciona (con clientes reales, operación probada y un equipo comprometido) el pensamiento estratégico y el análisis de información recaen sobre las mismas personas que gestionan la operación diaria.
+                En la empresa en crecimiento que ya funciona (con clientes reales, operación probada y un equipo comprometido) el pensamiento estratégico y el análisis de información recaen sobre las mismas personas que gestionan la operación diaria.
               </p>
               <p className="text-text-primary">
                 No es falta de capacidad. Es falta de estructura, tiempo y criterio externo.
               </p>
               <p>
-                Re. Intelligence es el equipo de inteligencia estratégica externo de tu empresa. <span className="text-text-primary font-medium">No reemplaza a tu equipo. Lo potencia.</span> Produce la inteligencia que permite que las decisiones sean mejores, más rápidas y con más claridad de la que el equipo puede generar solo.
+                ACELERA es el equipo de gerentes externos de tu empresa. <span className="text-text-primary font-medium">No reemplaza a tu equipo. Lo potencia.</span> Produce el criterio que permite que las decisiones sean mejores, más rápidas y con más claridad de la que el equipo puede generar solo.
               </p>
             </div>
 
@@ -53,7 +53,7 @@ export default function ForWhomIntroSection() {
                 ))}
               </ul>
               <p className="text-body-md text-text-secondary">
-                Muchas veces los fundadores tienen una estrategia clara, pero no siempre es la correcta. Re. Intelligence te ayuda a <span className="text-text-primary font-medium">validar, pivotar o mejorar</span> tu estrategia de negocio, con las mejores herramientas disponibles y la experiencia del equipo senior de Redesign Lab.
+                Muchas veces los fundadores tienen una estrategia clara, pero no siempre es la correcta. ACELERA te ayuda a <span className="text-text-primary font-medium">validar, pivotar o mejorar</span> tu estrategia de negocio, con las mejores herramientas disponibles y la experiencia del equipo senior de Redesign Lab.
               </p>
             </div>
 
@@ -72,7 +72,7 @@ export default function ForWhomIntroSection() {
           <SectionReveal delay={0.2}>
             <div className="bg-rl-dark text-text-on-dark p-8 md:p-10 rounded max-w-md lg:w-[420px]">
               <p className="font-mono text-mono-sm text-rl-red uppercase tracking-[0.18em] mb-6">
-                Lo que una empresa mediana
+                Lo que una empresa en crecimiento
                 <br />
                 típicamente no tiene
               </p>
@@ -83,7 +83,7 @@ export default function ForWhomIntroSection() {
                 </li>
                 <li className="flex items-start gap-3 text-body-sm text-text-muted">
                   <span className="w-1.5 h-1.5 rounded-full bg-rl-red mt-2 flex-shrink-0" />
-                  <span>Un analista de mercado que monitoree el ecosistema y detecte oportunidades antes de que sean obvias</span>
+                  <span>Un experto de mercado que monitoree el ecosistema y detecte oportunidades antes de que sean obvias</span>
                 </li>
                 <li className="flex items-start gap-3 text-body-sm text-text-muted">
                   <span className="w-1.5 h-1.5 rounded-full bg-rl-red mt-2 flex-shrink-0" />
@@ -96,7 +96,7 @@ export default function ForWhomIntroSection() {
               </ul>
               <div className="pt-6 border-t border-border-dark">
                 <p className="font-display text-display-sm text-text-on-dark">
-                  Re. Intelligence es todo eso.
+                  ACELERA es todo eso.
                 </p>
                 <p className="text-body-sm text-text-muted mt-2">
                   Sin contratar a nadie.

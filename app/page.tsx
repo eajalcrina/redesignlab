@@ -1,5 +1,4 @@
 import LandingHero from './(landing)/sections/LandingHero'
-import ProblemSection from './(landing)/sections/ProblemSection'
 import ThreePaths from './(landing)/sections/ThreePaths'
 import LandingReIntelligence from './(landing)/sections/LandingReIntelligence'
 import AISection from './(landing)/sections/AISection'
@@ -13,21 +12,19 @@ export default function Home() {
     <>
       {/* 1. Hero */}
       <LandingHero />
-      {/* 2. Aliados institucionales (puente tonal entre hero y Re. Intelligence) */}
+      {/* 2. Aliados institucionales (puente tonal entre hero y ACELERA) */}
       <AlliesMarquee />
       {/* 3. Tres formas de trabajar */}
       <ThreePaths />
-      {/* 4. Re. Intelligence */}
+      {/* 4. ACELERA */}
       <LandingReIntelligence />
-      {/* 5. El problema que resolvemos */}
-      <ProblemSection />
-      {/* 6. IA para bioeconomía */}
+      {/* 5. IA para bioeconomía */}
       <AISection />
-      {/* 7. Conocimiento */}
+      {/* 6. Conocimiento */}
       <KnowledgePreview />
-      {/* 8. Quiénes somos */}
+      {/* 7. Quiénes somos */}
       <TeamSection />
-      {/* 9. CTA Final (acento rojo de marca) */}
+      {/* 8. CTA Final (acento rojo de marca) */}
       <FinalCta />
     </>
   )

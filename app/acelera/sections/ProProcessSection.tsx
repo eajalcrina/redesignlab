@@ -9,12 +9,12 @@ const steps = [
   {
     number: '01',
     title: 'Articulación de flujos de información',
-    body: 'Re. Intelligence trabaja junto con la empresa para mapear y estructurar los datos que el negocio ya genera (operativos, financieros, comerciales, tecnológicos, de impacto) y los conecta a los Redesign Lab, la plataforma de procesamiento de información de Redesign Lab.',
+    body: 'ACELERA trabaja junto con la empresa para mapear y estructurar los datos que el negocio ya genera (operativos, financieros, comerciales, tecnológicos, de impacto) y los conecta a los sistemas de procesamiento de información de Redesign Lab.',
   },
   {
     number: '02',
     title: 'Procesamiento y análisis',
-    body: 'Los Redesign Lab procesan la información con IA y criterio territorial sobre las cuatro verticales estratégicas. El resultado no son dashboards. Son análisis de brechas, mapas de oportunidades y escenarios calibrados al negocio de cada empresa.',
+    body: 'Redesign Lab procesa la información con IA y criterio territorial sobre las cuatro verticales estratégicas. El resultado no son dashboards. Son análisis de brechas, mapas de oportunidades y escenarios calibrados al negocio de cada empresa.',
   },
   {
     number: '03',
@@ -29,7 +29,7 @@ const steps = [
   {
     number: '05',
     title: 'Ejecución a cargo del equipo de la empresa',
-    body: 'Re. Intelligence produce la inteligencia. La ejecución es del equipo de la empresa, con la claridad que el análisis externo genera.',
+    body: 'ACELERA produce la inteligencia. La ejecución es del equipo de la empresa, con la claridad que el análisis externo genera.',
   },
 ]
 
@@ -40,7 +40,7 @@ export default function ProProcessSection() {
     <div ref={ref}>
       <SectionReveal>
         <p className="text-body-lg text-text-secondary max-w-3xl mb-16">
-          En Pro, las 4 horas mensuales no se gastan nivelando contexto. Llegan con análisis ya hecho porque el ciclo de cinco pasos corre cada mes, antes y después de la sesión.
+          Las horas mensuales de consultoría no se gastan nivelando contexto porque el ciclo de cinco pasos corre cada mes, antes y después de la sesión.
         </p>
       </SectionReveal>
 

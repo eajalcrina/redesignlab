@@ -54,8 +54,19 @@ const verticales: Vertical[] = [
   },
   {
     number: 'III',
-    title: 'Estrategia Comercial',
-    body: 'Análisis de desempeño comercial, diagnóstico de pipeline y conversión, identificación de oportunidades de mercado, ajuste de propuesta de valor y estrategia de crecimiento de ingresos. Monitoreo del ecosistema competitivo y de los movimientos de los actores más relevantes del sector.',
+    title: 'Estrategia de Marca y Comercial',
+    intro:
+      'La marca y el proceso comercial no son piezas separadas. La marca define qué tan fácil es vender y a qué precio — es una palanca de la estrategia comercial, no un gasto aislado de diseño. Este bloque trabaja ambas dimensiones de forma integrada.',
+    blocks: [
+      {
+        heading: 'Marca',
+        body: 'Posicionamiento, arquitectura de mensaje y percepción de marca frente al cliente. Cómo comunica la empresa lo que hace, y si esa comunicación sostiene el precio y la propuesta de valor real.',
+      },
+      {
+        heading: 'Comercial',
+        body: 'Análisis de desempeño comercial, diagnóstico de pipeline y conversión, identificación de oportunidades de mercado y estrategia de crecimiento de ingresos. Monitoreo del ecosistema competitivo y de los movimientos de los actores más relevantes del sector.',
+      },
+    ],
   },
   {
     number: 'IV',
@@ -64,7 +75,7 @@ const verticales: Vertical[] = [
   },
 ]
 
-export default function RealMonthSection() {
+export default function FourVerticalsSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0)
 
   return (
@@ -76,7 +87,7 @@ export default function RealMonthSection() {
             Un mismo marco. Cuatro frentes que mueven el negocio.
           </h2>
           <p className="text-body-lg text-text-muted max-w-3xl mb-16">
-            Re. Intelligence trabaja sobre cuatro verticales estratégicas que cubren el espacio completo de decisiones que mueven una empresa mediana. Ambas versiones (Lite y Pro) operan sobre el mismo marco. El nivel de profundidad y la forma de intervención varía, pero el alcance temático es el mismo.
+            ACELERA trabaja sobre cuatro verticales estratégicas que cubren el espacio completo de decisiones que mueven una empresa en crecimiento.
           </p>
         </SectionReveal>
 

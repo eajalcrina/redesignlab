@@ -21,7 +21,7 @@ export default function LandingHero() {
           No somos una consultora. No somos un fondo. Somos un estudio de IA que transforma la relación de las industrias con los sistemas naturales, para convertirlas en ventajas competitivas únicas.
         </p>
         <div className="mt-12 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
-          <Button variant="primary" size="lg" href="/crear-valor">
+          <Button variant="primary" size="lg" href="/acelera">
             Ver nuestros servicios →
           </Button>
           <Button variant="secondary" size="lg" href="/inteligencia-artificial/diagnostico" className="text-text-on-dark border-text-on-dark/20">

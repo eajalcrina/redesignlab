@@ -295,8 +295,8 @@ const iaPymesEmprendimientos: BBSProgram = {
       body: 'Habrás diseñado cómo comunicar la evolución de tu empresa a clientes, talento y potenciales inversores — porque la adopción de IA no es solo un cambio interno, es un argumento de mercado.',
     },
     {
-      lead: 'Dado el primer paso hacia Re. Intelligence.',
-      body: 'Si tu empresa está creciendo y necesita inteligencia estratégica continua — no solo herramientas — conocerás Re. Intelligence, el servicio de Redesign Lab que lleva la toma de decisiones de tu empresa al siguiente nivel.',
+      lead: 'Dado el primer paso hacia ACELERA.',
+      body: 'Si tu empresa está creciendo y necesita inteligencia estratégica continua — no solo herramientas — conocerás ACELERA, el servicio de Redesign Lab que lleva la toma de decisiones de tu empresa al siguiente nivel.',
     },
   ],
 
@@ -341,8 +341,8 @@ const iaPymesEmprendimientos: BBSProgram = {
       heading: 'RE. INTELLIGENCE — EL SIGUIENTE NIVEL',
       body: [
         'Implementar IA en tu empresa es el primer paso. Sostenerla con inteligencia estratégica continua es lo que la hace crecer.',
-        'Re. Intelligence es el servicio de Redesign Lab para empresas en crecimiento que necesitan tomar decisiones con datos, no con intuición: monitoreo de mercado, análisis competitivo continuo, inteligencia de cliente y reportes estratégicos construidos con IA y criterio humano.',
-        'Los participantes del programa acceden a un 15% de descuento en la contratación de Re. Intelligence.',
+        'ACELERA es el servicio de Redesign Lab para empresas en crecimiento que necesitan tomar decisiones con datos, no con intuición: monitoreo de mercado, análisis competitivo continuo, inteligencia de cliente y reportes estratégicos construidos con IA y criterio humano.',
+        'Los participantes del programa acceden a un 15% de descuento en la contratación de ACELERA.',
       ],
     },
   ],
@@ -350,7 +350,7 @@ const iaPymesEmprendimientos: BBSProgram = {
   perks: {
     all: [
       'Acceso de por vida a la comunidad BBS — empresarios y fundadores que comparten el mismo estándar de criterio, se apoyan mutuamente y construyen juntos empresas más competitivas en América Latina.',
-      'Descuento del 15% en Re. Intelligence de Redesign Lab.',
+      'Descuento del 15% en ACELERA de Redesign Lab.',
     ],
     topHeading: 'Para los 2 mejores Planes de Adopción de IA del cohorte:',
     top: [
@@ -388,8 +388,8 @@ const iaPymesEmprendimientos: BBSProgram = {
       a: 'Todas las sesiones son en Google Meet. Los materiales están en Google Drive. No necesitas instalar nada adicional.',
     },
     {
-      q: '¿Qué es Re. Intelligence?',
-      a: 'Es el servicio de inteligencia estratégica continua de Redesign Lab para empresas en crecimiento. El programa es la introducción práctica — Re. Intelligence es el sistema permanente para quienes quieren seguir tomando decisiones con datos.',
+      q: '¿Qué es ACELERA?',
+      a: 'Es el servicio de inteligencia estratégica continua de Redesign Lab para empresas en crecimiento. El programa es la introducción práctica — ACELERA es el sistema permanente para quienes quieren seguir tomando decisiones con datos.',
     },
     {
       q: '¿El programa tiene certificado?',
