@@ -1,7 +1,7 @@
 'use client'
 
 import MetricBlock from '@/components/ui/MetricBlock'
-import Tag from '@/components/ui/Tag'
+import SectionLabel from '@/components/ui/SectionLabel'
 import SectionReveal from '@/components/animations/SectionReveal'
 import { ventureMetrics } from '@/data/ventures'
 
@@ -10,7 +10,7 @@ export default function MetricsSection() {
     <section className="section-dark py-24 md:py-32">
       <div className="container-rl">
         <SectionReveal>
-          <Tag color="red" className="mb-4">VI. Impacto en números</Tag>
+          <SectionLabel n="06" tone="dark" className="mb-4">Impacto en números</SectionLabel>
           <h2 className="font-display text-display-md md:text-display-lg text-text-on-dark max-w-3xl mb-16">
             La medición de nuestro progreso global.
           </h2>

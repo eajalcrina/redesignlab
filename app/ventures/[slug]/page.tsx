@@ -6,8 +6,8 @@ import { ventures, findVentureBySlug, getVentureSlug } from '@/data/ventures'
 import Tag from '@/components/ui/Tag'
 import Divider from '@/components/ui/Divider'
 import Button from '@/components/ui/Button'
+import CalendarButton from '@/components/ui/CalendarButton'
 import SectionReveal from '@/components/animations/SectionReveal'
-import { SITE_CONFIG } from '@/lib/constants'
 
 // Slugs that have a hero cover image in /public/assets/ventures/.
 // Ventures not listed here fall back to the plain dark hero.
@@ -258,30 +258,22 @@ export default function VenturePage({ params }: VenturePageProps) {
       </section>
 
       {/* CTA */}
-      <section className="bg-[#080808] py-24 md:py-32">
+      <section className="section-neutral py-24 md:py-32">
         <div className="container-rl text-center">
           <SectionReveal>
-            <h2 className="font-display text-display-md md:text-display-lg text-text-on-dark max-w-3xl mx-auto mb-6">
+            <h2 className="font-display text-display-md md:text-display-lg text-text-primary max-w-3xl mx-auto mb-6">
               ¿Quieres invertir o aliarte con {venture.name}?
             </h2>
-            <p className="text-body-lg text-text-muted max-w-xl mx-auto mb-12">
+            <p className="text-body-lg text-text-secondary max-w-xl mx-auto mb-12">
               Conversemos sobre cómo conectar tu capital o tu organización con esta venture.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button
-                variant="primary"
-                size="lg"
-                href={`mailto:${SITE_CONFIG.email}?subject=${encodeURIComponent(
-                  `Consulta — ${venture.name}`
-                )}`}
-              >
-                Escribir al equipo &rarr;
-              </Button>
+              <CalendarButton location="venture_ficha" context={venture.name}>Escribir al equipo</CalendarButton>
               <Button
                 variant="secondary"
                 size="lg"
                 href="/ventures#portafolio"
-                className="text-text-on-dark border-text-on-dark/20"
+                className="text-text-primary border-rl-dark/20"
               >
                 Ver todo el portafolio
               </Button>

@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import SectionReveal from '@/components/animations/SectionReveal'
-import Tag from '@/components/ui/Tag'
+import SectionLabel from '@/components/ui/SectionLabel'
 import { DURATION, EASE } from '@/lib/animations'
 
 const steps = [
@@ -22,7 +22,7 @@ export default function RouteSection() {
     <section className="section-dark py-24 md:py-32" ref={ref}>
       <div className="container-rl">
         <SectionReveal>
-          <Tag color="red" className="mb-4">IV. La ruta de transformación de Redesign Lab</Tag>
+          <SectionLabel n="04" tone="dark" className="mb-4">La ruta de transformación de Redesign Lab</SectionLabel>
           <h2 className="font-display text-display-md md:text-display-lg text-text-on-dark max-w-3xl mb-16">
             El proceso detrás de nuestras startups.
           </h2>

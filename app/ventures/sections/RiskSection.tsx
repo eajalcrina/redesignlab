@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import SectionReveal from '@/components/animations/SectionReveal'
-import Tag from '@/components/ui/Tag'
+import SectionLabel from '@/components/ui/SectionLabel'
 import { DURATION, EASE } from '@/lib/animations'
 
 const risks = [
@@ -28,7 +28,7 @@ export default function RiskSection() {
     <section className="section-neutral py-24 md:py-32">
       <div className="container-rl">
         <SectionReveal>
-          <Tag color="red" className="mb-4">I. El riesgo de las oportunidades perdidas</Tag>
+          <SectionLabel n="01" tone="light" className="mb-4">El riesgo de las oportunidades perdidas</SectionLabel>
           <h2 className="font-display text-display-md md:text-display-lg text-text-primary max-w-4xl mb-6">
             Lo que hemos visto de primera mano durante cinco años.
           </h2>

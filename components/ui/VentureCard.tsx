@@ -26,9 +26,6 @@ export default function VentureCard({
       whileHover={{ y: -4 }}
       transition={{ duration: 0.3 }}
     >
-      {/* Territory texture placeholder */}
-      <div className="absolute inset-0 bg-gradient-to-br from-rl-dark to-[#1a1a1a] opacity-100 group-hover:opacity-80 transition-opacity" />
-
       <div className="relative z-10">
         <span className="text-label-sm uppercase text-rl-red mb-3 block">
           {category}
