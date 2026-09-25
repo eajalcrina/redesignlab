@@ -42,12 +42,14 @@ export default function AnnouncementTab() {
     setAnn(pickAnnouncement(ANNOUNCEMENTS, new Date(), pathname))
   }, [pathname])
   if (!ann) return null
-  return <Tab key={ann.id + pathname} ann={ann} />
+  return <Tab key={ann.id} ann={ann} pathname={pathname} />
 }
 
-function Tab({ ann }: { ann: Announcement }) {
+function Tab({ ann, pathname }: { ann: Announcement; pathname: string }) {
   const el = useRef<HTMLElement>(null)
   const btn = useRef<HTMLButtonElement>(null)
+  const panel = useRef<HTMLDivElement>(null)
+  const probeRef = useRef<() => void>(() => {})
   const [state, setState] = useState<TabState>('hidden')
   const [tone, setTone] = useState<'light' | 'dark'>('light')
   const [tucked, setTucked] = useState(false)
@@ -120,11 +122,17 @@ function Tab({ ann }: { ann: Announcement }) {
       idle = window.setTimeout(() => setTucked(false), 550)
       requestAnimationFrame(probe)
     }
-    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') collapse() }
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key !== 'Escape') return
+      const focusWasInPanel = !!panel.current && panel.current.contains(document.activeElement)
+      collapse()
+      if (focusWasInPanel) btn.current?.focus({ preventScroll: true })
+    }
     const onDoc = (e: MouseEvent) => { if (!node.contains(e.target as Node)) collapse() }
     window.addEventListener('scroll', onScroll, { passive: true })
     window.addEventListener('keydown', onKey)
     document.addEventListener('click', onDoc)
+    probeRef.current = probe
     probe()
     return () => {
       window.clearTimeout(t0)
@@ -138,6 +146,14 @@ function Tab({ ann }: { ann: Announcement }) {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ann.id])
+
+  // Re-run the tone/blocked probe on navigation — the tab isn't remounted
+  // per-route anymore, so the background under it can change without a
+  // scroll event to trigger the check.
+  useEffect(() => {
+    probeRef.current()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pathname])
 
   const hoverTimer = useRef<number | undefined>(undefined)
   const onEnter = () => {
@@ -199,6 +215,7 @@ function Tab({ ann }: { ann: Announcement }) {
         <span>{ann.handleLabel}</span>
       </button>
       <div
+        ref={panel}
         className="ann-p"
         id="ann-panel"
         aria-hidden={state !== 'open'}

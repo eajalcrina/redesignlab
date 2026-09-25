@@ -127,7 +127,7 @@
 }
 
 /* ===== Pestaña de anuncios (spec §4.3) ===== */
-.ann { --pw: 300px; --ease: cubic-bezier(.2,.8,.2,1); position: fixed; right: 0; top: 62vh; z-index: 60; display: flex; align-items: stretch;
+.ann { --pw: 300px; --ease: cubic-bezier(.2,.8,.2,1); position: fixed; right: 0; top: 62vh; z-index: 35; display: flex; align-items: stretch;
   transform: translate(calc(100% + 4px), -50%); transition: transform .42s var(--ease); font-family: 'Mluvka', system-ui, sans-serif;
   --bg: #F5F3F0; --fg: #0D0D0D; --sub: rgba(13,13,13,.5); --rule: rgba(13,13,13,.12); }
 .ann *, .ann *::before, .ann *::after { box-sizing: border-box; }
