@@ -5,8 +5,8 @@ import { projects, findProjectBySlug, getProjectSlug } from '@/data/projects'
 import Tag from '@/components/ui/Tag'
 import Divider from '@/components/ui/Divider'
 import Button from '@/components/ui/Button'
+import CalendarButton from '@/components/ui/CalendarButton'
 import SectionReveal from '@/components/animations/SectionReveal'
-import { SITE_CONFIG } from '@/lib/constants'
 
 interface ProjectPageProps {
   params: { slug: string }
@@ -237,30 +237,22 @@ export default function ProjectPage({ params }: ProjectPageProps) {
       </section>
 
       {/* CTA */}
-      <section className="bg-[#080808] py-24 md:py-32">
+      <section className="section-neutral py-24 md:py-32">
         <div className="container-rl text-center">
           <SectionReveal>
-            <h2 className="font-display text-display-md md:text-display-lg text-text-on-dark max-w-3xl mx-auto mb-6">
+            <h2 className="font-display text-display-md md:text-display-lg text-text-primary max-w-3xl mx-auto mb-6">
               ¿Tu organización tiene un desafío similar?
             </h2>
-            <p className="text-body-lg text-text-muted max-w-xl mx-auto mb-12">
+            <p className="text-body-lg text-text-secondary max-w-xl mx-auto mb-12">
               Conversemos sobre cómo Redesign Lab puede construir la solución para tu industria.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button
-                variant="primary"
-                size="lg"
-                href={`mailto:${SITE_CONFIG.email}?subject=${encodeURIComponent(
-                  `Consulta — ${project.title}`
-                )}`}
-              >
-                Escribir al equipo &rarr;
-              </Button>
+              <CalendarButton location="proyecto_ficha" context={project.title}>Escribir al equipo</CalendarButton>
               <Button
                 variant="secondary"
                 size="lg"
                 href="/proyectos"
-                className="text-text-on-dark border-text-on-dark/20"
+                className="text-text-primary border-rl-dark/20"
               >
                 Ver todos los proyectos
               </Button>

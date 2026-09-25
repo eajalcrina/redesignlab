@@ -37,7 +37,7 @@ export default function ResourcesList() {
 
                 {/* Content */}
                 <div>
-                  <span className={`text-label-sm uppercase block mb-3 ${
+                  <span className={`text-label-sm uppercase font-mono block mb-3 ${
                     resource.mode === 'dark' ? 'text-rl-red' : 'text-rl-red'
                   }`}>
                     {resource.type}
