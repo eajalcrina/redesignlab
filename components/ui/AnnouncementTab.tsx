@@ -52,7 +52,8 @@ function Tab({ ann }: { ann: Announcement }) {
   const [tone, setTone] = useState<'light' | 'dark'>('light')
   const [tucked, setTucked] = useState(false)
   const [mini, setMini] = useState(false)
-  const s = useRef({ state: 'hidden' as TabState, appeared: false, blocked: false, mini: false })
+  const s = useRef({ state: 'hidden' as TabState, appeared: false, blocked: false, mini: false, viewed: false })
+  const timers = useRef<number[]>([])
 
   const set = (next: TabState) => { s.current.state = next; setState(next) }
   const open = (src?: 'hover' | 'click') => {
@@ -71,28 +72,40 @@ function Tab({ ann }: { ann: Announcement }) {
 
     let lastY = window.scrollY
     let idle: number | undefined
+    const fireView = () => {
+      if (s.current.viewed) return
+      s.current.viewed = true
+      track('announcement_view', { campaign: ann.id })
+    }
     const probe = () => {
       const r = node.getBoundingClientRect()
-      const { tone: t, blocked } = toneAt(window.innerWidth - 60, r.top + r.height / 2, node)
+      const x = Math.max(0, r.left - 12)
+      const { tone: t, blocked } = toneAt(x, r.top + r.height / 2, node)
       setTone(t)
       if (blocked !== s.current.blocked) {
         s.current.blocked = blocked
-        if (s.current.appeared) set(blocked ? 'hidden' : 'collapsed')
+        if (s.current.appeared) {
+          set(blocked ? 'hidden' : 'collapsed')
+          if (!blocked) fireView()
+        }
       }
     }
     const appear = () => {
       if (s.current.appeared) return
       s.current.appeared = true
+      if (s.current.blocked) return
       set('collapsed')
-      track('announcement_view', { campaign: ann.id })
+      fireView()
       if (!s.current.mini && !readStore(storageKey('peeked', ann.id))) {
-        window.setTimeout(() => {
+        const peekId = window.setTimeout(() => {
           if (s.current.state === 'collapsed') {
             set('open')
-            window.setTimeout(collapse, 3200)
+            const collapseId = window.setTimeout(collapse, 3200)
+            timers.current.push(collapseId)
           }
           writeStore(storageKey('peeked', ann.id), '1')
         }, 900)
+        timers.current.push(peekId)
       }
     }
     const t0 = window.setTimeout(appear, 2500)
@@ -116,6 +129,9 @@ function Tab({ ann }: { ann: Announcement }) {
     return () => {
       window.clearTimeout(t0)
       window.clearTimeout(idle)
+      timers.current.forEach((id) => window.clearTimeout(id))
+      timers.current = []
+      window.clearTimeout(hoverTimer.current)
       window.removeEventListener('scroll', onScroll)
       window.removeEventListener('keydown', onKey)
       document.removeEventListener('click', onDoc)
@@ -166,14 +182,28 @@ function Tab({ ann }: { ann: Announcement }) {
       data-state={state}
       data-tone={tone}
       aria-label="Anuncio"
+      aria-hidden={state === 'hidden'}
       onMouseEnter={onEnter}
       onMouseLeave={onLeave}
     >
-      <button ref={btn} className="ann-h" type="button" aria-expanded={state === 'open'} aria-controls="ann-panel" onClick={onHandle}>
+      <button
+        ref={btn}
+        className="ann-h"
+        type="button"
+        aria-expanded={state === 'open'}
+        aria-controls="ann-panel"
+        tabIndex={state === 'hidden' ? -1 : undefined}
+        onClick={onHandle}
+      >
         <span className="ann-dot" aria-hidden="true" />
         <span>{ann.handleLabel}</span>
       </button>
-      <div className="ann-p" id="ann-panel">
+      <div
+        className="ann-p"
+        id="ann-panel"
+        aria-hidden={state !== 'open'}
+        {...(state !== 'open' ? ({ inert: '' } as unknown as React.HTMLAttributes<HTMLDivElement>) : {})}
+      >
         <button className="ann-x" type="button" aria-label="Minimizar anuncio" title="Minimizar" onClick={onMinimize}>×</button>
         <span className="ann-k">{ann.kicker}</span>
         <p className="ann-t">{ann.title}</p>
