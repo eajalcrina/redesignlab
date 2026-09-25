@@ -30,47 +30,36 @@ export const whatsappUrl = (message: string) =>
   `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`
 
 export const NAV_LINKS = [
-  {
-    label: 'Mindset',
-    href: '/como-pensamos',
-    hasSubmenu: true,
-    submenu: [
-      { label: 'Cómo pensamos', href: '/como-pensamos' },
-      { label: 'Conocimiento', href: '/conocimiento' },
-      { label: 'Cursos BBS', href: '/cursos-bbs' },
-    ]
-  },
-  {
-    label: 'IA',
-    href: '/inteligencia-artificial',
-    hasSubmenu: true,
-    submenu: [
-      { label: 'Inteligencia artificial', href: '/inteligencia-artificial' },
-      { label: 'Diagnóstico', href: '/inteligencia-artificial/diagnostico' },
-    ]
-  },
-  {
-    label: 'Servicios',
-    href: '/acelera',
-    hasSubmenu: true,
-    submenu: [
-      { label: 'ACELERA', href: '/acelera' },
-      { label: 'Pon Orden', href: '/pon-orden' },
-      { label: 'Consigue Capital', href: '/consigue-capital' },
-      { label: 'Vende más', href: '/vende-mas' },
-    ]
-  },
+  { label: 'Empresas', href: '/empresas' },
   {
     label: 'Bio/Builders',
     href: '/biobuilders',
     hasSubmenu: true,
     submenu: [
+      { label: 'Bio/Builders', href: '/biobuilders' },
       { label: 'Ventures', href: '/ventures' },
-      { label: 'Fondos', href: '/fondos' },
-    ]
+    ],
   },
+  // La URL se mantiene en /fondos por SEO; en el menú se llama Instituciones.
+  { label: 'Instituciones', href: '/fondos' },
   { label: 'Proyectos', href: '/proyectos' },
+  { label: 'Conocimiento', href: '/conocimiento' },
 ] as const
+
+// Páginas vivas y en el sitemap, pero sin enlaces internos (ver spec §2.2).
+export const HIDDEN_PATHS = [
+  '/acelera',
+  '/pon-orden',
+  '/consigue-capital',
+  '/vende-mas',
+  '/crear-valor',
+  '/transformar-el-modelo',
+  '/como-pensamos',
+  '/inteligencia-artificial/diagnostico',
+] as const
+
+// Rutas cuyo código se conserva, pero que next.config.mjs redirige.
+export const REDIRECTED_PATHS = ['/inteligencia-artificial', '/cursos-bbs'] as const
 
 export const SERVICE_PATHS = [
   { label: 'ACELERA', href: '/acelera' },
@@ -80,24 +69,20 @@ export const SERVICE_PATHS = [
 ] as const
 
 export const FOOTER_LINKS = {
-  servicios: {
-    titulo: 'Servicios',
+  audiencias: {
+    titulo: 'Trabaja con nosotros',
     links: [
-      { label: 'ACELERA', href: '/acelera' },
-      { label: 'Pon Orden', href: '/pon-orden' },
-      { label: 'Consigue Capital', href: '/consigue-capital' },
-      { label: 'Vende más', href: '/vende-mas' },
-      { label: 'Para fondos', href: '/fondos' },
+      { label: 'Empresas', href: '/empresas' },
+      { label: 'Bio/Builders', href: '/biobuilders' },
+      { label: 'Instituciones', href: '/fondos' },
     ],
   },
-  ecosistema: {
-    titulo: 'Ecosistema',
+  portafolio: {
+    titulo: 'Portafolio',
     links: [
-      { label: 'Ventures', href: '/ventures' },
-      { label: 'Bio/Builders', href: '/biobuilders' },
-      { label: 'Conocimiento', href: '/conocimiento' },
-      { label: 'IA para bioeconomía', href: '/inteligencia-artificial' },
       { label: 'Proyectos', href: '/proyectos' },
+      { label: 'Ventures', href: '/ventures' },
+      { label: 'Conocimiento', href: '/conocimiento' },
     ],
   },
   contacto: {
@@ -132,3 +117,65 @@ export const ALLIES = {
 }
 
 export const ALLIES_FLAT = [...ALLIES.row1, ...ALLIES.row2]
+
+export interface Division {
+  theme: string
+  brand: string
+  description: string
+  /** null = sin enlace (sitio caído o división aún sin web) */
+  href: string | null
+  domain: string | null
+  image: string | null
+}
+
+export const DIVISIONS: Division[] = [
+  {
+    theme: 'Acceso a capital de impacto',
+    brand: 'Fondo de Impacto',
+    description: 'Estudio especializado en facilitar el acceso a capital de impacto y canalizar inversión privada hacia empresas de alto potencial.',
+    href: 'https://fondodeimpacto.pe',
+    domain: 'fondodeimpacto.pe',
+    image: '/assets/hero/hero-17.jpg',
+  },
+  {
+    theme: 'Marcas regenerativas',
+    brand: 'ThousandFold',
+    description: 'Estudio de branding que construye la identidad y narrativa de marcas con propósito verificable.',
+    href: 'https://www.thousandfold.la',
+    domain: 'thousandfold.la',
+    image: '/assets/ventures/thousandfold.jpg',
+  },
+  {
+    theme: 'Bioeconomía',
+    brand: 'Bio Business School',
+    description: 'Concentra nuestro conocimiento trabajando con bionegocios en los territorios y lo convierte en consultoría y formación especializada.',
+    href: 'https://biobusinessschool.org',
+    domain: 'biobusinessschool.org',
+    image: '/assets/ventures/bio-business-school.jpg',
+  },
+  {
+    theme: 'Negocios regenerativos',
+    brand: 'Regenerative Platform Latam',
+    description: 'Plataforma que promueve negocios regenerativos en toda América Latina.',
+    href: 'https://regenerativelatam.org',
+    domain: 'regenerativelatam.org',
+    image: '/assets/hero/hero-07.jpg',
+  },
+  {
+    theme: 'Economía circular',
+    brand: 'Circular Club',
+    description: 'Comunidad de expertos que diseñan soluciones para la transición circular.',
+    // circularclub.la no responde por HTTPS (2026-09-24). Poner 'https://circularclub.la' cuando se arregle.
+    href: null,
+    domain: 'circularclub.la',
+    image: '/assets/hero/hero-08.jpg',
+  },
+  {
+    theme: 'Inteligencia artificial',
+    brand: 'IA para Empresas · nueva división',
+    description: 'Integramos inteligencia artificial en la operación de empresas de toda América Latina, no solo de bioeconomía.',
+    href: null,
+    domain: null,
+    image: null,
+  },
+]

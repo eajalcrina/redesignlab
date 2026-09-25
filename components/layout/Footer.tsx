@@ -39,13 +39,13 @@ export default function Footer() {
             <NewsletterForm />
           </div>
 
-          {/* Servicios */}
+          {/* Audiencias */}
           <div>
             <h3 className="text-label-sm md:text-label-md uppercase text-text-muted mb-3 md:mb-4">
-              {FOOTER_LINKS.servicios.titulo}
+              {FOOTER_LINKS.audiencias.titulo}
             </h3>
             <ul className="space-y-2 md:space-y-3">
-              {FOOTER_LINKS.servicios.links.map((link) => (
+              {FOOTER_LINKS.audiencias.links.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
@@ -58,13 +58,13 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Ecosistema */}
+          {/* Portafolio */}
           <div>
             <h3 className="text-label-sm md:text-label-md uppercase text-text-muted mb-3 md:mb-4">
-              {FOOTER_LINKS.ecosistema.titulo}
+              {FOOTER_LINKS.portafolio.titulo}
             </h3>
             <ul className="space-y-2 md:space-y-3">
-              {FOOTER_LINKS.ecosistema.links.map((link) => (
+              {FOOTER_LINKS.portafolio.links.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
