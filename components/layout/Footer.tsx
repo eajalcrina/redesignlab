@@ -7,7 +7,7 @@ import NewsletterForm from '@/components/ui/NewsletterForm'
 
 export default function Footer() {
   return (
-    <footer className="section-dark">
+    <footer className="section-dark" data-no-announce>
       <div className="container-rl py-10 md:py-24">
         {/* Top: Logo + tagline */}
         <div className="mb-8 md:mb-16">
