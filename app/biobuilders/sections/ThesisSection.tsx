@@ -1,7 +1,7 @@
 'use client'
 
 import SectionReveal from '@/components/animations/SectionReveal'
-import Tag from '@/components/ui/Tag'
+import SectionLabel from '@/components/ui/SectionLabel'
 
 const resources = [
   'comunidad organizada',
@@ -13,11 +13,11 @@ const resources = [
 
 export default function ThesisSection() {
   return (
-    <section className="bg-white text-text-primary py-24 md:py-32">
+    <section className="section-neutral py-24 md:py-32">
       <div className="container-rl">
         <div className="max-w-3xl">
           <SectionReveal>
-            <Tag color="red" className="mb-6">Por qué existe Bio/Builders</Tag>
+            <SectionLabel n="01" tone="light" className="mb-6">Por qué existe Bio/Builders</SectionLabel>
             <p className="text-body-xl md:text-body-xl-dt text-text-secondary mb-8">
               En los territorios de América Latina ya existe casi todo lo que un negocio necesita:
             </p>
@@ -25,7 +25,7 @@ export default function ThesisSection() {
               {resources.map((r) => (
                 <li
                   key={r}
-                  className="px-4 py-2 rounded-full border border-border-light bg-rl-neutral text-body-md text-text-primary"
+                  className="px-4 py-2 rounded-full border border-border-light bg-white text-body-md text-text-primary"
                 >
                   {r}
                 </li>

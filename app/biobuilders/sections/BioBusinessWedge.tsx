@@ -1,6 +1,7 @@
 'use client'
 
 import SectionReveal from '@/components/animations/SectionReveal'
+import ArrowIcon from '@/components/ui/ArrowIcon'
 import { BIOBUILDERS_WHATSAPP_URL } from '@/lib/constants'
 
 export default function BioBusinessWedge() {
@@ -16,9 +17,10 @@ export default function BioBusinessWedge() {
               href={BIOBUILDERS_WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center self-start md:self-auto h-12 px-8 shrink-0 rounded bg-rl-dark text-text-on-dark font-medium text-body-lg hover:bg-black transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              className="group inline-flex items-center justify-center self-start md:self-auto h-12 px-8 shrink-0 rounded bg-rl-dark text-text-on-dark font-medium text-body-lg hover:bg-black transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             >
-              Agenda una reunión &rarr;
+              Agenda una reunión
+              <ArrowIcon className="ml-2" />
             </a>
           </div>
         </SectionReveal>

@@ -13,7 +13,7 @@ const Arrow = () => (
 
 export default function HowItWorksSection() {
   return (
-    <section className="bg-rl-white text-text-primary py-24 md:py-32">
+    <section className="section-neutral py-24 md:py-32">
       <div className="container-rl">
         <SectionReveal>
           <h2 className="font-display text-display-md md:text-display-lg text-text-primary max-w-3xl mb-14">
