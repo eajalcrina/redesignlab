@@ -6,18 +6,18 @@ import CalendarButton from '@/components/ui/CalendarButton'
 
 const connections = [
   {
-    title: 'Quiero que Construyan Conmigo',
-    description: 'Tiene activos bio y necesita diseño y estructuración metodológica, sea un proyecto naciente o maduro pero informal.',
-    mode: 'dark' as const,
-    cta: 'Explorar co-construcción',
-    subject: 'Ventures — Co-construcción',
-  },
-  {
     title: 'Quiero Invertir',
     description: 'Accede a deal flow de oportunidades de bioeconomía mitigadas, con equipo validado y modelo de gobernanza probado. Operamos con los estándares de venture capital más rigurosos.',
-    mode: 'neutral' as const,
+    mode: 'dark' as const,
     cta: 'Hablar de inversión',
     subject: 'Ventures — Inversión',
+  },
+  {
+    title: 'Quiero que Construyan Conmigo',
+    description: 'Tiene activos bio y necesita diseño y estructuración metodológica, sea un proyecto naciente o maduro pero informal.',
+    mode: 'neutral' as const,
+    cta: 'Explorar co-construcción',
+    subject: 'Ventures — Co-construcción',
   },
   {
     title: 'Quiero Aliarme',
@@ -32,7 +32,7 @@ export default function ConnectSection() {
   return (
     <>
       <div className="section-neutral py-12 md:py-16 text-center border-b border-border-light">
-        <SectionLabel n="08" tone="light" className="justify-center">
+        <SectionLabel n="08" tone="light" className="justify-center" as="h2">
           Tres formas de conectar con Redesign Lab
         </SectionLabel>
       </div>

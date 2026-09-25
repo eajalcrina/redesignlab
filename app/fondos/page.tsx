@@ -14,7 +14,19 @@ export const metadata: Metadata = {
   description: DESCRIPTION,
   keywords: ['due diligence bioeconomía', 'fondos impacto LATAM', 'cooperación internacional bioeconomía', 'investment readiness bionegocios', 'capital de impacto'],
   alternates: { canonical: '/fondos' },
-  openGraph: { title: 'Instituciones | Redesign Lab', description: DESCRIPTION, url: 'https://redesignlab.org/fondos' },
+  openGraph: {
+    title: 'Instituciones | Redesign Lab',
+    description: DESCRIPTION,
+    url: 'https://redesignlab.org/fondos',
+    siteName: 'Redesign Lab',
+    locale: 'es_PE',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Instituciones | Redesign Lab',
+    description: DESCRIPTION,
+  },
 }
 
 const BREADCRUMB = {

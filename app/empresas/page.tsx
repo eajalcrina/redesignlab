@@ -13,7 +13,19 @@ export const metadata: Metadata = {
   title: 'Empresas',
   description: DESCRIPTION,
   alternates: { canonical: '/empresas' },
-  openGraph: { title: 'Empresas | Redesign Lab', description: DESCRIPTION, url: 'https://redesignlab.org/empresas' },
+  openGraph: {
+    title: 'Empresas | Redesign Lab',
+    description: DESCRIPTION,
+    url: 'https://redesignlab.org/empresas',
+    siteName: 'Redesign Lab',
+    locale: 'es_PE',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Empresas | Redesign Lab',
+    description: DESCRIPTION,
+  },
 }
 
 const BREADCRUMB = {

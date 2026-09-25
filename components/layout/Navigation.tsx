@@ -127,7 +127,7 @@ export default function Navigation() {
                               tabIndex={activeSubmenu === link.label ? 0 : -1}
                               className={cn(
                                 'text-body-sm text-text-muted hover:text-text-on-dark transition-colors duration-200 whitespace-nowrap',
-                                pathname === sub.href && 'text-rl-red'
+                                pathname === sub.href && 'text-text-on-dark'
                               )}
                             >
                               {sub.label}
@@ -243,7 +243,7 @@ export default function Navigation() {
                                 href={sub.href}
                                 className={cn(
                                   'text-body-md text-text-muted hover:text-text-on-dark transition-colors',
-                                  pathname === sub.href && 'text-rl-red'
+                                  pathname === sub.href && 'text-text-on-dark'
                                 )}
                                 onClick={() => setIsMobileOpen(false)}
                               >
