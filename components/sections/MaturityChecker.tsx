@@ -648,12 +648,12 @@ export default function MaturityChecker({ inline = false }: MaturityCheckerProps
                       Descargar el Framework RE-IA completo <span aria-hidden>&rarr;</span>
                     </a>
                     {level <= 2 && (
-                      <a href="/pon-orden" className="text-body-md text-text-muted hover:text-rl-red transition-colors inline-flex items-center gap-2">
+                      <a href="/empresas" className="text-body-md text-text-muted hover:text-rl-red transition-colors inline-flex items-center gap-2">
                         Explorar Pon Orden, tu punto de entrada <span aria-hidden>&rarr;</span>
                       </a>
                     )}
                     {level >= 3 && (
-                      <a href="/acelera" className="text-body-md text-text-muted hover:text-rl-red transition-colors inline-flex items-center gap-2">
+                      <a href="/empresas" className="text-body-md text-text-muted hover:text-rl-red transition-colors inline-flex items-center gap-2">
                         Conocer ACELERA <span aria-hidden>&rarr;</span>
                       </a>
                     )}
