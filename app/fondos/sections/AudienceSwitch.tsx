@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import SectionLabel from '@/components/ui/SectionLabel'
 import CalendarButton from '@/components/ui/CalendarButton'
 import { cn } from '@/lib/utils'
@@ -26,6 +26,39 @@ const CASES = [
 
 export default function AudienceSwitch() {
   const [k, setK] = useState(0)
+  const tabRefs = useRef<(HTMLButtonElement | null)[]>([])
+
+  const handleTabKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>, index: number) => {
+    const tabCount = CASES.length
+    let newIndex = index
+
+    switch (e.key) {
+      case 'ArrowRight':
+        newIndex = (index + 1) % tabCount
+        e.preventDefault()
+        break
+      case 'ArrowLeft':
+        newIndex = (index - 1 + tabCount) % tabCount
+        e.preventDefault()
+        break
+      case 'Home':
+        newIndex = 0
+        e.preventDefault()
+        break
+      case 'End':
+        newIndex = tabCount - 1
+        e.preventDefault()
+        break
+      default:
+        return
+    }
+
+    setK(newIndex)
+    setTimeout(() => {
+      tabRefs.current[newIndex]?.focus()
+    }, 0)
+  }
+
   return (
     <section className="section-neutral">
       <div className="container-rl py-24 md:py-32">
@@ -37,10 +70,15 @@ export default function AudienceSwitch() {
               key={c.tab}
               type="button"
               role="tab"
+              ref={(el) => {
+                tabRefs.current[i] = el
+              }}
               id={`aud-tab-${i}`}
               aria-selected={i === k}
               aria-controls={`aud-panel-${i}`}
+              tabIndex={i === k ? 0 : -1}
               onClick={() => setK(i)}
+              onKeyDown={(e) => handleTabKeyDown(e, i)}
               className={cn('rounded-[30px] px-5 py-3 text-[15px] font-medium transition-colors duration-300', i === k ? 'bg-rl-dark text-white' : 'text-text-secondary hover:text-text-primary')}
             >
               {c.tab}
@@ -55,6 +93,7 @@ export default function AudienceSwitch() {
               id={`aud-panel-${i}`}
               aria-labelledby={`aud-tab-${i}`}
               aria-hidden={i !== k}
+              tabIndex={i === k ? 0 : -1}
               className={cn(
                 'grid grid-cols-1 gap-10 transition-[opacity,transform] duration-500 [grid-area:1/1] md:grid-cols-[7fr_5fr] md:gap-14',
                 i === k ? 'visible translate-y-0 opacity-100' : 'invisible translate-y-3 opacity-0'
