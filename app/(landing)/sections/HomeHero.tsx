@@ -12,9 +12,16 @@ const pad = (n: number) => String(n).padStart(2, '0')
 
 export default function HomeHero() {
   const [i, setI] = useState(0)
+  // Tracks whether we've advanced past the first slide yet, so the
+  // previously-shown slide only mounts once it actually needs to fade out —
+  // not speculatively on first paint (that would download slides 3-4 too).
+  const [hasAdvanced, setHasAdvanced] = useState(false)
   useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
-    const t = window.setInterval(() => setI((v) => (v + 1) % SLIDES.length), INTERVAL)
+    const t = window.setInterval(() => {
+      setI((v) => (v + 1) % SLIDES.length)
+      setHasAdvanced(true)
+    }, INTERVAL)
     return () => window.clearInterval(t)
   }, [])
 
@@ -36,11 +43,18 @@ export default function HomeHero() {
           </div>
         </div>
         <figure className="relative h-[320px] overflow-hidden rounded-[3px] md:h-[440px]">
-          {SLIDES.map((src, k) => (
-            <div key={src} className={cn('hero-slide duotone absolute inset-0', k === i && 'is-on')}>
-              <Image src={src} alt="" fill sizes="(min-width: 1024px) 36vw, 100vw" priority={k === 0} className="object-cover" />
-            </div>
-          ))}
+          {SLIDES.map((src, k) => {
+            const prev = (i - 1 + SLIDES.length) % SLIDES.length
+            const next = (i + 1) % SLIDES.length
+            const shouldRender = k === i || k === next || (hasAdvanced && k === prev)
+            return (
+              <div key={src} className={cn('hero-slide duotone absolute inset-0', k === i && 'is-on')}>
+                {shouldRender && (
+                  <Image src={src} alt="" fill sizes="(min-width: 1024px) 36vw, 100vw" priority={k === 0} className="object-cover" />
+                )}
+              </div>
+            )
+          })}
           <figcaption className="absolute bottom-3 left-3.5 right-3.5 z-[3] flex items-center gap-3 font-mono text-[10px] tracking-[0.15em] text-white">
             <span>{pad(i + 1)}</span>
             <span className="relative h-px flex-1 overflow-hidden bg-white/30">
