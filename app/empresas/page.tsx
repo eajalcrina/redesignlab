@@ -25,6 +25,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Empresas | Redesign Lab',
     description: DESCRIPTION,
+    creator: '@redesignlab',
   },
 }
 

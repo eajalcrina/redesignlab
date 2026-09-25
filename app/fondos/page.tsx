@@ -26,6 +26,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Instituciones | Redesign Lab',
     description: DESCRIPTION,
+    creator: '@redesignlab',
   },
 }
 

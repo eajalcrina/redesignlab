@@ -4,6 +4,7 @@ import SectionReveal from '@/components/animations/SectionReveal'
 import SectionLabel from '@/components/ui/SectionLabel'
 import CalendarButton from '@/components/ui/CalendarButton'
 
+// Orden original del contenido; los modos se alternan (dark/neutral/accent) para mantener el ritmo de fondos.
 const connections = [
   {
     title: 'Quiero Invertir',
