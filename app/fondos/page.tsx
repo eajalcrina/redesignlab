@@ -5,6 +5,8 @@ import CapabilitiesSection from './sections/CapabilitiesSection'
 import ProcessTimeline from './sections/ProcessTimeline'
 import TrackRecordNote from './sections/TrackRecordNote'
 import InstitucionesClosing from './sections/InstitucionesClosing'
+import JsonLd from '@/components/seo/JsonLd'
+import { serviceLd } from '@/lib/seo'
 
 const DESCRIPTION =
   'Acompañamos a fondos de impacto y agencias de cooperación en bioeconomía: sourcing, due diligence en campo, value building, monitoreo y reporte de impacto.'
@@ -43,6 +45,7 @@ export default function FondosPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB) }} />
+      <JsonLd data={serviceLd({ name: 'Acompañamiento en territorio para fondos de impacto y agencias de cooperación', description: DESCRIPTION, audience: 'Fondos de inversión de impacto y agencias de cooperación', path: '/fondos' })} />
       <InstitucionesHero />
       <AudienceSwitch />
       <CapabilitiesSection />

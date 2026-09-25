@@ -83,6 +83,15 @@ async function main() {
   emp.includes('id="ia"') ? ok('/empresas tiene #ia') : fail('/empresas sin id="ia"')
   emp.includes('claude-logo-white') ? ok('/empresas muestra el logo de Claude') : fail('/empresas sin logo de Claude')
 
+  // SEO / GEO: ficha para buscadores con IA, imagen para redes y datos estructurados por página
+  const llms = await get('/llms.txt')
+  llms.status === 200 && (await llms.text()).startsWith('# Redesign Lab') ? ok('llms.txt publicado') : fail('llms.txt ausente o vacío')
+  for (const p of VISIBLE) {
+    const html = await (await get(p)).text()
+    html.includes('property="og:image"') ? ok(`${p} tiene og:image`) : fail(`${p} sin og:image`)
+    if (p !== '/' && p !== '/privacidad') html.includes('"BreadcrumbList"') ? ok(`${p} tiene BreadcrumbList`) : fail(`${p} sin BreadcrumbList`)
+  }
+
   console.log(failures ? `\n${failures} fallas` : '\nTodo en orden')
   process.exit(failures ? 1 : 0)
 }

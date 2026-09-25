@@ -1,11 +1,15 @@
 import type { Metadata } from 'next'
+import { pageMetadata } from '@/lib/seo'
 import Divider from '@/components/ui/Divider'
 import { NEWSLETTER, SITE_CONFIG } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: 'Política de Privacidad',
-  description: 'Cómo Redesign Lab recopila, usa y protege los datos personales de quienes visitan el sitio o se suscriben al boletín.',
-  alternates: { canonical: '/privacidad' },
+  ...pageMetadata({
+    title: 'Política de Privacidad',
+    description: 'Cómo Redesign Lab recopila, usa y protege los datos personales de quienes visitan el sitio o se suscriben al boletín.',
+    path: '/privacidad',
+    image: '/opengraph-image.png',
+  }),
   robots: { index: true, follow: true },
 }
 

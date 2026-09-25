@@ -5,6 +5,8 @@ import HelpSection from './sections/HelpSection'
 import StrengthsSection from './sections/StrengthsSection'
 import AISection from './sections/AISection'
 import EmpresasClosing from './sections/EmpresasClosing'
+import JsonLd from '@/components/seo/JsonLd'
+import { serviceLd } from '@/lib/seo'
 
 const DESCRIPTION =
   'Diseñamos, escalamos e invertimos en bionegocios con potencial real en América Latina: estrategia, operaciones, marca, impacto e IA como socios.'
@@ -42,6 +44,7 @@ export default function EmpresasPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB) }} />
+      <JsonLd data={serviceLd({ name: 'Venture building y asesoría para bionegocios', description: DESCRIPTION, audience: 'Empresas y bionegocios', path: '/empresas' })} />
       <EmpresasHero />
       <PartnerSection />
       <HelpSection />

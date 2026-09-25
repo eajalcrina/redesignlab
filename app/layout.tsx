@@ -7,6 +7,7 @@ import CustomCursor from '@/components/animations/CustomCursor'
 import PageTransition from '@/components/animations/PageTransition'
 import GoogleTagManager, { GoogleTagManagerNoScript } from '@/components/analytics/GoogleTagManager'
 import AnnouncementTab from '@/components/ui/AnnouncementTab'
+import { DIVISIONS, SITE_CONFIG } from '@/lib/constants'
 
 if (process.env.NODE_ENV !== 'production' && !process.env.NEXT_PUBLIC_GTM_ID) {
   console.warn(
@@ -73,19 +74,40 @@ export const metadata: Metadata = {
 const ORG_JSON_LD = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
+  '@id': 'https://redesignlab.org/#organization',
   name: 'Redesign Lab',
+  legalName: 'Redesign Ventures SAC',
   alternateName: 'Redesign Lab — The AI Studio for Bioeconomy Industries',
   url: 'https://redesignlab.org',
   logo: 'https://redesignlab.org/icon.png',
-  email: 'hello@redesignlab.org',
+  email: SITE_CONFIG.email,
+  telephone: SITE_CONFIG.phone,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Av. Roosevelt 5957',
+    addressLocality: 'Miraflores, Lima',
+    addressCountry: 'PE',
+  },
   description:
-    'El primer AI Studio de América Latina dedicado a transformar industrias cuya ventaja competitiva depende de regenerar los sistemas naturales.',
-  areaServed: 'Latin America',
+    'Venture Studio boutique en América Latina. Diseñamos, escalamos e invertimos en negocios con potencial real para que compitan en los mercados más exigentes.',
+  areaServed: { '@type': 'Place', name: 'América Latina' },
   foundingDate: '2020',
-  founders: [
-    { '@type': 'Person', name: 'Eddie Ajalcriña', sameAs: 'https://www.linkedin.com/in/eddieajalcrina' },
-    { '@type': 'Person', name: 'Lorenzo Ortiz', sameAs: 'https://www.linkedin.com/in/lorenzoortiz/' },
+  knowsAbout: [
+    'bioeconomía',
+    'bionegocios',
+    'venture building',
+    'capital de impacto',
+    'due diligence en territorio',
+    'inteligencia artificial aplicada',
+    'agricultura regenerativa',
+    'economía circular',
   ],
+  founders: [
+    { '@type': 'Person', name: 'Eddie Ajalcriña', jobTitle: 'CEO & Co-founder', sameAs: 'https://www.linkedin.com/in/eddieajalcrina' },
+    { '@type': 'Person', name: 'Lorenzo Ortiz', jobTitle: 'CIO & Co-founder', sameAs: 'https://www.linkedin.com/in/lorenzoortiz/' },
+  ],
+  // divisiones con sitio propio (Circular Club queda fuera hasta que su HTTPS funcione)
+  subOrganization: DIVISIONS.filter((d) => d.href).map((d) => ({ '@type': 'Organization', name: d.brand, url: d.href })),
   sameAs: [
     'https://www.linkedin.com/company/redesignlab',
   ],
