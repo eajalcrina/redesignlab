@@ -6,6 +6,7 @@ import Footer from '@/components/layout/Footer'
 import CustomCursor from '@/components/animations/CustomCursor'
 import PageTransition from '@/components/animations/PageTransition'
 import GoogleTagManager, { GoogleTagManagerNoScript } from '@/components/analytics/GoogleTagManager'
+import AnnouncementTab from '@/components/ui/AnnouncementTab'
 
 if (process.env.NODE_ENV !== 'production' && !process.env.NEXT_PUBLIC_GTM_ID) {
   console.warn(
@@ -135,6 +136,7 @@ export default function RootLayout({
           <main>{children}</main>
         </PageTransition>
         <Footer />
+        <AnnouncementTab />
       </body>
     </html>
   )
