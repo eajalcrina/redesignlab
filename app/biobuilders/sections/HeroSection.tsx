@@ -44,8 +44,8 @@ export default function HeroSection() {
           </motion.p>
 
           <motion.div variants={item} className="mt-10">
-            <Button size="lg" href={BIOBUILDERS_FORM_URL} target="_blank" rel="noopener noreferrer">
-              Postula a la red &rarr;
+            <Button size="lg" href={BIOBUILDERS_FORM_URL} target="_blank" rel="noopener noreferrer" arrow>
+              Postula a la red
             </Button>
           </motion.div>
         </motion.div>

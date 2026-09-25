@@ -26,11 +26,8 @@ export default function VentureCard({
       whileHover={{ y: -4 }}
       transition={{ duration: 0.3 }}
     >
-      {/* Territory texture placeholder */}
-      <div className="absolute inset-0 bg-gradient-to-br from-rl-dark to-[#1a1a1a] opacity-100 group-hover:opacity-80 transition-opacity" />
-
       <div className="relative z-10">
-        <span className="text-label-sm uppercase text-rl-red mb-3 block">
+        <span className="mb-3 block font-mono text-[10px] uppercase leading-[1.5] tracking-[0.14em] text-rl-red md:text-[10.5px]">
           {category}
         </span>
 
@@ -54,7 +51,7 @@ export default function VentureCard({
 
         <div className="flex flex-wrap gap-2">
           {tags.map((tag) => (
-            <span key={tag} className="text-label-sm uppercase text-text-muted/50">
+            <span key={tag} className="font-mono text-[10px] uppercase leading-[1.5] tracking-[0.14em] text-text-muted/50">
               {tag}
             </span>
           ))}

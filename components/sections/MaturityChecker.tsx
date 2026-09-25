@@ -5,6 +5,7 @@ import { createPortal } from 'react-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
 import { cn } from '@/lib/utils'
+import CalendarButton from '@/components/ui/CalendarButton'
 import {
   LEVEL_PROFILE,
   BLOCK_INSIGHT,
@@ -647,31 +648,29 @@ export default function MaturityChecker({ inline = false }: MaturityCheckerProps
                     <a href="/conocimiento" className="text-body-md text-text-muted hover:text-rl-red transition-colors inline-flex items-center gap-2">
                       Descargar el Framework RE-IA completo <span aria-hidden>&rarr;</span>
                     </a>
-                    {level <= 2 && (
-                      <a href="/pon-orden" className="text-body-md text-text-muted hover:text-rl-red transition-colors inline-flex items-center gap-2">
-                        Explorar Pon Orden, tu punto de entrada <span aria-hidden>&rarr;</span>
-                      </a>
-                    )}
-                    {level >= 3 && (
-                      <a href="/acelera" className="text-body-md text-text-muted hover:text-rl-red transition-colors inline-flex items-center gap-2">
-                        Conocer ACELERA <span aria-hidden>&rarr;</span>
-                      </a>
-                    )}
-                    <a href="mailto:eddie@redesignlab.org" className="inline-flex items-center gap-2 bg-rl-red text-white px-6 h-10 rounded font-sans font-medium hover:bg-[#d91f5b] transition-colors w-fit mt-2">
-                      Hablar con el equipo <span aria-hidden>&rarr;</span>
+                    <a href="/empresas" className="text-body-md text-text-muted hover:text-rl-red transition-colors inline-flex items-center gap-2">
+                      Ver cómo trabajamos con empresas <span aria-hidden>&rarr;</span>
                     </a>
+                    <CalendarButton
+                      location="diagnostico_resultado"
+                      context={`Nivel ${level} · trabajar juntos`}
+                      className="!h-10 !px-6 w-fit mt-2"
+                    >
+                      Construyamos juntos tu hoja de ruta de IA
+                    </CalendarButton>
                   </div>
                 </div>
 
                 {/* 9. CTA */}
                 <div className="text-center">
                   <p className="text-body-lg text-text-muted mb-4">Quieres profundizar en tu diagnostico con nuestro equipo?</p>
-                  <a
-                    href={`mailto:eddie@redesignlab.org?subject=Diagnostico%20RE-IA%20-%20Nivel%20${level}%20(${LEVELS[level].name})&body=Hola%2C%20complete%20el%20maturity%20checker%20y%20obtuve%20nivel%20${level}%20(${totalScore}/48).%20Me%20gustaria%20conversar%20sobre%20los%20proximos%20pasos.`}
-                    className="inline-flex items-center gap-2 bg-rl-red text-white px-8 h-12 rounded font-sans font-medium hover:bg-[#d91f5b] transition-colors"
+                  <CalendarButton
+                    location="diagnostico_resultado"
+                    context={`Nivel ${level} (${LEVELS[level].name}, ${totalScore}/48)`}
+                    className="!px-8"
                   >
-                    Agendar conversacion <span aria-hidden>&rarr;</span>
-                  </a>
+                    Agendar conversacion
+                  </CalendarButton>
                 </div>
               </div>
             </Screen>

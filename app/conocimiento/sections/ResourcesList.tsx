@@ -1,144 +1,102 @@
 'use client'
 
 import { useState } from 'react'
-import Image from 'next/image'
 import SectionReveal from '@/components/animations/SectionReveal'
-import Button from '@/components/ui/Button'
+import SectionLabel from '@/components/ui/SectionLabel'
+import DuotoneImage from '@/components/ui/DuotoneImage'
+import ArrowIcon from '@/components/ui/ArrowIcon'
 import ResourceDrawer from '@/components/ui/ResourceDrawer'
-
-const resources = [
-  {
-    slug: 'birf',
-    name: 'BIRF: Bionegocio Investment Readiness Framework',
-    type: 'Disponible ahora · 15 páginas · PDF · Español',
-    description: 'La herramienta que evalúa lo que el pitch deck no dice. Seis dimensiones de madurez, cuatro niveles de investment readiness, señales de identificación concretas.',
-    downloadUrl: '/assets/conocimiento/BIRF_Reporte_RedesignLab_v2.pdf',
-    mode: 'neutral' as const,
-    available: true,
-    image: '/assets/conocimiento/birf.jpg',
-  },
-  {
-    slug: 're-ia-propuesta',
-    name: 'Re.·IA: Una propuesta para industrias de bioeconomía',
-    type: 'Disponible ahora · PDF · Español',
-    description: 'Cómo la inteligencia artificial produce valor real en industrias donde el activo central es un sistema vivo. Cuatro dimensiones de madurez y diagnóstico de autoevaluación.',
-    downloadUrl: '/assets/conocimiento/Modelo_ReIA_RedesignLab.pdf',
-    mode: 'dark' as const,
-    available: true,
-    image: '/assets/conocimiento/re-ia.jpg',
-  },
-  {
-    slug: 'due-diligence-tecnico',
-    name: 'Guía de Due Diligence Técnico para Bionegocios',
-    type: 'Disponible ahora · PDF · Español',
-    description: 'Las preguntas que hay que hacer en el territorio, las señales que hay que observar y los documentos que hay que solicitar, con criterio técnico y no solo financiero.',
-    downloadUrl: '#',
-    mode: 'neutral' as const,
-    available: true,
-    image: '/assets/conocimiento/due-diligence.jpg',
-  },
-  {
-    slug: 'inversion-comunidades-nativas',
-    name: 'Guía de Inversión con Comunidades Nativas',
-    type: 'Disponible ahora · PDF · Español',
-    description: 'Cinco años operando en territorios indígenas de la Amazonía peruana, condensados en una guía práctica de criterio para quien toma decisiones sobre capital en estos contextos.',
-    downloadUrl: '#',
-    mode: 'dark' as const,
-    available: true,
-    image: '/assets/conocimiento/comunidades-nativas.jpg',
-  },
-  {
-    slug: 'innovation-matrix',
-    name: 'Innovation Matrix: Un framework para industrias de bioeconomía',
-    type: 'Disponible ahora · 30 páginas · PDF · Español',
-    description: 'Cómo decidir dónde poner tus recursos de innovación. Dos dimensiones, cuatro arquetipos y una matriz que revela el patrón completo de tu portafolio en 30 minutos, sin consultores, sin software.',
-    downloadUrl: '/assets/conocimiento/Innovation_Matrix_RedesignLab.pdf',
-    mode: 'neutral' as const,
-    available: true,
-    image: '/assets/conocimiento/innovation-matrix.jpg',
-  },
-  {
-    slug: 'blended-finance-design',
-    name: 'Blended Finance Design Guide',
-    type: 'Próximamente',
-    description: 'Guía práctica para el diseño de instrumentos de blended finance aplicada al contexto específico de proyectos de bioeconomía, economía circular y agricultura regenerativa en América Latina.',
-    downloadUrl: '#',
-    mode: 'dark' as const,
-    available: false,
-    image: '/assets/conocimiento/blended-finance.jpg',
-  },
-]
+import { resources, type ResourceItem } from '@/data/resources'
+import { cn } from '@/lib/utils'
 
 export default function ResourcesList() {
-  const [drawerResource, setDrawerResource] = useState<typeof resources[0] | null>(null)
+  const [drawerResource, setDrawerResource] = useState<ResourceItem | null>(null)
 
   return (
-    <>
-      {resources.map((resource) => (
-        <section
-          key={resource.name}
-          className={resource.mode === 'dark' ? 'section-dark' : 'section-neutral'}
-        >
-          <div className="container-rl py-16 md:py-20">
-            <SectionReveal>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
-                {/* Cover image */}
-                <div className={`relative aspect-[4/3] rounded overflow-hidden ${
-                  resource.mode === 'dark' ? 'bg-rl-dark border border-border-dark' : 'bg-rl-dark/5'
-                }`}>
-                  <Image
-                    src={resource.image}
-                    alt={resource.name}
-                    fill
-                    sizes="(min-width: 768px) 50vw, 100vw"
-                    className="object-cover"
-                  />
-                  {/* Slight darkening overlay for tonal cohesion with the section */}
-                  <div className="absolute inset-0 bg-rl-dark/25 pointer-events-none" />
-                </div>
+    <section className="section-neutral">
+      <div className="container-rl py-20 md:py-28">
+        <SectionReveal>
+          <SectionLabel n="01" className="mb-6">Recursos</SectionLabel>
+        </SectionReveal>
 
-                {/* Content */}
-                <div>
-                  <span className={`text-label-sm uppercase block mb-3 ${
-                    resource.mode === 'dark' ? 'text-rl-red' : 'text-rl-red'
-                  }`}>
-                    {resource.type}
+        {/* Índice de recursos: filas con líneas finas, como las divisiones y el conocimiento de la Home */}
+        <ul className="border-t border-rl-dark">
+          {resources.map((resource, k) => (
+            <li key={resource.slug}>
+              <SectionReveal delay={Math.min(k, 4) * 0.04}>
+                <div
+                  className={cn(
+                    'group relative grid grid-cols-[88px_minmax(0,1fr)] gap-x-4 gap-y-4 border-b border-border-light py-6 transition-colors',
+                    "[grid-template-areas:'thumb_head'_'desc_desc'_'act_act']",
+                    'md:grid-cols-[40px_140px_minmax(0,1fr)_180px] md:gap-x-8 md:gap-y-2 md:py-8',
+                    "md:[grid-template-areas:'idx_thumb_head_act'_'idx_thumb_desc_act']",
+                    resource.available && 'hover:bg-white/60'
+                  )}
+                >
+                  <span className="hidden self-center font-mono text-[10.5px] tracking-[0.15em] text-text-tertiary [grid-area:idx] md:block">
+                    {String(k + 1).padStart(2, '0')}
                   </span>
-                  <h3 className={`font-display text-display-sm md:text-display-md mb-4 ${
-                    resource.mode === 'dark' ? 'text-text-on-dark' : 'text-text-primary'
-                  }`}>
-                    {resource.name}
-                  </h3>
-                  <p className={`text-body-md mb-6 ${
-                    resource.mode === 'dark' ? 'text-text-muted' : 'text-text-secondary'
-                  }`}>
+
+                  <DuotoneImage
+                    src={resource.image}
+                    alt=""
+                    sizes="(min-width: 768px) 140px, 88px"
+                    hoverColor={resource.available}
+                    className="h-[66px] w-[88px] self-start rounded-[2px] [grid-area:thumb] md:h-[105px] md:w-[140px] md:self-center"
+                  />
+
+                  <div className="min-w-0 self-center [grid-area:head] md:self-end">
+                    <span
+                      className={cn(
+                        'block font-mono text-[10px] uppercase leading-[1.5] tracking-[0.14em] md:text-[10.5px]',
+                        resource.available ? 'text-rl-red' : 'text-text-tertiary'
+                      )}
+                    >
+                      {resource.type}
+                    </span>
+                    <h3
+                      className={cn(
+                        'mt-1.5 font-sans text-[19px] font-normal leading-[1.15] tracking-[-0.02em] text-text-primary md:text-[25px] md:leading-[1.1] md:tracking-[-0.03em]',
+                        resource.available && 'transition-colors group-hover:text-rl-red'
+                      )}
+                    >
+                      {resource.name}
+                    </h3>
+                  </div>
+
+                  <p className="text-[15px] leading-[1.6] text-text-secondary [grid-area:desc] md:max-w-[620px] md:self-start">
                     {resource.description}
                   </p>
-                  {resource.available ? (
-                    <Button
-                      variant="text"
-                      onClick={() => setDrawerResource(resource)}
-                      className={resource.mode === 'dark' ? 'text-text-on-dark' : 'text-text-primary'}
-                    >
-                      Descargar
-                    </Button>
-                  ) : (
-                    <span className={`text-body-sm ${resource.mode === 'dark' ? 'text-text-muted/60' : 'text-text-tertiary'}`}>
-                      Próximamente
-                    </span>
-                  )}
+
+                  <div className="[grid-area:act] empty:hidden md:self-center md:text-right">
+                    {resource.available ? (
+                      <button
+                        type="button"
+                        onClick={() => setDrawerResource(resource)}
+                        aria-label={`Descargar ${resource.name}`}
+                        className="inline-flex min-h-[44px] items-center gap-1.5 text-[14px] font-medium text-text-primary after:absolute after:inset-0 after:content-[''] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rl-red"
+                      >
+                        Descargar
+                        <ArrowIcon className="text-rl-red" />
+                      </button>
+                    ) : resource.type === 'Próximamente' ? null : (
+                      <span className="inline-flex min-h-[44px] items-center font-mono text-[10.5px] uppercase tracking-[0.15em] text-text-tertiary">
+                        Próximamente
+                      </span>
+                    )}
+                  </div>
                 </div>
-              </div>
-            </SectionReveal>
-          </div>
-        </section>
-      ))}
+              </SectionReveal>
+            </li>
+          ))}
+        </ul>
+      </div>
 
       <ResourceDrawer
         isOpen={!!drawerResource}
         resource={drawerResource}
         onClose={() => setDrawerResource(null)}
       />
-    </>
+    </section>
   )
 }

@@ -76,7 +76,7 @@ export default function DiagnosticoPage() {
       <div className="fixed top-16 md:top-20 left-0 right-0 z-40 pointer-events-none">
         <div className="container-rl pt-4 pointer-events-auto">
           <Link
-            href="/inteligencia-artificial"
+            href="/empresas#ia"
             className="inline-flex items-center gap-2 text-body-sm text-text-muted hover:text-white transition-colors group"
           >
             <span className="inline-block transition-transform group-hover:-translate-x-1">&larr;</span>

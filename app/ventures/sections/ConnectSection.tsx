@@ -1,21 +1,22 @@
 'use client'
 
 import SectionReveal from '@/components/animations/SectionReveal'
-import Button from '@/components/ui/Button'
-import { SITE_CONFIG } from '@/lib/constants'
+import SectionLabel from '@/components/ui/SectionLabel'
+import CalendarButton from '@/components/ui/CalendarButton'
 
+// Orden original del contenido; los modos se alternan (dark/neutral/accent) para mantener el ritmo de fondos.
 const connections = [
   {
     title: 'Quiero Invertir',
     description: 'Accede a deal flow de oportunidades de bioeconomía mitigadas, con equipo validado y modelo de gobernanza probado. Operamos con los estándares de venture capital más rigurosos.',
-    mode: 'neutral' as const,
+    mode: 'dark' as const,
     cta: 'Hablar de inversión',
     subject: 'Ventures — Inversión',
   },
   {
     title: 'Quiero que Construyan Conmigo',
     description: 'Tiene activos bio y necesita diseño y estructuración metodológica, sea un proyecto naciente o maduro pero informal.',
-    mode: 'dark' as const,
+    mode: 'neutral' as const,
     cta: 'Explorar co-construcción',
     subject: 'Ventures — Co-construcción',
   },
@@ -31,8 +32,12 @@ const connections = [
 export default function ConnectSection() {
   return (
     <>
-      <div className="section-dark py-12 md:py-16 text-center border-b border-border-dark">
-        <h2 className="font-display text-display-sm text-text-on-dark">IX. Tres formas de conectar con Redesign Lab</h2>
+      <div className="section-neutral py-12 md:py-16 text-center border-b border-border-light">
+        <div className="container-rl">
+          <SectionLabel n="08" tone="light" className="justify-center" as="h2">
+            Tres formas de conectar con Redesign Lab
+          </SectionLabel>
+        </div>
       </div>
       {connections.map((conn) => {
         const sectionClass = conn.mode === 'dark' ? 'section-dark' : conn.mode === 'accent' ? 'section-accent' : 'section-neutral'
@@ -48,14 +53,13 @@ export default function ConnectSection() {
                     <h3 className={`font-display text-display-sm ${textClass} mb-2`}>{conn.title}</h3>
                     <p className={`text-body-md ${descClass}`}>{conn.description}</p>
                   </div>
-                  <Button
-                    variant={conn.mode === 'accent' ? 'secondary' : 'primary'}
-                    size="md"
-                    href={`mailto:${SITE_CONFIG.email}?subject=${encodeURIComponent(conn.subject)}`}
-                    className={conn.mode === 'accent' ? 'text-white border-white/30' : ''}
+                  <CalendarButton
+                    location="ventures_connect"
+                    context={conn.subject}
+                    variant={conn.mode === 'accent' ? 'dark' : 'primary'}
                   >
-                    {conn.cta} &rarr;
-                  </Button>
+                    {conn.cta}
+                  </CalendarButton>
                 </div>
               </SectionReveal>
             </div>

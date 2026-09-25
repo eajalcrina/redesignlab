@@ -1,7 +1,7 @@
 'use client'
 
 import SectionReveal from '@/components/animations/SectionReveal'
-import Tag from '@/components/ui/Tag'
+import SectionLabel from '@/components/ui/SectionLabel'
 
 const pillars = [
   {
@@ -23,7 +23,7 @@ export default function PillarsSection() {
     <section className="section-neutral py-24 md:py-32">
       <div className="container-rl">
         <SectionReveal>
-          <Tag color="red" className="mb-4">III. Tres pilares que definen nuestro ecosistema</Tag>
+          <SectionLabel n="03" tone="light" className="mb-4">Tres pilares que definen nuestro ecosistema</SectionLabel>
           <h2 className="font-display text-display-md md:text-display-lg text-text-primary max-w-3xl mb-12">
             No financiamos ideas. Co-fundamos negocios usando este framework.
           </h2>

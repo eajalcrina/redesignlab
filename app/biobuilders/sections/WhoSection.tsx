@@ -28,10 +28,10 @@ const profiles = [
 
 export default function WhoSection() {
   return (
-    <section className="section-neutral py-24 md:py-32">
+    <section className="section-dark py-24 md:py-32">
       <div className="container-rl">
         <SectionReveal>
-          <h2 className="font-display text-display-md md:text-display-lg text-text-primary max-w-3xl mb-14">
+          <h2 className="font-display text-display-md md:text-display-lg text-text-on-dark max-w-3xl mb-14">
             Quién es un Bio/Builder
           </h2>
         </SectionReveal>
@@ -51,8 +51,8 @@ export default function WhoSection() {
               >
                 {p.icon}
               </svg>
-              <h3 className="font-display text-display-sm text-text-primary mb-3">{p.title}</h3>
-              <p className="text-body-md text-text-secondary">{p.body}</p>
+              <h3 className="font-display text-display-sm text-text-on-dark mb-3">{p.title}</h3>
+              <p className="text-body-md text-text-muted">{p.body}</p>
             </SectionReveal>
           ))}
         </div>

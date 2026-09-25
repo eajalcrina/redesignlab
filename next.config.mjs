@@ -32,6 +32,23 @@ const nextConfig = {
         destination: '/pon-orden',
         permanent: true,
       },
+      {
+        // IA pasa a ser una sección de /empresas. El código de la ruta se conserva.
+        source: '/inteligencia-artificial',
+        destination: '/empresas#ia',
+        permanent: true,
+      },
+      {
+        // Los programas BBS viven ahora en el sitio de Bio Business School.
+        source: '/cursos-bbs',
+        destination: 'https://biobusinessschool.org',
+        permanent: true,
+      },
+      {
+        source: '/cursos-bbs/:slug',
+        destination: 'https://biobusinessschool.org',
+        permanent: true,
+      },
     ]
   },
 }

@@ -8,9 +8,10 @@ interface MarqueeProps {
   direction?: 'left' | 'right'
   speed?: number
   className?: string
+  tone?: 'light' | 'dark'
 }
 
-function MarqueeRow({ items, direction = 'left', speed = 60 }: MarqueeProps) {
+function MarqueeRow({ items, direction = 'left', speed = 60, tone = 'light' }: MarqueeProps) {
   const doubled = [...items, ...items]
   const x = direction === 'left' ? ['0%', '-50%'] : ['-50%', '0%']
 
@@ -25,7 +26,10 @@ function MarqueeRow({ items, direction = 'left', speed = 60 }: MarqueeProps) {
         {doubled.map((item, i) => (
           <span
             key={`${item}-${i}`}
-            className="text-body-lg font-display text-text-primary/60 hover:text-rl-red transition-colors cursor-default"
+            className={cn(
+              'text-body-lg font-display hover:text-rl-red transition-colors cursor-default',
+              tone === 'dark' ? 'text-text-on-dark/60' : 'text-text-primary/60'
+            )}
           >
             {item}
           </span>
@@ -39,20 +43,23 @@ interface MarqueeBlockProps {
   items: string[]
   label?: string
   className?: string
+  tone?: 'light' | 'dark'
 }
 
-export default function Marquee({ items, label, className }: MarqueeBlockProps) {
+export default function Marquee({ items, label, className, tone = 'light' }: MarqueeBlockProps) {
   const reversed = [...items].reverse()
 
   return (
     <section className={cn('overflow-hidden', className)}>
       {label && (
         <div className="container-rl mb-6">
-          <span className="text-label-sm uppercase text-text-tertiary">{label}</span>
+          <span className={cn('text-label-sm uppercase', tone === 'dark' ? 'text-text-on-dark/40' : 'text-text-tertiary')}>
+            {label}
+          </span>
         </div>
       )}
-      <MarqueeRow items={items} direction="left" />
-      <MarqueeRow items={reversed} direction="right" />
+      <MarqueeRow items={items} direction="left" tone={tone} />
+      <MarqueeRow items={reversed} direction="right" tone={tone} />
     </section>
   )
 }

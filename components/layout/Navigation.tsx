@@ -6,7 +6,9 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { cn } from '@/lib/utils'
 import { NAV_LINKS, SITE_CONFIG } from '@/lib/constants'
-import Button from '@/components/ui/Button'
+import ArrowIcon from '@/components/ui/ArrowIcon'
+import CalendarButton from '@/components/ui/CalendarButton'
+import { track } from '@/lib/analytics'
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -84,7 +86,7 @@ export default function Navigation() {
                     href={link.href}
                     className={cn(
                       'group/link relative text-body-sm text-text-muted hover:text-text-on-dark transition-colors duration-200 flex items-center gap-1',
-                      pathname === link.href && 'text-text-on-dark'
+                      (pathname === link.href || pathname.startsWith(link.href + '/')) && 'text-text-on-dark'
                     )}
                   >
                     <span className="relative inline-block">
@@ -125,7 +127,7 @@ export default function Navigation() {
                               tabIndex={activeSubmenu === link.label ? 0 : -1}
                               className={cn(
                                 'text-body-sm text-text-muted hover:text-text-on-dark transition-colors duration-200 whitespace-nowrap',
-                                pathname === sub.href && 'text-rl-red'
+                                pathname === sub.href && 'text-text-on-dark'
                               )}
                             >
                               {sub.label}
@@ -142,9 +144,15 @@ export default function Navigation() {
 
           {/* Desktop CTA */}
           <div className="hidden lg:block">
-            <Button variant="text" size="sm" href={`mailto:${SITE_CONFIG.email}`} className="text-body-sm !text-text-on-dark hover:!text-rl-red transition-colors">
-              Escribir al equipo
-            </Button>
+            <a
+              href={SITE_CONFIG.calendarUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => track('cta_calendar', { page: pathname, location: 'nav' })}
+              className="group inline-flex items-center gap-2 text-body-sm text-text-on-dark transition-colors hover:text-rl-red"
+            >
+              Escribir al equipo <ArrowIcon />
+            </a>
           </div>
 
           {/* Mobile hamburger */}
@@ -235,7 +243,7 @@ export default function Navigation() {
                                 href={sub.href}
                                 className={cn(
                                   'text-body-md text-text-muted hover:text-text-on-dark transition-colors',
-                                  pathname === sub.href && 'text-rl-red'
+                                  pathname === sub.href && 'text-text-on-dark'
                                 )}
                                 onClick={() => setIsMobileOpen(false)}
                               >
@@ -254,9 +262,7 @@ export default function Navigation() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: NAV_LINKS.length * 0.05 + 0.2 }}
               >
-                <Button variant="primary" href={`mailto:${SITE_CONFIG.email}`} className="mt-4">
-                  Escribir al equipo &rarr;
-                </Button>
+                <CalendarButton location="nav_mobile" className="mt-4">Escribir al equipo</CalendarButton>
               </motion.div>
             </div>
           </motion.div>

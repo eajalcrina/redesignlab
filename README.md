@@ -36,6 +36,30 @@ npm run build
 
 Trazabilidad de cambios relevantes del sitio, del más reciente al más antiguo. Cada entrada indica el motivo, qué cambió, el impacto en SEO y dónde está el código.
 
+### 2026-09-24 · Rediseño por audiencias (Empresas, Bio/Builders, Instituciones)
+
+**Rama:** `feat/audiencias-redesign` · **Spec:** `docs/superpowers/specs/2026-09-24-audiencias-redesign-design.md` · **Plan:** `docs/superpowers/plans/2026-09-24-audiencias-redesign.md`
+
+**Por qué:** menú más limpio con los tres públicos claros y páginas de lectura rápida que llevan a una reunión uno a uno.
+
+**Qué cambió**
+
+- Menú: Empresas · Bio/Builders (Ventures) · Instituciones · Proyectos · Conocimiento. "Escribir al equipo" y todos los CTA de conversación abren el calendario.
+- Home rediseñada. Página nueva `/empresas`. `/fondos` pasa a ser Instituciones (misma URL).
+- Pestaña lateral de anuncios con rotación de campañas (`data/announcements.ts`).
+- Sistema visual 2026 (oscuro/crema, numeración editorial, grano, relleno rojo al pasar el mouse) aplicado a Bio/Builders, Ventures, Proyectos, Conocimiento y Privacidad sin cambiar su contenido.
+- 404 propia e imágenes para redes de `/empresas` y `/fondos`.
+
+**Impacto SEO**
+
+- Redirects 308: `/inteligencia-artificial` → `/empresas#ia`; `/cursos-bbs` y `/cursos-bbs/*` → `biobusinessschool.org`. El código de esas rutas se conserva.
+- Páginas ocultas pero vivas y en el sitemap: ACELERA, Pon Orden, Consigue Capital, Vende más, Crear valor, Transformar el modelo, Cómo pensamos y el diagnóstico de IA.
+- Después de publicar: pedir indexación de `/`, `/empresas` y `/fondos` en Search Console y vigilar las páginas ocultas y `/fondos` durante 4 semanas.
+
+**Pendientes:** `circularclub.la` sin HTTPS (fila sin enlace); PDF de las guías de Due Diligence y Comunidades Nativas; revisar la fecha de cierre de la campaña Bio/Builders 2026 en `data/announcements.ts`.
+
+**Verificación:** `npm test`, `npm run verify`, `tsc`, `lint` y `build` sin errores; revisión visual en escritorio y 375 px.
+
 ### 2026-09-20 · Bio/Builders reemplaza a Builders
 
 **Rama:** `feat/biobuilders-page` · **Commit:** `b9b9634`
