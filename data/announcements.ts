@@ -12,7 +12,7 @@ export const ANNOUNCEMENTS: Announcement[] = [
     primary: { label: 'Postula aquí ↗', href: BIOBUILDERS_FORM_URL, external: true },
     secondary: { label: 'Descubre más →', href: '/biobuilders' },
     start: '2026-09-01',
-    end: '2027-01-01',
+    end: '2026-11-29', // la convocatoria cierra el 28 de noviembre de 2026 (inclusive)
     excludePaths: ['/biobuilders'],
   },
 ]

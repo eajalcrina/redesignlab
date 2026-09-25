@@ -33,9 +33,11 @@ export default function ConnectSection() {
   return (
     <>
       <div className="section-neutral py-12 md:py-16 text-center border-b border-border-light">
-        <SectionLabel n="08" tone="light" className="justify-center" as="h2">
-          Tres formas de conectar con Redesign Lab
-        </SectionLabel>
+        <div className="container-rl">
+          <SectionLabel n="08" tone="light" className="justify-center" as="h2">
+            Tres formas de conectar con Redesign Lab
+          </SectionLabel>
+        </div>
       </div>
       {connections.map((conn) => {
         const sectionClass = conn.mode === 'dark' ? 'section-dark' : conn.mode === 'accent' ? 'section-accent' : 'section-neutral'

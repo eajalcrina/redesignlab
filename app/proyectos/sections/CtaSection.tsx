@@ -5,15 +5,15 @@ import CalendarButton from '@/components/ui/CalendarButton'
 
 export default function CtaSection() {
   return (
-    <section className="section-dark py-24 md:py-32">
-      <div className="container-rl">
+    <section className="section-dark" data-no-announce>
+      <div className="container-rl py-24 md:py-32">
         <SectionReveal>
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="font-display text-display-md md:text-display-lg text-text-on-dark mb-8">
-              ¿Trabaja en una industria de bioeconomía y necesita un aliado estratégico con experiencia en campo?
-            </h2>
-            
-            <div className="text-body-lg text-text-muted space-y-6 mb-12">
+          <h2 className="max-w-[1000px] border-t border-border-dark pt-10 font-sans text-[32px] font-normal leading-[1.04] tracking-[-0.035em] text-text-on-dark md:pt-12 md:text-[46px]">
+            ¿Trabaja en una industria de bioeconomía y necesita un aliado estratégico con experiencia en campo?
+          </h2>
+
+          <div className="mt-10 grid grid-cols-1 items-end gap-10 md:mt-14 lg:grid-cols-12 lg:gap-6">
+            <div className="space-y-5 text-[16px] leading-[1.7] text-text-muted md:text-[17px] lg:col-span-7">
               <p>
                 Nuestro trabajo no comienza en una sala de reuniones. Comienza donde el activo natural existe: en la cocha amazónica, en la parcela del pequeño agricultor, en la planta de procesamiento, en la mesa de negociación con el fondo de impacto.
               </p>
@@ -21,8 +21,7 @@ export default function CtaSection() {
                 Si está buscando un aliado que combine ese conocimiento territorial con la capacidad de estructurar inversiones, diseñar modelos de negocio escalables y conectar su organización con mercados y capital de primer nivel. Conversemos.
               </p>
             </div>
-            
-            <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <div className="lg:col-span-4 lg:col-start-9 lg:justify-self-end">
               <CalendarButton location="proyectos_cta">Hablar con el equipo</CalendarButton>
             </div>
           </div>

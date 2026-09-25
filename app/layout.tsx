@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     template: '%s | Redesign Lab',
   },
   description:
-    'AI Studio de América Latina para industrias de bioeconomía. Estrategia, IA aplicada y construcción de ventures que regeneran los sistemas naturales.',
+    'Venture Studio boutique en América Latina. Diseñamos, escalamos e invertimos en negocios con potencial real para que compitan en los mercados más exigentes.',
   keywords: [
     'AI Studio LATAM',
     'bioeconomía',
@@ -53,13 +53,13 @@ export const metadata: Metadata = {
     siteName: 'Redesign Lab',
     title: 'Redesign Lab — The AI Studio for Bioeconomy Industries',
     description:
-      'Estudio especializado en bioeconomía e inteligencia artificial. Transformamos industrias regenerativas en ventajas competitivas verificables.',
+      'Venture Studio boutique en América Latina. Diseñamos, escalamos e invertimos en negocios con potencial real para que compitan en los mercados más exigentes.',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Redesign Lab — The AI Studio for Bioeconomy Industries',
     description:
-      'Estudio de IA para industrias de bioeconomía en América Latina.',
+      'Venture Studio boutique en América Latina. Diseñamos, escalamos e invertimos en negocios con potencial real para que compitan en los mercados más exigentes.',
     creator: '@redesignlab',
   },
   robots: {

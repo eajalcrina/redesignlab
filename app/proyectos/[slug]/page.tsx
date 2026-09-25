@@ -2,11 +2,13 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { projects, findProjectBySlug, getProjectSlug } from '@/data/projects'
-import Tag from '@/components/ui/Tag'
-import Divider from '@/components/ui/Divider'
-import Button from '@/components/ui/Button'
+import SectionLabel from '@/components/ui/SectionLabel'
+import FillPanel from '@/components/ui/FillPanel'
+import ArrowIcon from '@/components/ui/ArrowIcon'
 import CalendarButton from '@/components/ui/CalendarButton'
+import { buttonClasses } from '@/components/ui/buttonStyles'
 import SectionReveal from '@/components/animations/SectionReveal'
+import { cn } from '@/lib/utils'
 
 interface ProjectPageProps {
   params: { slug: string }
@@ -32,6 +34,15 @@ export function generateMetadata({ params }: ProjectPageProps): Metadata {
       description: project.keyline,
       type: 'article',
       url: `/proyectos/${params.slug}`,
+      // las fichas usan la imagen de su sección (app/proyectos/opengraph-image.png)
+      images: [{ url: '/proyectos/opengraph-image.png', width: 1200, height: 630 }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: project.title,
+      description: project.keyline,
+      images: ['/proyectos/twitter-image.png'],
+      creator: '@redesignlab',
     },
   }
 }
@@ -40,6 +51,42 @@ const categoryLabels: Record<string, string> = {
   'crear-valor': 'Crear valor',
   'redisenar-trabajo': 'Rediseñar el trabajo',
   'transformar-modelo': 'Transformar el modelo',
+}
+
+const H2 = 'font-sans text-[32px] font-normal leading-[1.04] tracking-[-0.035em] md:text-[44px]'
+const BODY = 'text-[17px] leading-[1.7] md:text-[18px]'
+
+/** Bloque de dos columnas: etiqueta + título fijos a la izquierda, contenido a la derecha. */
+function Block({
+  n,
+  title,
+  dark,
+  children,
+}: {
+  n: string
+  title: string
+  dark?: boolean
+  children: React.ReactNode
+}) {
+  return (
+    <section className={dark ? 'section-dark' : 'section-neutral'}>
+      <div className="container-rl py-20 md:py-28">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-12 md:gap-12">
+          <SectionReveal className="md:col-span-4">
+            <div className="md:sticky md:top-28">
+              <SectionLabel n={n} tone={dark ? 'dark' : 'light'} className="mb-4">
+                {null}
+              </SectionLabel>
+              <h2 className={cn(H2, dark ? 'text-text-on-dark' : 'text-text-primary')}>{title}</h2>
+            </div>
+          </SectionReveal>
+          <SectionReveal delay={0.15} className="md:col-span-8 md:pt-1">
+            {children}
+          </SectionReveal>
+        </div>
+      </div>
+    </section>
+  )
 }
 
 export default function ProjectPage({ params }: ProjectPageProps) {
@@ -68,11 +115,11 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       {/* Back button bar */}
-      <div className="section-dark border-b border-border-dark pt-24 pb-6">
+      <div className="section-dark border-b border-border-dark pb-3 pt-20 md:pt-24">
         <div className="container-rl">
           <Link
             href="/proyectos"
-            className="inline-flex items-center gap-2 text-body-sm text-text-muted hover:text-text-on-dark transition-colors group"
+            className="group inline-flex min-h-[44px] items-center gap-2 text-[14px] text-text-muted transition-colors hover:text-text-on-dark"
           >
             <span className="inline-block transition-transform group-hover:-translate-x-1">&larr;</span>
             Volver a todos los proyectos
@@ -81,181 +128,133 @@ export default function ProjectPage({ params }: ProjectPageProps) {
       </div>
 
       {/* Hero */}
-      <section className="section-dark pt-12 md:pt-16 pb-16 md:pb-24">
-        <div className="container-rl">
+      <section className="section-dark">
+        <div className="container-rl pb-20 pt-14 md:pb-28 md:pt-20">
           <SectionReveal>
-            <div className="flex items-center gap-4 mb-8">
-              <span className="font-mono text-mono-lg text-rl-red">{project.number}</span>
-              <Tag color="neutral">{categoryLabels[project.category]}</Tag>
+            <div className="mb-5 flex flex-wrap items-center gap-x-4 gap-y-2">
+              <span className="font-mono text-[13px] tracking-[0.1em] text-rl-red">{project.number}</span>
+              <span aria-hidden="true" className="inline-block h-px w-[18px] bg-text-on-dark/30" />
+              <span className="font-mono text-[10.5px] uppercase leading-[1.5] tracking-[0.15em] text-text-on-dark">{categoryLabels[project.category]}</span>
             </div>
 
-            <h1 className="font-display text-display-lg md:text-display-xl text-text-on-dark max-w-4xl mb-6">
+            <h1 className="max-w-[1000px] font-sans text-[36px] font-normal leading-[1.02] tracking-[-0.04em] text-text-on-dark sm:text-[44px] md:text-[60px]">
               {project.title}
             </h1>
 
-            <p className="text-body-xl text-rl-red max-w-3xl mb-8 font-medium">
+            <p className="mt-6 max-w-[760px] text-[18px] font-medium leading-[1.5] text-rl-red md:text-[20px]">
               {project.keyline}
             </p>
 
-            <div className="flex flex-wrap gap-x-6 gap-y-2 text-body-sm text-text-muted mb-8">
-              <span>
-                <span className="text-text-on-dark">Industria: </span>
-                {project.industry}
-              </span>
-              <span>
-                <span className="text-text-on-dark">Geografía: </span>
-                {project.geo}
-              </span>
-            </div>
+            <dl className="mt-12 grid max-w-[1000px] grid-cols-1 border-t border-border-dark md:grid-cols-2">
+              <div className="border-b border-border-dark py-4 md:pr-8">
+                <dt className="mb-1.5 font-mono text-[10.5px] uppercase tracking-[0.15em] text-text-on-dark/40">Industria</dt>
+                <dd className="text-[15px] leading-[1.55] text-text-on-dark">{project.industry}</dd>
+              </div>
+              <div className="border-b border-border-dark py-4 md:border-l md:pl-8">
+                <dt className="mb-1.5 font-mono text-[10.5px] uppercase tracking-[0.15em] text-text-on-dark/40">Geografía</dt>
+                <dd className="text-[15px] leading-[1.55] text-text-on-dark">{project.geo}</dd>
+              </div>
+            </dl>
 
-            <div className="flex flex-wrap gap-2">
+            <ul className="mt-7 flex flex-wrap gap-2">
               {project.tags.map((tag) => (
-                <span
+                <li
                   key={tag}
-                  className="inline-block border border-border-dark text-text-muted text-label-sm uppercase px-3 py-1.5 rounded-full"
+                  className="rounded-full border border-border-dark px-3 py-1.5 font-mono text-[10px] uppercase leading-[1.5] tracking-[0.12em] text-text-muted"
                 >
                   {tag}
-                </span>
+                </li>
               ))}
-            </div>
+            </ul>
           </SectionReveal>
         </div>
       </section>
 
       {/* La oportunidad */}
-      <section className="section-neutral py-16 md:py-24">
-        <div className="container-rl">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
-            <SectionReveal className="md:col-span-4">
-              <div className="md:sticky md:top-24">
-                <span className="text-label-sm uppercase text-rl-red block mb-3">01</span>
-                <h2 className="font-display text-display-md text-text-primary">
-                  La oportunidad
-                </h2>
-                <Divider variant="red" className="w-10 mt-4" />
-              </div>
-            </SectionReveal>
-            <SectionReveal delay={0.15} className="md:col-span-8">
-              <p className="text-body-lg text-text-secondary whitespace-pre-line">
-                {project.challenge}
-              </p>
-            </SectionReveal>
-          </div>
-        </div>
-      </section>
+      <Block n="01" title="La oportunidad">
+        <p className={cn(BODY, 'whitespace-pre-line text-text-secondary')}>{project.challenge}</p>
+      </Block>
 
       {/* La solución */}
-      <section className="section-dark py-16 md:py-24">
-        <div className="container-rl">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
-            <SectionReveal className="md:col-span-4">
-              <div className="md:sticky md:top-24">
-                <span className="text-label-sm uppercase text-rl-red block mb-3">02</span>
-                <h2 className="font-display text-display-md text-text-on-dark">
-                  La solución
-                </h2>
-                <Divider variant="red" className="w-10 mt-4" />
-              </div>
-            </SectionReveal>
-            <SectionReveal delay={0.15} className="md:col-span-8">
-              <p className="text-body-lg text-text-muted whitespace-pre-line">
-                {project.approach}
-              </p>
-            </SectionReveal>
-          </div>
-        </div>
-      </section>
+      <Block n="02" title="La solución" dark>
+        <p className={cn(BODY, 'whitespace-pre-line text-text-muted')}>{project.approach}</p>
+      </Block>
 
       {/* El impacto */}
-      <section className="section-neutral py-16 md:py-24">
-        <div className="container-rl">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
-            <SectionReveal className="md:col-span-4">
-              <div className="md:sticky md:top-24">
-                <span className="text-label-sm uppercase text-rl-red block mb-3">03</span>
-                <h2 className="font-display text-display-md text-text-primary">
-                  El impacto
-                </h2>
-                <Divider variant="red" className="w-10 mt-4" />
-              </div>
-            </SectionReveal>
-            <SectionReveal delay={0.15} className="md:col-span-8">
-              <ul className="space-y-4">
-                {project.results.map((r, i) => (
-                  <li
-                    key={i}
-                    className="flex items-start gap-3 text-body-lg text-text-secondary"
-                  >
-                    <span className="font-mono text-mono-sm text-rl-red mt-2 flex-shrink-0 w-8">
-                      0{i + 1}
-                    </span>
-                    <span>{r}</span>
-                  </li>
-                ))}
-              </ul>
-            </SectionReveal>
-          </div>
-        </div>
-      </section>
+      <Block n="03" title="El impacto">
+        <ol className="border-t border-rl-dark">
+          {project.results.map((r, i) => (
+            <li
+              key={i}
+              className="grid grid-cols-[36px_minmax(0,1fr)] gap-4 border-b border-border-light py-5 md:grid-cols-[48px_minmax(0,1fr)]"
+            >
+              <span className="pt-[5px] font-mono text-[10.5px] tracking-[0.15em] text-rl-red">
+                {String(i + 1).padStart(2, '0')}
+              </span>
+              <span className={cn(BODY, 'text-text-primary')}>{r}</span>
+            </li>
+          ))}
+        </ol>
+      </Block>
 
       {/* Next/Prev navigation */}
-      <section className="section-dark border-t border-border-dark py-16">
-        <div className="container-rl">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <section className="section-dark">
+        <div className="container-rl py-20 md:py-24">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
             {prevProject ? (
-              <Link
+              <FillPanel
                 href={`/proyectos/${getProjectSlug(prevProject)}`}
-                className="group border border-border-dark rounded p-6 hover:border-rl-red/30 transition-colors"
+                tone="ink"
+                kicker="← Proyecto anterior"
+                title={prevProject.title}
+                cta="Ver caso completo"
+                titleClassName="text-[26px] leading-[1.05] md:text-[32px]"
+                className="h-full"
               >
-                <span className="text-label-sm uppercase text-text-muted block mb-2">
-                  &larr; Proyecto anterior
-                </span>
-                <span className="font-display text-display-sm text-text-on-dark group-hover:text-rl-red transition-colors">
-                  {prevProject.title}
-                </span>
-              </Link>
+                {prevProject.keyline}
+              </FillPanel>
             ) : (
-              <div />
+              <div className="hidden md:block" />
             )}
             {nextProject ? (
-              <Link
+              <FillPanel
                 href={`/proyectos/${getProjectSlug(nextProject)}`}
-                className="group border border-border-dark rounded p-6 hover:border-rl-red/30 transition-colors md:text-right"
+                tone="ink"
+                kicker="Proyecto siguiente →"
+                title={nextProject.title}
+                cta="Ver caso completo"
+                titleClassName="text-[26px] leading-[1.05] md:text-[32px]"
+                className="h-full"
               >
-                <span className="text-label-sm uppercase text-text-muted block mb-2">
-                  Proyecto siguiente &rarr;
-                </span>
-                <span className="font-display text-display-sm text-text-on-dark group-hover:text-rl-red transition-colors">
-                  {nextProject.title}
-                </span>
-              </Link>
+                {nextProject.keyline}
+              </FillPanel>
             ) : (
-              <div />
+              <div className="hidden md:block" />
             )}
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="section-neutral py-24 md:py-32">
-        <div className="container-rl text-center">
+      <section className="section-neutral" data-no-announce>
+        <div className="container-rl py-24 md:py-32">
           <SectionReveal>
-            <h2 className="font-display text-display-md md:text-display-lg text-text-primary max-w-3xl mx-auto mb-6">
-              ¿Tu organización tiene un desafío similar?
-            </h2>
-            <p className="text-body-lg text-text-secondary max-w-xl mx-auto mb-12">
-              Conversemos sobre cómo Redesign Lab puede construir la solución para tu industria.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <CalendarButton location="proyecto_ficha" context={project.title}>Escribir al equipo</CalendarButton>
-              <Button
-                variant="secondary"
-                size="lg"
-                href="/proyectos"
-                className="text-text-primary border-rl-dark/20"
-              >
-                Ver todos los proyectos
-              </Button>
+            <div className="grid grid-cols-1 items-end gap-8 lg:grid-cols-12 lg:gap-6">
+              <div className="lg:col-span-8">
+                <h2 className="font-sans text-[34px] font-normal leading-[1.02] tracking-[-0.035em] text-text-primary md:text-[46px]">
+                  ¿Tu organización tiene un desafío similar?
+                </h2>
+                <p className="mt-5 max-w-[560px] text-[17px] leading-[1.65] text-text-secondary">
+                  Conversemos sobre cómo Redesign Lab puede construir la solución para tu industria.
+                </p>
+              </div>
+              <div className="flex flex-col items-start gap-3 sm:flex-row lg:col-span-4 lg:flex-col lg:items-end">
+                <CalendarButton location="proyecto_ficha" context={project.title}>Escribir al equipo</CalendarButton>
+                <Link href="/proyectos" className={buttonClasses('outlineInk')}>
+                  Ver todos los proyectos
+                  <ArrowIcon />
+                </Link>
+              </div>
             </div>
           </SectionReveal>
         </div>

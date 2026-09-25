@@ -23,7 +23,7 @@ export default function Footer() {
 
         {/* Newsletter — full width on mobile, shown in column on desktop */}
         <div className="mb-10 md:mb-16 lg:hidden">
-          <h3 className="text-label-sm uppercase text-text-muted mb-3">
+          <h3 className="text-label-md leading-[1.4] uppercase text-text-muted mb-3">
             {NEWSLETTER.headline}
           </h3>
           <NewsletterForm />
@@ -41,15 +41,15 @@ export default function Footer() {
 
           {/* Audiencias */}
           <div>
-            <h3 className="text-label-sm md:text-label-md uppercase text-text-muted mb-3 md:mb-4">
+            <h3 className="text-label-md leading-[1.4] uppercase text-text-muted mb-3 md:mb-4">
               {FOOTER_LINKS.audiencias.titulo}
             </h3>
-            <ul className="space-y-2 md:space-y-3">
+            <ul className="space-y-1 md:space-y-3">
               {FOOTER_LINKS.audiencias.links.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-body-xs md:text-body-sm text-text-muted hover:text-text-on-dark transition-colors"
+                    className="inline-block py-1.5 md:py-0 text-body-sm text-text-muted hover:text-text-on-dark transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -60,15 +60,15 @@ export default function Footer() {
 
           {/* Portafolio */}
           <div>
-            <h3 className="text-label-sm md:text-label-md uppercase text-text-muted mb-3 md:mb-4">
+            <h3 className="text-label-md leading-[1.4] uppercase text-text-muted mb-3 md:mb-4">
               {FOOTER_LINKS.portafolio.titulo}
             </h3>
-            <ul className="space-y-2 md:space-y-3">
+            <ul className="space-y-1 md:space-y-3">
               {FOOTER_LINKS.portafolio.links.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-body-xs md:text-body-sm text-text-muted hover:text-text-on-dark transition-colors"
+                    className="inline-block py-1.5 md:py-0 text-body-sm text-text-muted hover:text-text-on-dark transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -79,17 +79,17 @@ export default function Footer() {
 
           {/* Contacto — spans 2 cols on mobile */}
           <div className="col-span-2 lg:col-span-1">
-            <h3 className="text-label-sm md:text-label-md uppercase text-text-muted mb-3 md:mb-4">
+            <h3 className="text-label-md leading-[1.4] uppercase text-text-muted mb-3 md:mb-4">
               {FOOTER_LINKS.contacto.titulo}
             </h3>
-            <ul className="space-y-2 md:space-y-3">
-              <li className="text-body-xs md:text-body-sm text-text-muted">
+            <ul className="space-y-1 md:space-y-3">
+              <li className="text-body-sm text-text-muted">
                 {SITE_CONFIG.address} · {SITE_CONFIG.city}
               </li>
               <li>
                 <a
                   href={`mailto:${SITE_CONFIG.email}`}
-                  className="text-body-xs md:text-body-sm text-text-muted hover:text-text-on-dark transition-colors break-all"
+                  className="inline-block py-1.5 md:py-0 text-body-sm text-text-muted hover:text-text-on-dark transition-colors break-all"
                 >
                   {SITE_CONFIG.email}
                 </a>
@@ -97,7 +97,7 @@ export default function Footer() {
               <li>
                 <a
                   href={`tel:${SITE_CONFIG.phone}`}
-                  className="text-body-xs md:text-body-sm text-text-muted hover:text-text-on-dark transition-colors"
+                  className="inline-block py-1.5 md:py-0 text-body-sm text-text-muted hover:text-text-on-dark transition-colors"
                 >
                   {SITE_CONFIG.phone}
                 </a>
@@ -107,7 +107,7 @@ export default function Footer() {
                   href="https://fondodeimpacto.pe"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-body-xs md:text-body-sm text-text-muted hover:text-text-on-dark transition-colors"
+                  className="inline-block py-1.5 md:py-0 text-body-sm text-text-muted hover:text-text-on-dark transition-colors"
                 >
                   fondodeimpacto.pe
                 </a>

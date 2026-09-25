@@ -19,7 +19,9 @@ export interface Announcement {
   excludePaths: string[]
 }
 
-const day = (iso: string) => new Date(iso + 'T00:00:00Z').getTime()
+// Las fechas se interpretan en hora de Lima (UTC-5): una campaña con `end: '2026-11-29'`
+// se ve hasta el 28 a las 23:59 en Perú.
+const day = (iso: string) => new Date(iso + 'T00:00:00-05:00').getTime()
 
 export function pickAnnouncement(list: Announcement[], now: Date, pathname: string): Announcement | null {
   const t = now.getTime()

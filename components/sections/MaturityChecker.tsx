@@ -648,21 +648,15 @@ export default function MaturityChecker({ inline = false }: MaturityCheckerProps
                     <a href="/conocimiento" className="text-body-md text-text-muted hover:text-rl-red transition-colors inline-flex items-center gap-2">
                       Descargar el Framework RE-IA completo <span aria-hidden>&rarr;</span>
                     </a>
-                    {level <= 2 && (
-                      <a href="/empresas" className="text-body-md text-text-muted hover:text-rl-red transition-colors inline-flex items-center gap-2">
-                        Explorar Pon Orden, tu punto de entrada <span aria-hidden>&rarr;</span>
-                      </a>
-                    )}
-                    {level >= 3 && (
-                      <a href="/empresas" className="text-body-md text-text-muted hover:text-rl-red transition-colors inline-flex items-center gap-2">
-                        Conocer ACELERA <span aria-hidden>&rarr;</span>
-                      </a>
-                    )}
+                    <a href="/empresas" className="text-body-md text-text-muted hover:text-rl-red transition-colors inline-flex items-center gap-2">
+                      Ver cómo trabajamos con empresas <span aria-hidden>&rarr;</span>
+                    </a>
                     <CalendarButton
                       location="diagnostico_resultado"
+                      context={`Nivel ${level} · trabajar juntos`}
                       className="!h-10 !px-6 w-fit mt-2"
                     >
-                      Hablar con el equipo
+                      Construyamos juntos tu hoja de ruta de IA
                     </CalendarButton>
                   </div>
                 </div>

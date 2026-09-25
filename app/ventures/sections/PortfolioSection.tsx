@@ -25,7 +25,7 @@ export default function PortfolioSection() {
                 className="group relative h-full bg-rl-dark rounded-lg overflow-hidden p-6 md:p-8 border border-border-dark hover:border-rl-red/50 transition-all duration-300 hover:-translate-y-1 min-h-[260px] flex flex-col justify-end"
               >
                 <div className="relative z-10">
-                  <span className="text-label-sm uppercase text-rl-red mb-2 block">
+                  <span className="mb-2 block font-mono text-[10px] uppercase leading-[1.5] tracking-[0.14em] text-rl-red md:text-[10.5px]">
                     {venture.category}
                   </span>
 

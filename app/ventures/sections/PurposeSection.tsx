@@ -7,9 +7,10 @@ import SectionLabel from '@/components/ui/SectionLabel'
 import { DURATION, EASE } from '@/lib/animations'
 
 const circles = [
-  { label: 'Rentabilidad', color: 'border-rl-red' },
-  { label: 'Impacto', color: 'border-text-on-dark/30' },
-  { label: 'Biodiversidad', color: 'border-text-muted/30' },
+  // cada etiqueta va en la zona del círculo que no se cruza con los otros
+  { label: 'Rentabilidad', color: 'border-rl-red', place: 'items-start justify-start pl-[9%] pt-[30%]' },
+  { label: 'Impacto', color: 'border-text-on-dark/30', place: 'items-start justify-end pr-[13%] pt-[30%]' },
+  { label: 'Biodiversidad', color: 'border-text-muted/30', place: 'items-end justify-center pb-[13%]' },
 ]
 
 export default function PurposeSection() {
@@ -37,13 +38,13 @@ export default function PurposeSection() {
               return (
                 <motion.div
                   key={circle.label}
-                  className={`absolute w-[180px] h-[180px] md:w-[240px] md:h-[240px] rounded-full border-2 ${circle.color} flex items-center justify-center`}
+                  className={`absolute w-[180px] h-[180px] md:w-[240px] md:h-[240px] rounded-full border-2 ${circle.color} flex ${circle.place}`}
                   style={positions[i]}
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={inView ? { opacity: 1, scale: 1 } : {}}
                   transition={{ duration: DURATION.slow, ease: EASE.out, delay: i * 0.15 }}
                 >
-                  <span className="text-body-sm text-text-muted font-medium">{circle.label}</span>
+                  <span className="text-[12px] md:text-body-sm text-text-muted font-medium">{circle.label}</span>
                 </motion.div>
               )
             })}

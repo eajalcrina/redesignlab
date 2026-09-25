@@ -15,7 +15,7 @@ const CASES = [
     location: 'instituciones_fondo',
   },
   {
-    tab: 'Soy una agencia u ONG',
+    tab: 'Soy una agencia\u00A0u\u00A0ONG',
     who: 'Agencias de cooperación y ONGs',
     title: 'Que las capacidades instaladas sobrevivan cuando el proyecto termina.',
     problem: 'Años desarrollando asistencia técnica en territorio, con la exigencia de los donantes de mostrar sostenibilidad. Pero el company building real (comercial, gobernanza, acceso a capital) no siempre está entre sus capacidades.',
@@ -64,7 +64,7 @@ export default function AudienceSwitch() {
       <div className="container-rl py-24 md:py-32">
         <SectionLabel n="01" className="mb-4">Dos grandes problemas</SectionLabel>
         <h2 className="max-w-[900px] font-sans text-[30px] font-normal leading-[1.06] tracking-[-0.03em] md:text-[40px]">¿Desde dónde trabajas la bioeconomía?</h2>
-        <div role="tablist" aria-label="Tipo de institución" className="mt-11 inline-flex flex-wrap gap-1 rounded-[40px] bg-white p-1 shadow-[0_0_0_1px_rgba(13,13,13,.1)]">
+        <div role="tablist" aria-label="Tipo de institución" className="mt-11 grid w-full grid-cols-2 gap-1 rounded-[26px] bg-white p-1 shadow-[0_0_0_1px_rgba(13,13,13,.1)] sm:inline-flex sm:w-auto sm:rounded-[40px]">
           {CASES.map((c, i) => (
             <button
               key={c.tab}
@@ -79,7 +79,7 @@ export default function AudienceSwitch() {
               tabIndex={i === k ? 0 : -1}
               onClick={() => setK(i)}
               onKeyDown={(e) => handleTabKeyDown(e, i)}
-              className={cn('rounded-[30px] px-5 py-3 text-[15px] font-medium transition-colors duration-300', i === k ? 'bg-rl-dark text-white' : 'text-text-secondary hover:text-text-primary')}
+              className={cn('rounded-[22px] px-3 py-3 text-center text-[14px] font-medium leading-[1.25] transition-colors duration-300 sm:rounded-[30px] sm:px-5 sm:text-[15px] sm:leading-normal', i === k ? 'bg-rl-dark text-white' : 'text-text-secondary hover:text-text-primary')}
             >
               {c.tab}
             </button>

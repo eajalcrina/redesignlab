@@ -9,7 +9,7 @@ export default function AlliesLine() {
         <p className="text-[13px] leading-[2.05] text-text-on-dark/40">
           {ALLIES_FLAT.map((a, i) => (
             <Fragment key={a}>
-              {i > 0 && <span aria-hidden="true" className="mx-2.5 text-text-on-dark/15">/</span>}
+              {i > 0 && <>{'\u00A0'}<span aria-hidden="true" className="mx-1.5 text-text-on-dark/15">/</span> </>}
               {a}
             </Fragment>
           ))}

@@ -8,7 +8,7 @@ export default function FoundersSection() {
     <section className="section-dark">
       <div className="container-rl py-24 md:py-[104px]">
         <SectionLabel n="06" tone="dark" className="mb-4">Los fundadores</SectionLabel>
-        <h2 className="max-w-[860px] font-sans text-[30px] font-normal leading-[1.06] tracking-[-0.03em] md:text-[40px]">
+        <h2 className="max-w-[860px] font-sans text-[24px] font-normal leading-[1.1] sm:text-[30px] sm:leading-[1.06] tracking-[-0.03em] md:text-[40px]">
           Eddie y Lorenzo fundaron Redesign Lab sobre una red activa de expertos, operadores y fondos, que hoy co-construye algunos de los proyectos más ambiciosos de bioeconomía en la región.
         </h2>
         <div className="mt-16 grid grid-cols-1 gap-14 md:grid-cols-2">

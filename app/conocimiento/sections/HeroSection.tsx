@@ -15,16 +15,19 @@ export default function HeroSection() {
   }
 
   return (
-    <section className="section-dark py-32 md:py-40">
-      <div className="container-rl">
+    <section className="section-dark">
+      <div className="container-rl pb-20 pt-36 md:pb-28 md:pt-44">
         <motion.div initial="hidden" animate="visible" variants={container}>
           <motion.div variants={item}>
-            <Tag color="neutral" className="mb-8">Conocimiento</Tag>
+            <Tag color="neutral" className="mb-3">Conocimiento</Tag>
           </motion.div>
-          <motion.h1 variants={item} className="font-display text-display-lg md:text-display-xl text-text-on-dark max-w-4xl mb-6">
+          <motion.h1
+            variants={item}
+            className="max-w-[1000px] font-sans text-[38px] font-normal leading-none tracking-[-0.04em] text-text-on-dark sm:text-[46px] md:text-[64px]"
+          >
             Lo que sabemos, lo compartimos.
           </motion.h1>
-          <motion.p variants={item} className="text-body-xl text-text-muted max-w-2xl">
+          <motion.p variants={item} className="mt-7 max-w-[600px] text-[17px] leading-[1.6] text-text-muted md:text-[18px]">
             Recursos, frameworks y datos que usamos internamente, abiertos para el ecosistema.
           </motion.p>
         </motion.div>

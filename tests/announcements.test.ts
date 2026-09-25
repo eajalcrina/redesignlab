@@ -30,3 +30,10 @@ test('si hay varias vigentes gana la primera', () => {
   const b = { ...base, id: 'b' }
   assert.equal(pickAnnouncement([b, base], d('2026-10-01'), '/')?.id, 'b')
 })
+test('las fechas se cuentan en hora de Lima', () => {
+  const c = { ...base, end: '2026-11-29' }
+  // 28 nov, 23:30 en Lima (04:30 UTC del 29) → todavía vigente
+  assert.equal(pickAnnouncement([c], new Date('2026-11-29T04:30:00Z'), '/')?.id, 'a')
+  // 29 nov, 00:30 en Lima → vencida
+  assert.equal(pickAnnouncement([c], new Date('2026-11-29T05:30:00Z'), '/'), null)
+})
