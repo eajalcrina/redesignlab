@@ -22,6 +22,9 @@ const config: Config = {
 
         'border-light': 'rgba(13,13,13,0.08)',
         'border-dark': 'rgba(250,250,248,0.10)',
+
+        'rl-graphite': '#2A2A2A',
+        'claude': '#D97757',
       },
       fontSize: {
         // Display — mobile-first sizes (scale up with md: and lg: prefixes)

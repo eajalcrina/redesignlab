@@ -4,6 +4,7 @@ import { cn } from '@/lib/utils'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import type { AnchorHTMLAttributes } from 'react'
+import ArrowIcon from './ArrowIcon'
 
 type ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'text'
 type ButtonSize = 'sm' | 'md' | 'lg'
@@ -17,6 +18,7 @@ interface ButtonProps extends Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'hre
   className?: string
   type?: 'button' | 'submit'
   disabled?: boolean
+  arrow?: boolean
 }
 
 const variantStyles: Record<ButtonVariant, string> = {
@@ -44,10 +46,11 @@ export default function Button({
   className,
   type = 'button',
   disabled = false,
+  arrow = false,
   ...rest
 }: ButtonProps) {
   const baseClasses = cn(
-    'inline-flex items-center justify-center font-sans font-medium transition-all duration-200 cursor-pointer rounded',
+    'group inline-flex items-center justify-center font-sans font-medium transition-all duration-200 cursor-pointer rounded',
     variant !== 'text' && sizeStyles[size],
     variantStyles[variant],
     disabled && 'opacity-50 cursor-not-allowed',
@@ -67,7 +70,10 @@ export default function Button({
         </motion.span>
       </span>
     ) : (
-      children
+      <>
+        {children}
+        {arrow && <ArrowIcon className="ml-2" />}
+      </>
     )
 
   if (href) {
