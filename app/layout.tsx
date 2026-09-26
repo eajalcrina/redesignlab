@@ -130,10 +130,14 @@ export default function RootLayout({
   return (
     <html lang="es" className={jetbrains.variable}>
       <head>
-        {/* Mluvka font from CDNFonts — weights 200-800 */}
+        {/* Mluvka: @font-face en globals.css; aquí solo se adelanta la conexión y el peso normal */}
+        <link rel="preconnect" href="https://fonts.cdnfonts.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.cdnfonts.com/css/mluvka"
-          rel="stylesheet"
+          rel="preload"
+          href="https://fonts.cdnfonts.com/s/107646/Mluvka-Regular-BF65518ac8463f5.woff"
+          as="font"
+          type="font/woff"
+          crossOrigin="anonymous"
         />
         {/* Structured data — Organization + WebSite */}
         <script

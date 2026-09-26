@@ -1,3 +1,17 @@
+/* Mluvka desde cdnfonts, declarada aquí en lugar de su hoja externa: esa hoja
+   bloqueaba el primer render (~1 s en móvil) y no usaba font-display: swap,
+   así que los títulos quedaban invisibles hasta que llegaba la fuente.
+   Solo se declaran los pesos que usa el sitio; el navegador descarga cada uno
+   solo si una página lo necesita. */
+@font-face { font-family: 'Mluvka'; font-style: normal; font-weight: 400; font-display: swap;
+  src: local('Mluvka'), url('https://fonts.cdnfonts.com/s/107646/Mluvka-Regular-BF65518ac8463f5.woff') format('woff'); }
+@font-face { font-family: 'Mluvka'; font-style: italic; font-weight: 400; font-display: swap;
+  src: local('Mluvka'), url('https://fonts.cdnfonts.com/s/107646/Mluvka-Italic-BF65518ac838b27.woff') format('woff'); }
+@font-face { font-family: 'Mluvka'; font-style: normal; font-weight: 500; font-display: swap;
+  src: local('Mluvka'), url('https://fonts.cdnfonts.com/s/107646/Mluvka-Medium-BF65518ac864edb.woff') format('woff'); }
+@font-face { font-family: 'Mluvka'; font-style: normal; font-weight: 600 700; font-display: swap;
+  src: local('Mluvka'), url('https://fonts.cdnfonts.com/s/107646/Mluvka-SemiBold-BF65518ac864155.woff') format('woff'); }
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -241,3 +255,14 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* Entrada de los heros en CSS: arranca en el primer render, sin esperar a React,
+   para que el contenido principal (LCP) se pinte cuanto antes. */
+@keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+@keyframes rise-line { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+[data-rise] { animation: rise .5s cubic-bezier(0, 0, .2, 1) both; }
+[data-rise="2"] { animation-delay: .08s; }
+[data-rise="3"] { animation-delay: .16s; }
+[data-rise="4"] { animation-delay: .24s; }
+[data-rise-line] { transform-origin: left; animation: rise-line .7s cubic-bezier(0, 0, .2, 1) .12s both; }
+@media (prefers-reduced-motion: reduce) { [data-rise], [data-rise-line] { animation: none; } }
