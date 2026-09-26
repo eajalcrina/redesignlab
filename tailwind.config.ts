@@ -61,8 +61,8 @@ const config: Config = {
         'body-lg-dt': ['18px', { lineHeight: '1.65' }],
       },
       fontFamily: {
-        display: ['Mluvka', 'system-ui', 'sans-serif'],
-        sans: ['Mluvka', 'system-ui', 'sans-serif'],
+        display: ['Mluvka', 'Mluvka Fallback', 'system-ui', 'sans-serif'],
+        sans: ['Mluvka', 'Mluvka Fallback', 'system-ui', 'sans-serif'],
         mono: ['var(--font-jetbrains)', 'monospace'],
       },
       spacing: {

@@ -1,3 +1,22 @@
+/* Mluvka desde cdnfonts, declarada aquí en lugar de su hoja externa: esa hoja
+   bloqueaba el primer render (~1 s en móvil) y no usaba font-display: swap,
+   así que los títulos quedaban invisibles hasta que llegaba la fuente.
+   Solo se declaran los pesos que usa el sitio; el navegador descarga cada uno
+   solo si una página lo necesita. */
+@font-face { font-family: 'Mluvka'; font-style: normal; font-weight: 400; font-display: swap;
+  src: local('Mluvka'), url('https://fonts.cdnfonts.com/s/107646/Mluvka-Regular-BF65518ac8463f5.woff') format('woff'); }
+@font-face { font-family: 'Mluvka'; font-style: italic; font-weight: 400; font-display: swap;
+  src: local('Mluvka'), url('https://fonts.cdnfonts.com/s/107646/Mluvka-Italic-BF65518ac838b27.woff') format('woff'); }
+@font-face { font-family: 'Mluvka'; font-style: normal; font-weight: 500; font-display: swap;
+  src: local('Mluvka'), url('https://fonts.cdnfonts.com/s/107646/Mluvka-Medium-BF65518ac864edb.woff') format('woff'); }
+@font-face { font-family: 'Mluvka'; font-style: normal; font-weight: 600 700; font-display: swap;
+  src: local('Mluvka'), url('https://fonts.cdnfonts.com/s/107646/Mluvka-SemiBold-BF65518ac864155.woff') format('woff'); }
+
+/* Fuente provisional con las medidas de Mluvka (calculadas sobre Arial), para que
+   el texto no salte de tamaño cuando llega la fuente real (CLS). */
+@font-face { font-family: 'Mluvka Fallback'; src: local('Arial'), local('Helvetica'), local('Roboto');
+  size-adjust: 105.7%; ascent-override: 98.2%; descent-override: 21%; line-gap-override: 0%; }
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -23,7 +42,7 @@
   }
 
   body {
-    font-family: 'Mluvka', system-ui, sans-serif;
+    font-family: 'Mluvka', 'Mluvka Fallback', system-ui, sans-serif;
     font-weight: 400;
     color: #0D0D0D;
     background: #FAFAF8;
@@ -82,7 +101,7 @@
 
   /* Sistema 2026-09: todos los títulos en Mluvka Regular (400). */
   .font-display {
-    font-family: 'Mluvka', system-ui, sans-serif;
+    font-family: 'Mluvka', 'Mluvka Fallback', system-ui, sans-serif;
     font-weight: 400;
   }
 
@@ -128,7 +147,7 @@
 
 /* ===== Pestaña de anuncios (spec §4.3) ===== */
 .ann { --pw: 300px; --ease: cubic-bezier(.2,.8,.2,1); position: fixed; right: 0; top: 62vh; z-index: 35; display: flex; align-items: stretch;
-  transform: translate(calc(100% + 4px), -50%); transition: transform .42s var(--ease); font-family: 'Mluvka', system-ui, sans-serif;
+  transform: translate(calc(100% + 4px), -50%); transition: transform .42s var(--ease); font-family: 'Mluvka', 'Mluvka Fallback', system-ui, sans-serif;
   --bg: #F5F3F0; --fg: #0D0D0D; --sub: rgba(13,13,13,.5); --rule: rgba(13,13,13,.12); }
 .ann *, .ann *::before, .ann *::after { box-sizing: border-box; }
 .ann[data-state="collapsed"] { transform: translate(var(--pw), -50%); }
@@ -241,3 +260,14 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* Entrada de los heros en CSS: arranca en el primer render, sin esperar a React,
+   para que el contenido principal (LCP) se pinte cuanto antes. */
+@keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+@keyframes rise-line { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+[data-rise] { animation: rise .5s cubic-bezier(0, 0, .2, 1) both; }
+[data-rise="2"] { animation-delay: .08s; }
+[data-rise="3"] { animation-delay: .16s; }
+[data-rise="4"] { animation-delay: .24s; }
+[data-rise-line] { transform-origin: left; animation: rise-line .7s cubic-bezier(0, 0, .2, 1) .12s both; }
+@media (prefers-reduced-motion: reduce) { [data-rise], [data-rise-line] { animation: none; } }
